@@ -28,7 +28,7 @@ export function Navbar() {
                 <ThemeToggle />
             </div>
             <Button variant="ghost">Sign in</Button>
-            <Button>Start Watching</Button>
+            <Button>WhatsApp</Button>
             <MobileNav />
           </div>
         </div>
