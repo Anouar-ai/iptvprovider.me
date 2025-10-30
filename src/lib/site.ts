@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Check, Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react";
 import type { IconType } from "react-icons";
-import { SiApple, SiAppletv, SiIos, SiMacos, SiRoku, SiSamsung, SiLg, SiWindows11, SiAndroid, SiAmazonfiretv } from "react-icons/si";
+import { SiApple, SiAppletv, SiIos, SiMacos, SiRoku, SiSamsung, SiLg, SiMicrosoft, SiAndroid, SiAmazonfiretv } from "react-icons/si";
 
 export const navLinks = [
   { name: "Home", href: "/" },
@@ -50,7 +50,7 @@ export const devices: { name: string, icon: IconType }[] = [
     { name: 'iPad', icon: SiIos },
     { name: 'macOS', icon: SiMacos },
     { name: 'Android', icon: SiAndroid },
-    { name: 'Windows', icon: SiWindows11 },
+    { name: 'Windows', icon: SiMicrosoft },
     { name: 'Roku', icon: SiRoku },
     { name: 'Samsung TV', icon: SiSamsung },
     { name: 'LG TV', icon: SiLg },
