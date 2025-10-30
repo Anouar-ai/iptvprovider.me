@@ -3,11 +3,11 @@ import { Check, Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react"
 
 export const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Features", href: "#features" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "FAQ", href: "#faq" },
   { name: "Devices", href: "#devices" },
   { name: "Blog", href: "/blog" },
-  { name: "Affiliate", href: "#" },
 ];
 
 export const features = [
@@ -187,8 +187,8 @@ export const posts = [
 
 export const footerLinks = {
     quickLinks: [
-        { name: "Pricing", href: "/pricing" },
-        { name: "FAQ", href: "/faq" },
+        { name: "Pricing", href: "#pricing" },
+        { name: "FAQ", href: "#faq" },
         { name: "Blog", href: "/blog" },
         { name: "Affiliate Program", href: "#" },
     ],

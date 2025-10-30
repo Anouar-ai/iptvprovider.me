@@ -3,7 +3,6 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { footerLinks } from "@/lib/site";
-import { ContactSheet } from "./ContactSheet";
 
 export function Footer() {
   return (
@@ -61,7 +60,6 @@ export function Footer() {
           </div>
         </div>
       </Container>
-      <ContactSheet />
     </footer>
   );
 }
