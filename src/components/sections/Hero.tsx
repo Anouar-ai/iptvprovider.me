@@ -31,10 +31,10 @@ export function Hero() {
           className="w-full max-w-4xl rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-lg"
         >
           <h1 className="font-headline text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
-            The Most IPTV Service in the world
+            The World's Premier IPTV Service
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Unlock a world of entertainment — Start your IPTV service subscription now. Starting from just $16/mo
+            Unlock a world of entertainment with our top-rated IPTV service. Start your subscription now, from just $16/mo.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:shadow-xl hover:shadow-primary/40">

@@ -22,16 +22,16 @@ const outfit = Outfit({
 
 
 export const metadata: Metadata = {
-  title: "IPTV Service",
-  description: "The Most IPTV Service in the world",
+  title: "Your Premier IPTV Service Provider",
+  description: "Experience the best IPTV service with thousands of channels, HD/4K quality, and instant activation. Unlock a world of entertainment with our reliable IPTV service.",
   openGraph: {
-    title: "IPTV Service",
+    title: "The Best IPTV Service in the World",
     description: "Unlock a world of entertainment — Start your IPTV service subscription now.",
     images: [{ url: "/og-image.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Service",
+    title: "IPTV Service - The Most Reliable IPTV Provider",
     description: "The Most IPTV Service in the world.",
     images: ["/twitter-image.jpg"],
   },

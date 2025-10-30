@@ -13,7 +13,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground">
-              Unlock a world of entertainment with IPTV Service. The most reliable service for all your streaming needs.
+              Your premier IPTV service for unlocking a world of entertainment. The most reliable choice for all your streaming needs.
             </p>
           </div>
           <div>
