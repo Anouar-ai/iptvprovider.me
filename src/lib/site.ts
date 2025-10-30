@@ -1,7 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import { Check, Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react";
-import type { IconType } from "react-icons";
-import { SiApple, SiAppletv, SiIos, SiMacos, SiRoku, SiSamsung, SiLg, SiMicrosoft, SiAndroid, SiAmazonfiretv } from "react-icons/si";
 
 export const navLinks = [
   { name: "Home", href: "/" },
@@ -45,18 +43,18 @@ export const features = [
   },
 ];
 
-export const devices: { name: string, icon: IconType }[] = [
-    { name: 'iPhone', icon: SiIos },
-    { name: 'iPad', icon: SiIos },
-    { name: 'macOS', icon: SiMacos },
-    { name: 'Android', icon: SiAndroid },
-    { name: 'Windows', icon: SiMicrosoft },
-    { name: 'Roku', icon: SiRoku },
-    { name: 'Samsung TV', icon: SiSamsung },
-    { name: 'LG TV', icon: SiLg },
-    { name: 'Fire TV', icon: SiAmazonfiretv },
-    { name: 'MAG', icon: Tv },
-    { name: 'Apple TV', icon: SiAppletv }
+export const devices: { name: string, icon: string }[] = [
+    { name: 'iPhone', icon: 'SiIos' },
+    { name: 'iPad', icon: 'SiIos' },
+    { name: 'macOS', icon: 'SiMacos' },
+    { name: 'Android', icon: 'SiAndroid' },
+    { name: 'Windows', icon: 'Tv' },
+    { name: 'Roku', icon: 'SiRoku' },
+    { name: 'Samsung TV', icon: 'SiSamsung' },
+    { name: 'LG TV', icon: 'SiLg' },
+    { name: 'Fire TV', icon: 'SiAmazonfiretv' },
+    { name: 'MAG', icon: 'Tv' },
+    { name: 'Apple TV', icon: 'SiAppletv' }
 ];
 
 export const plans = [

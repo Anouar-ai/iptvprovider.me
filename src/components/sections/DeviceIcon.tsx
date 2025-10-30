@@ -1,6 +1,8 @@
 "use client";
 
 import type { IconType } from "react-icons";
+import * as siIcons from "react-icons/si";
+import * as lucideIcons from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -10,10 +12,18 @@ import {
 
 interface DeviceIconProps {
   name: string;
-  icon: IconType;
+  iconName: string;
 }
 
-export function DeviceIcon({ name, icon: Icon }: DeviceIconProps) {
+const allIcons = { ...siIcons, ...lucideIcons };
+
+export function DeviceIcon({ name, iconName }: DeviceIconProps) {
+  const Icon = (allIcons as Record<string, IconType>)[iconName];
+
+  if (!Icon) {
+    return null;
+  }
+
   return (
     <TooltipProvider>
       <Tooltip>

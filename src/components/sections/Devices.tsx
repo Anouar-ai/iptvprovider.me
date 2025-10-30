@@ -15,7 +15,7 @@ export function Devices() {
         <Reveal>
           <div className="flex flex-wrap justify-center gap-4">
             {devices.map((device) => (
-              <DeviceIcon key={device.name} name={device.name} icon={device.icon} />
+              <DeviceIcon key={device.name} name={device.name} iconName={device.icon} />
             ))}
           </div>
         </Reveal>
