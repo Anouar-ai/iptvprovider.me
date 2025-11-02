@@ -34,20 +34,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${plan.name} IPTV Subscription | $${plan.price}/${plan.duration.split('-')[0]} Months`;
-  const description = `Get our flexible ${plan.name} IPTV subscription for just $${plan.price}. Enjoy 20,000+ channels, HD/4K quality, 24/7 support, and instant activation.`;
+  const title = `Buy ${plan.name} IPTV Service Plan | $${plan.price}`;
+  const description = `Purchase our premium ${plan.name} IPTV service for just $${plan.price}. Get 20,000+ channels, HD/4K quality, 24/7 support, and instant activation. Ideal for SEM and paid campaigns.`;
 
   return {
     title,
     description,
-    keywords: `${plan.name} IPTV, ${plan.duration} IPTV subscription, IPTV trial, monthly IPTV plan`,
+    keywords: [`buy IPTV service`, `${plan.name} IPTV`, `IPTV subscription deals`, 'IPTV paid ads', `get IPTV now`],
     alternates: {
       canonical: `/iptv-subscription/${plan.id}`,
     },
     openGraph: {
-      title: `${plan.name} IPTV Subscription - Starting at $${plan.price_monthly.toFixed(2)}/month`,
-      description: `Get instant access to 20,000+ channels in HD/4K with our ${plan.duration} IPTV subscription.`,
+      title: `Best Deal: ${plan.name} IPTV Service for $${plan.price}`,
+      description: `Get instant access to 20,000+ channels in HD/4K with our ${plan.name} IPTV service subscription. Click to buy now!`,
       url: `/iptv-subscription/${plan.id}`,
+      images: [
+        {
+          url: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+          width: 1200,
+          height: 630,
+          alt: `Offer for ${plan.name} IPTV Service`,
+        },
+      ],
+      type: 'product',
+    },
+     twitter: {
+      card: "summary_large_image",
     },
   };
 }
@@ -63,15 +75,25 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
   const planSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": `${plan.name} IPTV Subscription`,
-    "description": `${plan.name} IPTV subscription with 20,000+ channels, HD/4K quality, and 24/7 support`,
+    "name": `${plan.name} IPTV Service`,
+    "description": `Premium ${plan.name} IPTV service subscription with 20,000+ channels, HD/4K quality, and 24/7 support`,
+    "image": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+    "sku": `IPTV-${plan.id.toUpperCase()}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "IPTV Service"
+    },
     "offers": {
       "@type": "Offer",
       "price": plan.price,
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2025-12-31",
-      "url": `/iptv-subscription/${plan.id}`
+      "url": `https://yoursite.com/iptv-subscription/${plan.id}`,
+      "seller": {
+        "@type": "Organization",
+        "name": "IPTV Service"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -87,11 +109,11 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
       },
       {
         question: "Can I cancel my subscription?",
-        answer: "Yes, you can cancel anytime. We also offer a 7-day money-back guarantee. If you're not satisfied within the first week, contact our support team for a full refund, no questions asked."
+        answer: "Yes, you can cancel anytime. We also offer a 7-day money-back guarantee. If you're not satisfied with your IPTV service within the first week, contact our support team for a full refund, no questions asked."
       },
       {
         question: "What devices are compatible?",
-        answer: "Our IPTV subscription works on almost any device, including Smart TVs, Android boxes, iOS (iPhone/iPad), Fire Stick, MAG boxes, and computers. We provide easy-to-follow setup guides for all platforms."
+        answer: "Our IPTV service subscription works on almost any device, including Smart TVs, Android boxes, iOS (iPhone/iPad), Fire Stick, MAG boxes, and computers. We provide easy-to-follow setup guides for all platforms."
       }
   ]
 
@@ -120,7 +142,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                 </li>
                 <li>/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <span itemProp="name">{plan.name}</span>
+                  <span itemProp="name">{plan.name} IPTV Service</span>
                   <meta itemProp="position" content="3" />
                 </li>
               </ol>
@@ -131,7 +153,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                     {plan.isPopular && plan.savings && (
                         <Badge variant="secondary" className="mb-4 bg-yellow-300 text-yellow-900 hover:bg-yellow-300">Best Value - {plan.savings}</Badge>
                     )}
-                    <h1 itemProp="name" className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">{plan.name} IPTV Subscription</h1>
+                    <h1 itemProp="name" className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">{plan.name} IPTV Service Subscription</h1>
 
                     <div className="price-display my-8" itemScope itemProp="offers" itemType="https://schema.org/Offer">
                         <p className="main-price">
@@ -145,12 +167,12 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                         <p className="mt-2 text-lg text-primary-foreground/80">
                             Equivalent to ${plan.price_monthly.toFixed(2)}/month
                         </p>
-                        <meta itemProp="availability" content="https://schema.org/InStock" />
+                        <link itemProp="availability" href="https://schema.org/InStock" />
                         <meta itemProp="priceValidUntil" content="2025-12-31" />
                     </div>
 
                     <p className="mx-auto max-w-2xl text-lg text-primary-foreground/80" itemProp="description">
-                        Get our premium IPTV subscription for {plan.duration.toLowerCase()} at the best price. Enjoy unlimited access to 20,000+ channels with HD/4K quality streaming.
+                        Get our premium IPTV service for {plan.duration.toLowerCase()} at the best price. Enjoy unlimited access to 20,000+ channels with HD/4K quality streaming.
                     </p>
 
                     <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -164,7 +186,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                 </header>
 
                 <section className="py-16 sm:py-24">
-                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">What's Included in Your {plan.name} Subscription</h2>
+                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">What's Included in Your {plan.name} IPTV Service</h2>
                     <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
                         <li className="rounded-lg border bg-card p-6 text-card-foreground">
                             <h3 className="font-semibold">HD/4K Quality</h3>
@@ -180,7 +202,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                         </li>
                         <li className="rounded-lg border bg-card p-6 text-card-foreground">
                             <h3 className="font-semibold">Instant Activation</h3>
-                            <p className="text-muted-foreground">Start watching immediately after purchase</p>
+                            <p className="text-muted-foreground">Start watching your IPTV service immediately after purchase</p>
                         </li>
                         <li className="rounded-lg border bg-card p-6 text-card-foreground">
                             <h3 className="font-semibold">Anti-Freeze Tech</h3>
@@ -195,9 +217,9 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                 
                 {plan.id === '12-months' && (
                 <section className="py-16 sm:py-24">
-                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose the 12-Month Plan?</h2>
+                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose the 12-Month IPTV Service Plan?</h2>
                     <Table>
-                        <caption className="mt-2 text-sm text-muted-foreground">Savings Comparison - Annual vs Monthly Billing</caption>
+                        <caption className="mt-2 text-sm text-muted-foreground">Savings Comparison - Annual vs Monthly Billing for IPTV Service</caption>
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Plan</TableHead>
@@ -214,7 +236,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                                 <TableCell>—</TableCell>
                             </TableRow>
                             <TableRow className="border-2 border-primary">
-                                <TableCell className="font-medium">12-Month Plan</TableCell>
+                                <TableCell className="font-medium">12-Month IPTV Service</TableCell>
                                 <TableCell>$90/year</TableCell>
                                 <TableCell>$7.50</TableCell>
                                 <TableCell className="font-bold text-primary">Save $102</TableCell>
@@ -229,13 +251,13 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                         <div className="relative h-48 w-full">
                             <Image 
                                 src="https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg" 
-                                alt="IPTV Subscription" 
+                                alt="IPTV Service Subscription Box" 
                                 fill
                                 className="object-cover"
                             />
                         </div>
                         <CardHeader className="text-center">
-                            <CardTitle className="font-headline text-2xl">Order Your {plan.name} IPTV Subscription</CardTitle>
+                            <CardTitle className="font-headline text-2xl">Order Your {plan.name} IPTV Service</CardTitle>
                             <CardDescription>Complete your purchase and start streaming in minutes!</CardDescription>
                         </CardHeader>
                         <CardContent>
@@ -244,7 +266,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                                 <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> 20,000+ Live Channels</li>
                                 <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> HD/4K Streaming Quality</li>
                                 <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> 24/7 Customer Support</li>
-                                <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Instant Activation</li>
+                                <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Instant IPTV Service Activation</li>
                                 <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Anti-Freeze Technology</li>
                                 <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> 7-Day Money-Back Guarantee</li>
                              </ul>
@@ -259,14 +281,14 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                 </section>
 
                 <section className="py-16 sm:py-24">
-                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
+                    <h2 className="mb-12 text-center font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say About Our IPTV Service</h2>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                         <Card>
                             <CardContent className="p-6">
                                 <div className="flex items-center gap-0.5">
                                     {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                                 </div>
-                                <blockquote className="mt-4 italic text-muted-foreground">"Best decision! The 12-month plan saved me so much money and the service is incredible."</blockquote>
+                                <blockquote className="mt-4 italic text-muted-foreground">"Best decision! The 12-month IPTV service plan saved me so much money and the streaming is incredible."</blockquote>
                                 <footer className="mt-4 font-semibold">— Sarah M., <cite className="text-sm font-normal text-muted-foreground">Verified Customer</cite></footer>
                             </CardContent>
                         </Card>
@@ -275,7 +297,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                                 <div className="flex items-center gap-0.5">
                                     {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                                 </div>
-                                <blockquote className="mt-4 italic text-muted-foreground">"Crystal clear quality and no buffering. Worth every penny of the annual subscription!"</blockquote>
+                                <blockquote className="mt-4 italic text-muted-foreground">"Crystal clear quality and no buffering. This IPTV service is worth every penny of the annual subscription!"</blockquote>
                                 <footer className="mt-4 font-semibold">— James T., <cite className="text-sm font-normal text-muted-foreground">Verified Customer</cite></footer>
                             </CardContent>
                         </Card>
@@ -284,7 +306,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                                 <div className="flex items-center gap-0.5">
                                     {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
                                 </div>
-                                <blockquote className="mt-4 italic text-muted-foreground">"Amazing value for money. 20,000+ channels for less than the price of cable!"</blockquote>
+                                <blockquote className="mt-4 italic text-muted-foreground">"Amazing value. With this IPTV service, I get 20,000+ channels for less than the price of cable!"</blockquote>
                                 <footer className="mt-4 font-semibold">— Maria L., <cite className="text-sm font-normal text-muted-foreground">Verified Customer</cite></footer>
                             </CardContent>
                         </Card>
@@ -294,7 +316,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                 <section className="bg-muted/30 py-16 dark:bg-card/30 sm:py-24">
                   <Container>
                       <div className="mx-auto max-w-3xl text-center">
-                          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
+                          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions about IPTV Service</h2>
                       </div>
                       <div className="mx-auto mt-8 max-w-3xl" itemScope itemType="https://schema.org/FAQPage">
                         <Accordion type="single" collapsible>

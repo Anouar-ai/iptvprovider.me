@@ -1,8 +1,17 @@
 import { MetadataRoute } from 'next'
+import { howToArticles } from '@/lib/how-to';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://yoursite.com'
   
+  const howToPages = howToArticles.map((article) => ({
+    url: `${baseUrl}/how-to-work/${article.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as 'monthly',
+    priority: 0.7,
+  }));
+
+
   return [
     {
       url: baseUrl,
@@ -45,7 +54,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
-    }
+    },
+    ...howToPages
   ]
 }
 
