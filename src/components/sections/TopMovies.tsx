@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const moviesData = [
   { id: 1, title: "Afterburn", imageHint: "sci-fi action", imageId: "movie-1" },
@@ -22,19 +23,44 @@ const moviesData = [
 
 const MovieCard = ({ movie, index }: { movie: any; index: number }) => {
   const movieImage = PlaceHolderImages.find(img => img.id === movie.imageId);
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
   return (
-    <div
+    <motion.div
       className="group relative flex-shrink-0 cursor-pointer transition-all duration-300"
-      style={{ minWidth: "350px", width: "350px", height: "220px" }}
+      style={{ 
+        minWidth: "350px", 
+        width: "350px", 
+        height: "220px",
+        perspective: 2000,
+      }}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        x.set(e.clientX - rect.left - rect.width / 2);
+        y.set(e.clientY - rect.top - rect.height / 2);
+      }}
+      onMouseLeave={() => {
+        x.set(0);
+        y.set(0);
+      }}
     >
       <div className="relative flex h-[220px] items-start overflow-hidden">
-        <div
+        <motion.div
           className="relative z-10"
-          style={{ width: index === 9 ? "280px" : "140px", height: "220px" }}
+          style={{ 
+            width: index === 9 ? "280px" : "140px", 
+            height: "220px",
+            rotateX,
+            rotateY,
+          }}
         >
           <div
-            className="absolute select-none font-black leading-none text-black [-webkit-text-stroke:4px_rgb(85,85,85)] [text-shadow:0px_0px_30px_rgba(32,31,31,0.8)]"
+            className="absolute select-none font-black leading-none text-muted-foreground/20 [-webkit-text-stroke:4px_rgb(85,85,85)] [text-shadow:0px_0px_30px_rgba(32,31,31,0.8)]"
             style={{
               fontSize: "280px",
               fontFamily: '"Bebas Neue", Arial, sans-serif',
@@ -50,14 +76,18 @@ const MovieCard = ({ movie, index }: { movie: any; index: number }) => {
           >
             {movie.id}
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="relative z-20 overflow-hidden rounded-md bg-muted"
           style={{
             width: "160px",
             height: "220px",
             marginLeft: index === 9 ? "-80px" : "-20px",
+            rotateX,
+            rotateY,
           }}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           {movieImage && (
             <Image
@@ -69,9 +99,9 @@ const MovieCard = ({ movie, index }: { movie: any; index: number }) => {
               className="h-full w-full object-cover transition-opacity duration-300 opacity-100"
             />
           )}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
