@@ -7,7 +7,6 @@ export const navLinks = [
   { name: "Features", href: "/#features" },
   { name: "Pricing", href: "/iptv-subscription" },
   { name: "Devices", href: "/devices" },
-  { name: "Blog", href: "/blog" },
 ];
 
 export const features = [
@@ -188,7 +187,6 @@ export const posts: {
 export const footerLinks = {
     quickLinks: [
         { name: "Pricing", href: "/iptv-subscription" },
-        { name: "Blog", href: "/blog" },
         { name: "Affiliate Program", href: "#" },
     ],
     supportedLinks: [

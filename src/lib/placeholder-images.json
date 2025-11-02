@@ -5,24 +5,6 @@
       "description": "A dark, cinematic background image for the hero section, evoking a sense of entertainment.",
       "imageUrl": "https://images.unsplash.com/photo-1646678376409-d3fe0099759b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaW5lbWElMjB0aGVhdGVyfGVufDB8fHx8MTc2MTcxOTIyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cinema theater"
-    },
-    {
-      "id": "blog-macbook",
-      "description": "Image for the blog post about installing IPTV on a Macbook.",
-      "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsYXB0b3AlMjBkZXNrfGVufDB8fHx8MTc2MTgyNzk0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "laptop desk"
-    },
-    {
-      "id": "blog-firestick",
-      "description": "Image for the blog post about installing IPTV on a Firestick.",
-      "imageUrl": "https://images.unsplash.com/photo-1721272243713-0f83e9d1188c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWxldmlzaW9uJTIwcmVtb3RlfGVufDB8fHx8MTc2MTc4OTIxMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "television remote"
-    },
-    {
-      "id": "blog-ott-navigator",
-      "description": "Image for the blog post about installing OTT Navigator.",
-      "imageUrl": "https://images.unsplash.com/photo-1619462572305-5fc766c87fc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2JpbGUlMjBzY3JlZW58ZW58MHx8fHwxNzYxODM0NTMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mobile screen"
     }
   ]
 }
