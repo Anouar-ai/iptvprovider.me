@@ -17,6 +17,10 @@ import { SectionHeader } from "../shared/SectionHeader";
 import { Reveal } from "../shared/Reveal";
 
 export function BlogGrid() {
+  if (posts.length === 0) {
+    return null;
+  }
+
   return (
     <section id="blog" className="py-16 sm:py-24">
       <Container>

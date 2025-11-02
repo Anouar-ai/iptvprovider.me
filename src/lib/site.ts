@@ -174,32 +174,16 @@ export const testimonials = [
     }
 ];
 
-export const posts = [
-    {
-        id: "how-to-install-iptv-on-macbook",
-        title: "The Ultimate 2024 Guide to Install IPTV on Macbook",
-        image: "blog-macbook",
-        excerpt: "Unlock a world of entertainment with our step-by-step guide to install IPTV on your MacBook. We cover everything from player installation to troubleshooting.",
-        tags: ["Tutorial", "macOS", "VLC"],
-        href: "/blog/how-to-install-iptv-on-macbook"
-    },
-    {
-        id: "how-to-install-smart-iptv-on-firestick",
-        title: "How to Install Smart IPTV on Firestick",
-        image: "blog-firestick",
-        excerpt: "A step-by-step guide to installing and configuring your IPTV subscription on an Amazon Firestick or Fire TV.",
-        tags: ["Guide", "Firestick"],
-        href: "/blog/how-to-install-smart-iptv-on-firestick"
-    },
-    {
-        id: "install-ott-navigator-iptv-player",
-        title: "Install OTT Navigator IPTV Player",
-        image: "blog-ott-navigator",
-        excerpt: "Discover the features of OTT Navigator and how to install it on your Android device for an enhanced IPTV experience.",
-        tags: ["How-To", "Android"],
-        href: "/blog/install-ott-navigator-iptv-player"
-    }
-];
+export const posts: {
+  id: string;
+  title: string;
+  image: string;
+  excerpt: string;
+  tags: string[];
+  href: string;
+  content?: string;
+}[] = [];
+
 
 export const footerLinks = {
     quickLinks: [
