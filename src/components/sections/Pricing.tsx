@@ -22,7 +22,7 @@ export function Pricing() {
       <Container>
         <SectionHeader
           title="Choose Your IPTV Service Package"
-          subtitle="Select the perfect plan that fits your needs. All plans come with our full feature set."
+          subtitle="Select the perfect IPTV service plan that fits your needs. All plans come with our full feature set."
         />
         <div className="grid max-w-md grid-cols-1 gap-8 md:max-w-none md:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, i) => (

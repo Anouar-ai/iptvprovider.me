@@ -51,7 +51,7 @@ export function Features() {
       <Container>
         <SectionHeader
           title="The Best Features for Your IPTV Service"
-          subtitle="We've built a platform with your entertainment in mind. Experience the difference with our premium features."
+          subtitle="Our IPTV service is built with your entertainment in mind. Experience the difference with our premium features."
         />
         <Reveal>
             <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-2 lg:grid-cols-3 xl:max-h-[34rem] xl:grid-rows-2">

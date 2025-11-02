@@ -17,27 +17,27 @@ export const features = [
   },
   {
     name: "All Devices",
-    description: "Compatible with all your favorite devices, from smart TVs to mobile phones.",
+    description: "Our IPTV service is compatible with all your favorite devices, from smart TVs to mobile phones.",
     icon: Tv,
   },
   {
     name: "Zero Effort",
-    description: "Our intuitive setup process means you'll be watching in no time, hassle-free.",
+    description: "Our IPTV service's intuitive setup process means you'll be watching in no time, hassle-free.",
     icon: Rabbit,
   },
   {
     name: "Stable Server",
-    description: "Enjoy uninterrupted streaming with our powerful and reliable server infrastructure.",
+    description: "Enjoy uninterrupted streaming with our powerful and reliable IPTV service server infrastructure.",
     icon: Server,
   },
   {
     name: "Fast Install",
-    description: "Quick and easy installation guides for every device to get you started.",
+    description: "Quick and easy installation guides for our IPTV service on every device to get you started.",
     icon: ShieldCheck,
   },
   {
     name: "Super Quality",
-    description: "Experience your favorite shows and movies in stunning HD and 4K quality.",
+    description: "Experience your favorite shows and movies in stunning HD and 4K quality with our IPTV service.",
     icon: Star,
   },
 ];
@@ -105,44 +105,44 @@ export const plans = [
 
 export const faqs = [
     {
-        question: "Do you offer free trials?",
-        answer: "Currently, we do not offer free trials due to the nature of the service. However, we offer affordable 1-month packages so you can test our service with minimal investment."
+        question: "Do you offer free trials for your IPTV service?",
+        answer: "Currently, we do not offer free trials for our IPTV service due to the nature of the product. However, we offer affordable 1-month packages so you can test our service with minimal investment."
     },
     {
-        question: "How many devices can I use with one subscription?",
-        answer: "Our standard plan allows for one connection at a time. If you need to watch on multiple devices simultaneously, please contact our support for a custom plan."
+        question: "How many devices can I use with one IPTV service subscription?",
+        answer: "Our standard IPTV service plan allows for one connection at a time. If you need to watch on multiple devices simultaneously, please contact our support for a custom plan."
     },
     {
-        question: "Why is my service buffering?",
-        answer: "Buffering can be caused by several factors, including slow internet speed, ISP throttling, or issues with your device. We recommend a stable internet connection of at least 25 Mbps and using a VPN if your ISP is throttling your connection."
+        question: "Why is my IPTV service buffering?",
+        answer: "Buffering can be caused by several factors, including slow internet speed, ISP throttling, or issues with your device. We recommend a stable internet connection of at least 25 Mbps and using a VPN if your ISP is throttling your connection for IPTV service."
     },
     {
-        question: "How long does activation take?",
-        answer: "Activation is instant. Once your payment is confirmed, your service details will be sent to your email address immediately."
+        question: "How long does IPTV service activation take?",
+        answer: "Activation for your IPTV service is instant. Once your payment is confirmed, your service details will be sent to your email address immediately."
     },
     {
-        question: "Do I need a VPN to use the service?",
-        answer: "A VPN is not always required, but it is highly recommended. A VPN can help bypass ISP throttling, protect your privacy, and access geo-restricted content."
+        question: "Do I need a VPN to use the IPTV service?",
+        answer: "A VPN is not always required for our IPTV service, but it is highly recommended. A VPN can help bypass ISP throttling, protect your privacy, and access geo-restricted content."
     },
     {
         question: "What is your refund policy?",
-        answer: "We offer a 3-day money-back guarantee if you are not satisfied with our service. Please contact our support team to request a refund."
+        answer: "We offer a 3-day money-back guarantee if you are not satisfied with our IPTV service. Please contact our support team to request a refund."
     },
     {
-        question: "What apps do you support?",
-        answer: "We support a wide range of IPTV apps, including IPTV Smarters, TiviMate, OTT Navigator, and many others. We provide setup guides for all major apps."
+        question: "What apps does your IPTV service support?",
+        answer: "Our IPTV service supports a wide range of IPTV apps, including IPTV Smarters, TiviMate, OTT Navigator, and many others. We provide setup guides for all major apps."
     },
     {
-        question: "Do you provide channel updates?",
-        answer: "Yes, our channel list is updated regularly to ensure you have access to the latest content and the most stable streams available."
+        question: "Do you provide channel updates for the IPTV service?",
+        answer: "Yes, our IPTV service channel list is updated regularly to ensure you have access to the latest content and the most stable streams available."
     },
     {
-        question: "How can I get support?",
-        answer: "We offer 24/7 customer support via our contact form, email, and live chat. Our team is always ready to assist you with any issues."
+        question: "How can I get support for my IPTV service?",
+        answer: "We offer 24/7 customer support via our contact form, email, and live chat. Our team is always ready to assist you with any issues related to your IPTV service."
     },
     {
-        question: "Can I cancel my subscription anytime?",
-        answer: "Yes, you can cancel your subscription at any time. There are no long-term contracts. Simply contact our support team to process the cancellation."
+        question: "Can I cancel my IPTV service subscription anytime?",
+        answer: "Yes, you can cancel your IPTV service subscription at any time. There are no long-term contracts. Simply contact our support team to process the cancellation."
     }
 ];
 
@@ -157,19 +157,19 @@ export const testimonials = [
         name: "Sarah L.",
         initials: "SL",
         rating: 5,
-        message: "The setup was surprisingly easy on my Firestick. I was watching my favorite shows in less than 5 minutes. The 24/7 support is also a huge plus!"
+        message: "The setup was surprisingly easy on my Firestick. I was watching my favorite shows in less than 5 minutes. The 24/7 support for this IPTV service is also a huge plus!"
     },
     {
         name: "Mike P.",
         initials: "MP",
         rating: 5,
-        message: "I was skeptical about the 'no buffering' claim, but they delivered. Rock-solid stability even during major sports events. Highly recommend."
+        message: "I was skeptical about the 'no buffering' claim, but this IPTV service delivered. Rock-solid stability even during major sports events. Highly recommend."
     },
     {
         name: "Emily R.",
         initials: "ER",
         rating: 5,
-        message: "Amazing value for money. The 12-month plan is a steal for this level of service. It works flawlessly on all my devices."
+        message: "Amazing value for money. The 12-month IPTV service plan is a steal for this level of quality. It works flawlessly on all my devices."
     }
 ];
 

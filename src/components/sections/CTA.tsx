@@ -19,7 +19,7 @@ export function CTA() {
               variant="outline"
               className="mt-8 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
-              Get Started Today
+              Get Your IPTV Service
             </Button>
           </div>
         </Reveal>
