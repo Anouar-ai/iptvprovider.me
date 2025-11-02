@@ -62,7 +62,7 @@ const MovieCard = ({ movie, index }: { movie: any; index: number }) => {
           <div
             className="absolute select-none font-black leading-none text-muted-foreground/20 [-webkit-text-stroke:4px_rgb(85,85,85)] [text-shadow:0px_0px_30px_rgba(32,31,31,0.8)]"
             style={{
-              fontSize: "280px",
+              fontSize: "220px",
               fontFamily: '"Bebas Neue", Arial, sans-serif',
               marginTop: "25px",
               marginLeft: "40px",
