@@ -177,10 +177,10 @@ export const testimonials = [
 export const posts = [
     {
         id: "how-to-install-iptv-on-macbook",
-        title: "How to Install IPTV on Macbook",
+        title: "The Ultimate 2024 Guide to Install IPTV on Macbook",
         image: "blog-macbook",
-        excerpt: "Learn the simple steps to set up and enjoy our IPTV service on your macOS device for a seamless streaming experience.",
-        tags: ["Tutorial", "macOS"],
+        excerpt: "Unlock a world of entertainment with our step-by-step guide to install IPTV on your MacBook. We cover everything from player installation to troubleshooting.",
+        tags: ["Tutorial", "macOS", "VLC"],
         href: "/blog/how-to-install-iptv-on-macbook"
     },
     {
