@@ -44,7 +44,7 @@ export const features = [
 ];
 
 export const devices: { name: string; icon: string; href: string; }[] = [
-    { name: 'iPhone', icon: 'SiIos', href: '/how-to-work/iphone' },
+    { name: 'iPhone', icon: 'SiIphone', href: '/how-to-work/iphone' },
     { name: 'iPad', icon: 'SiIpad', href: '/how-to-work/ipad' },
     { name: 'macOS', icon: 'SiMacos', href: '/how-to-work/macos' },
     { name: 'Android', icon: 'SiAndroid', href: '/how-to-work/android' },

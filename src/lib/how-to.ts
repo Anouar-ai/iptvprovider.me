@@ -121,7 +121,7 @@ export const howToArticles: HowToContent[] = [
             },
             {
                 title: 'Step 5: Enjoy Streaming',
-                description: 'Once the details are submitted, the app will load your channels and VOD content. You can now browse and watch anything from your subscription.'
+                description: 'Once the details are submitted, the app will load your subscription. You can now browse and watch anything from your subscription.'
             }
         ]
     },

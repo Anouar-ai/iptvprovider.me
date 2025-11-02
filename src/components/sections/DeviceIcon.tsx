@@ -20,8 +20,13 @@ interface DeviceIconProps {
 
 const allIcons: Record<string, IconType | any> = { ...siIcons, ...lucideIcons };
 
+// A list of icons that are part of the simple-icons library
+const simpleIconKeys = Object.keys(siIcons);
+
 export function DeviceIcon({ name, iconName, href }: DeviceIconProps) {
-  const Icon = allIcons[iconName];
+  // A bit of a hacky way to get the right icon component
+  const correctedIconName = simpleIconKeys.includes(iconName) ? iconName : `Si${iconName}`;
+  const Icon = allIcons[correctedIconName] || allIcons[iconName];
 
   if (!Icon) {
     return null;
