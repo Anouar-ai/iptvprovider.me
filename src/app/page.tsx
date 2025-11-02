@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
 import { LogoCarousel } from "@/components/sections/LogoCarousel";
+import { TopMovies } from "@/components/sections/TopMovies";
 
 const Features = dynamic(() => import("@/components/sections/Features").then((m) => m.Features));
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Features />
       <LogoCarousel />
+      <TopMovies />
       <Devices />
       <Pricing />
       <CTA />
