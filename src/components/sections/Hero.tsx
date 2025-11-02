@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { ShieldCheck, Tv, Zap } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import { AnimatedText } from "../ui/animated-underline-text-one";
 
 export function Hero() {
   return (
@@ -30,9 +32,11 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-4xl rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-lg"
         >
-          <h1 className="font-headline text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
-            The World's Premier IPTV Service
-          </h1>
+          <AnimatedText 
+            text="The World's Premier IPTV Service"
+            textClassName="font-headline text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl"
+            underlineClassName="text-primary"
+          />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
             Unlock a world of entertainment with our top-rated IPTV service. Start your subscription now, from just $16/mo.
           </p>
