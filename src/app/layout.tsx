@@ -43,8 +43,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IPTV Service",
+    "url": "https://yoursite.com",
+    "logo": "https://yoursite.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-555-0199",
+      "contactType": "Customer Service"
+    }
+  };
+
+  const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://yoursite.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yoursite.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+  }
+
+
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
+           <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
+        </head>
       <body className={cn("font-body antialiased", inter.variable, outfit.variable)}>
         <ThemeProvider
           attribute="class"
