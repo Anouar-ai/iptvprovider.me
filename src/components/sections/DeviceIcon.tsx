@@ -9,28 +9,38 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface DeviceIconProps {
   name: string;
   iconName: string;
+  href: string;
 }
 
 const allIcons = { ...siIcons, ...lucideIcons };
 
-export function DeviceIcon({ name, iconName }: DeviceIconProps) {
+export function DeviceIcon({ name, iconName, href }: DeviceIconProps) {
   const Icon = (allIcons as Record<string, IconType>)[iconName];
 
   if (!Icon) {
     return null;
   }
 
+  const isInternal = href.startsWith('/');
+  const Component = isInternal ? Link : 'a';
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className="group flex h-16 w-16 items-center justify-center rounded-lg bg-muted/50 transition-colors hover:bg-primary/10">
+          <Component href={href} className={cn(
+            "group flex h-16 w-16 items-center justify-center rounded-lg bg-muted/50 transition-colors hover:bg-primary/10",
+            !isInternal && "cursor-pointer",
+            href === '#' && "pointer-events-none opacity-50"
+          )}>
             <Icon className="h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary" />
-          </div>
+          </Component>
         </TooltipTrigger>
         <TooltipContent>
           <p>{name}</p>

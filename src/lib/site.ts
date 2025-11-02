@@ -42,18 +42,18 @@ export const features = [
   },
 ];
 
-export const devices: { name: string, icon: string }[] = [
-    { name: 'iPhone', icon: 'SiIos' },
-    { name: 'iPad', icon: 'SiIos' },
-    { name: 'macOS', icon: 'SiMacos' },
-    { name: 'Android', icon: 'SiAndroid' },
-    { name: 'Windows', icon: 'Tv' },
-    { name: 'Roku', icon: 'SiRoku' },
-    { name: 'Samsung TV', icon: 'SiSamsung' },
-    { name: 'LG TV', icon: 'SiLg' },
-    { name: 'Fire TV', icon: 'SiAmazonfiretv' },
-    { name: 'MAG', icon: 'Tv' },
-    { name: 'Apple TV', icon: 'SiAppletv' }
+export const devices: { name: string; icon: string; href: string; }[] = [
+    { name: 'iPhone', icon: 'SiIos', href: '/how-to-work/iphone' },
+    { name: 'iPad', icon: 'SiIos', href: '#' },
+    { name: 'macOS', icon: 'SiMacos', href: '#' },
+    { name: 'Android', icon: 'SiAndroid', href: '#' },
+    { name: 'Windows', icon: 'Tv', href: '#' },
+    { name: 'Roku', icon: 'SiRoku', href: '#' },
+    { name: 'Samsung TV', icon: 'SiSamsung', href: '#' },
+    { name: 'LG TV', icon: 'SiLg', href: '#' },
+    { name: 'Fire TV', icon: 'SiAmazonfiretv', href: '#' },
+    { name: 'MAG', icon: 'Tv', href: '#' },
+    { name: 'Apple TV', icon: 'SiAppletv', href: '#' }
 ];
 
 export const plans = [
