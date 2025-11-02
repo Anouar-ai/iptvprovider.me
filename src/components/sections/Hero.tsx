@@ -30,7 +30,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-4xl rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-lg"
+          className="w-full max-w-4xl rounded-xl border border-white/10 bg-white/10 p-8 shadow-2xl"
         >
           <AnimatedText 
             text="The World's Premier IPTV Service"
