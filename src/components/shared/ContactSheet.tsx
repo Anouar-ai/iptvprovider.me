@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useEffect } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,7 +16,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { submitContactForm } from "@/app/actions";
+
+async function submitContactForm(prevState: any, formData: FormData): Promise<any> {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log("Contact form submitted successfully:", {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+    });
+    return { message: "Your message has been sent successfully!", errors: null };
+}
+
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -30,7 +40,7 @@ function SubmitButton() {
 export function ContactSheet() {
   const { toast } = useToast();
   const initialState = { message: null, errors: null };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  const [state, dispatch] = useFormState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.message && !state.errors) {
