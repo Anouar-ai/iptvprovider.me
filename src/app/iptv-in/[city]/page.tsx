@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { Check } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { plans } from "@/lib/site";
 import { getCityData, allCities } from "@/lib/cities";
@@ -119,6 +119,26 @@ export default function CityPage({ params }: { params: { city: string } }) {
                 Welcome to your complete guide for buying IPTV service in {name}, {state}. With a population of around {population.toLocaleString()}, {name} residents are increasingly looking for flexible and high-quality entertainment. This guide covers the best providers, local pricing, legal considerations, and more. Nearby zip codes include: {zipCodes.join(', ')}.
               </p>
             </header>
+
+            <Card className="not-prose my-8 border-primary bg-primary/10">
+                <CardHeader>
+                    <CardTitle>Special Price for {country}</CardTitle>
+                    <CardDescription>
+                        For a limited time, residents of {country} get an exclusive discount on our most popular plan!
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex items-baseline gap-4">
+                        <p className="text-4xl font-bold">$7.50<span className="text-lg font-normal text-muted-foreground">/month</span></p>
+                        <p className="text-muted-foreground">Billed annually. Regular price $16.00/month.</p>
+                    </div>
+                </CardContent>
+                <CardFooter>
+                    <Button asChild>
+                        <Link href="/iptv-subscription/12-months">Claim Your {country} Discount</Link>
+                    </Button>
+                </CardFooter>
+            </Card>
             
             <section id="best-iptv" className="mb-12">
               <h2 className="font-headline">Best IPTV Services in {name}, {state}</h2>
