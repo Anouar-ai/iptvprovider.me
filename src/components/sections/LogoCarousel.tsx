@@ -2,8 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { NetflixLogo, DisneyPlusLogo, AppleTVLogo, HBOLogo, ParamountPlusLogo, StarzLogo, CheckmarkLogo } from "../shared/BrandLogos";
+import { NetflixLogo, DisneyPlusLogo, AppleTVLogo, HBOLogo, ParamountPlusLogo, StarzLogo } from "../shared/BrandLogos";
 
 const logos = [
   { id: "netflix", component: NetflixLogo },
@@ -12,14 +11,16 @@ const logos = [
   { id: "hbo", component: HBOLogo },
   { id: "paramount", component: ParamountPlusLogo },
   { id: "starz", component: StarzLogo },
-  { id: "checkmark", component: CheckmarkLogo },
 ];
 
-const duplicatedLogos = [...logos, ...logos];
+const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
 export function LogoCarousel() {
   return (
     <section className="py-12 sm:py-16">
+        <p className="mb-8 text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            Including Content From All Major Streaming Platforms
+        </p>
       <div className="container mx-auto">
         <div
           className="relative w-full overflow-hidden"
@@ -31,10 +32,10 @@ export function LogoCarousel() {
           <motion.div
             className="flex"
             animate={{
-              x: ["0%", "-50%"],
+              x: ["0%", "-25%"],
               transition: {
                 ease: "linear",
-                duration: 20,
+                duration: 30,
                 repeat: Infinity,
               },
             }}
@@ -43,13 +44,11 @@ export function LogoCarousel() {
               <div
                 key={`${logo.id}-${index}`}
                 className="flex-shrink-0"
-                style={{ flexBasis: `calc(100% / ${logos.length})` }}
+                style={{ flexBasis: `calc(100% / ${logos.length * 2})` }}
               >
-                <div className="flex h-16 w-full flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 md:h-24">
-                  <div className="relative flex size-8 items-center justify-center text-muted-foreground md:size-14">
-                    <div className="flex size-14 items-center justify-center text-muted-foreground [&>svg]:size-full [&>svg]:object-contain">
+                <div className="flex h-12 w-full flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 md:h-16">
+                  <div className="relative flex h-8 w-auto items-center justify-center text-muted-foreground md:h-10">
                       <logo.component />
-                    </div>
                   </div>
                 </div>
               </div>
