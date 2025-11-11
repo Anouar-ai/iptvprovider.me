@@ -1,8 +1,7 @@
-
 "use client";
 
 import { motion } from "framer-motion";
-import { NetflixLogo, DisneyPlusLogo, AppleTVLogo, HBOLogo, ParamountPlusLogo, StarzLogo } from "../shared/BrandLogos";
+import { NetflixLogo, DisneyPlusLogo, AppleTVLogo, HBOLogo, ParamountPlusLogo, StarzLogo, CheckmarkLogo } from "../shared/BrandLogos";
 
 const logos = [
   { id: "netflix", component: NetflixLogo },
@@ -43,13 +42,16 @@ export function LogoCarousel() {
             {duplicatedLogos.map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
-                className="flex-shrink-0"
+                className="flex-shrink-0 px-4"
                 style={{ flexBasis: `calc(100% / ${logos.length * 2})` }}
               >
-                <div className="flex h-12 w-full flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 md:h-16">
-                  <div className="relative flex h-8 w-auto items-center justify-center text-muted-foreground md:h-10">
-                      <logo.component />
-                  </div>
+                <div className="group relative flex h-16 w-16 items-center justify-center rounded-full border border-border/30 bg-gradient-to-b from-card/80 to-card/40 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/10 md:h-20 md:w-20">
+                    <div className="relative flex h-8 w-auto items-center justify-center text-muted-foreground transition-transform duration-300 group-hover:scale-110 md:h-10">
+                        <logo.component />
+                    </div>
+                    <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-background bg-primary text-primary-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <CheckmarkLogo />
+                    </div>
                 </div>
               </div>
             ))}
