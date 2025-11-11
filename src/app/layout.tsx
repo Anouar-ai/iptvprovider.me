@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
+import NextNProgress from 'nextjs-progressbar';
+import { Analytics } from "@/components/shared/Analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -81,8 +83,11 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
+          <link rel="manifest" href="/manifest.json" />
         </head>
       <body className={cn("font-body antialiased", inter.variable, outfit.variable)}>
+        <NextNProgress />
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -1,4 +1,7 @@
 import type {NextConfig} from 'next';
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -26,7 +29,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'https'
+        ,
         hostname: 'images-cdn.ubuy.co.in',
         port: '',
         pathname: '/**',
@@ -41,4 +45,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPWA(nextConfig);
