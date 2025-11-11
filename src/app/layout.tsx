@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
-import NextNProgress from 'nextjs-progressbar';
+import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 
 const inter = Inter({
@@ -86,7 +86,7 @@ export default function RootLayout({
           <link rel="manifest" href="/manifest.json" />
         </head>
       <body className={cn("font-body antialiased", inter.variable, outfit.variable)}>
-        <NextNProgress />
+        <ProgressBar />
         <Analytics />
         <ThemeProvider
           attribute="class"
