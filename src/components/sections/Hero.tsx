@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -17,7 +16,14 @@ export function Hero() {
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 h-full w-full object-cover"
+        style={{
+            minWidth: '100%',
+            minHeight: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center center',
+        }}
       >
         <source
           src="https://www.demotemplates.online//snowpulse//wp-content//uploads//2024//05//The-Best-IPTV-Subscription-Service-Provider.mp4"
