@@ -28,7 +28,7 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 0.1}>
               <Card className={cn(
-                "relative flex h-full flex-col transition-all",
+                "relative flex h-full flex-col transition-all hover:scale-[1.02]",
                 plan.isPopular && "border-2 border-primary shadow-lg shadow-primary/20"
               )}>
                 {plan.isPopular && (
