@@ -26,17 +26,17 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://yoursite.com'),
-  title: "IPTV Service | Your Premier Provider",
-  description: "Experience the best IPTV service with thousands of channels, HD/4K quality, and instant activation. Unlock a world of entertainment with our reliable IPTV service.",
+  title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
+  description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
   openGraph: {
-    title: "The Best IPTV Service in the World",
-    description: "Unlock a world of entertainment — Start your IPTV service subscription now.",
+    title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
+    description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
     images: [{ url: "/og-image.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Service - The Most Reliable IPTV Provider",
-    description: "The Most IPTV Service in the world.",
+    title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
+    description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
     images: ["/twitter-image.jpg"],
   },
 };
