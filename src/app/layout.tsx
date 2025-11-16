@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://yoursite.com'),
   title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
   description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
     description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
