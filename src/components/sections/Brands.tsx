@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -28,12 +27,12 @@ const BrandCarousel = ({ images, direction = 1 }: { images: typeof brands, direc
               },
             }}
           >
-            {duplicatedLogos.map((brand) => {
+            {duplicatedLogos.map((brand, index) => {
                  const brandImage = PlaceHolderImages.find(img => img.id === brand.id);
                  if (!brandImage) return null;
                  return (
                      <div
-                        key={brand.id}
+                        key={`${brand.id}-${index}`}
                         className="flex-shrink-0 px-8"
                         style={{ flexBasis: `calc(100% / ${images.length})` }}
                     >
