@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
 
 const Features = dynamic(() => import("@/components/sections/Features").then((m) => m.Features));
+const Brands = dynamic(() => import("@/components/sections/Brands").then((m) => m.Brands));
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
 const Pricing = dynamic(() => import("@/components/sections/Pricing").then((m) => m.Pricing));
 const CTA = dynamic(() => import("@/components/sections/CTA").then((m) => m.CTA));
@@ -39,6 +40,7 @@ export default function Home() {
       />
       <Hero />
       <Features />
+      <Brands />
       <TopMovies />
       <Devices />
       <Pricing />

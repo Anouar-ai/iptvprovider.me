@@ -43,6 +43,12 @@ const nextConfig: NextConfig = {
         hostname: 'image.tmdb.org',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'iptvwell.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

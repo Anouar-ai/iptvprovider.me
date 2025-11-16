@@ -32,7 +32,7 @@
     },
     {
       "id": "movie-5",
-      "imageUrl": "https://image.tmdb.org/t/p/w500/bcP7FtskwsNp1ikpMQJzDPjofP5.jpg",
+      "imageUrl": "https://image.tmdb.org/t/p/w500/bcP7FtskwsNpikpMQJzDPjofP5.jpg",
       "imageHint": "pirate adventure",
       "description": "Captain Hook movie poster"
     },
@@ -83,6 +83,96 @@
       "imageUrl": "https://images.unsplash.com/photo-1721333079705-36b879261b30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzbWFydCUyMHRlbGV2aXNpb258ZW58MHx8fHwxNzYyMTAwNjgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smart television",
       "description": "IPTV setup on a smart TV"
+    },
+    {
+      "id": "brand_item21",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item21-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 21"
+    },
+    {
+      "id": "brand_item22",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item22-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 22"
+    },
+    {
+      "id": "brand_item14",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item14-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 14"
+    },
+    {
+      "id": "brand_item13",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item13-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 13"
+    },
+    {
+      "id": "brand_item12",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item12-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 12"
+    },
+    {
+      "id": "brand_item18",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item18-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 18"
+    },
+    {
+      "id": "brand_item17",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item17-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 17"
+    },
+    {
+      "id": "brand_item15",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item15-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 15"
+    },
+    {
+      "id": "brand_item16",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item16-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 16"
+    },
+    {
+      "id": "brand_item10",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item10-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 10"
+    },
+    {
+      "id": "brand_item11",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item11-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 11"
+    },
+    {
+      "id": "brand_item08",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item08-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 08"
+    },
+    {
+      "id": "brand_item09",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item09-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 09"
+    },
+    {
+      "id": "brand_item06",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item06-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 06"
+    },
+    {
+      "id": "brand_item05",
+      "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item05-150x46-1-1.webp",
+      "imageHint": "brand logo",
+      "description": "Brand 05"
     }
   ]
 }
