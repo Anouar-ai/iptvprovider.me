@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { ShieldCheck, Tv, Zap } from "lucide-react";
 import { AnimatedText } from "../ui/animated-underline-text-one";
-import { LogoCarousel } from "./LogoCarousel";
 
 export function Hero() {
   return (
@@ -53,7 +52,6 @@ export function Hero() {
           </div>
         </motion.div>
       </Container>
-      <LogoCarousel />
        <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
