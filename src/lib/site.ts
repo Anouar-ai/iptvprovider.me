@@ -1,11 +1,12 @@
 
+
 import type { LucideIcon } from "lucide-react";
 import { Check, Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react";
 
 export const navLinks = [
   { name: "Home", href: "/" },
   { name: "Features", href: "/#features" },
-  { name: "Pricing", href: "/iptv-subscription" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Devices", href: "/devices" },
 ];
 
@@ -61,45 +62,75 @@ export const plans = [
     id: "1-month",
     name: "1 Month",
     duration: "1 month",
-    price: 16,
-    price_monthly: 16.00,
+    price: 14.99,
+    price_monthly: 14.99,
     savings: null,
-    features: ["HD/4K Quality", "24/7 Support", "20,000+ Channels", "Instant Activation", "Anti-Freeze Tech"],
+    features: [
+      "7000+ Live Channels",
+      "40000+ VOD Movies",
+      "1500+ TV Shows",
+      "HD & SD Quality",
+      "24/7 Support",
+    ],
     isPopular: false,
-    url: "/iptv-subscription/1-month",
+    url: "/pricing/1-month",
   },
   {
     id: "3-months",
     name: "3 Months",
     duration: "3 months",
-    price: 30,
-    price_monthly: 10.00,
-    savings: "Save $18",
-    features: ["HD/4K Quality", "24/7 Support", "20,000+ Channels", "Instant Activation", "Anti-Freeze Tech"],
+    price: 24.99,
+    price_monthly: 8.33,
+    savings: "Save $20",
+    features: [
+      "7000+ Live Channels",
+      "40000+ VOD Movies",
+      "1500+ TV Shows",
+      "HD & SD Quality",
+      "24/7 Support",
+      "3 Connections",
+    ],
     isPopular: false,
-    url: "/iptv-subscription/3-months",
-  },
-  {
-    id: "12-months",
-    name: "12 Months",
-    duration: "12 months",
-    price: 90,
-    price_monthly: 7.50,
-    savings: "Save $102",
-    features: ["HD/4K Quality", "24/7 Support", "20,000+ Channels", "Instant Activation", "Anti-Freeze Tech"],
-    isPopular: true,
-    url: "/iptv-subscription/12-months",
+    url: "/pricing/3-months",
   },
   {
     id: "6-months",
     name: "6 Months",
     duration: "6 months",
-    price: 50,
-    price_monthly: 8.33,
-    savings: "Save $46",
-    features: ["HD/4K Quality", "24/7 Support", "20,000+ Channels", "Instant Activation", "Anti-Freeze Tech"],
+    price: 39.99,
+    price_monthly: 6.66,
+    savings: "Save $50",
+    features: [
+      "7000+ Live Channels",
+      "40000+ VOD Movies",
+      "1500+ TV Shows",
+      "HD & SD Quality",
+      "24/7 Support",
+      "3 Connections",
+      "PPV Events",
+    ],
+    isPopular: true,
+    url: "/pricing/6-months",
+  },
+  {
+    id: "12-months",
+    name: "12 Months",
+    duration: "12 months",
+    price: 59.99,
+    price_monthly: 5.0,
+    savings: "Save $120",
+    features: [
+      "7000+ Live Channels",
+      "40000+ VOD Movies",
+      "1500+ TV Shows",
+      "HD & SD Quality",
+      "24/7 Support",
+      "4 Connections",
+      "PPV Events",
+      "Premium Support",
+    ],
     isPopular: false,
-    url: "/iptv-subscription/6-months",
+    url: "/pricing/12-months",
   },
 ];
 
@@ -186,7 +217,7 @@ export const posts: {
 
 export const footerLinks = {
     quickLinks: [
-        { name: "Pricing", href: "/iptv-subscription" },
+        { name: "Pricing", href: "/pricing" },
         { name: "Affiliate Program", href: "#" },
     ],
     supportedLinks: [
@@ -228,3 +259,4 @@ export const brands_two = [
     { id: "brand_item06", alt: "brand_item06", imageHint: "brand logo" },
     { id: "brand_item05", alt: "brand_item05", imageHint: "brand logo" },
 ]
+
