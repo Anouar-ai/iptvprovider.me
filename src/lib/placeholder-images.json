@@ -125,6 +125,110 @@
       "description": "Brand 05",
       "width": 150,
       "height": 46
+    },
+    {
+      "id": "blog-post-01",
+      "imageUrl": "https://images.unsplash.com/photo-1760708626483-ef25245a7185?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwZ3VpZGV8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech guide",
+      "description": "A placeholder image for a blog post about Fire TV.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "blog-post-02",
+      "imageUrl": "https://images.unsplash.com/photo-1587840178393-079769787b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbmRyb2lkJTIwc2V0dXB8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "android setup",
+      "description": "A placeholder image for a blog post about Android setup.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "blog-post-03",
+      "imageUrl": "https://images.unsplash.com/photo-1760531932521-8eb5a064dbca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cm91Ymxlc2hvb3RpbmclMjB0ZWNofGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "troubleshooting tech",
+      "description": "A placeholder image for a blog post about troubleshooting.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "ios",
+      "imageUrl": "https://images.unsplash.com/photo-1729860646582-10a6721e05f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpb3MlMjBkZXZpY2V8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ios device",
+      "description": "A placeholder image for the iOS guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "android",
+      "imageUrl": "https://images.unsplash.com/photo-1658282513894-612835eb44e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmRyb2lkJTIwZGV2aWNlfGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "android device",
+      "description": "A placeholder image for the Android guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "fire-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1701422522356-03444a156644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlyZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fire tv",
+      "description": "A placeholder image for the Fire TV guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "windows",
+      "imageUrl": "https://images.unsplash.com/photo-1624571395775-253d9666612b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aW5kb3dzJTIwcGN8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "windows pc",
+      "description": "A placeholder image for the Windows guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "macos",
+      "imageUrl": "https://images.unsplash.com/photo-1627660163617-72878fc413e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWNvcyUyMGxhcHRvcHxlbnwwfHx8fDE3NjMzOTY4OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "macos laptop",
+      "description": "A placeholder image for the macOS guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "samsung-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1593784991188-c899ca07263b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzYW1zdW5nJTIwdHZ8ZW58MHx8fHwxNzYzMzk2ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "samsung tv",
+      "description": "A placeholder image for the Samsung TV guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "lg-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1611718663049-4c39b6b1182e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZyUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lg tv",
+      "description": "A placeholder image for the LG TV guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "apple-tv",
+      "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "apple tv",
+      "description": "A placeholder image for the Apple TV guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "roku",
+      "imageUrl": "https://images.unsplash.com/photo-1699940191424-c99a129e7b1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb2t1JTIwZGV2aWNlfGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "roku device",
+      "description": "A placeholder image for the Roku guide.",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "id": "mag",
+      "imageUrl": "https://images.unsplash.com/photo-1698376620993-41b0e91fb0ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWclMjBib3h8ZW58MHx8fHwxNzYzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mag box",
+      "description": "A placeholder image for the MAG guide.",
+      "width": 600,
+      "height": 400
     }
   ]
 }

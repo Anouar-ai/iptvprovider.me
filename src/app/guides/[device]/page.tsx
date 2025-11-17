@@ -55,7 +55,7 @@ export default function HowToPage({ params }: { params: { device: string } }) {
     notFound();
   }
 
-  const deviceImage = PlaceHolderImages.find(img => img.id.includes('blog'));
+  const deviceImage = PlaceHolderImages.find(img => img.id.includes(article.id));
 
   const howToSchema = {
     "@context": "https://schema.org",
