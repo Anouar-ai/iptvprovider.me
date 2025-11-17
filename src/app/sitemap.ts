@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { allCities } from '@/lib/cities';
-import { howToArticles } from '@/lib/site-data/how-to';
+import { howToArticles } from '@/lib/how-to';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://yoursite.com';
