@@ -75,4 +75,3 @@ isPopular: false,
     url: "https://wa.me/1234567890",
   },
 ];
-
