@@ -1,302 +1,243 @@
-import type { LucideIcon } from "lucide-react";
-import { Check, Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react";
 
-export const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Features", href: "/#features" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Devices", href: "/devices" },
-  { name: "FAQ", href: "/faq" },
-];
-
-export const features = [
-  {
-    name: "Instant Activation",
-    description: "Get your IPTV service subscription up and running in minutes. No waiting, just entertainment.",
-    icon: Zap,
-  },
-  {
-    name: "All Devices",
-    description: "Our IPTV service is compatible with all your favorite devices, from smart TVs to mobile phones.",
-    icon: Tv,
-  },
-  {
-    name: "Zero Effort",
-    description: "Our IPTV service's intuitive setup process means you'll be watching in no time, hassle-free.",
-    icon: Rabbit,
-  },
-  {
-    name: "Stable Server",
-    description: "Enjoy uninterrupted streaming with our powerful and reliable IPTV service server infrastructure.",
-    icon: Server,
-  },
-  {
-    name: "Fast Install",
-    description: "Quick and easy installation guides for our IPTV service on every device to get you started.",
-    icon: ShieldCheck,
-  },
-  {
-    name: "Super Quality",
-    description: "Experience your favorite shows and movies in stunning HD and 4K quality with our IPTV service.",
-    icon: Star,
-  },
-];
-
-export const devices: { name: string; icon: string; href: string; }[] = [
-    { name: 'iPhone', icon: 'SiIphone', href: '#' },
-    { name: 'iPad', icon: 'SiIpad', href: '#' },
-    { name: 'macOS', icon: 'SiMacos', href: '#' },
-    { name: 'Android', icon: 'SiAndroid', href: '#' },
-    { name: 'Windows', icon: 'SiWindows', href: '#' },
-    { name: 'Roku', icon: 'SiRoku', href: '#' },
-    { name: 'Samsung TV', icon: 'SiSamsung', href: '#' },
-    { name: 'LG TV', icon: 'SiLg', href: '#' },
-    { name: 'Fire TV', icon: 'SiAmazonfiretv', href: '#' },
-    { name: 'MAG', icon: 'Tv', href: '#' },
-    { name: 'Apple TV', icon: 'SiAppletv', href: '#' }
-];
-
-export const plans = [
-  {
-    id: "1-month",
-    name: "1 Month",
-    duration: "1 month",
-    price: 14.99,
-    price_monthly: 14.99,
-    savings: null,
-    features: [
-      "7000+ Live Channels",
-      "40000+ VOD Movies",
-      "1500+ TV Shows",
-      "HD & SD Quality",
-      "24/7 Support",
-    ],
-    isPopular: false,
-    url: "/iptv-subscription/1-month",
-  },
-  {
-    id: "3-months",
-    name: "3 Months",
-    duration: "3 months",
-    price: 24.99,
-    price_monthly: 8.33,
-    savings: "Save $20",
-    features: [
-      "7000+ Live Channels",
-      "40000+ VOD Movies",
-      "1500+ TV Shows",
-      "HD & SD Quality",
-      "24/7 Support",
-      "3 Connections",
-    ],
-    isPopular: false,
-    url: "/iptv-subscription/3-months",
-  },
-  {
-    id: "6-months",
-    name: "6 Months",
-    duration: "6 months",
-    price: 39.99,
-    price_monthly: 6.66,
-    savings: "Save $50",
-    features: [
-      "7000+ Live Channels",
-      "40000+ VOD Movies",
-      "1500+ TV Shows",
-      "HD & SD Quality",
-      "24/7 Support",
-      "3 Connections",
-      "PPV Events",
-    ],
-    isPopular: true,
-    url: "/iptv-subscription/6-months",
-  },
-  {
-    id: "12-months",
-    name: "12 Months",
-    duration: "12 months",
-    price: 59.99,
-    price_monthly: 5.0,
-    savings: "Save $120",
-    features: [
-      "7000+ Live Channels",
-      "40000+ VOD Movies",
-      "1500+ TV Shows",
-      "HD & SD Quality",
-      "24/7 Support",
-      "4 Connections",
-      "PPV Events",
-      "Premium Support",
-    ],
-    isPopular: false,
-    url: "/iptv-subscription/12-months",
-  },
-];
-
-export const faqs = [
+export const howToArticles = [
     {
-        question: "Do you offer free trials for your IPTV service?",
-        answer: "Currently, we do not offer free trials for our IPTV service due to high demand. However, we have affordable 1-month packages, which are perfect for testing our service. This approach helps us maintain high-quality streams for our paid subscribers."
+        id: "ios",
+        title: "How to Set Up IPTV on iOS (iPhone & iPad)",
+        description: "A complete guide to installing and configuring IPTV on your iPhone or iPad using the IPTV Smarters app.",
+        keywords: ["IPTV on iPhone", "IPTV on iPad", "iOS IPTV setup", "IPTV Smarters iOS"],
+        steps: [
+            {
+                title: "Download IPTV Smarters from App Store",
+                description: "Open the App Store on your iOS device and search for 'IPTV Smarters'. Download and install the application."
+            },
+            {
+                title: "Open the App and Accept Terms",
+                description: "Launch the IPTV Smarters app. You will be prompted to accept the terms of use. Tap 'Accept' to continue."
+            },
+            {
+                title: "Add New User",
+                description: "Select 'Add New User' and then choose 'Login with Xtream Codes API', which is the most common and easiest method."
+            },
+            {
+                title: "Enter Your Credentials",
+                description: "In the fields provided, enter any name for the playlist, followed by the Username, Password, and Server URL from your IPTV subscription email. Click 'Add User'."
+            },
+            {
+                title: "Start Streaming",
+                description: "Once logged in, the app will download the channels and VOD. You can now start watching your favorite content."
+            }
+        ]
     },
     {
-        question: "How many devices can I use with one IPTV service subscription?",
-        answer: "Our standard IPTV service plan allows for one connection at a time. This ensures stable and high-quality streaming. If you require multiple simultaneous connections for your family, please contact our support for a custom IPTV plan."
+        id: "android",
+        title: "How to Install IPTV on Android Devices",
+        description: "Follow this guide to set up IPTV on your Android phone, tablet, or Android TV box using the IPTV Smarters Pro app.",
+        keywords: ["IPTV on Android", "Android IPTV setup", "IPTV Smarters Android", "Android TV IPTV"],
+        steps: [
+            {
+                title: "Download IPTV Smarters Pro",
+                description: "Go to the Google Play Store on your Android device, search for 'IPTV Smarters Pro', and install the app."
+            },
+            {
+                title: "Accept Terms and Add User",
+                description: "Open the app, accept the terms of use, and click on 'Add New User'. Choose the 'Login with Xtream Codes API' option."
+            },
+            {
+                title: "Enter Login Details",
+                description: "Fill in the required fields: Playlist Name (any name), Username, Password, and the server URL provided in your subscription email."
+            },
+            {
+                title: "Add User and Start Watching",
+                description: "Click 'Add User'. The app will then start downloading channels, movies, and series. Once finished, you can start streaming."
+            }
+        ]
     },
     {
-        question: "Why is my IPTV service buffering?",
-        answer: "Buffering can be caused by several factors. The most common are slow internet speed, ISP throttling, or issues with your device. For a smooth IPTV service experience, we recommend a stable internet connection of at least 25 Mbps and using a reliable VPN to prevent ISP throttling."
+        id: "fire-tv",
+        title: "How to Install IPTV on Amazon Fire TV Stick",
+        description: "A step-by-step guide to setting up IPTV on your Fire TV Stick and start streaming your favorite channels in minutes.",
+        keywords: ["IPTV on Fire TV", "Firestick IPTV setup", "Downloader app Fire TV", "IPTV Smarters Firestick"],
+        steps: [
+            {
+                title: "Enable Apps from Unknown Sources",
+                description: "From the Fire TV home screen, go to Settings > My Fire TV > Developer Options. Turn on 'Apps from Unknown Sources'."
+            },
+            {
+                title: "Install the Downloader App",
+                description: "Go back to the home screen, search for the 'Downloader' app, and install it."
+            },
+            {
+                title: "Download IPTV Smarters APK",
+                description: "Open the Downloader app and enter the direct APK URL for IPTV Smarters Pro in the URL field. This can be found on the official IPTV Smarters website."
+            },
+            {
+                title: "Install and Log In",
+                description: "Once the download is complete, install the IPTV Smarters app. Open it and log in using the 'Xtream Codes API' with the credentials from your subscription email."
+            }
+        ]
     },
     {
-        question: "How long does IPTV service activation take?",
-        answer: "Activation for your IPTV service is instant. As soon as your payment is successfully processed, your login credentials and setup instructions will be sent to your email address immediately. You can start streaming within minutes."
+        id: "windows",
+        title: "How to Set Up IPTV on Windows PC",
+        description: "Learn how to watch IPTV on your Windows computer using the official IPTV Smarters Pro application.",
+        keywords: ["IPTV on Windows", "Windows IPTV player", "IPTV Smarters for PC"],
+        steps: [
+            {
+                title: "Download the Official App",
+                description: "Visit the official IPTV Smarters website and download the application for Windows."
+            },
+            {
+                title: "Install the Application",
+                description: "Run the downloaded installer file and follow the on-screen instructions to install IPTV Smarters on your PC."
+            },
+            {
+                title: "Log In with Your Credentials",
+                description: "Launch the application. Choose 'Login with Xtream Codes API' and enter the Username, Password, and Server URL from your subscription email."
+            },
+            {
+                title: "Enjoy Streaming",
+                description: "After logging in, the app will load all your subscribed content, and you can begin watching on your Windows PC."
+            }
+        ]
     },
     {
-        question: "Do I need a VPN to use the IPTV service?",
-        answer: "A VPN is not strictly required, but it is highly recommended for the best IPTV service experience. A VPN protects your online privacy, helps bypass any ISP restrictions or throttling, and can unlock geo-restricted content, giving you more freedom."
+        id: "macos",
+        title: "How to Set Up IPTV on macOS",
+        description: "A simple guide to installing and using IPTV on your MacBook or iMac with the IPTV Smarters Pro app.",
+        keywords: ["IPTV on macOS", "MacBook IPTV", "IPTV Smarters for Mac"],
+        steps: [
+            {
+                title: "Download the App from App Store",
+                description: "Open the App Store on your Mac and search for 'IPTV Smarters Pro'. Download and install the application."
+            },
+            {
+                title: "Log In to Your Account",
+                description: "Open the IPTV Smarters app. Select 'Login with Xtream Codes API' and input your credentials (Username, Password, Server URL) provided in your IPTV subscription email."
+            },
+            {
+                title: "Start Watching",
+                description: "Once you're logged in, the application will automatically load your channels and VOD library. You're now ready to stream on your Mac."
+            }
+        ]
     },
     {
-        question: "What is your refund policy for the IPTV service?",
-        answer: "We are confident in our IPTV service and offer a 7-day money-back guarantee. If you are not completely satisfied within the first week, contact our support team to request a full refund, no questions asked."
+        id: "samsung-tv",
+        title: "How to Set Up IPTV on Samsung Smart TV",
+        description: "This guide explains how to install and configure IPTV on your Samsung Smart TV using the 'IPTV Smarters Player' app.",
+        keywords: ["IPTV on Samsung TV", "Samsung Smart TV IPTV", "Tizen IPTV app"],
+        steps: [
+            {
+                title: "Go to the App Store",
+                description: "Press the 'Smart Hub' button on your remote and navigate to the Apps section on your Samsung TV."
+            },
+            {
+                title: "Search and Install IPTV Smarters Player",
+                description: "Search for 'IPTV Smarters Player' and install the application on your TV."
+            },
+            {
+                title: "Log In with Your Credentials",
+                description: "Open the app. Select 'Login with Xtream Codes API' and enter the username, password, and server URL from your IPTV service email."
+            },
+            {
+                title: "Stream Content",
+                description: "After a successful login, the app will load your channels and movie library. Start enjoying IPTV on your Samsung Smart TV."
+            }
+        ]
     },
     {
-        question: "What apps does your IPTV service support?",
-        answer: "Our flexible IPTV service supports a wide range of popular applications, including IPTV Smarters, TiviMate, GSE Smart IPTV, OTT Navigator, and many others. We provide easy-to-follow setup guides for all major apps and devices."
+        id: "lg-tv",
+        title: "How to Set Up IPTV on LG Smart TV (webOS)",
+        description: "Learn to install and set up IPTV on your LG Smart TV using the 'IPTV Smarters Pro' app from the LG Content Store.",
+        keywords: ["IPTV on LG TV", "LG Smart TV IPTV", "webOS IPTV app"],
+        steps: [
+            {
+                title: "Open the LG Content Store",
+                description: "Press the 'Home' button on your remote and select the 'LG Content Store' from the menu."
+            },
+            {
+                title: "Find and Install IPTV Smarters Pro",
+                description: "Use the search function to find 'IPTV Smarters Pro' and proceed with the installation."
+            },
+            {
+                title: "Log In and Load Playlist",
+                description: "Launch the app and choose to log in with 'Xtream Codes API'. Enter the details provided in your subscription email to load your playlist."
+            },
+            {
+                title: "Start Watching",
+                description: "Once your playlist is loaded, you can browse through channels and VOD to start streaming on your LG TV."
+            }
+        ]
     },
     {
-        question: "Do you provide channel updates for the IPTV service?",
-        answer: "Yes, our IPTV service channel list is updated automatically and regularly at no extra cost. This ensures you always have access to the latest channels, movies, and series without any manual intervention."
+        id: "apple-tv",
+        title: "How to Set Up IPTV on Apple TV",
+        description: "This guide shows you how to install and configure IPTV on your Apple TV using a compatible app like IPTV Smarters.",
+        keywords: ["IPTV on Apple TV", "Apple TV IPTV setup", "tvOS IPTV"],
+        steps: [
+            {
+                title: "Open the App Store",
+                description: "Navigate to the App Store on your Apple TV."
+            },
+            {
+                title: "Search for IPTV Smarters",
+                description: "Search for 'IPTV Smarters' and download the application."
+            },
+            {
+                title: "Log In with Your Service Details",
+                description: "Open the IPTV Smarters app. Choose 'Login with Xtream Codes API' and enter your username, password, and the server URL from your IPTV subscription email."
+            },
+            {
+                title: "Enjoy Streaming",
+                description: "After logging in, your channel list and VOD will be loaded. You are now ready to stream on your Apple TV."
+            }
+        ]
     },
     {
-        question: "How can I get support for my IPTV service?",
-        answer: "We offer 24/7 customer support for our IPTV service. You can reach our dedicated team via our contact form, email, or live chat. We are always ready to assist you with any setup, billing, or technical issues."
+        id: "roku",
+        title: "How to Watch IPTV on Roku",
+        description: "Roku devices don't directly support IPTV apps, but you can still watch by screen mirroring from another device. This guide explains how.",
+        keywords: ["IPTV on Roku", "Roku screen mirroring", "cast IPTV to Roku"],
+        steps: [
+            {
+                title: "Enable Screen Mirroring on Roku",
+                description: "Go to Settings > System > Screen Mirroring on your Roku device and set the 'Screen mirroring mode' to 'Prompt' or 'Always allow'."
+            },
+            {
+                title: "Set up IPTV on a Second Device",
+                description: "Install and configure your IPTV service on a compatible Android or Windows device using an app like IPTV Smarters."
+            },
+            {
+                title: "Start Screen Mirroring",
+                description: "On your Android/Windows device, find the screen casting option (often called 'Smart View', 'Cast', or 'Wireless Display') and select your Roku device from the list."
+            },
+            {
+                title: "Play IPTV Content",
+                description: "Once connected, open the IPTV app on your phone or PC and play any channel. The content will now be mirrored and displayed on your TV through the Roku device."
+            }
+        ]
     },
     {
-        question: "Can I cancel my IPTV service subscription anytime?",
-        answer: "Absolutely. You can cancel your IPTV service subscription at any time. We believe in flexibility, so there are no long-term contracts. Simply contact our support team, and they will process the cancellation for you."
+        id: "mag",
+        title: "How to Set Up IPTV on a MAG Box",
+        description: "Follow these steps to configure your MAG device with our IPTV service using the portal URL.",
+        keywords: ["IPTV on MAG", "MAG box setup", "IPTV portal URL"],
+        steps: [
+            {
+                title: "Go to Settings",
+                description: "From the main menu of your MAG box, navigate to 'Settings'."
+            },
+            {
+                title: "Navigate to Servers & Portals",
+                description: "In the settings menu, go to 'System Settings', then select 'Servers & Portals'."
+            },
+            {
+                title: "Enter Portal URL",
+                description: "In the 'Portal 1 URL' field, enter the portal address provided in your IPTV subscription email. Save and reboot the device."
+            },
+            {
+                title: "Start Watching",
+                description: "After rebooting, the portal will load automatically, giving you access to all the channels and content from your subscription."
+            }
+        ]
     }
-];
-
-export const testimonials = [
-    {
-        name: "John D.",
-        initials: "JD",
-        rating: 5,
-        message: "Blown away by the quality and channel selection. The 4K streams are crystal clear. Best IPTV service I've ever used, hands down."
-    },
-    {
-        name: "Sarah L.",
-        initials: "SL",
-        rating: 5,
-        message: "The setup was surprisingly easy on my Firestick. I was watching my favorite shows in less than 5 minutes. The 24/7 support for this IPTV service is also a huge plus!"
-    },
-    {
-        name: "Mike P.",
-        initials: "MP",
-        rating: 5,
-        message: "I was skeptical about the 'no buffering' claim, but this IPTV service delivered. Rock-solid stability even during major sports events. Highly recommend."
-    },
-    {
-        name: "Emily R.",
-        initials: "ER",
-        rating: 5,
-        message: "Amazing value for money. The 12-month IPTV service plan is a steal for this level of quality. It works flawlessly on all my devices."
-    }
-];
-
-export const posts: {
-  id: string;
-  title: string;
-  image: string;
-  excerpt: string;
-  tags: string[];
-  href: string;
-  content?: string;
-}[] = [];
-
-
-export const footerLinks = {
-    quickLinks: [
-        { name: "Pricing", href: "/pricing" },
-        { name: "Affiliate Program", href: "#" },
-    ],
-    supportedLinks: [
-        { name: "Android App", href: "#" },
-        { name: "iOS App", href: "#" },
-        { name: "Windows App", href: "#" },
-        { name: "macOS App", href: "#" },
-    ],
-    contact: {
-        address: "123 Digital Street, Lizard City, LC 12345",
-        email: "support@iptvservice.com"
-    }
-};
-
-export const socialIcons = [
-    { name: "Facebook", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Instagram", href: "#" },
-];
-
-
-export const brands = [
-    { id: "brand_item21", alt: "brand_item21", imageHint: "brand logo" },
-    { id: "brand_item22", alt: "brand_item22", imageHint: "brand logo" },
-    { id: "brand_item14", alt: "brand_item14", imageHint: "brand logo" },
-    { id: "brand_item13", alt: "brand_item13", imageHint: "brand logo" },
-    { id: "brand_item12", alt: "brand_item12", imageHint: "brand logo" },
-    { id: "brand_item18", alt: "brand_item18", imageHint: "brand logo" },
-    { id: "brand_item17", alt: "brand_item17", imageHint: "brand logo" },
-    { id: "brand_item15", alt: "brand_item15", imageHint: "brand logo" },
-    { id: "brand_item16", alt: "brand_item16", imageHint: "brand logo" },
-];
-
-export const brands_two = [
-    { id: "brand_item10", alt: "brand_item10", imageHint: "brand logo" },
-    { id: "brand_item11", alt: "brand_item11", imageHint: "brand logo" },
-    { id: "brand_item08", alt: "brand_item08", imageHint: "brand logo" },
-    { id: "brand_item09", alt: "brand_item09", imageHint: "brand logo" },
-    { id: "brand_item06", alt: "brand_item06", imageHint: "brand logo" },
-    { id: "brand_item05", alt: "brand_item05", imageHint: "brand logo" },
-];
-
-export const iptvApps = [
-    "Iptv Smarters Pro",
-    "TiviMate",
-    "GSE Smart IPTV",
-    "OTT Navigator",
-    "Perfect Player",
-    "Flix IPTV",
-    "Net IPTV",
-    "Set IPTV",
-    "Smart IPTV",
-    "Other",
-];
-
-export const countries = [
-    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
-    "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
-    "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia",
-    "Denmark", "Djibouti", "Dominica", "Dominican Republic",
-    "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia",
-    "Fiji", "Finland", "France",
-    "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana",
-
-    "Haiti", "Honduras", "Hungary",
-    "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
-    "Jamaica", "Japan", "Jordan",
-    "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
-    "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
-    "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
-    "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
-
-    "Oman",
-    "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
-    "Qatar",
-    "Romania", "Russia", "Rwanda",
-    "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
-    "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu",
-    "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan",
-    "Vanuatu", "Vatican City", "Venezuela", "Vietnam",
-    "Yemen",
-    "Zambia", "Zimbabwe"
 ];
