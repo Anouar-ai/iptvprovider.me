@@ -7,6 +7,12 @@
       "imageHint": "cinema theater"
     },
     {
+      "id": "subscription-og",
+      "description": "An image for the IPTV subscription open graph tag and product display.",
+      "imageUrl": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+      "imageHint": "IPTV box"
+    },
+    {
       "id": "brand_item21",
       "imageUrl": "https://iptvwell.com/demo13/wp-content/uploads/2023/04/brand_item21-150x46-1-1.webp",
       "imageHint": "brand logo",
@@ -160,7 +166,7 @@
     },
     {
       "id": "android",
-      "imageUrl": "https://images.unsplash.com/photo-1658282513894-612835eb44e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmRyb2lkJTIwZGV2aWNlfGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1658282513894-612835eb44e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmRyb2lkJTIwZGV2aWNlfGVufDB8fHx8MTc2MzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "android device",
       "description": "A placeholder image for the Android guide.",
       "width": 600,
@@ -168,7 +174,7 @@
     },
     {
       "id": "fire-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1701422522356-03444a156644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlyZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1701422522356-03444a156644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlyZSUyMHR2fGVufDB8fHx8MTc2MzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fire tv",
       "description": "A placeholder image for the Fire TV guide.",
       "width": 600,
@@ -200,7 +206,7 @@
     },
     {
       "id": "lg-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1611718663049-4c39b6b1182e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZyUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1611718663049-4c39b6b1182e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZyUyMHR2fGVufDB8fHx8MTc2MzMzk2ODk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "lg tv",
       "description": "A placeholder image for the LG TV guide.",
       "width": 600,
@@ -208,7 +214,7 @@
     },
     {
       "id": "apple-tv",
-      "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM5Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1591970698020-e685959dcdaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHBsZSUyMHR2fGVufDB8fHx8MTc2MzM9Njg5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "apple tv",
       "description": "A placeholder image for the Apple TV guide.",
       "width": 600,
