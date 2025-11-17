@@ -50,7 +50,7 @@ function StructuredData({ article }: { article: Article }) {
             name: faq.question,
             acceptedAnswer: {
                 "@type": "Answer",
-                text": faq.answer
+                "text": faq.answer
             }
         }))
     } : null;
