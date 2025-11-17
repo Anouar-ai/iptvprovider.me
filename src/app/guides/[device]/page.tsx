@@ -33,21 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const faqs = [
-    {
-        question: "Can I use one subscription on multiple devices?",
-        answer: "Our standard subscription supports one connection at a time. However, you can easily switch between devices. Just make sure to log out from one device before logging into another to avoid connection issues."
-    },
-    {
-        question: "What should I do if the stream is buffering?",
-        answer: "Buffering is often caused by a slow internet connection. First, test your internet speed to ensure it's above 25 Mbps for HD/4K streaming. If your speed is good, try restarting your router and device. Using a VPN can also help bypass any potential throttling from your internet provider."
-    },
-    {
-        question: "The channel list is not loading. What's the fix?",
-        answer: "This can happen if the playlist URL or credentials were entered incorrectly. Double-check the M3U link or Xtream Codes login details from your subscription email. If the problem persists, try refreshing or reloading the playlist within your IPTV app settings."
-    }
-]
-
 export default function HowToPage({ params }: { params: { device: string } }) {
   const article = howToArticles.find((p) => p.id === params.device);
 
@@ -55,27 +40,74 @@ export default function HowToPage({ params }: { params: { device: string } }) {
     notFound();
   }
 
-  const deviceImage = PlaceHolderImages.find(img => img.id.includes(article.id));
+  const deviceImage = PlaceHolderImages.find(img => img.id === article.id);
 
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": article.title,
     "description": article.description,
+    "image": deviceImage ? {
+        "@type": "ImageObject",
+        "url": deviceImage.imageUrl,
+        "width": deviceImage.width,
+        "height": deviceImage.height
+    } : undefined,
     "step": article.steps.map((step, index) => ({
       "@type": "HowToStep",
       "name": step.title,
       "text": step.description,
+      "url": `${process.env.NEXT_PUBLIC_BASE_URL}/guides/${article.id}#step-${index + 1}`,
       "position": index + 1,
     })),
-    "totalTime": "PT5M", // Estimated time: 5 minutes
+    "totalTime": "PT5M",
   };
+
+  const faqSchema = article.faqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": article.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "IPTV Service Subscription",
+    "description": `Our premium IPTV service is fully compatible with ${article.id.replace('-', ' ')} devices. Follow our guide to get set up.`,
+    "brand": {
+      "@type": "Brand",
+      "name": "IPTV Service"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "14.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "/pricing"
+    }
+  }
+
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      {faqSchema && <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />}
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <main className="py-16 sm:py-24">
         <Container>
@@ -118,38 +150,50 @@ export default function HowToPage({ params }: { params: { device: string } }) {
                       <p>Follow these simple steps to get our IPTV service running on your {article.id.replace('-', ' ')}. The entire process should only take a few minutes.</p>
                       <div className="space-y-8 mt-8">
                       {article.steps.map((step, index) => (
-                          <div key={index} className="flex gap-6">
+                          <div key={index} id={`step-${index + 1}`} className="flex gap-6">
                               <div className="flex flex-col items-center">
                                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">{index + 1}</div>
                                   {index < article.steps.length - 1 && <div className="w-px flex-grow bg-border" />}
                               </div>
                               <div>
                                   <h3 className="font-headline text-2xl font-semibold mt-1 mb-2">{step.title}</h3>
-                                  <p className="text-muted-foreground">{step.description}</p>
+                                  <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: step.description }} />
                               </div>
                           </div>
                       ))}
                       </div>
 
+                      {article.extraSections?.map(section => (
+                        <div key={section.id} className="my-12">
+                            <h2 className="font-headline text-3xl">{section.title}</h2>
+                            <p dangerouslySetInnerHTML={{ __html: section.content }} />
+                        </div>
+                      ))}
+
+
                       <div className="my-12 rounded-lg bg-primary/10 p-6 text-center">
                         <h3 className="font-headline text-2xl font-bold">Ready to Start Watching on Your {article.id.charAt(0).toUpperCase() + article.id.slice(1).replace('-', ' ')}?</h3>
                         <p className="mt-2 text-muted-foreground">Get your premium IPTV subscription today and unlock thousands of channels!</p>
                         <Button asChild className="mt-4">
-                            <Link href="/iptv-subscription">Get Your Subscription Now</Link>
+                            <Link href="/pricing">Get Your Subscription Now</Link>
                         </Button>
                       </div>
 
-                      <h2 className="font-headline text-3xl">Frequently Asked Questions</h2>
-                       <Accordion type="single" collapsible>
-                          {faqs.map((faq, i) => (
-                          <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                              <AccordionTrigger itemProp="name">{faq.question}</AccordionTrigger>
-                              <AccordionContent itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                              <p itemProp="text">{faq.answer}</p>
-                              </AccordionContent>
-                          </AccordionItem>
-                          ))}
-                      </Accordion>
+                      {article.faqs && (
+                        <>
+                            <h2 className="font-headline text-3xl">Frequently Asked Questions</h2>
+                            <Accordion type="single" collapsible>
+                                {article.faqs.map((faq, i) => (
+                                <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                                    <AccordionTrigger itemProp="name">{faq.question}</AccordionTrigger>
+                                    <AccordionContent itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                                    <p itemProp="text">{faq.answer}</p>
+                                    </AccordionContent>
+                                </AccordionItem>
+                                ))}
+                            </Accordion>
+                        </>
+                      )}
                   </div>
               </div>
               <aside className="lg:col-span-1 space-y-8">
@@ -173,7 +217,7 @@ export default function HowToPage({ params }: { params: { device: string } }) {
                           <div className="relative h-64 w-full">
                           <Image
                               src={deviceImage.imageUrl}
-                              alt={`IPTV setup on ${article.id}`}
+                              alt={`A person using a ${article.id.replace('-', ' ')} to watch IPTV`}
                               data-ai-hint={deviceImage.imageHint}
                               fill
                               className="object-cover rounded-lg"

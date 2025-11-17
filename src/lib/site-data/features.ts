@@ -5,11 +5,13 @@ export const features = [
     name: "Instant Activation",
     description: "Get your IPTV service subscription up and running in minutes. No waiting, just entertainment.",
     icon: Zap,
+    href: "/pricing"
   },
   {
     name: "All Devices",
     description: "Our IPTV service is compatible with all your favorite devices, from smart TVs to mobile phones.",
     icon: Tv,
+    href: "/devices"
   },
   {
     name: "Zero Effort",
@@ -25,6 +27,7 @@ export const features = [
     name: "Fast Install",
     description: "Quick and easy installation guides for our IPTV service on every device to get you started.",
     icon: ShieldCheck,
+    href: "/guides/fire-tv"
   },
   {
     name: "Super Quality",

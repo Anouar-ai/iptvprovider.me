@@ -54,25 +54,59 @@ export const howToArticles = [
     },
     {
         id: "fire-tv",
-        title: "How to Install IPTV on Amazon Fire TV Stick",
-        description: "A step-by-step guide to setting up IPTV on your Fire TV Stick and start streaming your favorite channels in minutes.",
-        keywords: ["IPTV on Fire TV", "Firestick IPTV setup", "Downloader app Fire TV", "IPTV Smarters Firestick"],
+        title: "How to Install IPTV on Fire TV Stick (2024 Guide)",
+        description: "The Amazon Fire TV Stick is one of the most popular devices for streaming IPTV. This comprehensive 2024 guide will walk you through the entire process of setting up IPTV on your Firestick, from enabling developer options to logging in and start watching. Get the best IPTV for Firestick experience with our easy-to-follow instructions.",
+        keywords: ["IPTV on Fire TV", "Firestick IPTV setup", "Downloader app Fire TV", "IPTV Smarters Firestick", "best IPTV for Firestick"],
         steps: [
             {
-                title: "Enable Apps from Unknown Sources",
-                description: "From the Fire TV home screen, go to Settings > My Fire TV > Developer Options. Turn on 'Apps from Unknown Sources'."
+                title: "Step 1: Enable Apps from Unknown Sources",
+                description: "Before you can install third-party apps, you need to enable developer options. From the Fire TV home screen, navigate to Settings (the gear icon) > My Fire TV > About. Click on your Fire TV Stick name about 7 times until you see the message 'You are now a developer'. Go back one screen and you will see the new 'Developer Options' menu. Open it and turn on 'Apps from Unknown Sources'."
             },
             {
-                title: "Install the Downloader App",
-                description: "Go back to the home screen, search for the 'Downloader' app, and install it."
+                title: "Step 2: Install the Downloader App",
+                description: "The Downloader app is essential for installing apps not available on the Amazon Appstore. Go back to the Fire TV home screen, select the 'Find' option, and search for 'Downloader'. Select the orange Downloader app from the results and click 'Download' or 'Get' to install it on your device."
             },
             {
-                title: "Download IPTV Smarters APK",
-                description: "Open the Downloader app and enter the direct APK URL for IPTV Smarters Pro in the URL field. This can be found on the official IPTV Smarters website."
+                title: "Step 3: Download Your IPTV Player (IPTV Smarters)",
+                description: "Open the Downloader app. You will see a URL field. This is where you will enter the direct download link (APK URL) for your chosen IPTV player. For IPTV Smarters Pro, a popular choice for Firestick IPTV setup, you can find the official download code on their website. Enter the code or URL and click 'Go'. The APK file will begin to download."
             },
             {
-                title: "Install and Log In",
-                description: "Once the download is complete, install the IPTV Smarters app. Open it and log in using the 'Xtream Codes API' with the credentials from your subscription email."
+                title: "Step 4: Install the IPTV App and Log In",
+                description: "Once the download is complete, Downloader will automatically prompt you to install the application. Click 'Install'. After installation, you can delete the downloaded APK file to save space. Open your new IPTV app. Most will ask you to choose a login method. Select 'Login with Xtream Codes API' for the simplest setup."
+            },
+            {
+                title: "Step 5: Enter Your IPTV Service Credentials",
+                description: "You're almost there! On the login screen, enter the credentials you received in your IPTV subscription email. This includes a Playlist Name (you can call it anything), your Username, your Password, and the Server/Portal URL. Double-check for typos and then click 'Add User'. The app will begin loading channels and VOD content."
+            }
+        ],
+        extraSections: [
+            {
+                id: "why-vpn",
+                title: "Why a VPN is Recommended for IPTV on Fire TV",
+                content: "While not mandatory, using a VPN with your IPTV service on Fire TV is highly recommended. A VPN encrypts your internet traffic, preventing your Internet Service Provider (ISP) from throttling your connection speeds, which can cause buffering. It also unlocks geo-restricted content and protects your privacy. See our <a href='/pricing' class='text-primary hover:underline'>IPTV plans</a> which work perfectly with popular VPN services."
+            },
+            {
+                id: "conclusion",
+                title: "Conclusion: Enjoy Limitless Entertainment",
+                content: "Congratulations! You have successfully completed your Firestick IPTV setup. You now have access to thousands of channels, movies, and TV shows right on your Amazon device. For any issues, refer to our <a href='/faq' class='text-primary hover:underline'>main FAQ page</a> or contact our 24/7 support. Happy streaming!"
+            }
+        ],
+        faqs: [
+            {
+                question: "Is IPTV legal to use on a Fire TV Stick?",
+                answer: "Yes, IPTV is legal on Firestick as long as you use a legitimate provider that has the proper licenses for the content it distributes. Our service is a 100% legal and verified IPTV provider."
+            },
+            {
+                question: "What is the best IPTV app for Firestick?",
+                answer: "IPTV Smarters Pro and TiviMate are widely considered the two best IPTV apps for Fire TV Stick due to their user-friendly interfaces, EPG support, and stability. We provide setup details for both."
+            },
+            {
+                question: "Can I record shows with IPTV on Fire TV?",
+                answer: "Yes, many modern IPTV apps, including TiviMate, offer a recording feature. You may need to connect an external storage device to your Fire TV Stick to save your recordings."
+            },
+            {
+                question: "Why are some channels not working on my Firestick?",
+                answer: "This can occasionally happen due to temporary server maintenance or source issues. First, try restarting your Fire TV Stick and router. If the problem persists, check our service status page or contact support. Using a VPN can also sometimes resolve channel playback issues."
             }
         ]
     },
