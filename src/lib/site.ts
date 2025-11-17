@@ -8,6 +8,7 @@ export const navLinks = [
   { name: "Features", href: "/#features" },
   { name: "Pricing", href: "/pricing" },
   { name: "Devices", href: "/devices" },
+  { name: "FAQ", href: "/faq" },
 ];
 
 export const features = [
@@ -44,17 +45,17 @@ export const features = [
 ];
 
 export const devices: { name: string; icon: string; href: string; }[] = [
-    { name: 'iPhone', icon: 'SiIphone', href: '/guides/iphone' },
-    { name: 'iPad', icon: 'SiIpad', href: '/guides/ipad' },
-    { name: 'macOS', icon: 'SiMacos', href: '/guides/macos' },
-    { name: 'Android', icon: 'SiAndroid', href: '/guides/android' },
-    { name: 'Windows', icon: 'SiWindows', href: '/guides/windows' },
-    { name: 'Roku', icon: 'SiRoku', href: '/guides/roku' },
-    { name: 'Samsung TV', icon: 'SiSamsung', href: '/guides/smart-tv' },
-    { name: 'LG TV', icon: 'SiLg', href: '/guides/smart-tv' },
-    { name: 'Fire TV', icon: 'SiAmazonfiretv', href: '/guides/fire-tv' },
-    { name: 'MAG', icon: 'Tv', href: '/guides/mag' },
-    { name: 'Apple TV', icon: 'SiAppletv', href: '/guides/apple-tv' }
+    { name: 'iPhone', icon: 'SiIphone', href: '#' },
+    { name: 'iPad', icon: 'SiIpad', href: '#' },
+    { name: 'macOS', icon: 'SiMacos', href: '#' },
+    { name: 'Android', icon: 'SiAndroid', href: '#' },
+    { name: 'Windows', icon: 'SiWindows', href: '#' },
+    { name: 'Roku', icon: 'SiRoku', href: '#' },
+    { name: 'Samsung TV', icon: 'SiSamsung', href: '#' },
+    { name: 'LG TV', icon: 'SiLg', href: '#' },
+    { name: 'Fire TV', icon: 'SiAmazonfiretv', href: '#' },
+    { name: 'MAG', icon: 'Tv', href: '#' },
+    { name: 'Apple TV', icon: 'SiAppletv', href: '#' }
 ];
 
 export const plans = [
@@ -73,7 +74,7 @@ export const plans = [
       "24/7 Support",
     ],
     isPopular: false,
-    url: "/pricing/1-month",
+    url: "/iptv-subscription/1-month",
   },
   {
     id: "3-months",
@@ -91,7 +92,7 @@ export const plans = [
       "3 Connections",
     ],
     isPopular: false,
-    url: "/pricing/3-months",
+    url: "/iptv-subscription/3-months",
   },
   {
     id: "6-months",
@@ -110,7 +111,7 @@ export const plans = [
       "PPV Events",
     ],
     isPopular: true,
-    url: "/pricing/6-months",
+    url: "/iptv-subscription/6-months",
   },
   {
     id: "12-months",
@@ -130,7 +131,7 @@ export const plans = [
       "Premium Support",
     ],
     isPopular: false,
-    url: "/pricing/12-months",
+    url: "/iptv-subscription/12-months",
   },
 ];
 
@@ -221,10 +222,10 @@ export const footerLinks = {
         { name: "Affiliate Program", href: "#" },
     ],
     supportedLinks: [
-        { name: "Android App", href: "/guides/android" },
-        { name: "iOS App", href: "/guides/iphone" },
-        { name: "Windows App", href: "/guides/windows" },
-        { name: "macOS App", href: "/guides/macos" },
+        { name: "Android App", href: "#" },
+        { name: "iOS App", href: "#" },
+        { name: "Windows App", href: "#" },
+        { name: "macOS App", href: "#" },
     ],
     contact: {
         address: "123 Digital Street, Lizard City, LC 12345",
