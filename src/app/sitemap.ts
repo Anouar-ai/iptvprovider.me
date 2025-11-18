@@ -2,23 +2,31 @@
 import { MetadataRoute } from 'next'
 import { allCities } from '@/lib/cities';
 import { howToArticles } from '@/lib/how-to';
+import { plans } from '@/lib/site-data/pricing';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://yoursite.com';
   const lastModified = new Date();
   
-  const cityPages = allCities.map((city) => ({
+  const cityPages: MetadataRoute.Sitemap = allCities.map((city) => ({
     url: `${baseUrl}/iptv-in/${city.id}`,
     lastModified,
-    changeFrequency: 'weekly' as 'weekly',
+    changeFrequency: 'weekly',
     priority: 0.8,
   }));
 
-  const guidePages = howToArticles.map((article) => ({
+  const guidePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/guides/${article.id}`,
     lastModified,
-    changeFrequency: 'monthly' as 'monthly',
+    changeFrequency: 'monthly',
     priority: 0.7,
+  }));
+
+  const subscriptionPages: MetadataRoute.Sitemap = plans.map((plan) => ({
+    url: `${baseUrl}${plan.url}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: 0.9,
   }));
 
 
@@ -30,35 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/iptv-subscription`,
+      url: `${baseUrl}/pricing`,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/iptv-subscription/1-month`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/iptv-subscription/3-months`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/iptv-subscription/6-months`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/iptv-subscription/12-months`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
+    ...subscriptionPages,
     {
       url: `${baseUrl}/devices`,
       lastModified,
