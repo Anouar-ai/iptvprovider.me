@@ -21,8 +21,34 @@ type Props = {
 };
 
 function StructuredData({ article }: { article: Article }) {
-    const { id, title, description, steps, faqs, image, primaryKeyword } = article;
+    const { id, title, description, steps, faqs, image, primaryKeyword, datePublished, dateModified } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
+
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description: description,
+        image: image?.imageUrl,
+        datePublished: datePublished,
+        dateModified: dateModified,
+        author: {
+            '@type': 'Organization',
+            name: 'DigitalLizard IPTV',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'DigitalLizard IPTV',
+            logo: {
+                '@type': 'ImageObject',
+                url: `${baseUrl}/logo.png`,
+            },
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${baseUrl}/guides/${id}`,
+        },
+    };
 
     const howToSchema = {
         "@context": "https://schema.org",
@@ -78,6 +104,10 @@ function StructuredData({ article }: { article: Article }) {
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}

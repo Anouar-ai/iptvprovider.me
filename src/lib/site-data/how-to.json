@@ -6,6 +6,8 @@
         "primaryKeyword": "IPTV on iOS",
         "description": "A complete guide to installing and configuring IPTV on your iPhone or iPad using the IPTV Smarters app.",
         "keywords": ["IPTV on iPhone", "IPTV on iPad", "iOS IPTV setup", "IPTV Smarters iOS"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Download IPTV Smarters from App Store",
@@ -35,6 +37,8 @@
         "primaryKeyword": "IPTV on Android",
         "description": "Follow this guide to set up IPTV on your Android phone, tablet, or Android TV box using the IPTV Smarters Pro app.",
         "keywords": ["IPTV on Android", "Android IPTV setup", "IPTV Smarters Android", "Android TV IPTV"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Download IPTV Smarters Pro",
@@ -60,6 +64,8 @@
         "primaryKeyword": "IPTV on Fire TV",
         "description": "The Amazon Fire TV Stick is one of the most popular devices for streaming IPTV. This comprehensive 2024 guide will walk you through the entire process of setting up IPTV on your Firestick, from enabling developer options to logging in and start watching. Get the best IPTV for Firestick experience with our easy-to-follow instructions.",
         "keywords": ["IPTV on Fire TV", "Firestick IPTV setup", "Downloader app Fire TV", "IPTV Smarters Firestick", "best IPTV for Firestick"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Step 1: Enable Apps from Unknown Sources",
@@ -119,6 +125,8 @@
         "primaryKeyword": "IPTV on Windows",
         "description": "Learn how to watch IPTV on your Windows computer using the official IPTV Smarters Pro application.",
         "keywords": ["IPTV on Windows", "Windows IPTV player", "IPTV Smarters for PC"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Download the Official App",
@@ -144,6 +152,8 @@
         "primaryKeyword": "IPTV on macOS",
         "description": "A simple guide to installing and using IPTV on your MacBook or iMac with the IPTV Smarters Pro app.",
         "keywords": ["IPTV on macOS", "MacBook IPTV", "IPTV Smarters for Mac"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Download the App from App Store",
@@ -165,6 +175,8 @@
         "primaryKeyword": "IPTV on Samsung TV",
         "description": "This guide explains how to install and configure IPTV on your Samsung Smart TV using the 'IPTV Smarters Player' app.",
         "keywords": ["IPTV on Samsung TV", "Samsung Smart TV IPTV", "Tizen IPTV app"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Go to the App Store",
@@ -190,6 +202,8 @@
         "primaryKeyword": "IPTV on LG TV",
         "description": "Learn to install and set up IPTV on your LG Smart TV using the 'IPTV Smarters Pro' app from the LG Content Store.",
         "keywords": ["IPTV on LG TV", "LG Smart TV IPTV", "webOS IPTV app"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Open the LG Content Store",
@@ -215,6 +229,8 @@
         "primaryKeyword": "IPTV on Apple TV",
         "description": "This guide shows you how to install and configure IPTV on your Apple TV using a compatible app like IPTV Smarters.",
         "keywords": ["IPTV on Apple TV", "Apple TV IPTV setup", "tvOS IPTV"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Open the App Store",
@@ -240,6 +256,8 @@
         "primaryKeyword": "IPTV on Roku",
         "description": "Roku devices don't directly support IPTV apps, but you can still watch by screen mirroring from another device. This guide explains how.",
         "keywords": ["IPTV on Roku", "Roku screen mirroring", "cast IPTV to Roku"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Enable Screen Mirroring on Roku",
@@ -265,6 +283,8 @@
         "primaryKeyword": "IPTV on MAG Box",
         "description": "Follow these steps to configure your MAG device with our IPTV service using the portal URL.",
         "keywords": ["IPTV on MAG", "MAG box setup", "IPTV portal URL"],
+        "datePublished": "2024-07-20T10:00:00Z",
+        "dateModified": "2024-07-20T10:00:00Z",
         "steps": [
             {
                 "title": "Go to Settings",
