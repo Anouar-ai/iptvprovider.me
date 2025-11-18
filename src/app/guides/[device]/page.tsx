@@ -10,18 +10,17 @@ import { Check } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import type { ImagePlaceholder } from "@/lib/placeholder-images";
 import { getRelatedPosts } from "@/lib/linking";
 import InternalLinks from "@/components/shared/InternalLinks";
+import type { Post } from "@/lib/linking";
 
-type Article = (typeof howToArticles)[0];
 
 type Props = {
   params: { device: string; };
 };
 
-function StructuredData({ article }: { article: Article }) {
-    const { id, title, description, steps, faqs, image, primaryKeyword, datePublished, dateModified } = article;
+function StructuredData({ article }: { article: Post }) {
+    const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
 
     const articleSchema = {
@@ -88,7 +87,7 @@ function StructuredData({ article }: { article: Article }) {
         "@context": "https://schema.org",
         "@type": "Product",
         name: "IPTV Service Subscription",
-        description: `Our premium IPTV service is fully compatible with ${primaryKeyword}. Follow our guide to get set up.`,
+        description: `Our premium IPTV service is fully compatible with ${article.primaryKeyword}. Follow our guide to get set up.`,
         brand: {
             "@type": "Brand",
             name: "IPTV Service"
@@ -195,7 +194,7 @@ export default async function HowToPage({ params }: { params: { device: string }
     keyword: post.title,
   }));
 
-  const { id, title, description, steps, extraSections, faqs, image, primaryKeyword } = article;
+  const { title, description, steps, extraSections, faqs, image, primaryKeyword } = article;
 
   return (
     <>
@@ -224,9 +223,9 @@ export default async function HowToPage({ params }: { params: { device: string }
                 </li>
               </ol>
             </nav>
-          <article>
+          <article itemScope itemType="https://schema.org/Article">
             <header className="mb-12 text-center">
-              <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 itemProp="headline" className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                 {title}
               </h1>
               <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -236,7 +235,7 @@ export default async function HowToPage({ params }: { params: { device: string }
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
-                  <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <div itemProp="articleBody" className="prose prose-lg dark:prose-invert max-w-none">
                       <h2 className="font-headline text-3xl">Step-by-Step Installation Guide for {primaryKeyword}</h2>
                       <p>Follow these simple steps to get our IPTV service running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
                       <div className="space-y-8 mt-8">
@@ -339,3 +338,5 @@ export async function generateStaticParams() {
     device: article.id,
   }));
 }
+
+    
