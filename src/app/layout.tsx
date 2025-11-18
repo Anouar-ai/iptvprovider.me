@@ -78,7 +78,12 @@ export default function RootLayout({
       "@type": "ContactPoint",
       "telephone": "+1-800-555-0199",
       "contactType": "Customer Service"
-    }
+    },
+    "sameAs": [
+      "https://twitter.com/yourcompany",
+      "https://www.facebook.com/yourcompany",
+      "https://www.instagram.com/yourcompany"
+    ]
   };
 
   const websiteSchema = {
