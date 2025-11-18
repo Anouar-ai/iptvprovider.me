@@ -235,6 +235,38 @@
       "description": "A placeholder image for the MAG guide.",
       "width": 600,
       "height": 400
+    },
+    {
+      "id": "testimonial-1",
+      "imageUrl": "https://www.demotemplates.online/snowpulse/wp-content/uploads/2023/12/1.webp",
+      "imageHint": "testimonial",
+      "description": "Testimonial Image 1",
+      "width": 280,
+      "height": 280
+    },
+    {
+      "id": "testimonial-2",
+      "imageUrl": "https://www.demotemplates.online/snowpulse/wp-content/uploads/2023/12/2.webp",
+      "imageHint": "testimonial",
+      "description": "Testimonial Image 2",
+      "width": 280,
+      "height": 280
+    },
+    {
+      "id": "testimonial-3",
+      "imageUrl": "https://www.demotemplates.online/snowpulse/wp-content/uploads/2023/12/3.webp",
+      "imageHint": "testimonial",
+      "description": "Testimonial Image 3",
+      "width": 280,
+      "height": 280
+    },
+    {
+      "id": "testimonial-4",
+      "imageUrl": "https://www.demotemplates.online/snowpulse/wp-content/uploads/2023/12/4.webp",
+      "imageHint": "testimonial",
+      "description": "Testimonial Image 4",
+      "width": 280,
+      "height": 280
     }
   ]
 }
