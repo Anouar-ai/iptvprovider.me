@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -230,6 +231,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                                     alt="IPTV Service Subscription Box"
                                     data-ai-hint={productImage.imageHint}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="object-cover"
                                 />
                             </div>

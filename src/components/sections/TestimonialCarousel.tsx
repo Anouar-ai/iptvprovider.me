@@ -1,3 +1,4 @@
+
 "use client";
 
 import Swiper from 'react-id-swiper';
@@ -41,6 +42,7 @@ export function TestimonialCarousel() {
             alt={image.description}
             width={image.width || 280}
             height={image.height || 280}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="rounded-lg object-cover"
             data-ai-hint={image.imageHint}
           />

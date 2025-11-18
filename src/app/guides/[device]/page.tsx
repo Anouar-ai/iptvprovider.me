@@ -1,4 +1,5 @@
 
+
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -242,6 +243,7 @@ export default function HowToPage({ params }: { params: { device: string }}) {
                               alt={`A person using a ${deviceName} to watch IPTV`}
                               data-ai-hint={image.imageHint}
                               fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               className="object-cover rounded-lg"
                           />
                           </div>
