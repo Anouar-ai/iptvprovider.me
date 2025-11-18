@@ -56,5 +56,8 @@ export async function getRelatedPosts(currentId: string, minLinks = 3) {
     .sort((a, b) => b.relevanceScore - a.relevanceScore)
     .slice(0, minLinks);
   
-  return related;
+  return related.map(post => ({
+      ...post,
+      href: `/devices/${post.id}`
+  }));
 }
