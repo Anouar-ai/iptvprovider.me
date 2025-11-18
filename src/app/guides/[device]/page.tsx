@@ -21,7 +21,7 @@ type Props = {
 
 function StructuredData({ article }: { article: Post }) {
     const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
 
     const articleSchema = {
         '@context': 'https://schema.org',

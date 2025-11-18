@@ -28,13 +28,13 @@ export default function CheckoutPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://yoursite.com/"
+                "item": "https://digitallizard-iptv.vercel.app/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Checkout",
-                "item": "https://yoursite.com/checkout"
+                "item": "https://digitallizard-iptv.vercel.app/checkout"
             }
         ]
     };

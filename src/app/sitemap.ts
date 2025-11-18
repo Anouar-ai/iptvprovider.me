@@ -5,7 +5,7 @@ import { howToArticles } from '@/lib/how-to';
 import { plans } from '@/lib/site-data/pricing';
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yoursite.com';
+  const baseUrl = 'https://digitallizard-iptv.vercel.app';
   const lastModified = new Date();
   
   const cityPages: MetadataRoute.Sitemap = allCities.map((city) => ({

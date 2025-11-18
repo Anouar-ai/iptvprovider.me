@@ -70,7 +70,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
   const planId = params.duration;
   const plan = plans.find(p => p.id === planId);
   const productImage = PlaceHolderImages.find(img => img.id === 'subscription-og');
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
 
 
   if (!plan) {
@@ -94,7 +94,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2025-12-31",
-      "url": `https://yoursite.com/iptv-subscription/${plan.id}`,
+      "url": `https://digitallizard-iptv.vercel.app/iptv-subscription/${plan.id}`,
       "seller": {
         "@type": "Organization",
         "name": "IPTV Service"

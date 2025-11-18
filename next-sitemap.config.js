@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://yoursite.com',
+    siteUrl: process.env.SITE_URL || 'https://digitallizard-iptv.vercel.app',
     generateRobotsTxt: true,
     robotsTxtOptions: {
         policies: [
@@ -9,7 +9,7 @@ module.exports = {
             // { userAgent: '*', disallow: '/admin' },
         ],
         additionalSitemaps: [
-            `${process.env.SITE_URL || 'https://yoursite.com'}/sitemap.xml`,
+            `${process.env.SITE_URL || 'https://digitallizard-iptv.vercel.app'}/sitemap.xml`,
         ],
         // To add a crawl-delay, uncomment the following line:
         // crawlDelay: 5, 

@@ -51,7 +51,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
   }
 
   const { name, state, country, population, zipCodes, nearbyCities, faqs, id } = cityData;
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -68,7 +68,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
       "@type": "City",
       "name": name,
     },
-    "url": `https://yoursite.com/iptv-in/${id}`,
+    "url": `https://digitallizard-iptv.vercel.app/iptv-in/${id}`,
     "telephone": "+1-800-555-0199",
     "priceRange": "$7.50 - $16.00"
   };
