@@ -21,7 +21,7 @@ type Props = {
 };
 
 function StructuredData({ article }: { article: Article }) {
-    const { id, title, description, steps, faqs, image } = article;
+    const { id, title, description, steps, faqs, image, primaryKeyword } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com';
 
     const howToSchema = {
@@ -62,7 +62,7 @@ function StructuredData({ article }: { article: Article }) {
         "@context": "https://schema.org",
         "@type": "Product",
         name: "IPTV Service Subscription",
-        description: `Our premium IPTV service is fully compatible with ${id.replace('-', ' ')} devices. Follow our guide to get set up.`,
+        description: `Our premium IPTV service is fully compatible with ${primaryKeyword}. Follow our guide to get set up.`,
         brand: {
             "@type": "Brand",
             name: "IPTV Service"
@@ -136,8 +136,7 @@ export default async function HowToPage({ params }: { params: { device: string }
     keyword: post.title,
   }));
 
-  const { id, title, description, steps, extraSections, faqs, image } = article;
-  const deviceName = id.replace('-', ' ');
+  const { id, title, description, steps, extraSections, faqs, image, primaryKeyword } = article;
 
   return (
     <>
@@ -179,8 +178,8 @@ export default async function HowToPage({ params }: { params: { device: string }
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                   <div className="prose prose-lg dark:prose-invert max-w-none">
-                      <h2 className="font-headline text-3xl">Step-by-Step Installation Guide</h2>
-                      <p>Follow these simple steps to get our IPTV service running on your {deviceName}. The entire process should only take a few minutes.</p>
+                      <h2 className="font-headline text-3xl">Step-by-Step Installation Guide for {primaryKeyword}</h2>
+                      <p>Follow these simple steps to get our IPTV service running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
                       <div className="space-y-8 mt-8">
                       {steps.map((step, index) => (
                           <div key={index} id={`step-${index + 1}`} className="flex gap-6">
@@ -204,7 +203,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                       ))}
 
                       <div className="my-12 rounded-lg bg-primary/10 p-6 text-center">
-                        <h3 className="font-headline text-2xl font-bold">Ready to Start Watching on Your {deviceName.charAt(0).toUpperCase() + deviceName.slice(1)}?</h3>
+                        <h3 className="font-headline text-2xl font-bold">Ready to Start Watching on Your {primaryKeyword}?</h3>
                         <p className="mt-2 text-muted-foreground">Get your premium IPTV subscription today and unlock thousands of channels!</p>
                         <Button asChild className="mt-4">
                             <Link href="/pricing">Get Your Subscription Now</Link>
@@ -235,7 +234,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                       </CardHeader>
                       <CardContent>
                           <ul className="space-y-3">
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A compatible {deviceName}</li>
+                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A compatible {primaryKeyword}</li>
                               <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A stable internet connection</li>
                               <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> An active IPTV subscription</li>
                               <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Your M3U link or credentials</li>
@@ -249,7 +248,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                           <div className="relative h-64 w-full">
                           <Image
                               src={image.imageUrl}
-                              alt={`A person using a ${deviceName} to watch IPTV`}
+                              alt={`${primaryKeyword} - ${title}`}
                               data-ai-hint={image.imageHint}
                               fill
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
