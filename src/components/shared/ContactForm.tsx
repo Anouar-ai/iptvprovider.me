@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useActionState, useEffect } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useEffect } from 'react';
+import { useFormState, useFormStatus } from 'react-dom';
 import { submitContactForm } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,7 +22,7 @@ function SubmitButton() {
 export function ContactForm() {
   const { toast } = useToast();
   const initialState = { message: null, errors: null };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  const [state, dispatch] = useFormState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.message && !state.errors) {
@@ -42,16 +42,16 @@ export function ContactForm() {
   return (
     <form action={dispatch} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" placeholder="Your Name" />
+        <Label htmlFor="name-form">Name</Label>
+        <Input id="name-form" name="name" placeholder="Your Name" />
         {state.errors?.name && (
           <p className="text-sm text-destructive">{state.errors.name[0]}</p>
         )}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email-form">Email</Label>
         <Input
-          id="email"
+          id="email-form"
           name="email"
           type="email"
           placeholder="your@email.com"
@@ -61,8 +61,8 @@ export function ContactForm() {
         )}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea id="message" name="message" placeholder="How can we help you?" />
+        <Label htmlFor="message-form">Message</Label>
+        <Textarea id="message-form" name="message" placeholder="How can we help you?" />
         {state.errors?.message && (
           <p className="text-sm text-destructive">{state.errors.message[0]}</p>
         )}

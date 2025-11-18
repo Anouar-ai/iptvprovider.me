@@ -1,7 +1,8 @@
+
 "use client";
 
-import { useEffect, useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useEffect } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +32,7 @@ function SubmitButton() {
 export function ContactSheet() {
   const { toast } = useToast();
   const initialState = { message: null, errors: null };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  const [state, dispatch] = useFormState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.message && !state.errors) {
@@ -67,18 +68,18 @@ export function ContactSheet() {
         </SheetHeader>
         <form action={dispatch} className="mt-8 space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" placeholder="Your Name" />
+            <Label htmlFor="name-sheet">Name</Label>
+            <Input id="name-sheet" name="name" placeholder="Your Name" />
             {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" placeholder="your@email.com" />
+            <Label htmlFor="email-sheet">Email</Label>
+            <Input id="email-sheet" name="email" type="email" placeholder="your@email.com" />
             {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" placeholder="How can we help you?" />
+            <Label htmlFor="message-sheet">Message</Label>
+            <Textarea id="message-sheet" name="message" placeholder="How can we help you?" />
             {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
           </div>
           <SubmitButton />
