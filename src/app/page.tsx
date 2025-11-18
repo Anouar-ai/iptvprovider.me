@@ -5,7 +5,6 @@ import { Blog } from "@/components/sections/Blog";
 import { Brands } from "@/components/sections/Brands";
 import { Pricing } from "@/components/sections/Pricing";
 
-const Features = dynamic(() => import("@/components/sections/Features").then((m) => m.Features));
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
 const CTA = dynamic(() => import("@/components/sections/CTA").then((m) => m.CTA));
 const FAQ = dynamic(() => import("@/components/sections/FAQ").then((m) => m.FAQ));
@@ -39,7 +38,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <Hero />
-      <Features />
       <Brands />
       <Devices />
       <Pricing />
