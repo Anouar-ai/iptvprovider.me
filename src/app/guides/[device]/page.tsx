@@ -101,12 +101,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const { title, description, keywords, image } = article;
+
   return {
-    title: `${article.title} | IPTV Service`,
-    description: article.description,
-    keywords: article.keywords,
+    title,
+    description,
+    keywords,
+    openGraph: {
+      title: title,
+      description: description,
+      type: 'article',
+      images: image ? [{ url: image.imageUrl }] : [],
+    },
     alternates: {
-      canonical: `/guides/${article.id}`,
+      canonical: `/guides/${params.device}`,
     },
   };
 }
