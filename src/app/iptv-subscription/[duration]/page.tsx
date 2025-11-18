@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           alt: `Offer for ${plan.name} IPTV Service`,
         },
       ] : [],
-      type: 'product',
+      type: 'website',
     },
      twitter: {
       card: "summary_large_image",
