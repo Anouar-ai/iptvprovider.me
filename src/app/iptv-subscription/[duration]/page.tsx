@@ -338,3 +338,5 @@ export async function generateStaticParams() {
       duration: plan.id,
     }));
 }
+
+    
