@@ -27,7 +27,7 @@ export const features = [
     name: "Fast Install",
     description: "Quick and easy installation guides for our IPTV service on every device to get you started.",
     icon: ShieldCheck,
-    href: "/guides/fire-tv"
+    href: "/devices/fire-tv"
   },
   {
     name: "Super Quality",
