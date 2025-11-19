@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "IPTV Installation Guides | IPTV Service",
     description: "Find easy-to-follow setup and installation guides for your IPTV service on any device. Get started with our step-by-step tutorials.",
     alternates: {
-        canonical: "/devices",
+        canonical: "/guides",
     }
 };
 
@@ -30,8 +30,8 @@ export default function GuidesPage() {
         {
             "@type": "ListItem",
             "position": 2,
-            "name": "Devices",
-            "item": "https://digitallizard-iptv.vercel.app/devices"
+            "name": "Guides",
+            "item": "https://digitallizard-iptv.vercel.app/guides"
         }
     ]
   };
@@ -54,7 +54,7 @@ export default function GuidesPage() {
               </li>
               <li>/</li>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <span itemProp="name">Devices</span>
+                  <span itemProp="name">Guides</span>
                   <meta itemProp="position" content="2" />
               </li>
             </ol>

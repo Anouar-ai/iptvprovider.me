@@ -45,7 +45,7 @@ function StructuredData({ article }: { article: Post }) {
         },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `${baseUrl}/devices/${id}`,
+            '@id': `${baseUrl}/guides/${id}`,
         },
     };
 
@@ -64,7 +64,7 @@ function StructuredData({ article }: { article: Post }) {
             "@type": "HowToStep",
             name: step.title,
             text: step.description,
-            url: `${baseUrl}/devices/${id}#step-${index + 1}`,
+            url: `${baseUrl}/guides/${id}#step-${index + 1}`,
             position: index + 1,
         })),
         totalTime: "PT5M",
@@ -114,14 +114,14 @@ function StructuredData({ article }: { article: Post }) {
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Devices",
-                "item": `${baseUrl}/devices`
+                "name": "Guides",
+                "item": `${baseUrl}/guides`
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": title,
-                "item": `${baseUrl}/devices/${id}`
+                "item": `${baseUrl}/guides/${id}`
             }
         ]
     };
@@ -175,7 +175,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: image ? [{ url: image.imageUrl }] : [],
     },
     alternates: {
-      canonical: `/devices/${params.device}`,
+      canonical: `/guides/${params.device}`,
     },
   };
 }
@@ -189,7 +189,7 @@ export default async function HowToPage({ params }: { params: { device: string }
   
   const relatedPosts = await getRelatedPosts(params.device);
   const relatedLinks = relatedPosts.map(post => ({
-    href: `/devices/${post.id}`,
+    href: `/guides/${post.id}`,
     title: post.title,
     keyword: post.title,
   }));
@@ -211,8 +211,8 @@ export default async function HowToPage({ params }: { params: { device: string }
                 </li>
                 <li>/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <Link href="/devices" itemProp="item" className="hover:text-primary">
-                    <span itemProp="name">Devices</span>
+                  <Link href="/guides" itemProp="item" className="hover:text-primary">
+                    <span itemProp="name">Guides</span>
                   </Link>
                   <meta itemProp="position" content="2" />
                 </li>
@@ -321,7 +321,7 @@ export default async function HowToPage({ params }: { params: { device: string }
             </div>
 
             <div className="text-center mt-16">
-              <Link href="/devices" className="text-primary font-semibold hover:underline">
+              <Link href="/guides" className="text-primary font-semibold hover:underline">
                   &larr; Back to All Guides
               </Link>
             </div>

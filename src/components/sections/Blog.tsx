@@ -66,7 +66,7 @@ export function Blog() {
 
                 <div className="mt-12 text-center">
                     <Button asChild>
-                        <Link href="/devices">View All Guides</Link>
+                        <Link href="/guides">View All Guides</Link>
                     </Button>
                 </div>
             </Container>

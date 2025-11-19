@@ -1,3 +1,4 @@
+
 import { Tv, Zap, Server, Rabbit, Star, ShieldCheck } from "lucide-react";
 
 export const features = [
@@ -11,7 +12,7 @@ export const features = [
     name: "All Devices",
     description: "Our IPTV service is compatible with all your favorite devices, from smart TVs to mobile phones.",
     icon: Tv,
-    href: "/devices"
+    href: "/guides"
   },
   {
     name: "Zero Effort",
@@ -27,7 +28,7 @@ export const features = [
     name: "Fast Install",
     description: "Quick and easy installation guides for our IPTV service on every device to get you started.",
     icon: ShieldCheck,
-    href: "/devices/fire-tv"
+    href: "/guides/fire-tv"
   },
   {
     name: "Super Quality",

@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const guidePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
-    url: `${baseUrl}/devices/${article.id}`,
+    url: `${baseUrl}/guides/${article.id}`,
     lastModified,
     changeFrequency: 'monthly',
     priority: 0.7,
@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...subscriptionPages,
     {
-      url: `${baseUrl}/devices`,
+      url: `${baseUrl}/guides`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,

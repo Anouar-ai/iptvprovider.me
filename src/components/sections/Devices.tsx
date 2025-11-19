@@ -24,7 +24,7 @@ export function Devices() {
         </Reveal>
          <div className="mt-12 text-center">
             <Button asChild variant="outline">
-                <Link href="/devices">View All Setup Guides</Link>
+                <Link href="/guides">View All Setup Guides</Link>
             </Button>
         </div>
       </Container>
