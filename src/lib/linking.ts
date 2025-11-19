@@ -1,5 +1,6 @@
 
 import { howToArticles } from '@/lib/how-to';
+import { findSemanticallySimilarContent } from './vector-related-content';
 
 export type Post = (typeof howToArticles)[0];
 
@@ -9,34 +10,10 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 /**
- * Calculates a relevance score between two posts based on shared keywords.
- * @param currentPost The post to compare from.
- * @param otherPost The post to compare to.
- * @returns A numerical relevance score.
- */
-function calculateRelevance(currentPost: Post, otherPost: Post): number {
-  if (!currentPost.keywords || !otherPost.keywords) {
-    return 0;
-  }
-
-  const currentKeywords = new Set(currentPost.keywords);
-  const otherKeywords = new Set(otherPost.keywords);
-
-  let score = 0;
-  for (const keyword of currentKeywords) {
-    if (otherKeywords.has(keyword)) {
-      score++;
-    }
-  }
-
-  return score;
-}
-
-/**
- * Gets a list of related posts for a given slug, based on relevance.
+ * Gets a list of related posts for a given slug, based on semantic similarity.
  * @param currentId The slug/ID of the current post.
  * @param minLinks The maximum number of related links to return.
- * @returns An array of related posts.
+ * @returns An array of semantically related posts.
  */
 export async function getRelatedPosts(currentId: string, minLinks = 3) {
   const allPosts = await getAllPosts();
@@ -46,15 +23,21 @@ export async function getRelatedPosts(currentId: string, minLinks = 3) {
     return [];
   }
   
-  const related = allPosts
-    .filter(post => post.id !== currentId)
-    .map(post => ({
-      ...post,
-      relevanceScore: calculateRelevance(currentPost, post)
-    }))
-    .filter(post => post.relevanceScore > 0) // Only include posts with some relevance
-    .sort((a, b) => b.relevanceScore - a.relevanceScore)
-    .slice(0, minLinks);
+  // Create a single text block for the current post to generate its embedding for comparison
+  const currentContentText = [
+    currentPost.title,
+    currentPost.description,
+    ...currentPost.steps.map(step => `${step.title}: ${step.description}`),
+    ...(currentPost.faqs ? currentPost.faqs.map(faq => `${faq.question} ${faq.answer}`) : [])
+  ].join('\n\n');
+
+  // Find semantically similar content
+  const related = await findSemanticallySimilarContent(
+    currentContentText,
+    allPosts,
+    currentId,
+    minLinks
+  );
   
   return related.map(post => ({
       ...post,
