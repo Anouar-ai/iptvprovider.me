@@ -1,5 +1,6 @@
 
-import { generateEmbedding, cosineSimilarity } from './vector-seo';
+import { generateEmbedding } from './vector-seo';
+import { cosineSimilarity } from './utils';
 
 interface ContentWithEmbedding {
   id: string;
