@@ -28,7 +28,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const planId = params.duration;
   const plan = plans.find(p => p.id === planId);
-  const ogImage = PlaceHolderImages.find(img => img.id === 'subscription-og');
+  const ogImage = PlaceHolderImages.find(img => img.id === 'subscription-offering-og');
 
   if (!plan) {
     return {
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function PlanPage({ params }: { params: { duration: string } }) {
   const planId = params.duration;
   const plan = plans.find(p => p.id === planId);
-  const productImage = PlaceHolderImages.find(img => img.id === 'subscription-og');
+  const productImage = PlaceHolderImages.find(img => img.id === 'subscription-offering-og');
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
 
 
@@ -259,7 +259,7 @@ export default function PlanPage({ params }: { params: { duration: string } }) {
                             <div className="relative h-48 w-full">
                                 <Image 
                                     src={productImage.imageUrl} 
-                                    alt="IPTV Service Subscription Box"
+                                    alt={productImage.description}
                                     data-ai-hint={productImage.imageHint}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -338,5 +338,3 @@ export async function generateStaticParams() {
       duration: plan.id,
     }));
 }
-
-    
