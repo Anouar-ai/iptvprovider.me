@@ -20,7 +20,7 @@ type Props = {
 };
 
 function StructuredData({ article }: { article: Post }) {
-    const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
+    const { id, title, description, steps, faqs, image, datePublished, dateModified, wikidataId, primaryKeyword } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
 
     const articleSchema = {
@@ -68,6 +68,11 @@ function StructuredData({ article }: { article: Post }) {
             position: index + 1,
         })),
         totalTime: "PT5M",
+        about: wikidataId ? {
+            "@type": "Thing",
+            "name": primaryKeyword,
+            "sameAs": `https://www.wikidata.org/wiki/${wikidataId}`
+        } : undefined
     };
 
     const faqSchema = faqs ? {
@@ -365,5 +370,3 @@ export async function generateStaticParams() {
     device: article.id,
   }));
 }
-
-    

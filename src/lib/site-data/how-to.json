@@ -8,6 +8,7 @@
         "keywords": ["IPTV on iPhone", "IPTV on iPad", "iOS IPTV setup", "IPTV Smarters iOS"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q48493",
         "steps": [
             {
                 "title": "Download IPTV Smarters from App Store",
@@ -39,6 +40,7 @@
         "keywords": ["IPTV on Android", "Android IPTV setup", "IPTV Smarters Android", "Android TV IPTV"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q94",
         "steps": [
             {
                 "title": "Download IPTV Smarters Pro",
@@ -66,6 +68,7 @@
         "keywords": ["IPTV on Fire TV", "Firestick IPTV setup", "Downloader app Fire TV", "IPTV Smarters Firestick", "best IPTV for Firestick"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q175154",
         "steps": [
             {
                 "title": "Step 1: Enable Apps from Unknown Sources",
@@ -93,11 +96,6 @@
                 "id": "why-vpn",
                 "title": "Why a VPN is Recommended for IPTV on Fire TV",
                 "content": "While not mandatory, using a VPN with your IPTV service on Fire TV is highly recommended. A VPN encrypts your internet traffic, preventing your Internet Service Provider (ISP) from throttling your connection speeds, which can cause buffering. It also unlocks geo-restricted content and protects your privacy. See our <a href='/pricing' class='text-primary hover:underline'>IPTV plans</a> which work perfectly with popular VPN services."
-            },
-            {
-                "id": "conclusion",
-                "title": "Conclusion: Enjoy Limitless Entertainment",
-                "content": "Congratulations! You have successfully completed your Firestick IPTV setup. You now have access to thousands of channels, movies, and TV shows right on your Amazon device. For any issues, refer to our <a href='/faq' class='text-primary hover:underline'>main FAQ page</a> or contact our 24/7 support. Happy streaming!"
             }
         ],
         "faqs": [
@@ -127,6 +125,7 @@
         "keywords": ["IPTV on Windows", "Windows IPTV player", "IPTV Smarters for PC"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q1406",
         "steps": [
             {
                 "title": "Download the Official App",
@@ -154,6 +153,7 @@
         "keywords": ["IPTV on macOS", "MacBook IPTV", "IPTV Smarters for Mac"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q14116",
         "steps": [
             {
                 "title": "Download the App from App Store",
@@ -177,6 +177,7 @@
         "keywords": ["IPTV on Samsung TV", "Samsung Smart TV IPTV", "Tizen IPTV app"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q225343",
         "steps": [
             {
                 "title": "Go to the App Store",
@@ -204,6 +205,7 @@
         "keywords": ["IPTV on LG TV", "LG Smart TV IPTV", "webOS IPTV app"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q493417",
         "steps": [
             {
                 "title": "Open the LG Content Store",
@@ -231,6 +233,7 @@
         "keywords": ["IPTV on Apple TV", "Apple TV IPTV setup", "tvOS IPTV"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q42732",
         "steps": [
             {
                 "title": "Open the App Store",
@@ -258,6 +261,7 @@
         "keywords": ["IPTV on Roku", "Roku screen mirroring", "cast IPTV to Roku"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q591559",
         "steps": [
             {
                 "title": "Enable Screen Mirroring on Roku",
@@ -285,6 +289,7 @@
         "keywords": ["IPTV on MAG", "MAG box setup", "IPTV portal URL"],
         "datePublished": "2024-07-20T10:00:00Z",
         "dateModified": "2024-07-20T10:00:00Z",
+        "wikidataId": "Q16927953",
         "steps": [
             {
                 "title": "Go to Settings",
