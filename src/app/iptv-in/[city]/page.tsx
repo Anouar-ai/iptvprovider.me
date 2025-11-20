@@ -1,4 +1,5 @@
 
+
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -250,7 +251,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
                 </ul>
                 <div className="mt-6">
                     <Button asChild variant="outline">
-                        <Link href="/devices">See All Device Setup Guides</Link>
+                        <Link href="/guides">See All Device Setup Guides</Link>
                     </Button>
                 </div>
             </section>
