@@ -237,7 +237,7 @@ export default async function HowToPage({ params }: { params: { device: string }
               <div className="lg:col-span-2">
                   <div itemProp="articleBody" className="prose prose-lg dark:prose-invert max-w-none">
                       <h2 className="font-headline text-3xl">Step-by-Step Installation Guide for {primaryKeyword}</h2>
-                      <p>Follow these simple steps to get our IPTV service running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
+                      <p>This guide provides the direct steps to get our IPTV service running on your {primaryKeyword}. The process takes about 5 minutes.</p>
                       <div className="space-y-8 mt-8">
                       {steps.map((step, index) => (
                           <div key={index} id={`step-${index + 1}`} className="flex gap-6">
@@ -261,16 +261,16 @@ export default async function HowToPage({ params }: { params: { device: string }
                       ))}
 
                       <div className="my-12 rounded-lg bg-primary/10 p-6 text-center">
-                        <h3 className="font-headline text-2xl font-bold">Ready to Start Watching on Your {primaryKeyword}?</h3>
-                        <p className="mt-2 text-muted-foreground">Get your premium IPTV subscription today and unlock thousands of channels!</p>
+                        <h3 className="font-headline text-2xl font-bold">Get Your Subscription for {primaryKeyword}</h3>
+                        <p className="mt-2 text-muted-foreground">Purchase a premium IPTV plan to unlock thousands of channels instantly.</p>
                         <Button asChild className="mt-4">
-                            <Link href="/pricing">Get Your Subscription Now</Link>
+                            <Link href="/pricing">View Subscription Plans</Link>
                         </Button>
                       </div>
 
                       {faqs && (
                         <>
-                            <h2 className="font-headline text-3xl">Frequently Asked Questions</h2>
+                            <h2 className="font-headline text-3xl">Frequently Asked Questions about {primaryKeyword} IPTV</h2>
                             <Accordion type="single" collapsible>
                                 {faqs.map((faq, i) => (
                                 <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
@@ -288,14 +288,14 @@ export default async function HowToPage({ params }: { params: { device: string }
               <aside className="lg:col-span-1 space-y-8">
                    <Card>
                       <CardHeader>
-                          <CardTitle>What You'll Need</CardTitle>
+                          <CardTitle>Installation Requirements</CardTitle>
                       </CardHeader>
                       <CardContent>
                           <ul className="space-y-3">
                               <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A compatible {primaryKeyword}</li>
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A stable internet connection</li>
+                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A stable internet connection (&gt;25 Mbps)</li>
                               <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> An active IPTV subscription</li>
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Your M3U link or credentials</li>
+                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Your M3U link or Xtream Code credentials</li>
                           </ul>
                       </CardContent>
                   </Card>
@@ -319,6 +319,33 @@ export default async function HowToPage({ params }: { params: { device: string }
                   <InternalLinks relatedLinks={relatedLinks} />
               </aside>
             </div>
+
+             <section id="final-checklist" className="mt-16 border-t pt-12">
+              <h2 className="font-headline text-3xl text-center">Final Checklist for Your {primaryKeyword} IPTV Setup</h2>
+              <p className="text-center text-muted-foreground mt-2">Ensure you have completed these steps for a successful installation.</p>
+              <ul className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <li className="rounded-lg border bg-card p-4">
+                  <Check className="h-6 w-6 text-primary mb-2" />
+                  <h3 className="font-semibold">App Installed</h3>
+                  <p className="text-sm text-muted-foreground">The correct IPTV player app is installed on your {primaryKeyword}.</p>
+                </li>
+                <li className="rounded-lg border bg-card p-4">
+                  <Check className="h-6 w-6 text-primary mb-2" />
+                  <h3 className="font-semibold">Credentials Entered</h3>
+                  <p className="text-sm text-muted-foreground">You have accurately entered your username, password, and server URL.</p>
+                </li>
+                <li className="rounded-lg border bg-card p-4">
+                  <Check className="h-6 w-6 text-primary mb-2" />
+                  <h3 className="font-semibold">Content Loaded</h3>
+                  <p className="text-sm text-muted-foreground">Channels and VOD have successfully loaded in the app.</p>
+                </li>
+              </ul>
+              <div className="text-center mt-8">
+                  <Button asChild>
+                    <Link href="/pricing">Get Your IPTV Subscription</Link>
+                  </Button>
+              </div>
+            </section>
 
             <div className="text-center mt-16">
               <Link href="/guides" className="text-primary font-semibold hover:underline">
