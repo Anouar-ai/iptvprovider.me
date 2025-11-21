@@ -2,7 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -41,7 +40,6 @@ export function WeeklyBuzz() {
           {weeklyBuzzItems.map((item, index) => (
             <CarouselItem key={index} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 xl:basis-1/7 pl-3 max-w-[200px]">
               <main className="group relative overflow-hidden rounded-xl">
-                <Link href={item.href} aria-label={`Link to details of ${item.title}`}>
                   <Image
                     alt={`Poster of ${item.title}`}
                     loading="lazy"
@@ -61,7 +59,6 @@ export function WeeklyBuzz() {
                       {item.title}
                     </p>
                   </div>
-                </Link>
                 <div className="absolute inset-x-0 top-0 flex flex-col items-end justify-end gap-2 p-2">
                   <Button
                     size="icon"
