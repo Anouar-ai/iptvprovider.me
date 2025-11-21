@@ -7,9 +7,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
+import { DeviceIcon } from "@/components/sections/DeviceIcon";
+import { devices } from "@/lib/site-data/devices";
+import { Reveal } from "@/components/shared/Reveal";
 
 
 export const metadata: Metadata = {
@@ -64,9 +64,18 @@ export default function GuidesPage() {
             </ol>
           </nav>
           <SectionHeader
-            title="IPTV Installation Guides"
-            subtitle="Follow our simple step-by-step guides to set up your IPTV service on any device. Get streaming in minutes!"
+            title="View All Setup Guides"
+            subtitle="Works on All Your Devices. Watch on your TV, computer, tablet, or phone. Our IPTV service is compatible with a wide range of devices."
           />
+
+          <Reveal>
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {devices.map((device) => (
+                <DeviceIcon key={device.name} name={device.name} iconName={device.icon} href={`/guides/${device.href.split('/').pop()}`} />
+              ))}
+            </div>
+          </Reveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {howToArticles.map((article) => (
                   <Link key={article.id} href={`/guides/${article.id}`} className="group">
@@ -84,7 +93,6 @@ export default function GuidesPage() {
           </div>
         </Container>
       </main>
-      <Devices />
     </>
   );
 }
