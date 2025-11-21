@@ -7,7 +7,6 @@ import { Pricing } from "@/components/sections/Pricing";
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
 const CTA = dynamic(() => import("@/components/sections/CTA").then((m) => m.CTA));
 const FAQ = dynamic(() => import("@/components/sections/FAQ").then((m) => m.FAQ));
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then((m) => m.Testimonials));
 
 export default function Home() {
     const productSchema = {
@@ -41,7 +40,6 @@ export default function Home() {
       <Devices />
       <Pricing />
       <CTA />
-      <Testimonials />
       <FAQ />
     </>
   );
