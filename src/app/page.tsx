@@ -2,6 +2,7 @@
 import { Hero } from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
 import { Brands } from "@/components/sections/Brands";
+import { Features } from "@/components/sections/Features";
 import { Pricing } from "@/components/sections/Pricing";
 
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
@@ -38,6 +39,7 @@ export default function Home() {
       />
       <Hero />
       <Brands />
+      <Features />
       <Devices />
       <Pricing />
       <CTA />
