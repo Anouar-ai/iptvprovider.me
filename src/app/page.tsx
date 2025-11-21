@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Brands } from "@/components/sections/Brands";
 import { Pricing } from "@/components/sections/Pricing";
 import { WeeklyBuzz } from "@/components/sections/WeeklyBuzz";
+import { SportEvents } from "@/components/sections/SportEvents";
 
 const Devices = dynamic(() => import("@/components/sections/Devices").then((m) => m.Devices));
 const CTA = dynamic(() => import("@/components/sections/CTA").then((m) => m.CTA));
@@ -38,6 +39,7 @@ export default function Home() {
       />
       <Hero />
       <WeeklyBuzz />
+      <SportEvents />
       <Brands />
       <Devices />
       <Pricing />
