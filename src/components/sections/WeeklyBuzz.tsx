@@ -6,7 +6,7 @@ export function WeeklyBuzz() {
   return (
     <ContentCarousel
       items={weeklyBuzzItems}
-      title="Top 10 Movies"
+      title="Top 10"
       titleClassName="styled-title absolute top-8 text-7xl opacity-10 sm:top-4 sm:text-[9rem]"
       subtitle="Movies"
       subtitleClassName="text-2xl font-bold uppercase tracking-[10px]"
