@@ -10,7 +10,7 @@ const Devices = dynamic(() => import("@/components/sections/Devices").then((m) =
 const CTA = dynamic(() => import("@/components/sections/CTA").then((m) => m.CTA));
 const FAQ = dynamic(() => import("@/components/sections/FAQ").then((m) => m.FAQ));
 
-export default function Home() {
+export default async function Home() {
     const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
