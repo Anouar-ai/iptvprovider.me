@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -11,6 +12,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { weeklyBuzzItems } from "@/lib/site-data/weekly-buzz";
 import { Bookmark, Heart, Play } from "lucide-react";
+
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
 
 export function WeeklyBuzz() {
   return (
@@ -47,6 +50,8 @@ export function WeeklyBuzz() {
                     decoding="async"
                     className="rounded-xl object-cover transition-opacity duration-300 ease-in h-[300px] w-[200px]"
                     src={item.src}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-transparent opacity-0 transition-[colors,opacity] ease-in-out group-hover:bg-black/40 group-hover:opacity-100">
                     <div className="m-auto grid h-10 w-10 scale-0 place-content-center rounded-full bg-card text-primary shadow-xl shadow-primary/50 transition-transform ease-in-out group-hover:scale-100">

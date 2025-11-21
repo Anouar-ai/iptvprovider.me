@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -5,6 +6,8 @@ import { brands, brands_two } from "@/lib/site-data/brands";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Container } from "../shared/Container";
 import { cn } from "@/lib/utils";
+
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
 
 const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, reverse?: boolean }) => {
     return (
@@ -36,6 +39,8 @@ const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, rev
                             height={brandImage.height || 46}
                             className="object-contain h-12 w-auto"
                             data-ai-hint={brandImage.imageHint}
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
                         />
                     </div>
                  )

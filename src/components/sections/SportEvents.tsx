@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/carousel";
 import { sportEvents } from "@/lib/site-data/sport-events";
 
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
+
 export function SportEvents() {
   return (
     <section className="relative space-y-4 px-4 py-4 sm:px-16">
@@ -46,6 +48,8 @@ export function SportEvents() {
                     decoding="async"
                     className="rounded-xl object-cover transition-opacity duration-300 ease-in h-[300px] w-[200px]"
                     src={item.src}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                   />
               </main>
             </CarouselItem>

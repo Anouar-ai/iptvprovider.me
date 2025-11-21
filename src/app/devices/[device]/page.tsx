@@ -19,6 +19,9 @@ type Props = {
   params: { device: string; };
 };
 
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
+
+
 function StructuredData({ article }: { article: Post }) {
     const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
@@ -311,6 +314,8 @@ export default async function HowToPage({ params }: { params: { device: string }
                               fill
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               className="object-cover rounded-lg"
+                              placeholder="blur"
+                              blurDataURL={BLUR_DATA_URL}
                           />
                           </div>
                       </CardContent>
