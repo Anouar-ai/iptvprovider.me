@@ -1,6 +1,6 @@
 
 
-import { howToArticles } from '@/lib/how-to';
+import { howToArticles, getArticlesWithEmbeddings } from '@/lib/how-to';
 import { findSemanticallySimilarContent } from './vector-related-content';
 
 export type Post = (typeof howToArticles)[0];
@@ -17,12 +17,14 @@ export async function getAllPosts(): Promise<Post[]> {
  * @returns An array of semantically related posts.
  */
 export async function getRelatedPosts(currentId: string, minLinks = 3) {
-  const allPosts = await getAllPosts();
-  if (!allPosts || allPosts.length === 0) {
+  // Use the function that generates embeddings on the server at request time
+  const allPostsWithEmbeddings = await getArticlesWithEmbeddings();
+  
+  if (!allPostsWithEmbeddings || allPostsWithEmbeddings.length === 0) {
     return [];
   }
   
-  const currentPost = allPosts.find(p => p.id === currentId);
+  const currentPost = allPostsWithEmbeddings.find(p => p.id === currentId);
 
   if (!currentPost) {
     return [];
@@ -39,7 +41,7 @@ export async function getRelatedPosts(currentId: string, minLinks = 3) {
   // Find semantically similar content
   const related = await findSemanticallySimilarContent(
     currentContentText,
-    allPosts,
+    allPostsWithEmbeddings,
     currentId,
     minLinks
   );

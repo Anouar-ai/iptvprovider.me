@@ -3,13 +3,13 @@ import articles from '@/lib/site-data/how-to.json';
 import { PlaceHolderImages } from './placeholder-images';
 import { generateEmbedding } from './vector-seo';
 
-// Augment the article type to include an embedding
+// Augment the article type to include an optional embedding
 export type ArticleWithEmbedding = (typeof articles)[0] & {
     embedding: number[];
 };
 
-// Function to generate embeddings for all articles
-async function getArticlesWithEmbeddings(): Promise<ArticleWithEmbedding[]> {
+// Function to generate embeddings for all articles, intended for server-side use
+export async function getArticlesWithEmbeddings(): Promise<ArticleWithEmbedding[]> {
     if (!articles.length) {
         return [];
     }
@@ -34,11 +34,8 @@ async function getArticlesWithEmbeddings(): Promise<ArticleWithEmbedding[]> {
 }
 
 
-// We will fetch the articles with embeddings once
-export const articlesWithEmbeddings = await getArticlesWithEmbeddings();
-
-
-export const howToArticles = articlesWithEmbeddings.map(article => {
+// Export articles without embeddings for client-side and build-time usage
+export const howToArticles = articles.map(article => {
     const image = PlaceHolderImages.find(img => img.id === `guide-image-${article.id}`);
     return {
         ...article,
