@@ -53,6 +53,7 @@ export function ClientCarousel({
                 src={item.src}
                 placeholder="blur"
                 blurDataURL={item.placeholder}
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 17vw, 14vw"
               />
               {showHoverContent && (
                 <>
