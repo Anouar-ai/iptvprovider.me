@@ -2,6 +2,7 @@
 'use server';
 
 import { z } from 'zod';
+import { cache } from 'react';
 
 // Define the schema for the semantic content structure
 const SemanticContentSchema = z.object({
@@ -25,7 +26,7 @@ export type SemanticContent = z.infer<typeof SemanticContentSchema>;
  * @param topic The topic to analyze.
  * @returns A promise that resolves to a default semantic content structure.
  */
-export async function generateSemanticContent(topic: string): Promise<SemanticContent> {
+export const generateSemanticContent = cache(async (topic: string): Promise<SemanticContent> => {
   console.warn("generateSemanticContent is using a fallback implementation. No API call was made.");
   return Promise.resolve({
     primaryEntity: topic,
@@ -33,7 +34,7 @@ export async function generateSemanticContent(topic: string): Promise<SemanticCo
     semanticClusters: [],
     contextualKeywords: [],
   });
-}
+});
 
 /**
  * Generates a vector embedding for a given text string.
@@ -41,8 +42,8 @@ export async function generateSemanticContent(topic: string): Promise<SemanticCo
  * @param text The text to generate an embedding for.
  * @returns A promise that resolves to an array of numbers representing the embedding.
  */
-export async function generateEmbedding(text: string): Promise<number[]> {
+export const generateEmbedding = cache(async (text: string): Promise<number[]> => {
   // Return a zero-vector as a fallback.
   // This will disable semantic similarity for related content but prevent errors.
   return new Array(768).fill(0);
-}
+});

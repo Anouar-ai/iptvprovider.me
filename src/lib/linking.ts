@@ -2,6 +2,7 @@
 
 import { howToArticles, getArticlesWithEmbeddings } from '@/lib/how-to';
 import { findSemanticallySimilarContent } from './vector-related-content';
+import { cache } from 'react';
 
 export type Post = (typeof howToArticles)[0];
 
@@ -16,7 +17,7 @@ export async function getAllPosts(): Promise<Post[]> {
  * @param minLinks The maximum number of related links to return.
  * @returns An array of semantically related posts.
  */
-export async function getRelatedPosts(currentId: string, minLinks = 3) {
+export const getRelatedPosts = cache(async (currentId: string, minLinks = 3) => {
   // Use the function that generates embeddings on the server at request time
   const allPostsWithEmbeddings = await getArticlesWithEmbeddings();
   
@@ -50,4 +51,4 @@ export async function getRelatedPosts(currentId: string, minLinks = 3) {
       ...post,
       href: `/devices/${post.id}`
   }));
-}
+});

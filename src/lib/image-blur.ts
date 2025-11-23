@@ -1,5 +1,6 @@
 'use server'
 import sharp from 'sharp'
+import { cache } from 'react';
 
 function bufferToBase64(buffer: Buffer): string {
   // Sharp can output to base64 directly, but this is a safeguard
@@ -12,7 +13,7 @@ async function getFileBufferRemote(url: string): Promise<Buffer> {
   return Buffer.from(arrayBuffer)
 }
 
-export async function getPlaceholderImage(filepath: string): Promise<string> {
+export const getPlaceholderImage = cache(async (filepath: string): Promise<string> => {
   try {
     const originalBuffer = await getFileBufferRemote(filepath)
     const resizedBuffer = await sharp(originalBuffer).resize(20).toBuffer()
@@ -21,4 +22,4 @@ export async function getPlaceholderImage(filepath: string): Promise<string> {
     // Return a transparent 1x1 pixel as a fallback
     return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
   }
-}
+});
