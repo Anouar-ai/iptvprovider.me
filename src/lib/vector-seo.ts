@@ -3,7 +3,6 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
-import { googleAI } from '@genkit-ai/google-genai';
 
 // Define the schema for the semantic content structure
 const SemanticContentSchema = z.object({
@@ -31,7 +30,7 @@ const semanticContentPrompt = ai.definePrompt({
     2.  **Related Entities**: A list of closely related people, places, organizations, or concepts.
     3.  **Semantic Clusters**: Group related concepts into clusters. Each cluster should be an array of strings, where the first string is the cluster's main theme.
     4.  **Contextual Keywords**: A list of keywords that frequently appear in the same semantic context as the main topic.`,
-    model: 'gemini-pro',
+    model: 'llama3-8b-8192',
     config: {
         safetySettings: [
             {
@@ -65,16 +64,7 @@ export async function generateSemanticContent(topic: string): Promise<SemanticCo
  * @returns A promise that resolves to an array of numbers representing the embedding.
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
-  try {
-    const { embedding } = await ai.embed({
-      embedder: googleAI.embedder('text-embedding-004'),
-      content: text,
-    });
-    return embedding;
-  } catch (error) {
-    console.error('Failed to generate embedding:', error);
-    // Return a zero-vector of the correct dimensionality as a fallback.
-    // text-embedding-004 has a dimensionality of 768.
-    return new Array(768).fill(0);
-  }
+  // Groq does not support embeddings, so we return a zero-vector as a fallback.
+  // This will disable semantic similarity for related content but prevent errors.
+  return new Array(768).fill(0);
 }
