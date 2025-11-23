@@ -28,10 +28,10 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.iptvprovider.me'),
   title: {
-    default: 'IPTV Provider',
+    default: 'Best IPTV Provider | Buy IPTV In USA, UK & Worldwide',
     template: '%s | IPTV Provider'
   },
-  description: 'Your premier IPTV Provider for unlocking a world of entertainment. The most reliable choice for all your streaming needs.',
+  description: 'Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!',
   keywords: ['IPTV', 'IPTV Provider', 'buy IPTV', 'IPTV subscription', 'IPTV provider'],
   authors: [{ name: 'DigitalLizard' }],
   openGraph: {
