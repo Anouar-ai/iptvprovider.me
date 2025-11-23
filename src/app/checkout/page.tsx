@@ -9,6 +9,8 @@ import { CreditCard, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "Secure Checkout | IPTV Provider",
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 
-export default function CheckoutPage() {
+export default async function CheckoutPage() {
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -38,11 +40,20 @@ export default function CheckoutPage() {
             }
         ]
     };
+    
+    const semanticContent = await generateSemanticContent("IPTV Subscription Checkout");
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <SemanticContent 
+                primaryEntity={semanticContent.primaryEntity}
+                relatedEntities={semanticContent.relatedEntities}
+                semanticClusters={semanticContent.semanticClusters}
+                contextualKeywords={semanticContent.contextualKeywords}
             />
             <main className="py-16 sm:py-24">
                 <Container>

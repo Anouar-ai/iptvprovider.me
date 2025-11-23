@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { faqs } from "@/lib/site-data/faq";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "Frequently Asked Questions | IPTV Provider",
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
     }
 };
 
-export default function FaqPage() {
+export default async function FaqPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -46,6 +48,8 @@ export default function FaqPage() {
     ]
   };
 
+  const semanticContent = await generateSemanticContent("IPTV Provider Frequently Asked Questions");
+
   return (
     <>
       <script
@@ -55,6 +59,12 @@ export default function FaqPage() {
        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <SemanticContent 
+        primaryEntity={semanticContent.primaryEntity}
+        relatedEntities={semanticContent.relatedEntities}
+        semanticClusters={semanticContent.semanticClusters}
+        contextualKeywords={semanticContent.contextualKeywords}
       />
       <main>
         <Container className="py-16 sm:py-24">

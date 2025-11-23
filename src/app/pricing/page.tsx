@@ -1,6 +1,7 @@
 
 
 
+
 import type { Metadata } from "next";
 import { plans } from "@/lib/site-data/pricing";
 import { Container } from "@/components/shared/Container";
@@ -8,6 +9,8 @@ import { Check, Shield, Tv, Zap, MessageCircle, Smartphone } from "lucide-react"
 import { Pricing } from "@/components/sections/Pricing";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
   title: "IPTV Provider Plans - Buy 1, 3, 6 & 12 Month Subscriptions",
@@ -51,7 +54,7 @@ const pageFaqs = [
     }
 ]
 
-export default function IPTVSubscription() {
+export default async function IPTVSubscription() {
     const schemaOrg = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -100,6 +103,9 @@ export default function IPTVSubscription() {
             }
         ]
       };
+      
+    const semanticContent = await generateSemanticContent("IPTV Provider Subscription Plans");
+
 
   return (
     <>
@@ -110,6 +116,12 @@ export default function IPTVSubscription() {
        <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <SemanticContent 
+        primaryEntity={semanticContent.primaryEntity}
+        relatedEntities={semanticContent.relatedEntities}
+        semanticClusters={semanticContent.semanticClusters}
+        contextualKeywords={semanticContent.contextualKeywords}
       />
       
       <main>

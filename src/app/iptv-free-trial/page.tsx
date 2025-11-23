@@ -6,6 +6,8 @@ import { Check, Tv, Zap, Shield, MessageCircle, Smartphone } from "lucide-react"
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "IPTV Free Trial | Test Our Premium IPTV Service",
@@ -24,7 +26,7 @@ const features = [
     { icon: Smartphone, text: "Works on All Your Devices" },
 ];
 
-export default function IptvFreeTrialPage() {
+export default async function IptvFreeTrialPage() {
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -43,11 +45,20 @@ export default function IptvFreeTrialPage() {
             }
         ]
     };
+    
+    const semanticContent = await generateSemanticContent("IPTV Free Trial");
+
     return (
         <>
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <SemanticContent 
+            primaryEntity={semanticContent.primaryEntity}
+            relatedEntities={semanticContent.relatedEntities}
+            semanticClusters={semanticContent.semanticClusters}
+            contextualKeywords={semanticContent.contextualKeywords}
         />
         <main className="py-16 sm:py-24">
             <Container>

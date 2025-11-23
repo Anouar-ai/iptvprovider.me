@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/card';
 import { Container } from '@/components/shared/Container';
 import { ContactForm } from '@/components/shared/ContactForm';
+import SemanticContent from '@/components/shared/SemanticContent';
+import { generateSemanticContent } from '@/lib/vector-seo';
 
 
 export const metadata: Metadata = {
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
     }
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
     const breadcrumbSchema = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -39,11 +41,20 @@ export default function ContactPage() {
             }
         ]
     };
+    
+    const semanticContent = await generateSemanticContent("Contact IPTV Provider Support");
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <SemanticContent 
+                primaryEntity={semanticContent.primaryEntity}
+                relatedEntities={semanticContent.relatedEntities}
+                semanticClusters={semanticContent.semanticClusters}
+                contextualKeywords={semanticContent.contextualKeywords}
             />
             <main className="py-16 sm:py-24">
                 <Container>

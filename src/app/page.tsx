@@ -3,6 +3,9 @@ import { Hero } from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
 import { Brands } from "@/components/sections/Brands";
 import { Pricing } from "@/components/sections/Pricing";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent } from "@/lib/vector-seo";
+
 
 const WeeklyBuzz = dynamic(() => import("@/components/sections/WeeklyBuzz").then((m) => m.WeeklyBuzz));
 const SportEvents = dynamic(() => import("@/components/sections/SportEvents").then((m) => m.SportEvents));
@@ -30,12 +33,19 @@ export default async function Home() {
     }
   };
 
+  const semanticContent = await generateSemanticContent("Best IPTV Provider");
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <SemanticContent 
+        primaryEntity={semanticContent.primaryEntity}
+        relatedEntities={semanticContent.relatedEntities}
+        semanticClusters={semanticContent.semanticClusters}
+        contextualKeywords={semanticContent.contextualKeywords}
       />
       <Hero />
       <WeeklyBuzz />
