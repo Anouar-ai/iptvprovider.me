@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent } from "@/lib/vector-seo";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "Secure Checkout | IPTV Provider",
@@ -41,7 +41,18 @@ export default async function CheckoutPage() {
         ]
     };
     
-    const semanticContent = await generateSemanticContent("IPTV Subscription Checkout");
+    let semanticContent: SemanticContentType;
+    try {
+        semanticContent = await generateSemanticContent("IPTV Subscription Checkout");
+    } catch (error) {
+        console.error("Failed to generate semantic content:", error);
+        semanticContent = {
+            primaryEntity: "IPTV Subscription Checkout",
+            relatedEntities: [],
+            semanticClusters: [],
+            contextualKeywords: []
+        };
+    }
 
     return (
         <>

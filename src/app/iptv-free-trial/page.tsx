@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent } from "@/lib/vector-seo";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "IPTV Free Trial | Test Our Premium IPTV Service",
@@ -46,7 +46,18 @@ export default async function IptvFreeTrialPage() {
         ]
     };
     
-    const semanticContent = await generateSemanticContent("IPTV Free Trial");
+    let semanticContent: SemanticContentType;
+    try {
+        semanticContent = await generateSemanticContent("IPTV Free Trial");
+    } catch (error) {
+        console.error("Failed to generate semantic content:", error);
+        semanticContent = {
+            primaryEntity: "IPTV Free Trial",
+            relatedEntities: [],
+            semanticClusters: [],
+            contextualKeywords: []
+        };
+    }
 
     return (
         <>

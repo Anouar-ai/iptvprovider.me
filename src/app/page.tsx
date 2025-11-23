@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Brands } from "@/components/sections/Brands";
 import { Pricing } from "@/components/sections/Pricing";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent } from "@/lib/vector-seo";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 
 
 const WeeklyBuzz = dynamic(() => import("@/components/sections/WeeklyBuzz").then((m) => m.WeeklyBuzz));
@@ -33,7 +33,18 @@ export default async function Home() {
     }
   };
 
-  const semanticContent = await generateSemanticContent("Best IPTV Provider");
+  let semanticContent: SemanticContentType;
+  try {
+      semanticContent = await generateSemanticContent("Best IPTV Provider");
+  } catch (error) {
+      console.error("Failed to generate semantic content:", error);
+      semanticContent = {
+          primaryEntity: "Best IPTV Provider",
+          relatedEntities: [],
+          semanticClusters: [],
+          contextualKeywords: []
+      };
+  }
 
   return (
     <>

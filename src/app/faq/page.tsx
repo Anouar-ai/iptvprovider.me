@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { faqs } from "@/lib/site-data/faq";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent } from "@/lib/vector-seo";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
     title: "Frequently Asked Questions | IPTV Provider",
@@ -48,7 +48,18 @@ export default async function FaqPage() {
     ]
   };
 
-  const semanticContent = await generateSemanticContent("IPTV Provider Frequently Asked Questions");
+  let semanticContent: SemanticContentType;
+  try {
+    semanticContent = await generateSemanticContent("IPTV Provider Frequently Asked Questions");
+  } catch (error) {
+    console.error("Failed to generate semantic content:", error);
+    semanticContent = {
+        primaryEntity: "IPTV Provider Frequently Asked Questions",
+        relatedEntities: [],
+        semanticClusters: [],
+        contextualKeywords: []
+    };
+  }
 
   return (
     <>

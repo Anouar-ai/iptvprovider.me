@@ -11,7 +11,7 @@ import {
 import { Container } from '@/components/shared/Container';
 import { ContactForm } from '@/components/shared/ContactForm';
 import SemanticContent from '@/components/shared/SemanticContent';
-import { generateSemanticContent } from '@/lib/vector-seo';
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from '@/lib/vector-seo';
 
 
 export const metadata: Metadata = {
@@ -42,7 +42,18 @@ export default async function ContactPage() {
         ]
     };
     
-    const semanticContent = await generateSemanticContent("Contact IPTV Provider Support");
+    let semanticContent: SemanticContentType;
+    try {
+        semanticContent = await generateSemanticContent("Contact IPTV Provider Support");
+    } catch (error) {
+        console.error("Failed to generate semantic content:", error);
+        semanticContent = {
+            primaryEntity: "Contact IPTV Provider Support",
+            relatedEntities: [],
+            semanticClusters: [],
+            contextualKeywords: []
+        };
+    }
 
     return (
         <>

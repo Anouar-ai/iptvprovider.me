@@ -7,7 +7,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent } from "@/lib/vector-seo";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 
 export const metadata: Metadata = {
   title: "IPTV Provider Plans - Buy 1, 3, 6 & 12 Month Subscriptions",
@@ -101,7 +101,18 @@ export default async function IPTVSubscription() {
         ]
       };
       
-    const semanticContent = await generateSemanticContent("IPTV Provider Subscription Plans");
+    let semanticContent: SemanticContentType;
+    try {
+        semanticContent = await generateSemanticContent("IPTV Provider Subscription Plans");
+    } catch (error) {
+        console.error("Failed to generate semantic content:", error);
+        semanticContent = {
+            primaryEntity: "IPTV Provider Subscription Plans",
+            relatedEntities: [],
+            semanticClusters: [],
+            contextualKeywords: []
+        };
+    }
 
 
   return (
