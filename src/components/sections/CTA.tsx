@@ -21,7 +21,7 @@ export function CTA() {
               variant="outline"
               className="mt-8 border-primary-foreground bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
-              <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Get Your IPTV Provider</Link>
+              <Link href="/iptv-free-trial">IPTV Free Trial</Link>
             </Button>
           </div>
         </Reveal>
