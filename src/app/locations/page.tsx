@@ -51,6 +51,19 @@ export default async function LocationsPage() {
             />
             <main className="py-16 sm:py-24">
                 <Container>
+                     <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+                      <ol className="flex items-center gap-2">
+                        <li>
+                          <Link href="/" className="hover:text-primary">
+                            Home
+                          </Link>
+                        </li>
+                        <li>/</li>
+                        <li>
+                            Service Locations
+                        </li>
+                      </ol>
+                    </nav>
                     <div className="text-center">
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                             Available Worldwide

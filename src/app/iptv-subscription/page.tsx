@@ -6,6 +6,7 @@ import { Container } from "@/components/shared/Container";
 import { Check, Shield, Tv, Zap, MessageCircle, Smartphone } from "lucide-react";
 import { Pricing } from "@/components/sections/Pricing";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "IPTV Provider Plans - Buy 1, 3, 6 & 12 Month Subscriptions",
@@ -50,6 +51,25 @@ const pageFaqs = [
 ]
 
 export default function IPTVSubscription() {
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.iptvprovider.me/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Subscription",
+                "item": "https://www.iptvprovider.me/iptv-subscription"
+            }
+        ]
+    };
+    
     const schemaOrg = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -86,83 +106,101 @@ export default function IPTVSubscription() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       
-      <div className="py-16 text-center sm:py-24">
-        <Container>
-            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">IPTV Provider Subscription Plans</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Choose the perfect IPTV Provider plan for your streaming needs. All plans include 20,000+ channels in HD/4K quality.
-            </p>
-        </Container>
-      </div>
-
-      <Pricing />
-
-      <section className="py-16 sm:py-24">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Our IPTV Provider Subscription?</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary"/> 20,000+ Channels</h3>
-                  <p className="text-muted-foreground">Access a massive selection of premium channels from around the world with our IPTV Provider subscription.</p>
-              </div>
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Zap size={20} className="text-primary"/> Instant Activation</h3>
-                  <p className="text-muted-foreground">Your IPTV Provider is activated immediately after payment. No waiting, just streaming.</p>
-              </div>
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Check size={20} className="text-primary"/> HD/4K Quality</h3>
-                  <p className="text-muted-foreground">Enjoy a superior viewing experience with crystal clear streaming in High Definition and 4K resolution.</p>
-              </div>
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Shield size={20} className="text-primary"/> Anti-Freeze Technology</h3>
-                  <p className="text-muted-foreground">Our IPTV Provider uses advanced anti-freeze tech for smooth, uninterrupted streaming.</p>
-              </div>
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><MessageCircle size={20} className="text-primary"/> 24/7 Support</h3>
-                  <p className="text-muted-foreground">Get round-the-clock customer support for all our IPTV Provider plans. We're here to help anytime.</p>
-              </div>
-              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                  <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Smartphone size={20} className="text-primary"/> Multi-Device</h3>
-                  <p className="text-muted-foreground">Watch our IPTV Provider on your Smart TV, Android, iOS, Fire Stick, PC, and more.</p>
-              </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-muted/30 py-16 dark:bg-card/30 sm:py-24">
-        <Container>
-            <div className="mx-auto max-w-3xl text-center">
-                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">IPTV Provider - Frequently Asked Questions</h2>
-            </div>
-            <div className="mx-auto mt-8 max-w-3xl" itemScope itemType="https://schema.org/FAQPage">
-              <Accordion type="single" collapsible>
-                {pageFaqs.map((faq, i) => (
-                  <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                    <AccordionTrigger itemProp="name">{faq.question}</AccordionTrigger>
-                    <AccordionContent itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                      <p itemProp="text">{faq.answer}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24">
-        <Container>
-            <div className="rounded-xl bg-primary/10 p-8 text-center md:p-12">
-                <h2 className="font-headline text-3xl font-bold">100% Satisfaction Guarantee on Your IPTV Provider</h2>
+      <main>
+          <Container className="py-16 sm:py-24">
+            <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+              <ol className="flex items-center gap-2">
+                <li>
+                  <Link href="/" className="hover:text-primary">
+                    Home
+                  </Link>
+                </li>
+                <li>/</li>
+                <li>
+                    Subscription
+                </li>
+              </ol>
+            </nav>
+            <div className="text-center">
+                <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">IPTV Provider Subscription Plans</h1>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                    Try our IPTV Provider completely risk-free. If you're not satisfied within the first 7 days, we'll provide a full refund—no questions asked.
+                    Choose the perfect IPTV Provider plan for your streaming needs. All plans include 20,000+ channels in HD/4K quality.
                 </p>
             </div>
-        </Container>
-      </section>
+          </Container>
 
+          <Pricing />
+
+          <section className="py-16 sm:py-24">
+            <Container>
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Our IPTV Provider Subscription?</h2>
+              </div>
+              <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary"/> 20,000+ Channels</h3>
+                      <p className="text-muted-foreground">Access a massive selection of premium channels from around the world with our IPTV Provider subscription.</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Zap size={20} className="text-primary"/> Instant Activation</h3>
+                      <p className="text-muted-foreground">Your IPTV Provider is activated immediately after payment. No waiting, just streaming.</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Check size={20} className="text-primary"/> HD/4K Quality</h3>
+                      <p className="text-muted-foreground">Enjoy a superior viewing experience with crystal clear streaming in High Definition and 4K resolution.</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Shield size={20} className="text-primary"/> Anti-Freeze Technology</h3>
+                      <p className="text-muted-foreground">Our IPTV Provider uses advanced anti-freeze tech for smooth, uninterrupted streaming.</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><MessageCircle size={20} className="text-primary"/> 24/7 Support</h3>
+                      <p className="text-muted-foreground">Get round-the-clock customer support for all our IPTV Provider plans. We're here to help anytime.</p>
+                  </div>
+                  <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                      <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Smartphone size={20} className="text-primary"/> Multi-Device</h3>
+                      <p className="text-muted-foreground">Watch our IPTV Provider on your Smart TV, Android, iOS, Fire Stick, PC, and more.</p>
+                  </div>
+              </div>
+            </Container>
+          </section>
+
+          <section className="bg-muted/30 py-16 dark:bg-card/30 sm:py-24">
+            <Container>
+                <div className="mx-auto max-w-3xl text-center">
+                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">IPTV Provider - Frequently Asked Questions</h2>
+                </div>
+                <div className="mx-auto mt-8 max-w-3xl" itemScope itemType="https://schema.org/FAQPage">
+                  <Accordion type="single" collapsible>
+                    {pageFaqs.map((faq, i) => (
+                      <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                        <AccordionTrigger itemProp="name">{faq.question}</AccordionTrigger>
+                        <AccordionContent itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                          <p itemProp="text">{faq.answer}</p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+            </Container>
+          </section>
+
+          <section className="py-16 sm:py-24">
+            <Container>
+                <div className="rounded-xl bg-primary/10 p-8 text-center md:p-12">
+                    <h2 className="font-headline text-3xl font-bold">100% Satisfaction Guarantee on Your IPTV Provider</h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        Try our IPTV Provider completely risk-free. If you're not satisfied within the first 7 days, we'll provide a full refund—no questions asked.
+                    </p>
+                </div>
+            </Container>
+          </section>
+      </main>
     </>
   );
 }

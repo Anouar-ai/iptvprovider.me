@@ -81,20 +81,17 @@ export default function CountryPage({ params }: { params: { country: string }}) 
       <main className="py-16 sm:py-24">
         <Container>
             <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                <ol itemScope itemType="https://schema.org/BreadcrumbList" className="flex items-center gap-2">
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <Link href="/" itemProp="item" className="hover:text-primary"><span itemProp="name">Home</span></Link>
-                        <meta itemProp="position" content="1" />
+                <ol className="flex items-center gap-2">
+                    <li>
+                        <Link href="/" className="hover:text-primary">Home</Link>
                     </li>
                     <li>/</li>
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <Link href="/locations" itemProp="item" className="hover:text-primary"><span itemProp="name">Locations</span></Link>
-                        <meta itemProp="position" content="2" />
+                    <li>
+                        <Link href="/locations" className="hover:text-primary">Locations</Link>
                     </li>
                     <li>/</li>
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <span itemProp="name">{name}</span>
-                        <meta itemProp="position" content="3" />
+                    <li>
+                        {name}
                     </li>
                 </ol>
             </nav>

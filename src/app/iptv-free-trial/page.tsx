@@ -63,17 +63,15 @@ export default async function IptvFreeTrialPage() {
         <main className="py-16 sm:py-24">
             <Container>
                 <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                    <ol itemScope itemType="https://schema.org/BreadcrumbList" className="flex items-center gap-2">
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <Link href="/" itemProp="item" className="hover:text-primary">
-                        <span itemProp="name">Home</span>
+                    <ol className="flex items-center gap-2">
+                    <li>
+                        <Link href="/" className="hover:text-primary">
+                        Home
                         </Link>
-                        <meta itemProp="position" content="1" />
                     </li>
                     <li>/</li>
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <span itemProp="name">IPTV Free Trial</span>
-                        <meta itemProp="position" content="2" />
+                    <li>
+                        IPTV Free Trial
                     </li>
                     </ol>
                 </nav>
