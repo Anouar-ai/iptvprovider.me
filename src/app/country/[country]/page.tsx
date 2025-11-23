@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: 'website',
+      images: [`/api/og?title=${encodeURIComponent(title)}`],
     },
     alternates: {
       canonical: `/country/${params.country}`,

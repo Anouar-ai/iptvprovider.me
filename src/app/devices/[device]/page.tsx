@@ -158,7 +158,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const { title, description, keywords, image } = article;
+  const { title, description, keywords } = article;
 
   return {
     title,
@@ -168,7 +168,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: title,
       description: description,
       type: 'article',
-      images: image ? [{ url: image.imageUrl }] : [],
+      images: [`/api/og?title=${encodeURIComponent(title)}`],
     },
     alternates: {
       canonical: `/devices/${params.device}`,
