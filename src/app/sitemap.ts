@@ -1,19 +1,11 @@
 
 import { MetadataRoute } from 'next'
-import { allCountries } from '@/lib/countries';
 import { howToArticles } from '@/lib/how-to';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://digitallizard-iptv.vercel.app';
   const lastModified = new Date();
   
-  const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
-    url: `${baseUrl}/iptv-in/${country.id}`,
-    lastModified,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
-
   const guidePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/guides/${article.id}`,
     lastModified,
@@ -47,7 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
-    ...countryPages,
     ...guidePages,
   ]
 }
