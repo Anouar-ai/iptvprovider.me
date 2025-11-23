@@ -45,6 +45,7 @@
     "dotenv": "latest",
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
+    "genkitx-groq": "latest",
     "lucide-react": "latest",
     "motion": "latest",
     "next": "latest",
