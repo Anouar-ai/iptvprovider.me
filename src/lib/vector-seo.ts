@@ -29,23 +29,11 @@ export async function generateSemanticContent(topic: string): Promise<SemanticCo
   const { output } = await ai.generate({
     model: 'groq/llama3-8b-8192',
     output: { schema: SemanticContentSchema },
-    prompt: `You are an SEO expert specializing in semantic content optimization. For the topic "${topic}", identify the following and return it in a valid JSON format:
+    prompt: `Analyze the topic "${topic}" and provide a semantic content breakdown in JSON format. Identify the following:
     1.  **Primary Entity**: The single most important subject.
-    2.  **Related Entities**: A list of closely related people, places, organizations, or concepts.
-    3.  **Semantic Clusters**: Group related concepts into clusters. Each cluster should be an array of strings, where the first string is the cluster's main theme.
-    4.  **Contextual Keywords**: A list of keywords that frequently appear in the same semantic context as the main topic.`,
-    config: {
-        safetySettings: [
-            {
-                category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-                threshold: 'BLOCK_NONE',
-            },
-            {
-                category: 'HARM_CATEGORY_HARASSMENT',
-                threshold: 'BLOCK_NONE',
-            },
-        ],
-    }
+    2.  **Related Entities**: Closely related people, places, organizations, or concepts.
+    3.  **Semantic Clusters**: Group related concepts into clusters. Each cluster should be an array of strings, starting with the main theme.
+    4.  **Contextual Keywords**: Keywords that frequently appear in the same semantic context as the topic.`,
   });
 
   if (!output) {
