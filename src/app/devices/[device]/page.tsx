@@ -24,7 +24,7 @@ const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy5
 
 function StructuredData({ article }: { article: Post }) {
     const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://digitallizard-iptv.vercel.app';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
 
     const articleSchema = {
         '@context': 'https://schema.org',

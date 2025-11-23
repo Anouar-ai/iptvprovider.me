@@ -35,13 +35,13 @@ export default function FaqPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://digitallizard-iptv.vercel.app/"
+            "item": "https://www.iptvprovider.me/"
         },
         {
             "@type": "ListItem",
             "position": 2,
             "name": "FAQ",
-            "item": "https://digitallizard-iptv.vercel.app/faq"
+            "item": "https://www.iptvprovider.me/faq"
         }
     ]
   };

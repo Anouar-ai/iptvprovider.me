@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 import { howToArticles } from '@/lib/how-to';
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://digitallizard-iptv.vercel.app';
+  const baseUrl = 'https://www.iptvprovider.me';
   const lastModified = new Date();
   
   const guidePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({

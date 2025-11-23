@@ -26,7 +26,7 @@ const outfit = Outfit({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://digitallizard-iptv.vercel.app'),
+  metadataBase: new URL('https://www.iptvprovider.me'),
   title: {
     default: 'DigitalLizard IPTV',
     template: '%s | DigitalLizard IPTV'
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://digitallizard-iptv.vercel.app',
+    url: 'https://www.iptvprovider.me',
     siteName: 'DigitalLizard IPTV',
     title: "Best IPTV Service Provider | Buy IPTV In USA, UK & Worldwide",
     description: "Looking to Buy IPTV? Choose the best IPTV provider offering affordable services in USA, UK & Worldwide with 24K+ channels. Subscribe now!",
@@ -72,8 +72,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "IPTV Service",
-    "url": "https://digitallizard-iptv.vercel.app",
-    "logo": "https://digitallizard-iptv.vercel.app/logo.png",
+    "url": "https://www.iptvprovider.me",
+    "logo": "https://www.iptvprovider.me/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-800-555-0199",
@@ -89,10 +89,10 @@ export default function RootLayout({
   const websiteSchema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://digitallizard-iptv.vercel.app/",
+      "url": "https://www.iptvprovider.me/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://digitallizard-iptv.vercel.app/search?q={search_term_string}",
+        "target": "https://www.iptvprovider.me/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
   }

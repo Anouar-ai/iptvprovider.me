@@ -29,13 +29,13 @@ export default function ContactPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://digitallizard-iptv.vercel.app/"
+                "item": "https://www.iptvprovider.me/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Contact Us",
-                "item": "https://digitallizard-iptv.vercel.app/contact"
+                "item": "https://www.iptvprovider.me/contact"
             }
         ]
     };

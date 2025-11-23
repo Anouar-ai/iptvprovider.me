@@ -66,7 +66,7 @@ export default function IPTVSubscription() {
           "price": plan.price,
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": `https://digitallizard-iptv.vercel.app/pricing`,
+          "url": `https://www.iptvprovider.me/pricing`,
           "priceValidUntil": "2025-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "seller": {
@@ -89,13 +89,13 @@ export default function IPTVSubscription() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://digitallizard-iptv.vercel.app/"
+                "item": "https://www.iptvprovider.me/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Pricing",
-                "item": "https://digitallizard-iptv.vercel.app/pricing"
+                "item": "https://www.iptvprovider.me/pricing"
             }
         ]
       };
