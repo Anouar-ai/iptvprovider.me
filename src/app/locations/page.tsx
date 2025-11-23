@@ -7,12 +7,20 @@ import { FlagIcon } from '@/components/shared/FlagIcon';
 import SemanticContent from '@/components/shared/SemanticContent';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from '@/lib/vector-seo';
 
+const pageTitle = "IPTV Provider Service Locations | Available Worldwide";
+
 export const metadata: Metadata = {
-    title: "IPTV Provider Service Locations | Available Worldwide",
+    title: pageTitle,
     description: "Our IPTV Provider is available in over 100 countries worldwide. Find your country and get the best IPTV streaming service for your region.",
     alternates: {
         canonical: "/locations",
-    }
+    },
+    openGraph: {
+        title: pageTitle,
+        description: "Our IPTV Provider is available in over 100 countries worldwide. Find your country and get the best IPTV streaming service for your region.",
+        type: 'website',
+        images: [`/api/og?title=${encodeURIComponent(pageTitle)}`],
+    },
 };
 
 export default async function LocationsPage() {
