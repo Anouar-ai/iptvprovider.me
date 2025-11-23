@@ -79,6 +79,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/old-blog/:slug',
+        destination: '/new-blog/:slug',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default pwaConfig(nextConfig);
