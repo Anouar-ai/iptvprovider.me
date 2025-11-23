@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@genkit-ai/googleai": "latest",
+    "@genkit-ai/google-genai": "latest",
     "@iconify-icons/circle-flags": "^1.2.4",
     "@iconify/react": "^5.0.1",
     "@imgproxy/imgproxy-js-core": "latest",
