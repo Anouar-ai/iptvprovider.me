@@ -29,7 +29,8 @@ export default async function Home() {
         "price": "16.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "/pricing"
+        "url": "/pricing",
+        "priceValidUntil": "2025-12-31"
     }
   };
 
