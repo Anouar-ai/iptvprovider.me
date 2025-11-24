@@ -95,7 +95,9 @@ export default function RootLayout({
   const websiteSchema = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://www.iptvprovider.me/",
+      "name": "IPTV Provider",
+      "alternateName": ["IPTV Provider", "best iptv"],
+      "url": process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me/",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://www.iptvprovider.me/search?q={search_term_string}",
