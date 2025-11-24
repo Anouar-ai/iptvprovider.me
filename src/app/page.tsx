@@ -18,6 +18,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "IPTV Provider Subscription",
+    "image": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
     "description": "Premium IPTV Provider with over 20,000 channels, HD/4K quality, and instant activation.",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -30,7 +31,42 @@ export default async function Home() {
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "/pricing",
-        "priceValidUntil": "2025-12-31"
+        "priceValidUntil": "2025-12-31",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "WW" 
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "WW",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 7,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+        }
     }
   };
 

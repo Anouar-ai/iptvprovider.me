@@ -89,6 +89,7 @@ function StructuredData({ article }: { article: Post }) {
         "@context": "https://schema.org",
         "@type": "Product",
         name: "IPTV Provider Subscription",
+        image: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
         description: `Our premium IPTV Provider is fully compatible with ${article.primaryKeyword}. Follow our guide to get set up.`,
         brand: {
             '@type': 'Brand',
@@ -99,8 +100,43 @@ function StructuredData({ article }: { article: Post }) {
             price: "14.99",
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-            url: "/pricing",
-            priceValidUntil: "2025-12-31"
+            url: `${baseUrl}/pricing`,
+            priceValidUntil: "2025-12-31",
+            shippingDetails: {
+                "@type": "OfferShippingDetails",
+                shippingRate: {
+                  "@type": "MonetaryAmount",
+                  value: 0,
+                  currency: "USD"
+                },
+                shippingDestination: {
+                  "@type": "DefinedRegion",
+                  addressCountry: "WW" 
+                },
+                deliveryTime: {
+                  "@type": "ShippingDeliveryTime",
+                  handlingTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY"
+                  },
+                  transitTime: {
+                    "@type": "QuantitativeValue",
+                    minValue: 0,
+                    maxValue: 0,
+                    unitCode: "DAY"
+                  }
+                }
+            },
+            hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "WW",
+                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+                merchantReturnDays: 7,
+                returnMethod: "https://schema.org/ReturnByMail",
+                returnFees: "https://schema.org/FreeReturn"
+            }
         }
     };
 

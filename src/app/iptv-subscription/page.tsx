@@ -69,11 +69,12 @@ export default function IPTVSubscription() {
             }
         ]
     };
-    
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
     const schemaOrg = {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "IPTV Provider Subscription",
+        "image": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
         "description": "Premium IPTV Provider with 20,000+ channels, HD/4K quality, and 24/7 support. Available in 1, 3, 6, and 12-month plans.",
         "brand": {
           "@type": "Brand",
@@ -85,12 +86,47 @@ export default function IPTVSubscription() {
           "price": plan.price,
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": `https://www.iptvprovider.me${plan.url}`,
+          "url": `${baseUrl}${plan.url}`,
           "priceValidUntil": "2025-12-31",
           "itemCondition": "https://schema.org/NewCondition",
           "seller": {
             "@type": "Organization",
             "name": "IPTV Provider"
+          },
+          "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              shippingRate: {
+                "@type": "MonetaryAmount",
+                value: 0,
+                currency: "USD"
+              },
+              shippingDestination: {
+                "@type": "DefinedRegion",
+                addressCountry: "WW" 
+              },
+              deliveryTime: {
+                "@type": "ShippingDeliveryTime",
+                handlingTime: {
+                  "@type": "QuantitativeValue",
+                  minValue: 0,
+                  maxValue: 0,
+                  unitCode: "DAY"
+                },
+                transitTime: {
+                  "@type": "QuantitativeValue",
+                  minValue: 0,
+                  maxValue: 0,
+                  unitCode: "DAY"
+                }
+              }
+          },
+          "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              applicableCountry: "WW",
+              returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+              merchantReturnDays: 7,
+              returnMethod: "https://schema.org/ReturnByMail",
+              returnFees: "https://schema.org/FreeReturn"
           }
         })),
         "aggregateRating": {
