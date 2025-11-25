@@ -63,7 +63,8 @@
     "sharp": "latest",
     "swiper": "latest",
     "tailwind-merge": "latest",
-    "zod": "latest"
+    "zod": "latest",
+    "@genkit-ai/google-genai": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

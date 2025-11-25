@@ -1,8 +1,10 @@
 
+
 'use server';
 
 import { z } from 'zod';
 import { cache } from 'react';
+import { generateTextEmbedding } from '@/ai/flows/embedding-flow';
 
 // Define the schema for the semantic content structure
 const SemanticContentSchema = z.object({
@@ -43,7 +45,13 @@ export const generateSemanticContent = cache(async (topic: string): Promise<Sema
  * @returns A promise that resolves to an array of numbers representing the embedding.
  */
 export const generateEmbedding = cache(async (text: string): Promise<number[]> => {
-  // Return a zero-vector as a fallback.
-  // This will disable semantic similarity for related content but prevent errors.
-  return new Array(768).fill(0);
+  try {
+    const embedding = await generateTextEmbedding(text);
+    return embedding;
+  } catch (error) {
+    console.error("Failed to generate embedding, returning zero-vector:", error);
+    // Return a zero-vector as a fallback.
+    // This will disable semantic similarity for related content but prevent errors.
+    return new Array(768).fill(0);
+  }
 });
