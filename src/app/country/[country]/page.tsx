@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { allCountries, getCountryById } from "@/lib/countries";
 import { Check, Shield, Tv, Zap, MessageCircle, Smartphone } from "lucide-react";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
+
 
 type Props = {
   params: { country: string };
@@ -39,14 +42,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CountryPage({ params }: { params: { country: string }}) {
+export default async function CountryPage({ params }: { params: { country: string }}) {
   const country = getCountryById(params.country);
 
   if (!country) {
     notFound();
   }
 
-  const { name } = country;
+  const { name, code } = country;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
 
   const breadcrumbSchema = {
       "@context": "https://schema.org",
@@ -56,28 +60,72 @@ export default function CountryPage({ params }: { params: { country: string }}) 
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://www.iptvprovider.me/"
+              "item": `${baseUrl}/`
           },
           {
               "@type": "ListItem",
               "position": 2,
               "name": "Locations",
-              "item": "https://www.iptvprovider.me/locations"
+              "item": `${baseUrl}/locations`
           },
           {
               "@type": "ListItem",
               "position": 3,
               "name": name,
-              "item": `https://www.iptvprovider.me/country/${params.country}`
+              "item": `${baseUrl}/country/${params.country}`
           }
       ]
   };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "IPTV Provider",
+    "provider": {
+      "@type": "Organization",
+      "name": "IPTV Provider"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": name
+    },
+    "name": `IPTV Provider for ${name}`,
+    "description": `Premium IPTV service available in ${name} with over 20,000 channels, HD/4K quality, and instant setup.`,
+    "offers": {
+        "@type": "Offer",
+        "price": "14.99",
+        "priceCurrency": "USD"
+    }
+  };
+  
+  let semanticContent: SemanticContentType;
+  try {
+      semanticContent = await generateSemanticContent(`IPTV Provider in ${name}`);
+  } catch (error) {
+      console.error("Failed to generate semantic content:", error);
+      semanticContent = {
+          primaryEntity: `IPTV Provider in ${name}`,
+          relatedEntities: [],
+          semanticClusters: [],
+          contextualKeywords: []
+      };
+  }
 
   return (
     <>
       <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <SemanticContent 
+        primaryEntity={semanticContent.primaryEntity}
+        relatedEntities={semanticContent.relatedEntities}
+        semanticClusters={semanticContent.semanticClusters}
+        contextualKeywords={semanticContent.contextualKeywords}
       />
       <main className="py-16 sm:py-24">
         <Container>
@@ -111,12 +159,13 @@ export default function CountryPage({ params }: { params: { country: string }}) 
 
           <section className="py-16 sm:py-24">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why We're The Best Choice for {name}</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Us for {name}?</h2>
+              <p className="mt-4 text-muted-foreground">We are the top-rated IPTV provider in {name} for a reason. Our service is optimized for viewers in your country, offering unparalleled stability and channel selection.</p>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary"/> Massive Channel Selection</h3>
-                    <p className="text-muted-foreground">Get access to local {name} channels plus thousands of international sports, movies, and news channels.</p>
+                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary"/> Local & International Channels</h3>
+                    <p className="text-muted-foreground">Get access to all local {name} channels plus thousands of international sports, movies, and news channels.</p>
                 </div>
                 <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
                     <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Zap size={20} className="text-primary"/> Instant Activation</h3>
