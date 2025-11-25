@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description: "Stream 24,000+ live channels in HD/4K. Movies, sports, news & more. Affordable plans. Subscribe to the best IPTV service today!",
     images: [
       { 
-        url: 'https://www.iptvprovider.me/og-image.jpg',
+        url: `/api/og?title=${encodeURIComponent(defaultTitle)}`,
         width: 1200,
         height: 630,
         alt: 'IPTV Provider - Best Streaming Service'
