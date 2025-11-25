@@ -27,7 +27,7 @@ const outfit = Outfit({
 // SEO Constants
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me";
 const SITE_NAME = "IPTV Provider";
-const DEFAULT_TITLE = "Best IPTV Provider 2025 | Buy IPTV USA, UK & Worldwide - 24K+ Channels";
+const DEFAULT_TITLE = "Best IPTV Provider 2026 | Buy IPTV USA, UK & Worldwide - 24K+ Channels";
 const DEFAULT_DESCRIPTION = "Buy IPTV from the #1 rated provider! Get 24,000+ live channels, HD/4K streaming, VOD movies & sports. Affordable IPTV subscription for USA, UK & worldwide. 24/7 support.";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'cheap IPTV',
     'IPTV channels',
     'live TV streaming',
-    'IPTV 2025',
+    'IPTV 2026',
     '4K IPTV',
     'sports IPTV',
     'VOD streaming'
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Best IPTV Provider 2025 | 24K+ Channels | USA, UK & Worldwide",
+    title: "Best IPTV Provider 2026 | 24K+ Channels | USA, UK & Worldwide",
     description: "Stream 24,000+ live channels in HD/4K. Movies, sports, news & more. Affordable plans. Subscribe to the best IPTV service today!",
     images: [
       {
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@iptvprovider",
     creator: "@iptvprovider",
-    title: "Best IPTV Provider 2025 | 24K+ Channels",
+    title: "Best IPTV Provider 2026 | 24K+ Channels",
     description: "Stream 24,000+ live channels in HD/4K. Movies, sports & more. Subscribe now!",
     images: [{
       url: `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`,
