@@ -120,6 +120,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
           <link rel="manifest" href="/manifest.json" />
+          <script src="https://analytics.ahrefs.com/analytics.js" data-key="Jl98JtH7ssQUsMyNzloJAw" async></script>
         </head>
       <body className={cn("font-body antialiased", inter.variable, outfit.variable)}>
         <ProgressBar />
