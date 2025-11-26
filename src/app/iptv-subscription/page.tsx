@@ -216,8 +216,10 @@ export default function IPTVSubscription() {
                     {pageFaqs.map((faq, i) => (
                       <AccordionItem key={i} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
                         <AccordionTrigger itemProp="name">{faq.question}</AccordionTrigger>
-                        <AccordionContent itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                          <p itemProp="text">{faq.answer}</p>
+                        <AccordionContent>
+                          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                            <p itemProp="text">{faq.answer}</p>
+                          </div>
                         </AccordionContent>
                       </AccordionItem>
                     ))}
