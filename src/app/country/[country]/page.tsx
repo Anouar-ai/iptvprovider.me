@@ -8,6 +8,7 @@ import { allCountries, getCountryById } from "@/lib/countries";
 import { Check, Shield, Tv, Zap, MessageCircle, Smartphone } from "lucide-react";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
+import { FlagIcon } from "@/components/shared/FlagIcon";
 
 
 type Props = {
@@ -146,8 +147,9 @@ export default async function CountryPage({ params }: { params: { country: strin
             </nav>
 
           <div className="text-center">
-            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
-              The #1 IPTV Provider in {name}
+            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl flex items-center justify-center gap-4">
+              <FlagIcon countryCode={code} countryName={name} className="h-10 w-10" />
+              <span>The #1 IPTV Provider in {name}</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Experience the best IPTV streaming in {name} with over 20,000 channels, movies, and series in stunning HD & 4K quality. Instant activation and 24/7 support guaranteed.
