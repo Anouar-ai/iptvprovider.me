@@ -29,7 +29,7 @@
     "datePublished": "2024-07-19T11:00:00Z",
     "dateModified": "2024-07-19T11:00:00Z",
     "steps": [
-      { "title": "Download the IPTV Player App", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <strong>IPTV Smarters Pro</strong> or <strong>TiviMate</strong> for the best experience." },
+      { "title": "Download the IPTV Player App", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <a href='https://www.frandroid.com/telecharger/apps/iptv-smarters-pro' target='_blank' rel='noopener noreferrer'><strong>IPTV Smarters Pro</strong></a> or <a href='https://tivimate.com/' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> for the best experience." },
       { "title": "Install the Application", "description": "Tap the 'Install' button and wait for the app to download and install on your Android device." },
       { "title": "Open the App and Add User", "description": "Launch the IPTV app. You will be prompted to add a new user or load a playlist. Choose the option to log in with Xtream Codes API or an M3U URL." },
       { "title": "Enter Your Subscription Details", "description": "Carefully enter the username, password, and server URL that we provided in your subscription email. Double-check for any typos." },
