@@ -48,12 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-        url: `${baseUrl}/iptv-subscription`,
-        lastModified,
-        changeFrequency: 'monthly',
-        priority: 0.9,
-    },
-    {
       url: `${baseUrl}/locations`,
       lastModified,
       changeFrequency: 'monthly',
