@@ -103,21 +103,28 @@
   {
     "id": "macos",
     "title": "How to Set Up IPTV on macOS",
-    "description": "This guide will show you the best and easiest ways to get your IPTV subscription running on your MacBook or iMac.",
+    "description": "This definitive guide shows you the best way to get your IPTV subscription running on your MacBook or iMac for a superior viewing experience.",
     "primaryKeyword": "IPTV on macOS",
-    "keywords": ["IPTV for Mac", "macOS IPTV player", "GSE for Mac"],
+    "keywords": ["IPTV for Mac", "macOS IPTV player", "IPTV Smarters Mac"],
     "datePublished": "2024-07-23T14:00:00Z",
-    "dateModified": "2024-07-23T14:00:00Z",
+    "dateModified": "2024-09-05T16:00:00Z",
     "steps": [
-      { "title": "Download an IPTV Player", "description": "For macOS, we recommend using a dedicated IPTV player. Search the App Store for <a href='https://apps.apple.com/ma/app/gse-smart-iptv-player-live-tv/id6444845680?l=fr-FR' target='_blank' rel='noopener noreferrer'><strong>GSE Smart IPTV</strong></a> or download <a href='https://images.videolan.org/vlc/index.fr.html' target='_blank' rel='noopener noreferrer'><strong>VLC Media Player</strong></a> from its official website." },
-      { "title": "Installation and Setup", "description": "Install your chosen application. For this guide, we'll use GSE Smart IPTV. Open the app after installation." },
-      { "title": "Add Xtream Playlist", "description": "In the GSE menu, navigate to <strong>'Xtream-Codes API'</strong>. Click the '+' button to add a new server." },
-      { "title": "Enter Your Credentials", "description": "Fill in the fields: set the name to 'IPTV Provider', paste the server URL, and enter the username and password from your subscription email." },
-      { "title": "Load and Watch", "description": "Click 'Add'. The app will verify your details and start downloading channels and VOD. Once finished, you can begin streaming." }
+      { "title": "Download the Recommended Player", "description": "For the best experience on macOS, download the official <strong>IPTV Smarters Player</strong>. Go to iptvsmarters.com and download the .dmg file for macOS." },
+      { "title": "Install the Application", "description": "Open the downloaded .dmg file and drag the IPTV Smarters Player icon into your 'Applications' folder. You may need to grant security permission in System Settings if prompted." },
+      { "title": "Launch and Select Login Method", "description": "Open IPTV Smarters Player from your Applications folder. When prompted, select <strong>'Login with Xtream Codes API'</strong>. This is the most reliable method." },
+      { "title": "Enter Your Credentials", "description": "In the login screen, fill in the four fields exactly as provided in your subscription email: a name for the playlist (e.g., 'IPTV Provider'), your username, your password, and the server URL." },
+      { "title": "Load and Watch", "description": "Click 'Add User'. The app will verify your details and download all the channels, movies, and series associated with your account. Once complete, you're ready to stream." }
+    ],
+    "extraSections": [
+      {
+        "id": "why-smarters",
+        "title": "Why Use IPTV Smarters Player?",
+        "content": "While players like VLC can play IPTV streams, they offer a basic file-like interface. <strong>IPTV Smarters Player</strong> is a dedicated application that provides a true TV-like experience. It features a full Electronic Program Guide (EPG), channel categories, VOD library organization, and a more intuitive interface designed for streaming media, making it the superior choice for macOS."
+      }
     ],
     "faqs": [
-      { "question": "Is TiviMate available for macOS?", "answer": "No, TiviMate is an Android-exclusive application and is not officially available for macOS. GSE Smart IPTV is an excellent alternative with similar features." },
-      { "question": "Why use Xtream-Codes API instead of an M3U link?", "answer": "Using the API login method is generally more robust. It handles EPG (TV Guide) and channel logos more effectively and requires less manual setup." }
+      { "question": "Is TiviMate available for macOS?", "answer": "No, TiviMate is an Android-exclusive application and is not officially available for macOS. IPTV Smarters Player is the best and most comparable alternative, offering a rich feature set for Mac users." },
+      { "question": "Why should I use the 'Xtream Codes API' login instead of an M3U link?", "answer": "Logging in with the Xtream Codes API is a more direct and robust method. It automatically handles the EPG (TV Guide), channel logos, and VOD categories for you. An M3U link requires manual entry and can sometimes lead to issues with the guide data." }
     ]
   },
   {
