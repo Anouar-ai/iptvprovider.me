@@ -216,15 +216,15 @@
     "datePublished": "2024-07-28T09:00:00Z",
     "dateModified": "2024-07-28T09:00:00Z",
     "steps": [
-      { "title": "Find Your MAC Address", "description": "Connect your MAG box to your TV and internet. On the back or bottom of the device, find the sticker with the MAC address. It will start with 00:1A:79. Write it down." },
-      { "title": "Send Us Your MAC Address", "description": "When you purchase your subscription, or by contacting our support, you must provide us with your full MAC address. We will use it to activate your device on our server." },
-      { "title": "Access the Inner Portal", "description": "Restart your MAG box. When you see 'Loading', press the 'SET' or 'GEAR' button on your remote to enter the Inner Portal." },
-      { "title": "Configure the Portal", "description": "Go to <strong>'Servers' > 'Portals'</strong>. In the 'Portal 1 URL' field, enter the specific portal URL we provided in your subscription email. Press 'OK' to save." },
-      { "title": "Reboot the Device", "description": "Press the 'EXIT' key on your remote several times to go back, and then select the option to 'Reboot Portal' or 'Reboot Device'. The IPTV portal will load, and your channels will appear." }
+      { "title": "Find Your MAC Address", "description": "Connect your MAG box to your TV and internet. The MAC address, which starts with <strong>00:1A:79</strong>, is printed on a sticker on the bottom of the device. Write it down." },
+      { "title": "Provide Your MAC Address to Us", "description": "During your IPTV subscription purchase, you must provide us with the full MAC address. This is required for us to activate your device on our servers." },
+      { "title": "Access the Inner Portal", "description": "Restart your MAG box. As it's loading, repeatedly press the <strong>'SET' or 'GEAR' button</strong> on your remote control to access the system's 'Inner Portal'." },
+      { "title": "Configure the Server Portal", "description": "Navigate to <strong>'Servers' > 'Portals'</strong>. In the 'Portal 1 URL' field, carefully enter the specific portal address that was sent to you in your subscription confirmation email. Press 'OK' to save." },
+      { "title": "Reboot and Launch", "description": "Press the 'EXIT' key multiple times to return to the main portal menu, and then select the option to 'Reboot Portal' or 'Reboot Device'. Once restarted, the IPTV portal will load automatically with your channels." }
     ],
     "faqs": [
-      { "question": "My MAG box is stuck on 'Loading'. What should I do?", "answer": "This usually means the portal URL is incorrect or your MAC address hasn't been activated yet. Double-check the portal URL for typos. If it's correct, contact our support to confirm your MAC address is active in our system." },
-      { "question": "Can I use an M3U link with a MAG box?", "answer": "While technically possible in some firmwares, MAG boxes are designed to work with IPTV portals. The portal method provides a much better experience, with a TV-friendly interface and EPG, and is the only method we support for these devices." }
+      { "question": "My MAG box is stuck on the 'Loading' screen. What's wrong?", "answer": "This is a common issue that almost always means either the portal URL was entered incorrectly or your device's MAC address has not yet been activated on our end. Please double-check the portal URL for any typos. If it is correct, contact our support team to verify that your MAC address has been successfully activated." },
+      { "question": "Can I use an M3U link with my MAG box instead of a portal?", "answer": "No. MAG boxes are specifically designed to work with IPTV portals and do not function well with M3U links. The portal method is the only one we support for these devices as it ensures a stable connection, a user-friendly interface, and a functional EPG (TV Guide)." }
     ]
   }
 ]
