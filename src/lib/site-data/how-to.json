@@ -29,15 +29,15 @@
     "datePublished": "2024-07-19T11:00:00Z",
     "dateModified": "2024-07-19T11:00:00Z",
     "steps": [
-      { "title": "Download the IPTV Player App", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <a href='https://www.frandroid.com/telecharger/apps/iptv-smarters-pro' target='_blank' rel='noopener noreferrer'><strong>IPTV Smarters Pro</strong></a> or <a href='https://tivimate.com/' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> for the best experience." },
+      { "title": "Download a Recommended IPTV Player", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <a href='https://www.iptvsmarters.com/' target='_blank' rel='noopener noreferrer'><strong>IPTV Smarters Pro</strong></a> or <a href='https://play.google.com/store/apps/details?id=ar.tvplayer.tv' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> for the best and most reliable user experience." },
       { "title": "Install the Application", "description": "Tap the 'Install' button and wait for the app to download and install on your Android device." },
-      { "title": "Open the App and Add User", "description": "Launch the IPTV app. You will be prompted to add a new user or load a playlist. Choose the option to log in with Xtream Codes API or an M3U URL." },
-      { "title": "Enter Your Subscription Details", "description": "Carefully enter the username, password, and server URL that we provided in your subscription email. Double-check for any typos." },
-      { "title": "Start Streaming", "description": "Once you've logged in, the app will download the channel list and VOD content. You can now start enjoying thousands of channels and movies!" }
+      { "title": "Open the App and Select Login Method", "description": "Launch the IPTV app. You will be prompted to add a new user. For the most seamless setup, choose the option to <strong>'Login with Xtream Codes API'</strong>." },
+      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login credentials provided in your subscription confirmation email. This includes your username, password, and the server URL. Double-check for any typos to ensure a successful login." },
+      { "title": "Start Streaming Your Content", "description": "After you log in, the app will automatically download the channel lists, movies, and TV shows. You can now start enjoying thousands of hours of content!" }
     ],
     "faqs": [
-      { "question": "Can I use a different IPTV player?", "answer": "Yes, our service is compatible with most IPTV players on the Google Play Store. However, we recommend IPTV Smarters Pro or TiviMate for optimal performance and features." },
-      { "question": "What is the difference between M3U link and Xtream Codes API?", "answer": "Both methods work, but the Xtream Codes API login is generally easier and more reliable. It automatically fetches all necessary information, including EPG (Electronic Program Guide)." }
+      { "question": "Can I use a different IPTV player on Android?", "answer": "Yes, our service is compatible with most IPTV players on the Google Play Store. However, for optimal performance, features, and EPG (Electronic Program Guide) support, we strongly recommend using IPTV Smarters Pro or TiviMate." },
+      { "question": "What is the difference between an M3U link and the Xtream Codes API?", "answer": "The Xtream Codes API login is a simpler and more powerful method. It uses a username, password, and server URL to automatically fetch all your content, including the TV guide (EPG) and channel logos. An M3U link is a single file URL that can sometimes have issues with guide data and requires manual updating." }
     ]
   },
   {
