@@ -1,4 +1,5 @@
 
+import { Suspense } from "react";
 import { Hero } from "@/components/sections/Hero";
 import { Brands } from "@/components/sections/Brands";
 import { Pricing } from "@/components/sections/Pricing";
@@ -10,6 +11,7 @@ import { Devices } from "@/components/sections/Devices";
 import { CTA } from "@/components/sections/CTA";
 import { FAQ } from "@/components/sections/FAQ";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { ContentCarouselSkeleton } from "@/components/shared/ContentCarousel";
 
 
 export default async function Home() {
@@ -99,8 +101,12 @@ export default async function Home() {
       <Devices />
       <Pricing />
       <HowItWorks />
-      <WeeklyBuzz />
-      <SportEvents />
+      <Suspense fallback={<ContentCarouselSkeleton />}>
+        <WeeklyBuzz />
+      </Suspense>
+      <Suspense fallback={<ContentCarouselSkeleton />}>
+        <SportEvents />
+      </Suspense>
       <CTA />
       <FAQ />
     </>
