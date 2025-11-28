@@ -1,3 +1,4 @@
+
 export const faqs = [
     {
         question: "Do you offer free trials for your IPTV Provider?",
