@@ -9,6 +9,7 @@ import { SportEvents } from "@/components/sections/SportEvents";
 import { Devices } from "@/components/sections/Devices";
 import { CTA } from "@/components/sections/CTA";
 import { FAQ } from "@/components/sections/FAQ";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 
 
 export default async function Home() {
@@ -94,15 +95,14 @@ export default async function Home() {
         contextualKeywords={semanticContent.contextualKeywords}
       />
       <Hero />
-      <WeeklyBuzz />
-      <SportEvents />
       <Brands />
       <Devices />
       <Pricing />
+      <HowItWorks />
+      <WeeklyBuzz />
+      <SportEvents />
       <CTA />
       <FAQ />
     </>
   );
 }
-
-    
