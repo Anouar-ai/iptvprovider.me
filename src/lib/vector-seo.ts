@@ -1,41 +1,33 @@
-
-
 'use server';
 
 import { z } from 'zod';
 import { cache } from 'react';
 import { generateTextEmbedding } from '@/ai/flows/embedding-flow';
+import { generateSemanticContentFlow } from '@/ai/flows/generate-semantic-content-flow';
+import { SemanticContentSchema, type SemanticContent as SemanticContentType } from '@/lib/types/semantic-content';
 
-// Define the schema for the semantic content structure
-const SemanticContentSchema = z.object({
-  primaryEntity: z.string().describe('The main subject or topic.'),
-  relatedEntities: z
-    .array(z.string())
-    .describe('A list of people, places, or concepts related to the primary entity.'),
-  semanticClusters: z
-    .array(z.array(z.string()))
-    .describe('Groups of related concepts. Each inner array is a cluster, with the first element being the cluster\'s main topic.'),
-  contextualKeywords: z
-    .array(z.string())
-    .describe('Keywords that often appear in the same semantic space as the topic.'),
-});
-
-export type SemanticContent = z.infer<typeof SemanticContentSchema>;
+export type SemanticContent = SemanticContentType;
 
 /**
- * Generates a semantic content structure for a given topic.
- * This is a fallback implementation that returns a default structure.
+ * Generates a semantic content structure for a given topic by calling an AI flow.
+ * The result is cached to prevent re-running the analysis on every request.
  * @param topic The topic to analyze.
- * @returns A promise that resolves to a default semantic content structure.
+ * @returns A promise that resolves to a semantic content structure.
  */
 export const generateSemanticContent = cache(async (topic: string): Promise<SemanticContent> => {
-  console.warn("generateSemanticContent is using a fallback implementation. No API call was made.");
-  return Promise.resolve({
-    primaryEntity: topic,
-    relatedEntities: [],
-    semanticClusters: [],
-    contextualKeywords: [],
-  });
+  try {
+    const content = await generateSemanticContentFlow(topic);
+    return content;
+  } catch (error) {
+    console.error(`Failed to generate semantic content for topic "${topic}":`, error);
+    // Return a fallback structure to prevent page errors
+    return {
+      primaryEntity: topic,
+      relatedEntities: [],
+      semanticClusters: [],
+      contextualKeywords: [],
+    };
+  }
 });
 
 /**
