@@ -27,8 +27,8 @@ const outfit = Outfit({
 // SEO Constants
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me";
 const SITE_NAME = "IPTV Provider";
-const DEFAULT_TITLE = "Best IPTV Provider 2026 | Buy IPTV USA, UK & Worldwide - 24K+ Channels";
-const DEFAULT_DESCRIPTION = "Buy IPTV from the #1 rated provider! Get 24,000+ live channels, HD/4K streaming, VOD movies & sports. Affordable IPTV subscription for USA, UK & worldwide. 24/7 support.";
+const DEFAULT_TITLE = "Best IPTV Providers of 2026 | Top IPTV Service Provider";
+const DEFAULT_DESCRIPTION = "Looking for the best IPTV provider? We are a top-rated IPTV service provider offering 24,000+ channels, HD/4K streaming, and VOD. Compare the best IPTV providers and choose us for a premium experience.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   
   keywords: [
     'best IPTV provider',
+    'iptv providers',
+    'best iptv providers',
+    'iptv service provider',
     'buy IPTV',
     'IPTV subscription',
     'IPTV USA',
@@ -74,8 +77,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Best IPTV Provider 2026 | 24K+ Channels | USA, UK & Worldwide",
-    description: "Stream 24,000+ live channels in HD/4K. Movies, sports, news & more. Affordable plans. Subscribe to the best IPTV service today!",
+    title: "Best IPTV Providers 2026 | Top IPTV Service Provider",
+    description: "Stream 24,000+ live channels in HD/4K from the best IPTV provider. Movies, sports, news & more. Subscribe to a top IPTV service today!",
     images: [
       {
         url: `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`,
@@ -91,8 +94,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@iptvprovider",
     creator: "@iptvprovider",
-    title: "Best IPTV Provider 2026 | 24K+ Channels",
-    description: "Stream 24,000+ live channels in HD/4K. Movies, sports & more. Subscribe now!",
+    title: "Best IPTV Providers 2026 | 24K+ Channels",
+    description: "Stream 24,000+ live channels in HD/4K from one of the best IPTV providers. Movies, sports & more. Subscribe now!",
     images: [{
       url: `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`,
       alt: `${SITE_NAME} - Premium IPTV Service`,
@@ -173,7 +176,7 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": SITE_NAME,
-      "alternateName": ["IPTV Provider", "best iptv"],
+      "alternateName": ["IPTV Providers", "best iptv provider"],
       "url": SITE_URL,
       "potentialAction": {
         "@type": "SearchAction",

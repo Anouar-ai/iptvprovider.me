@@ -40,7 +40,7 @@ export function Hero() {
             underlineClassName="text-primary"
           />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-secondary-foreground/80">
-            Unlock a world of entertainment with our top-rated IPTV Provider. Start your subscription now, from just $7.50/mo.
+            Unlock a world of entertainment with one of the world's best IPTV providers. Start your subscription now, from just $7.50/mo.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:bg-accent hover:shadow-xl hover:shadow-primary/30">

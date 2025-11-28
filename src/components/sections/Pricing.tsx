@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Check } from "lucide-react";
@@ -24,7 +25,7 @@ export function Pricing() {
       <Container>
         <SectionHeader
           title="Choose Your IPTV Provider Package"
-          subtitle="Select the perfect IPTV Provider plan that fits your needs. All plans come with our full feature set."
+          subtitle="Select the perfect plan from one of the best IPTV providers. All plans come with our full feature set."
         />
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, i) => (

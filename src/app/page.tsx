@@ -19,7 +19,7 @@ export default async function Home() {
     "@type": "Product",
     "name": "IPTV Provider Subscription",
     "image": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
-    "description": "Premium IPTV Provider with over 20,000 channels, HD/4K quality, and instant activation.",
+    "description": "As one of the best IPTV providers, we offer a premium IPTV service provider subscription with over 20,000 channels, HD/4K quality, and instant activation.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
