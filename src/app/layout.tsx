@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -204,7 +205,6 @@ export default function RootLayout({
           <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-          <script src="https://analytics.ahrefs.com/analytics.js" data-key="Jl98JtH7ssQUsMyNzloJAw" async></script>
         </head>
       <body className={cn(
         "font-body antialiased",
@@ -213,6 +213,11 @@ export default function RootLayout({
       )}>
         <ProgressBar />
         <Analytics />
+        <Script
+            src="https://analytics.ahrefs.com/analytics.js"
+            data-key="Jl98JtH7ssQUsMyNzloJAw"
+            strategy="lazyOnload"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
