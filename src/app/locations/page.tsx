@@ -5,7 +5,7 @@ import { Container } from '@/components/shared/Container';
 import { allCountries } from '@/lib/countries';
 import { FlagIcon } from '@/components/shared/FlagIcon';
 import SemanticContent from '@/components/shared/SemanticContent';
-import { generateSemanticContent, type SemanticContent as SemanticContentType } from '@/lib/vector-seo';
+import { getLocationsPageData } from '@/lib/data/locations-page';
 
 const pageTitle = "IPTV Provider Service Locations | Available Worldwide";
 
@@ -24,37 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default async function LocationsPage() {
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.iptvprovider.me/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Service Locations",
-                "item": "https://www.iptvprovider.me/locations"
-            }
-        ]
-    };
-    
-    let semanticContent: SemanticContentType;
-    try {
-        semanticContent = await generateSemanticContent("IPTV Service Locations");
-    } catch (error) {
-        console.error("Failed to generate semantic content:", error);
-        semanticContent = {
-            primaryEntity: "IPTV Service Locations",
-            relatedEntities: [],
-            semanticClusters: [],
-            contextualKeywords: []
-        };
-    }
+    const { semanticContent, breadcrumbSchema } = await getLocationsPageData();
 
     return (
         <>
