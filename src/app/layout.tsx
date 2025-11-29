@@ -207,6 +207,7 @@ export default function RootLayout({
           <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+          <script src="https://cdn.visitors.now/v.js" data-token="0a9ca441-3262-415a-a3ac-e06859feeeba" async></script>
         </head>
       <body className={cn(
         "font-body antialiased",
