@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
-import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
+import { getIptvFreeTrialPageData } from "@/lib/data/iptv-free-trial-page";
 
 export const metadata: Metadata = {
     title: "IPTV Free Trial | Test Our Premium IPTV Service",
@@ -27,37 +27,7 @@ const features = [
 ];
 
 export default async function IptvFreeTrialPage() {
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.iptvprovider.me/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "IPTV Free Trial",
-                "item": "https://www.iptvprovider.me/iptv-free-trial"
-            }
-        ]
-    };
-    
-    let semanticContent: SemanticContentType;
-    try {
-        semanticContent = await generateSemanticContent("IPTV Free Trial");
-    } catch (error) {
-        console.error("Failed to generate semantic content:", error);
-        semanticContent = {
-            primaryEntity: "IPTV Free Trial",
-            relatedEntities: [],
-            semanticClusters: [],
-            contextualKeywords: []
-        };
-    }
+    const { semanticContent, breadcrumbSchema } = await getIptvFreeTrialPageData();
 
     return (
         <>
