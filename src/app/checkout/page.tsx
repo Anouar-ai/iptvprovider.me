@@ -12,14 +12,15 @@ import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { Schema } from "@/components/shared/Schema";
 import { getCheckoutPageData } from "@/lib/data/checkout-page";
+import { generateMetadata } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-    title: "Secure Checkout | IPTV Provider",
-    description: "Complete your IPTV Provider subscription securely. Enter your payment details to get instant access to thousands of channels.",
-    alternates: {
-      canonical: "/checkout",
-    },
-};
+export function generateMetadata(): Metadata {
+    return generateMetadata({
+        title: "Secure Checkout | IPTV Provider",
+        description: "Complete your IPTV Provider subscription securely. Enter your payment details to get instant access to thousands of channels.",
+        canonical: "/checkout",
+    });
+}
 
 
 export default async function CheckoutPage() {

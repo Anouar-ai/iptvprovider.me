@@ -198,25 +198,26 @@ interface HowToSchemaProps {
 }
 
 export function generateHowToSchema(props: HowToSchemaProps): HowTo {
+    const { name, description, image, steps, totalTime } = props;
     return {
         '@context': 'https://schema.org',
         '@type': 'HowTo',
-        name: props.name,
-        description: props.description,
-        image: props.image ? {
+        name,
+        description,
+        image: image ? {
             '@type': 'ImageObject',
-            url: props.image.url,
-            width: props.image.width,
-            height: props.image.height,
+            url: image.url,
+            width: image.width,
+            height: image.height,
         } : undefined,
-        step: props.steps.map((step, index) => ({
+        step: steps.map((step, index) => ({
             '@type': 'HowToStep',
             name: step.name,
             text: step.text,
             url: step.url,
             position: index + 1,
         })),
-        totalTime: props.totalTime || 'PT5M', // Default to 5 minutes
+        totalTime: totalTime || 'PT5M', // Default to 5 minutes
     };
 }
 

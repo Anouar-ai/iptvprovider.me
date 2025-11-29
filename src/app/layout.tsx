@@ -12,6 +12,7 @@ import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
+import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,44 +28,29 @@ const outfit = Outfit({
 });
 
 // SEO Constants
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me";
-const SITE_NAME = "IPTV Provider";
-const DEFAULT_TITLE = "Best IPTV Providers of 2026 | Top IPTV Service Provider";
-const DEFAULT_DESCRIPTION = "Looking for the best IPTV provider? We are a top-rated IPTV service provider offering 24,000+ channels, HD/4K streaming, and VOD. Compare the best IPTV providers and choose us for a premium experience.";
+const DEFAULT_TITLE = "IPTV Provider | 24,000+ Channels & VOD | Best IPTV Service";
+const DEFAULT_DESCRIPTION = "Get the best IPTV service with over 24,000 live channels and a massive VOD library. Instant activation, HD/4K quality, and 24/7 support. Subscribe to the top IPTV provider today!";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteConfig.url),
   
   title: {
     default: DEFAULT_TITLE,
-    template: `%s | ${SITE_NAME}`
+    template: `%s | ${siteConfig.name}`
   },
   
   description: DEFAULT_DESCRIPTION,
   
   keywords: [
-    'best IPTV provider',
-    'iptv providers',
-    'best iptv providers',
-    'iptv service provider',
-    'buy IPTV',
-    'IPTV subscription',
-    'IPTV USA',
-    'IPTV UK',
-    'IPTV service',
-    'premium IPTV',
-    'cheap IPTV',
-    'IPTV channels',
-    'live TV streaming',
-    'IPTV 2026',
-    '4K IPTV',
-    'sports IPTV',
-    'VOD streaming'
+    'best IPTV provider', 'iptv providers', 'best iptv providers', 'iptv service provider',
+    'buy IPTV', 'IPTV subscription', 'IPTV USA', 'IPTV UK', 'IPTV service',
+    'premium IPTV', 'cheap IPTV', 'IPTV channels', 'live TV streaming',
+    '4K IPTV', 'sports IPTV', 'VOD streaming'
   ],
   
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
-  creator: SITE_NAME,
-  publisher: SITE_NAME,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   
   alternates: {
     canonical: '/',
@@ -77,17 +63,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    title: "Best IPTV Providers 2026 | Top IPTV Service Provider",
-    description: "Stream 24,000+ live channels in HD/4K from the best IPTV provider. Movies, sports, news & more. Subscribe to a top IPTV service today!",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`,
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} - Best Streaming Service`,
-        type: 'image/png',
+        alt: `${siteConfig.name} - Best Streaming Service`,
+        type: 'image/jpeg',
       }
     ],
   },
@@ -96,11 +82,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@iptvprovider",
     creator: "@iptvprovider",
-    title: "Best IPTV Providers 2026 | 24K+ Channels",
-    description: "Stream 24,000+ live channels in HD/4K from one of the best IPTV providers. Movies, sports & more. Subscribe now!",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [{
-      url: `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`,
-      alt: `${SITE_NAME} - Premium IPTV Service`,
+      url: siteConfig.ogImage,
+      alt: `${siteConfig.name} - Premium IPTV Service`,
     }],
   },
   

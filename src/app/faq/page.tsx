@@ -6,14 +6,15 @@ import { Container } from "@/components/shared/Container";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { getFaqPageData } from "@/lib/data/faq-page";
 import { Schema } from "@/components/shared/Schema";
+import { generateMetadata } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-    title: "Frequently Asked Questions | IPTV Provider",
-    description: "Have questions about our IPTV Provider? Find answers to common questions about free trials, device compatibility, buffering, activation, and our refund policy.",
-    alternates: {
+export function generateMetadata(): Metadata {
+    return generateMetadata({
+        title: "Frequently Asked Questions | IPTV Provider",
+        description: "Have questions about our IPTV Provider? Find answers to common questions about free trials, device compatibility, buffering, activation, and our refund policy.",
         canonical: "/faq",
-    }
-};
+    });
+}
 
 export default async function FaqPage() {
   const { 

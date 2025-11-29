@@ -10,6 +10,8 @@ import { FlagIcon } from "@/components/shared/FlagIcon";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getCountryPageData } from "@/lib/data/country-page";
 import { Schema } from "@/components/shared/Schema";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
+import { notFound } from "next/navigation";
 
 
 type Props = {
@@ -20,28 +22,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const country = getCountryById(params.country);
 
   if (!country) {
-    return {
-      title: "Country Not Found",
-    };
+    notFound();
   }
 
   const title = `Best IPTV Provider in ${country.name} | Reliable Streaming`;
   const description = `Get the best IPTV Provider in ${country.name}. Enjoy 20,000+ channels, HD/4K quality, and instant activation. Perfect for sports, movies, and TV shows in ${country.name}.`;
 
-  return {
+  return generatePageMetadata({
     title,
     description,
-    keywords: [`IPTV ${country.name}`, `buy IPTV ${country.name}`, `${country.name} IPTV provider`, `best IPTV for ${country.name}`],
-    openGraph: {
-      title,
-      description,
-      type: 'website',
-      images: [`/api/og?title=${encodeURIComponent(title)}`],
-    },
-    alternates: {
-      canonical: `/country/${params.country}`,
-    },
-  };
+    canonical: `/country/${params.country}`,
+  });
 }
 
 export default async function CountryPage({ params }: { params: { country: string }}) {

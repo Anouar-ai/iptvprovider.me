@@ -14,15 +14,15 @@ import SemanticContent from '@/components/shared/SemanticContent';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from '@/lib/vector-seo';
 import { Schema } from '@/components/shared/Schema';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateMetadata } from '@/lib/site-config';
 
-
-export const metadata: Metadata = {
-    title: "Contact Us | IPTV Provider",
-    description: "Get in touch with our team. Whether you have a question about our IPTV Provider or need support, we're here to help.",
-    alternates: {
+export function generateMetadata(): Metadata {
+    return generateMetadata({
+        title: "Contact Us | IPTV Provider",
+        description: "Get in touch with our team. Whether you have a question about our IPTV Provider or need support, we're here to help.",
         canonical: "/contact",
-    }
-};
+    });
+}
 
 export default async function ContactPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([

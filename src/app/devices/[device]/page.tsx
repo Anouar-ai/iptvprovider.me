@@ -13,6 +13,7 @@ import InternalLinks from "@/components/shared/InternalLinks";
 import type { Post } from "@/lib/linking";
 import { Schema } from "@/components/shared/Schema";
 import { generateArticleSchema, generateHowToSchema, generateFAQPageSchema, generateProductSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 
 type Props = {
@@ -43,7 +44,7 @@ function StructuredData({ article }: { article: Post }) {
             width: image.width,
             height: image.height
         } : undefined,
-        step: steps.map((step, index) => ({
+        steps: steps.map((step, index) => ({
             name: step.title,
             text: step.description,
             url: `${baseUrl}/devices/${id}#step-${index + 1}`,
@@ -82,27 +83,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = howToArticles.find((p) => p.id === params.device);
 
   if (!article) {
-    return {
-      title: "Guide Not Found",
-    };
+    notFound();
   }
 
-  const { title, description, keywords } = article;
+  const { title, description } = article;
 
-  return {
-    title,
-    description,
-    keywords,
-    openGraph: {
-      title: title,
-      description: description,
-      type: 'article',
-      images: [`/api/og?title=${encodeURIComponent(title)}`],
-    },
-    alternates: {
-      canonical: `/devices/${params.device}`,
-    },
-  };
+  return generatePageMetadata({
+    title: title,
+    description: description,
+    canonical: `/devices/${params.device}`,
+  });
 }
 
 export default async function HowToPage({ params }: { params: { device: string }}) {

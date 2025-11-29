@@ -8,24 +8,15 @@ import SemanticContent from "@/components/shared/SemanticContent";
 import { SubscriptionFeatures } from "@/components/sections/SubscriptionFeatures";
 import { getPricingPageData } from "@/lib/data/pricing-page";
 import { Schema } from "@/components/shared/Schema";
+import { generateMetadata } from "@/lib/site-config";
 
-const ogTitle = "Best IPTV Provider Plans - Stream 20,000+ Channels Today";
-
-export const metadata: Metadata = {
-  title: "IPTV Subscription Plans",
-  description: "Choose the perfect IPTV Provider plan. Starting at just $7.50/month with 20,000+ channels, HD/4K quality, and 24/7 support. Instant activation. Buy now!",
-  keywords: "IPTV Provider subscription, buy IPTV, IPTV plans, IPTV pricing, monthly IPTV, yearly IPTV, SEM, SEA",
-  openGraph: {
-    title: ogTitle,
-    description: "Get the best IPTV Provider subscription with HD/4K quality. Flexible plans from 1-12 months available. Perfect for your SEM and SMM campaigns.",
-    url: "/pricing",
-    type: "website",
-    images: [{ url: `/api/og?title=${encodeURIComponent(ogTitle)}` }],
-  },
-  alternates: {
-    canonical: "/pricing",
-  },
-};
+export function generateMetadata(): Metadata {
+    return generateMetadata({
+        title: "IPTV Subscription Plans | Best IPTV Provider Packages",
+        description: "Choose the perfect IPTV Provider plan. Starting at just $7.50/month with 20,000+ channels, HD/4K quality, and 24/7 support. Instant activation. Buy now!",
+        canonical: "/pricing",
+    });
+}
 
 
 export default async function IPTVSubscription() {

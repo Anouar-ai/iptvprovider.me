@@ -45,6 +45,7 @@ export function generateMetadata({
       ],
     },
     twitter: {
+      card: 'summary_large_image',
       title,
       description,
       images: [image || `/api/og?title=${encodeURIComponent(title)}`],
