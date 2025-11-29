@@ -9,10 +9,10 @@ import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { getIptvFreeTrialPageData } from "@/lib/data/iptv-free-trial-page";
 import { Schema } from "@/components/shared/Schema";
-import { generateMetadata } from "@/lib/site-config";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
-    return generateMetadata({
+    return generatePageMetadata({
         title: "IPTV Free Trial | Test Our Premium IPTV Service",
         description: "Discover our IPTV service. We offer a low-cost 1-month plan as a trial to ensure the highest quality for all users. Get instant access to 20,000+ channels.",
         canonical: "/iptv-free-trial",
