@@ -12,7 +12,7 @@ import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Buy IPTV Subscription | Plans from $7.50/mo | IPTV Provider",
+        title: "Buy IPTV Subscription | Plans from $7.50/mo",
         description: "Choose the perfect IPTV Provider plan. Starting at just $7.50/month with 20,000+ channels, HD/4K quality, and 24/7 support. Instant activation. Buy now!",
         canonical: "/pricing",
     });
