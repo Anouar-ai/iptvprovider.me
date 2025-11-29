@@ -1,19 +1,20 @@
 
-import { weeklyBuzzItems } from "@/lib/site-data/weekly-buzz";
 import { ContentCarousel } from "../shared/ContentCarousel";
-import { getPlaceholderImage } from "@/lib/image-blur";
 
-export async function WeeklyBuzz() {
-  const itemsWithPlaceholders = await Promise.all(
-    weeklyBuzzItems.map(async (item) => {
-      const placeholder = await getPlaceholderImage(item.src);
-      return { ...item, placeholder };
-    })
-  );
-  
+interface Item {
+  title: string;
+  src: string;
+  placeholder: string;
+}
+
+interface WeeklyBuzzProps {
+  items: Item[];
+}
+
+export function WeeklyBuzz({ items }: WeeklyBuzzProps) {
   return (
     <ContentCarousel
-      items={itemsWithPlaceholders}
+      items={items}
       title="Top 10"
       titleClassName="styled-title absolute top-8 text-7xl opacity-10 sm:top-4 sm:text-[9rem]"
       subtitle="Movies"
