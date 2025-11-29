@@ -1,6 +1,8 @@
 
 import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
+import { generateBreadcrumbSchema } from '@/lib/schema';
+import type { BreadcrumbList } from 'schema-dts';
 
 // This function fetches and processes all data required for the locations page in a single, cached operation.
 export const getLocationsPageData = cache(
@@ -10,24 +12,10 @@ export const getLocationsPageData = cache(
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent("IPTV Service Locations");
 
-    const breadcrumbSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": `${baseUrl}/`
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Service Locations",
-                "item": `${baseUrl}/locations`
-            }
-        ]
-    });
+    const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
+        { name: "Home", item: `${baseUrl}/` },
+        { name: "Service Locations", item: `${baseUrl}/locations` }
+    ]));
 
     // Await all promises in parallel for maximum efficiency
     const [

@@ -11,6 +11,8 @@ import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
+import { Schema } from "@/components/shared/Schema";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Secure Checkout | IPTV Provider",
@@ -22,24 +24,10 @@ export const metadata: Metadata = {
 
 
 export default async function CheckoutPage() {
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.iptvprovider.me/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Checkout",
-                "item": "https://www.iptvprovider.me/checkout"
-            }
-        ]
-    };
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", item: "https://www.iptvprovider.me/" },
+        { name: "Checkout", item: "https://www.iptvprovider.me/checkout" }
+    ]);
     
     let semanticContent: SemanticContentType;
     try {
@@ -56,10 +44,8 @@ export default async function CheckoutPage() {
 
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
+            <Schema id="breadcrumb" schema={breadcrumbSchema} />
+
             <SemanticContent 
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}

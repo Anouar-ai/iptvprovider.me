@@ -6,6 +6,7 @@ import { allCountries } from '@/lib/countries';
 import { FlagIcon } from '@/components/shared/FlagIcon';
 import SemanticContent from '@/components/shared/SemanticContent';
 import { getLocationsPageData } from '@/lib/data/locations-page';
+import { Schema } from '@/components/shared/Schema';
 
 const pageTitle = "IPTV Provider Service Locations | Available Worldwide";
 
@@ -28,10 +29,7 @@ export default async function LocationsPage() {
 
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
+            <Schema id="breadcrumb" schema={breadcrumbSchema} />
             <SemanticContent 
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}

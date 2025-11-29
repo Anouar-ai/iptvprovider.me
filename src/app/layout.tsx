@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
-import Script from "next/script";
+import { Schema } from "@/components/shared/Schema";
+import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -154,54 +155,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": SITE_NAME,
-    "url": SITE_URL,
-    "logo": `${SITE_URL}/logo.png`,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-800-555-0199",
-      "contactType": "Customer Service"
-    },
-    "sameAs": [
-      "https://twitter.com/yourcompany",
-      "https://www.facebook.com/yourcompany",
-      "https://www.instagram.com/yourcompany"
-    ]
-  };
-
-  const websiteSchema = {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": SITE_NAME,
-      "alternateName": ["IPTV Providers", "best iptv provider"],
-      "url": SITE_URL,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${SITE_URL}/search?q={search_term_string}`
-        },
-        "query-input": "required name=search_term_string"
-      }
-  }
 
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
-          <Script
-            id="organization-schema"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-          />
-           <Script
-            id="website-schema"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-          />
+          <Schema id="organization" schema={generateOrganizationSchema()} />
+          <Schema id="website" schema={generateWebSiteSchema()} />
           <link rel="icon" href="/favicon.ico" sizes="48x48"/>
           <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
           <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
@@ -216,11 +175,11 @@ export default function RootLayout({
       )}>
         <ProgressBar />
         <Analytics />
-        <Script
+        <script
             src="https://analytics.ahrefs.com/analytics.js"
             id="ahrefs-analytics"
-            strategy="lazyOnload"
-        />
+            async
+        ></script>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -245,5 +204,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    

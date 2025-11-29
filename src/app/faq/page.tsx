@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { getFaqPageData } from "@/lib/data/faq-page";
+import { Schema } from "@/components/shared/Schema";
 
 export const metadata: Metadata = {
     title: "Frequently Asked Questions | IPTV Provider",
@@ -23,14 +24,9 @@ export default async function FaqPage() {
 
   return (
     <>
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-       <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <Schema id="faq" schema={faqSchema} />
+      <Schema id="breadcrumb" schema={breadcrumbSchema} />
+
       <SemanticContent 
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { getIptvFreeTrialPageData } from "@/lib/data/iptv-free-trial-page";
+import { Schema } from "@/components/shared/Schema";
 
 export const metadata: Metadata = {
     title: "IPTV Free Trial | Test Our Premium IPTV Service",
@@ -31,10 +32,8 @@ export default async function IptvFreeTrialPage() {
 
     return (
         <>
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
+        <Schema id="breadcrumb" schema={breadcrumbSchema} />
+
         <SemanticContent 
             primaryEntity={semanticContent.primaryEntity}
             relatedEntities={semanticContent.relatedEntities}

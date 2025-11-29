@@ -3,6 +3,8 @@ import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 import { plans } from "@/lib/site-data/pricing";
 import { pricingPageFaqs } from "@/lib/site-data/pricing-page-faq";
+import { generateProductSchema, generateBreadcrumbSchema, generateFAQPageSchema } from "@/lib/schema";
+import type { Product, BreadcrumbList, FAQPage } from 'schema-dts';
 
 // This function fetches and processes all data required for the pricing page in a single, cached operation.
 export const getPricingPageData = cache(
@@ -11,19 +13,15 @@ export const getPricingPageData = cache(
 
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent("IPTV Subscription Plans");
-
-    // Static schemas can be resolved immediately
-    const schemaOrgPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "IPTV Provider Subscription",
-        "image": "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
-        "description": "Premium IPTV Provider with 20,000+ channels, HD/4K quality, and 24/7 support. Available in 1, 3, 6, and 12-month plans.",
-        "brand": {
-          "@type": "Brand",
-          "name": "IPTV Provider"
-        },
-        "offers": plans.map(plan => ({
+    
+    const productSchemaPromise: Promise<Product> = Promise.resolve(generateProductSchema({
+      name: "IPTV Provider Subscription",
+      description: "Premium IPTV Provider with 20,000+ channels, HD/4K quality, and 24/7 support. Available in 1, 3, 6, and 12-month plans.",
+      image: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+      ratingValue: "4.8",
+      reviewCount: "2547",
+      price: "0", // Price is specified in offers
+      offers: plans.map(plan => ({
           "@type": "Offer",
           "name": `IPTV Provider - ${plan.name}`,
           "price": plan.price,
@@ -35,98 +33,33 @@ export const getPricingPageData = cache(
           "seller": {
             "@type": "Organization",
             "name": "IPTV Provider"
-          },
-          "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              shippingRate: {
-                "@type": "MonetaryAmount",
-                value: 0,
-                currency: "USD"
-              },
-              shippingDestination: {
-                "@type": "DefinedRegion",
-                addressCountry: "WW" 
-              },
-              deliveryTime: {
-                "@type": "ShippingDeliveryTime",
-                handlingTime: {
-                  "@type": "QuantitativeValue",
-                  minValue: 0,
-                  maxValue: 0,
-                  unitCode: "DAY"
-                },
-                transitTime: {
-                  "@type": "QuantitativeValue",
-                  minValue: 0,
-                  maxValue: 0,
-                  unitCode: "DAY"
-                }
-              }
-          },
-          "hasMerchantReturnPolicy": {
-              "@type": "MerchantReturnPolicy",
-              applicableCountry: "WW",
-              returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-              merchantReturnDays: 7,
-              returnMethod: "https://schema.org/ReturnByMail",
-              returnFees: "https://schema.org/FreeReturn"
           }
-        })),
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "2547"
-        }
-    });
+      }))
+    }));
 
-    const breadcrumbSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.iptvprovider.me/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Pricing",
-                "item": "https://www.iptvprovider.me/pricing"
-            }
-        ]
-    });
+    const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
+        { name: "Home", item: `${baseUrl}/` },
+        { name: "Pricing", item: `${baseUrl}/pricing` }
+    ]));
     
-    const faqSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": pricingPageFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    });
+    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pricingPageFaqs));
 
     // Await all promises in parallel for maximum efficiency
     const [
       semanticContent,
-      schemaOrg,
+      productSchema,
       breadcrumbSchema,
       faqSchema,
     ] = await Promise.all([
       semanticContentPromise,
-      schemaOrgPromise,
+      productSchemaPromise,
       breadcrumbSchemaPromise,
       faqSchemaPromise,
     ]);
 
     return { 
       semanticContent, 
-      schemaOrg,
+      productSchema,
       breadcrumbSchema,
       faqSchema,
       pricingPageFaqs, // Pass static data through as well

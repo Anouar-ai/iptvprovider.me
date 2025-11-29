@@ -2,6 +2,9 @@
 import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 import { faqs } from "@/lib/site-data/faq";
+import { generateBreadcrumbSchema, generateFAQPageSchema } from '@/lib/schema';
+import type { BreadcrumbList, FAQPage } from 'schema-dts';
+
 
 // This function fetches and processes all data required for the FAQ page in a single, cached operation.
 export const getFaqPageData = cache(
@@ -11,27 +14,12 @@ export const getFaqPageData = cache(
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent("IPTV Provider Frequently Asked Questions");
 
-    const faqSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    });
+    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(faqs));
 
-    const breadcrumbSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${baseUrl}/` },
-            { "@type": "ListItem", "position": 2, "name": "FAQ", "item": `${baseUrl}/faq` }
-        ]
-    });
+    const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
+        { name: "Home", item: `${baseUrl}/` },
+        { name: "FAQ", item: `${baseUrl}/faq` }
+    ]));
 
     // Await all promises in parallel
     const [

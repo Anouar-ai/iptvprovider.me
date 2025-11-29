@@ -7,6 +7,7 @@ import Link from "next/link";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { SubscriptionFeatures } from "@/components/sections/SubscriptionFeatures";
 import { getPricingPageData } from "@/lib/data/pricing-page";
+import { Schema } from "@/components/shared/Schema";
 
 const ogTitle = "Best IPTV Provider Plans - Stream 20,000+ Channels Today";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 export default async function IPTVSubscription() {
     const { 
       semanticContent, 
-      schemaOrg, 
+      productSchema,
       breadcrumbSchema, 
       faqSchema,
       pricingPageFaqs
@@ -38,18 +39,10 @@ export default async function IPTVSubscription() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
-      />
-       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <Schema id="product" schema={productSchema} />
+      <Schema id="breadcrumb" schema={breadcrumbSchema} />
+      <Schema id="faq" schema={faqSchema} />
+      
       <SemanticContent 
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}

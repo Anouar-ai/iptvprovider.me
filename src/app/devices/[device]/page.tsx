@@ -1,5 +1,4 @@
 
-
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -12,6 +11,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import InternalLinks from "@/components/shared/InternalLinks";
 import type { Post } from "@/lib/linking";
+import { Schema } from "@/components/shared/Schema";
+import { generateArticleSchema, generateHowToSchema, generateFAQPageSchema, generateProductSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 
 type Props = {
@@ -22,165 +23,56 @@ const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy5
 
 
 function StructuredData({ article }: { article: Post }) {
-    const { id, title, description, steps, faqs, image, datePublished, dateModified } = article;
+    const { id, title, description, steps, faqs, image, datePublished, dateModified, primaryKeyword } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
 
-    const articleSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
+    const articleSchema = generateArticleSchema({
         headline: title,
-        description: description,
+        description,
         image: image?.imageUrl,
-        datePublished: datePublished,
-        dateModified: dateModified,
-        author: {
-            '@type': 'Organization',
-            name: 'IPTV Provider',
-        },
-        publisher: {
-            '@type': 'Organization',
-            name: 'IPTV Provider',
-            logo: {
-                '@type': 'ImageObject',
-                url: `${baseUrl}/logo.png`,
-            },
-        },
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `${baseUrl}/devices/${id}`,
-        },
-    };
+        datePublished,
+        dateModified,
+        url: `${baseUrl}/devices/${id}`,
+    });
 
-    const howToSchema = {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
+    const howToSchema = generateHowToSchema({
         name: title,
         description: description,
         image: image ? {
-            "@type": "ImageObject",
-            "url": image.imageUrl,
-            "width": image.width,
-            "height": image.height
+            url: image.imageUrl,
+            width: image.width,
+            height: image.height
         } : undefined,
         step: steps.map((step, index) => ({
-            "@type": "HowToStep",
             name: step.title,
             text: step.description,
             url: `${baseUrl}/devices/${id}#step-${index + 1}`,
-            position: index + 1,
         })),
-        totalTime: "PT5M",
-    };
+    });
 
-    const faqSchema = faqs ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs.map(faq => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    } : null;
-
-    const productSchema = {
-        "@context": "https://schema.org",
-        "@type": "Product",
+    const faqSchema = faqs ? generateFAQPageSchema(faqs) : null;
+    
+    const productSchema = generateProductSchema({
         name: "IPTV Provider Subscription",
+        description: `Our premium IPTV Provider is fully compatible with ${primaryKeyword}. Follow our guide to get set up.`,
         image: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
-        description: `Our premium IPTV Provider is fully compatible with ${article.primaryKeyword}. Follow our guide to get set up.`,
-        brand: {
-            '@type': 'Brand',
-            name: 'IPTV Provider'
-        },
-        offers: {
-            "@type": "Offer",
-            price: "14.99",
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock",
-            url: `${baseUrl}/pricing`,
-            priceValidUntil: "2025-12-31",
-            shippingDetails: {
-                "@type": "OfferShippingDetails",
-                shippingRate: {
-                  "@type": "MonetaryAmount",
-                  value: 0,
-                  currency: "USD"
-                },
-                shippingDestination: {
-                  "@type": "DefinedRegion",
-                  addressCountry: "WW" 
-                },
-                deliveryTime: {
-                  "@type": "ShippingDeliveryTime",
-                  handlingTime: {
-                    "@type": "QuantitativeValue",
-                    minValue: 0,
-                    maxValue: 0,
-                    unitCode: "DAY"
-                  },
-                  transitTime: {
-                    "@type": "QuantitativeValue",
-                    minValue: 0,
-                    maxValue: 0,
-                    unitCode: "DAY"
-                  }
-                }
-            },
-            hasMerchantReturnPolicy: {
-                "@type": "MerchantReturnPolicy",
-                applicableCountry: "WW",
-                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                merchantReturnDays: 7,
-                returnMethod: "https://schema.org/ReturnByMail",
-                returnFees: "https://schema.org/FreeReturn"
-            }
-        }
-    };
+        ratingValue: "4.8",
+        reviewCount: "2547",
+        price: "14.99",
+    });
 
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": `${baseUrl}/`
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": title,
-                "item": `${baseUrl}/devices/${id}`
-            }
-        ]
-    };
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", item: `${baseUrl}/` },
+        { name: title, item: `${baseUrl}/devices/${id}` }
+    ]);
 
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-            />
-            {faqSchema && <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-            />
-             <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
+            <Schema id="article" schema={articleSchema} />
+            <Schema id="how-to" schema={howToSchema} />
+            {faqSchema && <Schema id="faq" schema={faqSchema} />}
+            <Schema id="product" schema={productSchema} />
+            <Schema id="breadcrumb" schema={breadcrumbSchema} />
         </>
     );
 }

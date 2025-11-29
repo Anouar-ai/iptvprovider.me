@@ -9,6 +9,7 @@ import SemanticContent from "@/components/shared/SemanticContent";
 import { FlagIcon } from "@/components/shared/FlagIcon";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { getCountryPageData } from "@/lib/data/country-page";
+import { Schema } from "@/components/shared/Schema";
 
 
 type Props = {
@@ -57,18 +58,10 @@ export default async function CountryPage({ params }: { params: { country: strin
 
   return (
     <>
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <Schema id="breadcrumb" schema={breadcrumbSchema} />
+      <Schema id="service" schema={serviceSchema} />
+      <Schema id="faq" schema={faqSchema} />
+
       <SemanticContent 
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}

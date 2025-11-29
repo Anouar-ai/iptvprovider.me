@@ -3,6 +3,8 @@ import { unstable_cache as cache } from 'next/cache';
 import { notFound } from 'next/navigation';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 import { getCountryById } from "@/lib/countries";
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQPageSchema } from '@/lib/schema';
+import type { BreadcrumbList, Service, FAQPage } from 'schema-dts';
 
 const getPageFaqs = (name: string) => [
     {
@@ -39,35 +41,23 @@ export const getCountryPageData = cache(
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent(`IPTV Provider in ${name}`);
 
-    const breadcrumbSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${baseUrl}/` },
-            { "@type": "ListItem", "position": 2, "name": "Locations", "item": `${baseUrl}/locations` },
-            { "@type": "ListItem", "position": 3, "name": name, "item": `${baseUrl}/country/${countryId}` }
-        ]
-    });
+    const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
+        { name: "Home", item: `${baseUrl}/` },
+        { name: "Locations", item: `${baseUrl}/locations` },
+        { name: name, item: `${baseUrl}/country/${countryId}` }
+    ]));
 
-    const serviceSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "IPTV Provider",
-        "provider": { "@type": "Organization", "name": "IPTV Provider" },
-        "areaServed": { "@type": "Country", "name": name },
-        "name": `IPTV Provider for ${name}`,
-        "description": `Premium IPTV service available in ${name} with over 20,000 channels, HD/4K quality, and instant setup.`,
-        "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "USD" }
-    });
+    const serviceSchemaPromise: Promise<Service> = Promise.resolve(generateServiceSchema({
+        serviceType: "IPTV Provider",
+        providerName: "IPTV Provider",
+        areaServed: { type: "Country", name },
+        name: `IPTV Provider for ${name}`,
+        description: `Premium IPTV service available in ${name} with over 20,000 channels, HD/4K quality, and instant setup.`,
+        price: "14.99",
+        priceCurrency: "USD"
+    }));
 
-    const faqSchemaPromise = Promise.resolve({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": pageFaqs.map(faq => ({
-            "@type": "Question", "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-        }))
-    });
+    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pageFaqs));
 
     // Await all promises in parallel
     const [
