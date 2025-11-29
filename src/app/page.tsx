@@ -12,6 +12,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { getHomePageData } from "@/lib/data/home-page";
 import { Schema } from "@/components/shared/Schema";
 import { generateProductSchema } from "@/lib/schema";
+import { siteConfig } from "@/lib/site-config";
 
 
 export default async function Home() {
@@ -22,12 +23,31 @@ export default async function Home() {
     } = await getHomePageData();
 
     const productSchema = generateProductSchema({
-      name: "IPTV Provider Subscription",
-      description: "As one of the best IPTV providers, we offer a premium IPTV service provider subscription with over 20,000 channels, HD/4K quality, and instant activation.",
-      image: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
+      name: "Premium IPTV Subscription Service",
+      description: "Get the best IPTV service with over 24,000 live channels and a massive VOD library. Instant activation, HD/4K quality, and 24/7 support. Subscribe to the top IPTV provider today!",
+      image: `${siteConfig.url}/og-image.jpg`,
+      sku: "iptv-premium-service",
+      mpn: "iptv-premium-service",
+      brand: {
+        "@type": "Brand",
+        name: siteConfig.name,
+      },
       ratingValue: "4.9",
       reviewCount: "1843",
-      price: "16.00"
+      price: "0", // Price specified in offers on pricing page
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: "7.50",
+        highPrice: "16.00",
+        offerCount: "4",
+        offers: [
+            {
+                "@type": "Offer",
+                url: `${siteConfig.url}/pricing`
+            }
+        ]
+      }
     });
 
   return (

@@ -7,7 +7,10 @@ import type {
   BreadcrumbList,
   Article,
   HowTo,
-  Service
+  Service,
+  Brand,
+  Offer,
+  AggregateOffer
 } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';
 
@@ -67,7 +70,10 @@ interface ProductSchemaProps {
   reviewCount: string;
   price: string;
   priceCurrency?: string;
-  offers?: any;
+  offers?: Offer | AggregateOffer;
+  sku?: string;
+  mpn?: string;
+  brand?: Brand;
 }
 
 export function generateProductSchema(props: ProductSchemaProps): Product {
@@ -77,6 +83,9 @@ export function generateProductSchema(props: ProductSchemaProps): Product {
         name: props.name,
         description: props.description,
         image: props.image,
+        sku: props.sku,
+        mpn: props.mpn,
+        brand: props.brand,
         aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: props.ratingValue,
