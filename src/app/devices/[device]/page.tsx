@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { howToArticles } from "@/lib/how-to";
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy5
 
 
 function StructuredData({ article }: { article: Post }) {
-    const { id, title, description, steps, faqs, image, datePublished, dateModified, primaryKeyword } = article;
+    const { id, title, description, steps, faqs, image, datePublished, dateModified, primaryKeyword, totalTime } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
 
     const articleSchema = generateArticleSchema({
@@ -39,6 +39,7 @@ function StructuredData({ article }: { article: Post }) {
     const howToSchema = generateHowToSchema({
         name: title,
         description: description,
+        totalTime: totalTime,
         image: image ? {
             url: image.imageUrl,
             width: image.width,
@@ -102,7 +103,8 @@ export default async function HowToPage({ params }: { params: { device: string }
     notFound();
   }
   
-  const { title, description, steps, extraSections, faqs, image, primaryKeyword, id } = article;
+  const { title, description, steps, extraSections, faqs, image, primaryKeyword, id, totalTime } = article;
+  const totalTimeInMinutes = totalTime?.replace('PT', '').replace('M', '');
 
   return (
     <>
@@ -123,18 +125,38 @@ export default async function HowToPage({ params }: { params: { device: string }
               </ol>
             </nav>
           <article>
-            <header className="mb-12 text-center">
+            <header className="mb-8 text-center">
               <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
                 {title}
               </h1>
               <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
                 {description}
               </p>
+               {totalTimeInMinutes && (
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-muted px-4 py-1 text-sm text-muted-foreground">
+                    <Clock className="h-4 w-4" />
+                    <span>Estimated time: {totalTimeInMinutes} minutes</span>
+                </div>
+              )}
             </header>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                   <div className="prose prose-lg dark:prose-invert max-w-none">
+                       <Card className="not-prose my-8">
+                          <CardHeader>
+                              <CardTitle>What You'll Need</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                              <ul className="space-y-3 my-0">
+                                  <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A compatible {primaryKeyword}</li>
+                                  <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A stable internet connection</li>
+                                  <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> An active IPTV subscription</li>
+                                  <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Your M3U link or credentials</li>
+                              </ul>
+                          </CardContent>
+                      </Card>
+
                       <h2 className="font-headline text-3xl">Step-by-Step Installation Guide for {primaryKeyword}</h2>
                       <p>Follow these simple steps to get our IPTV Provider running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
                       <div className="space-y-8 mt-8">
@@ -186,20 +208,6 @@ export default async function HowToPage({ params }: { params: { device: string }
                   </div>
               </div>
               <aside className="lg:col-span-1 space-y-8">
-                   <Card>
-                      <CardHeader>
-                          <CardTitle>What You'll Need</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                          <ul className="space-y-3">
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A compatible {primaryKeyword}</li>
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> A stable internet connection</li>
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> An active IPTV subscription</li>
-                              <li className="flex items-center gap-3"><Check className="h-5 w-5 flex-shrink-0 text-primary" /> Your M3U link or credentials</li>
-                          </ul>
-                      </CardContent>
-                  </Card>
-
                   {image && (
                       <Card>
                       <CardContent className="p-0">

@@ -217,7 +217,7 @@ export function generateHowToSchema(props: HowToSchemaProps): HowTo {
             url: step.url,
             position: index + 1,
         })),
-        totalTime: totalTime || 'PT5M', // Default to 5 minutes
+        totalTime: totalTime,
     };
 }
 

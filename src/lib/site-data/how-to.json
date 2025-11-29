@@ -8,6 +8,7 @@
     "keywords": ["IPTV Fire TV", "Firestick IPTV setup", "install IPTV on Fire TV"],
     "datePublished": "2024-07-20T10:00:00Z",
     "dateModified": "2024-07-20T10:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Enable Apps from Unknown Sources", "description": "Navigate to <strong>Settings > My Fire TV > Developer Options</strong>. Turn on <strong>'Apps from Unknown Sources'</strong>. This is a crucial first step that allows you to install applications not found on the Amazon Appstore." },
       { "title": "Install the Downloader App", "description": "From the Fire TV home screen, use the search function to find the 'Downloader' app and install it. This utility lets you download files from the internet directly onto your Fire TV." },
@@ -28,11 +29,12 @@
     "keywords": ["IPTV on Android", "Android IPTV player", "setup IPTV Android"],
     "datePublished": "2024-07-19T11:00:00Z",
     "dateModified": "2024-07-19T11:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Download a Recommended IPTV Player", "description": "Go to the Google Play Store and search for an IPTV player. We highly recommend <a href='https://www.iptvsmarters.com/' target='_blank' rel='noopener noreferrer'><strong>IPTV Smarters Pro</strong></a> or <a href='https://play.google.com/store/apps/details?id=ar.tvplayer.tv' target='_blank' rel='noopener noreferrer'><strong>TiviMate</strong></a> for the best user experience and reliability." },
       { "title": "Install the Application", "description": "Tap the 'Install' button and wait for the app to download and install on your Android phone, tablet, or TV box." },
       { "title": "Open the App and Select Login Method", "description": "Launch the IPTV app. You will typically be prompted to add a new user or playlist. For the most seamless setup, choose the option to <strong>'Login with Xtream Codes API'</strong>." },
-      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login credentials provided in your subscription confirmation email. This includes a playlist name (e.g., 'IPTV Provider'), your username, password, and the server URL. Double-check for typos." },
+      { "title": "Enter Your Subscription Details", "description": "Carefully enter the login credentials provided in your subscription confirmation email. This includes a playlist name (e.g., 'IPTV Provider'), your username, your password, and the server URL. Double-check for typos." },
       { "title": "Start Streaming Your Content", "description": "After logging in, the app will automatically download the channel lists, movies, and TV shows. You can now start enjoying thousands of hours of content!" }
     ],
     "faqs": [
@@ -48,6 +50,7 @@
     "keywords": ["IPTV buffering fix", "stop IPTV freezing", "IPTV troubleshooting"],
     "datePublished": "2024-07-18T14:00:00Z",
     "dateModified": "2024-07-18T14:00:00Z",
+    "totalTime": "PT10M",
     "steps": [
       { "title": "Check Your Internet Speed", "description": "Buffering is most often caused by a slow or unstable internet connection. Run a speed test. For stable HD and 4K streaming, we recommend a minimum consistent download speed of <strong>25-30 Mbps</strong>." },
       { "title": "Restart Your Devices", "description": "This is a simple but highly effective solution. Power cycle your streaming device (Fire TV, Android box, etc.) and your internet router by unplugging them for 60 seconds before plugging them back in. This clears their temporary cache and can resolve many connectivity problems." },
@@ -68,6 +71,7 @@
     "keywords": ["IPTV iPhone", "iPad IPTV app", "GSE Smart IPTV iOS"],
     "datePublished": "2024-07-21T09:00:00Z",
     "dateModified": "2024-07-21T09:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Install an IPTV Player from the App Store", "description": "Open the App Store on your iPhone or iPad and search for an IPTV player. We recommend <strong>'GSE Smart IPTV'</strong> or <strong>'IPTV Smarters Player'</strong>, both of which are free to download and use." },
       { "title": "Accept Terms and Open Menu", "description": "Launch the app you just installed. After accepting the terms and conditions, open the main menu. This is usually represented by an icon with three horizontal lines (a 'hamburger' icon) located in the top-left corner of the screen." },
@@ -88,6 +92,7 @@
     "keywords": ["IPTV player for PC", "VLC IPTV setup", "watch IPTV on computer"],
     "datePublished": "2024-07-22T12:00:00Z",
     "dateModified": "2024-07-22T12:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Download VLC Media Player", "description": "Go to the official VideoLAN website at <strong>videolan.org</strong> and download the free VLC Media Player. VLC is a powerful and versatile open-source player that fully supports IPTV streams." },
       { "title": "Install VLC on Your PC", "description": "Run the downloaded installer file. Follow the on-screen instructions to complete the installation of VLC Media Player on your computer." },
@@ -108,6 +113,7 @@
     "keywords": ["IPTV for Mac", "macOS IPTV player", "IPTV Smarters Mac"],
     "datePublished": "2024-07-23T14:00:00Z",
     "dateModified": "2024-09-05T16:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Download the Recommended Player", "description": "For the best experience on macOS, download the official <strong>IPTV Smarters Player</strong>. Go to iptvsmarters.com and download the .dmg file specifically for macOS." },
       { "title": "Install the Application", "description": "Open the downloaded .dmg file. Drag the IPTV Smarters Player icon into your 'Applications' folder to install it. If prompted by macOS security, you may need to go to 'System Settings' > 'Privacy & Security' to grant permission to open the app." },
@@ -135,6 +141,7 @@
     "keywords": ["IPTV on Samsung TV", "Samsung Smart IPTV", "Set IPTV Samsung"],
     "datePublished": "2024-07-24T10:00:00Z",
     "dateModified": "2024-07-24T10:00:00Z",
+    "totalTime": "PT10M",
     "steps": [
       { "title": "Access the App Store on Your TV", "description": "Press the 'Smart Hub' or 'Home' button on your Samsung remote control to open the main app screen. Navigate to the 'Apps' section." },
       { "title": "Search for a Compatible IPTV Player", "description": "Using the search function, look for an IPTV player. We recommend installing either the <strong>'SET IPTV'</strong> or <strong>'NET IPTV'</strong> application, as they are widely available on the Samsung App Store." },
@@ -155,6 +162,7 @@
     "keywords": ["IPTV on LG TV", "webOS IPTV", "Smart IPTV LG"],
     "datePublished": "2024-07-25T11:00:00Z",
     "dateModified": "2024-07-25T11:00:00Z",
+    "totalTime": "PT10M",
     "steps": [
       { "title": "Go to the LG Content Store", "description": "Press the 'Home' button on your LG Magic Remote and navigate to the 'LG Content Store'." },
       { "title": "Find a Recommended IPTV Player", "description": "Use the search function to find an IPTV player. We strongly recommend using <strong>'IPTV Smarters Player'</strong> if available, as it allows direct login. Alternatively, you can use apps like 'SET IPTV' or 'NET IPTV'." },
@@ -175,6 +183,7 @@
     "keywords": ["IPTV Apple TV", "tvOS IPTV player", "iPlayTV setup"],
     "datePublished": "2024-07-26T15:00:00Z",
     "dateModified": "2024-07-26T15:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Go to the App Store", "description": "From your Apple TV home screen, navigate to and open the App Store application." },
       { "title": "Search for a Compatible IPTV Player", "description": "Use the search function to find an IPTV player. Popular and reliable choices for Apple TV (tvOS) include <strong>'iPlayTV'</strong> (this is a paid app) or <strong>'GSE Smart IPTV'</strong> (which is free)." },
@@ -195,6 +204,7 @@
     "keywords": ["IPTV on Roku", "Roku screen mirror IPTV", "cast IPTV to Roku"],
     "datePublished": "2024-07-27T16:00:00Z",
     "dateModified": "2024-09-06T11:00:00Z",
+    "totalTime": "PT5M",
     "steps": [
       { "title": "Understand the Method: Screen Mirroring", "description": "Roku's operating system does not allow the direct installation of common IPTV apps. Therefore, the most reliable method is to play the IPTV stream on a separate device (such as your phone or computer) and then 'mirror' or 'cast' its screen to your Roku." },
       { "title": "Set Up IPTV on Your Casting Device", "description": "First, ensure your IPTV subscription is properly set up and working on a secondary device. This can be an <strong>Android/iOS phone or tablet</strong>, or a <strong>Windows/macOS computer</strong>. Follow one of our other guides to do this first." },
@@ -215,6 +225,7 @@
     "keywords": ["IPTV MAG setup", "MAG box portal", "configure MAG device"],
     "datePublished": "2024-07-28T09:00:00Z",
     "dateModified": "2024-07-28T09:00:00Z",
+    "totalTime": "PT10M",
     "steps": [
       { "title": "Find Your Device's MAC Address", "description": "First, connect your MAG box to your TV and internet. The unique MAC address, which always starts with <strong>00:1A:79</strong>, is printed on a sticker on the bottom of the device. You must write this address down." },
       { "title": "Provide Your MAC Address to Us", "description": "During your IPTV subscription purchase, it is mandatory to provide us with the full MAC address of your MAG box. This is required for our system to authorize and activate your device on our servers." },
