@@ -18,6 +18,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 const outfit = Outfit({
@@ -25,6 +26,7 @@ const outfit = Outfit({
   weight: ["700", "900"],
   display: "swap",
   variable: "--font-outfit",
+  preload: true,
 });
 
 // SEO Constants
@@ -144,7 +146,11 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn(
+        "font-body antialiased",
+        inter.variable,
+        outfit.variable
+      )}>
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
           <Schema id="website" schema={generateWebSiteSchema()} />
@@ -152,11 +158,7 @@ export default function RootLayout({
           <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
           <script src="https://cdn.visitors.now/v.js" data-token="0a9ca441-3262-415a-a3ac-e06859feeeba" async></script>
         </head>
-      <body className={cn(
-        "font-body antialiased",
-        inter.variable,
-        outfit.variable
-      )}>
+      <body>
         <ProgressBar />
         <Analytics />
         <script
