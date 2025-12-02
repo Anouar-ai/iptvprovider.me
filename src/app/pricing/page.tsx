@@ -8,14 +8,15 @@ import SemanticContent from "@/components/shared/SemanticContent";
 import { SubscriptionFeatures } from "@/components/sections/SubscriptionFeatures";
 import { getPricingPageData } from "@/lib/data/pricing-page";
 import { Schema } from "@/components/shared/Schema";
-import { generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
     const title = "Buy IPTV Subscription | Plans from $7.50/mo";
     const description = "Choose the perfect IPTV Provider plan. Starting at just $7.50/month with 24,000+ channels, HD/4K quality, and 24/7 support. Instant activation. Buy now!";
     
     return {
-        title,
+        title: {
+            absolute: title,
+        },
         description,
         alternates: {
             canonical: "/pricing",
