@@ -20,7 +20,7 @@ const defaultPublisher = {
   'name': siteConfig.name,
   'logo': {
     '@type': 'ImageObject' as const,
-    'url': `${siteConfig.url}/logo.png`,
+    'url': siteConfig.ogImage,
   },
 };
 
@@ -35,7 +35,7 @@ export function generateWebSiteSchema(): WebSite {
       '@type': 'SearchAction',
       'target': {
         '@type': 'EntryPoint',
-        'urlTemplate': `${siteConfig.url}/search?q={search_term_string}`
+        'urlTemplate': `${siteConfig.url}/?q={search_term_string}`
       },
       'query-input': 'required name=search_term_string',
     },
@@ -48,10 +48,10 @@ export function generateOrganizationSchema(): Organization {
     '@type': 'Organization',
     'name': siteConfig.name,
     'url': siteConfig.url,
-    'logo': `${siteConfig.url}/logo.png`,
+    'logo': siteConfig.ogImage,
     'contactPoint': {
       '@type': 'ContactPoint',
-      'telephone': '+1-800-555-0199',
+      'email': 'support@iptvprovider.me',
       'contactType': 'Customer Service',
     },
     'sameAs': [
