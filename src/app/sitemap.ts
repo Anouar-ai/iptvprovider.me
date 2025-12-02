@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const devicePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/devices/${article.id}`,
-    lastModified,
+    lastModified: article.dateModified,
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -85,3 +85,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...countryPages,
   ]
 }
+
