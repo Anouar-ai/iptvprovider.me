@@ -8,6 +8,7 @@ import SemanticContent from "@/components/shared/SemanticContent";
 import { SubscriptionFeatures } from "@/components/sections/SubscriptionFeatures";
 import { getPricingPageData } from "@/lib/data/pricing-page";
 import { Schema } from "@/components/shared/Schema";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
     const title = "Buy IPTV Subscription | Plans from $7.50/mo";
