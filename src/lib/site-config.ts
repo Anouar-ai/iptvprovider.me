@@ -27,6 +27,8 @@ export function generateMetadata({
   noIndex?: boolean;
   canonical?: string;
 }) {
+  const ogImageUrl = image || `/api/og?title=${encodeURIComponent(title)}`;
+  
   return {
     title,
     description,
@@ -38,7 +40,7 @@ export function generateMetadata({
       description,
       images: [
         {
-          url: image || `/api/og?title=${encodeURIComponent(title)}`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
         },
@@ -48,7 +50,7 @@ export function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [image || `/api/og?title=${encodeURIComponent(title)}`],
+      images: [ogImageUrl],
     },
     robots: noIndex
       ? { index: false, follow: false }
