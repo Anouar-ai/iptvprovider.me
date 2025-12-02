@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next'
  
 export default function robots(): MetadataRoute.Robots {
@@ -8,14 +9,19 @@ export default function robots(): MetadataRoute.Robots {
         {
             userAgent: '*',
             allow: '/',
-            disallow: ['/admin/', '/staging/'],
+            disallow: ['/api/', '/admin/', '/staging/'],
         },
         {
             userAgent: 'GPTBot',
-            allow: '/',
+            allow: ['/devices/', '/country/', '/faq', '/pricing'],
+            disallow: ['/api/', '/admin/']
         },
         {
             userAgent: 'ChatGPT-User',
+            allow: '/',
+        },
+        {
+            userAgent: 'Google-Extended',
             allow: '/',
         },
         {
