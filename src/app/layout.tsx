@@ -18,7 +18,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-  preload: true,
 });
 
 const outfit = Outfit({
@@ -26,12 +25,13 @@ const outfit = Outfit({
   weight: ["700", "900"],
   display: "swap",
   variable: "--font-outfit",
-  preload: true,
 });
 
 // SEO Constants
 const DEFAULT_TITLE = "#1 IPTV Provider";
 const DEFAULT_DESCRIPTION = "Subscribe to the #1 IPTV provider with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Try the best IPTV service now!";
+const defaultOgImage = `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`;
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: defaultOgImage,
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - Best Streaming Service`,
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
     images: [{
-      url: siteConfig.ogImage,
+      url: defaultOgImage,
       alt: `${siteConfig.name} - Premium IPTV Service`,
     }],
   },
