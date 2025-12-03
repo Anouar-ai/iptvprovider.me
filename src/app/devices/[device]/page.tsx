@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
-import { howToArticles } from "@/lib/how-to";
+import { howToArticles, getSafeArticleData } from "@/lib/how-to";
 import { Check, Clock } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,12 +14,42 @@ import { Schema } from "@/components/shared/Schema";
 import { generateArticleSchema, generateHowToSchema, generateFAQPageSchema, generateProductSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { plans } from "@/lib/site-data/pricing";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { getPlaceholderImage } from "@/lib/server/image-blur-server";
 
 type Props = {
   params: { device: string; };
 };
 
-function StructuredData({ article }: { article: ReturnType<typeof getArticleData> }) {
+type ArticleType = ReturnType<typeof getSafeArticleData> & { 
+    image?: { 
+        imageUrl: string; 
+        imageHint: string; 
+        width?: number; 
+        height?: number; 
+        blurDataURL?: string;
+    } 
+};
+
+async function getArticleData(deviceId: string): Promise<ArticleType> {
+    const article = getSafeArticleData(deviceId);
+    if (!article) return undefined;
+
+    const imageInfo = PlaceHolderImages.find(img => img.id === `guide-image-${article.id}`);
+    if (!imageInfo) return { ...article, image: undefined };
+
+    const blurDataURL = await getPlaceholderImage(imageInfo.imageUrl);
+    return {
+        ...article,
+        image: {
+            ...imageInfo,
+            blurDataURL,
+        },
+    };
+}
+
+
+function StructuredData({ article }: { article: ArticleType }) {
     if (!article) return null;
     const { id, title, description, steps, faqs, image, datePublished, dateModified, primaryKeyword, totalTime } = article;
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.iptvprovider.me';
@@ -85,12 +115,9 @@ function StructuredData({ article }: { article: ReturnType<typeof getArticleData
     );
 }
 
-function getArticleData(deviceId: string) {
-    return howToArticles.find((p) => p.id === deviceId);
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = getArticleData(params.device);
+  const article = getSafeArticleData(params.device);
 
   if (!article) {
     notFound();
@@ -106,7 +133,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function HowToPage({ params }: { params: { device: string }}) {
-  const article = getArticleData(params.device);
+  const article = await getArticleData(params.device);
 
   if (!article) {
     notFound();
@@ -223,7 +250,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                   </div>
               </div>
               <aside className="lg:col-span-1 space-y-8">
-                  {image && (
+                  {image && image.blurDataURL && (
                       <Card>
                           <CardContent className="p-0">
                               <Image
