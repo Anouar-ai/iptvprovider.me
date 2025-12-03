@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -30,7 +29,7 @@ export function Hero() {
         style={{ opacity: videoLoaded ? 1 : 0 }}
       >
         <source
-          src="https://www.demotemplates.online/snowpulse/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider.mp4"
+          src="https://pub-93d3f90925314c4ea8adf63998c26129.r2.dev/The-Best-IPTV-Subscription-Service-Provider.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
