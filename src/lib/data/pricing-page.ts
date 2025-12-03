@@ -5,6 +5,7 @@ import { plans } from "@/lib/site-data/pricing";
 import { pricingPageFaqs } from "@/lib/site-data/pricing-page-faq";
 import { generateProductSchema, generateBreadcrumbSchema, generateFAQPageSchema } from "@/lib/schema";
 import type { Product, BreadcrumbList, FAQPage } from 'schema-dts';
+import { siteConfig } from '../site-config';
 
 // This function fetches and processes all data required for the pricing page in a single, cached operation.
 export const getPricingPageData = cache(
@@ -20,21 +21,31 @@ export const getPricingPageData = cache(
       image: "https://images-cdn.ubuy.co.in/633fee9c3a16a463ad2f7388-iptv-subscription-not-box-including.jpg",
       ratingValue: "4.8",
       reviewCount: "2547",
-      price: "0", // Price is specified in offers
-      offers: plans.map(plan => ({
-          "@type": "Offer",
-          "name": `IPTV Provider - ${plan.name}`,
-          "price": plan.price,
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": `${baseUrl}/pricing`,
-          "priceValidUntil": "2025-12-31",
-          "itemCondition": "https://schema.org/NewCondition",
-          "seller": {
-            "@type": "Organization",
-            "name": "IPTV Provider"
-          }
-      }))
+      brand: {
+        "@type": "Brand",
+        name: siteConfig.name,
+      },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: Math.min(...plans.map(p => p.price_monthly)).toFixed(2),
+        highPrice: Math.max(...plans.map(p => p.price_monthly)).toFixed(2),
+        offerCount: plans.length.toString(),
+        offers: plans.map(plan => ({
+            "@type": "Offer",
+            "name": `IPTV Provider - ${plan.name}`,
+            "price": plan.price.toFixed(2),
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": `${baseUrl}/pricing`,
+            "priceValidUntil": "2025-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": {
+              "@type": "Organization",
+              "name": "IPTV Provider"
+            }
+        }))
+      }
     }));
 
     const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([

@@ -68,8 +68,7 @@ interface ProductSchemaProps {
   image: string;
   ratingValue: string;
   reviewCount: string;
-  price?: string; // Make price optional
-  priceCurrency?: string;
+  price?: string;
   offers?: Offer | AggregateOffer;
   sku?: string;
   mpn?: string;
@@ -77,63 +76,32 @@ interface ProductSchemaProps {
 }
 
 export function generateProductSchema(props: ProductSchemaProps): Product {
+    const { name, description, image, ratingValue, reviewCount, price, offers, sku, mpn, brand } = props;
+    
+    const offerDetails = offers || (price ? {
+        '@type': 'Offer' as const,
+        price: price,
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock' as const,
+        url: `${siteConfig.url}/pricing`,
+        priceValidUntil: "2025-12-31",
+    } : undefined);
+
     return {
         '@context': 'https://schema.org',
         '@type': 'Product',
-        name: props.name,
-        description: props.description,
-        image: props.image,
-        sku: props.sku,
-        mpn: props.mpn,
-        brand: props.brand,
+        name,
+        description,
+        image,
+        sku,
+        mpn,
+        brand,
         aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: props.ratingValue,
-            reviewCount: props.reviewCount,
+            ratingValue,
+            reviewCount,
         },
-        offers: props.offers || {
-            '@type': 'Offer',
-            price: props.price,
-            priceCurrency: props.priceCurrency || 'USD',
-            availability: 'https://schema.org/InStock',
-            url: `${siteConfig.url}/pricing`,
-            priceValidUntil: "2025-12-31",
-            shippingDetails: {
-              "@type": "OfferShippingDetails",
-              shippingRate: {
-                "@type": "MonetaryAmount",
-                value: 0,
-                currency: "USD"
-              },
-              shippingDestination: {
-                "@type": "DefinedRegion",
-                addressCountry: "WW"
-              },
-              deliveryTime: {
-                "@type": "ShippingDeliveryTime",
-                handlingTime: {
-                  "@type": "QuantitativeValue",
-                  minValue: 0,
-                  maxValue: 0,
-                  unitCode: "DAY"
-                },
-                transitTime: {
-                  "@type": "QuantitativeValue",
-                  minValue: 0,
-                  maxValue: 0,
-                  unitCode: "DAY"
-                }
-              }
-            },
-            hasMerchantReturnPolicy: {
-                "@type": "MerchantReturnPolicy",
-                applicableCountry: "WW",
-                returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                merchantReturnDays: 7,
-                returnMethod: "https://schema.org/ReturnByMail",
-                returnFees: "https://schema.org/FreeReturn"
-            }
-        },
+        offers: offerDetails,
     };
 }
 
@@ -237,8 +205,7 @@ interface ServiceSchemaProps {
     areaServed: { type: string, name: string};
     name: string;
     description: string;
-    price: string;
-    priceCurrency: string;
+    offers?: Offer | AggregateOffer;
 }
 
 export function generateServiceSchema(props: ServiceSchemaProps): Service {
@@ -251,17 +218,11 @@ export function generateServiceSchema(props: ServiceSchemaProps): Service {
             name: props.providerName
         },
         areaServed: {
-            '@type': props.areaServed.type,
+            '@type': props.areaServed.type as any,
             name: props.areaServed.name,
         },
         name: props.name,
         description: props.description,
-        offers: {
-            '@type': 'Offer',
-            price: props.price,
-            priceCurrency: props.priceCurrency,
-        }
+        offers: props.offers
     }
 }
-
-    

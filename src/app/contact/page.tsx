@@ -11,9 +11,8 @@ import {
 import { Container } from '@/components/shared/Container';
 import { ContactForm } from '@/components/shared/ContactForm';
 import SemanticContent from '@/components/shared/SemanticContent';
-import { generateSemanticContent, type SemanticContent as SemanticContentType } from '@/lib/vector-seo';
+import { getContactPageData } from '@/lib/data/contact-page';
 import { Schema } from '@/components/shared/Schema';
-import { generateBreadcrumbSchema } from '@/lib/schema';
 import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 
 export function generateMetadata(): Metadata {
@@ -25,23 +24,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function ContactPage() {
-    const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: "https://www.iptvprovider.me/" },
-        { name: "Contact Us", item: "https://www.iptvprovider.me/contact" }
-    ]);
-    
-    let semanticContent: SemanticContentType;
-    try {
-        semanticContent = await generateSemanticContent("Contact IPTV Provider Support");
-    } catch (error) {
-        console.error("Failed to generate semantic content:", error);
-        semanticContent = {
-            primaryEntity: "Contact IPTV Provider Support",
-            relatedEntities: [],
-            semanticClusters: [],
-            contextualKeywords: []
-        };
-    }
+    const { breadcrumbSchema, semanticContent } = await getContactPageData();
 
     return (
         <>

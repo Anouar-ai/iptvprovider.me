@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
-import { allCountries, getCountryById } from "@/lib/countries";
+import { allCountries } from "@/lib/countries";
 import { Check, Shield, Tv, Zap, MessageCircle, Smartphone } from "lucide-react";
 import SemanticContent from "@/components/shared/SemanticContent";
 import { FlagIcon } from "@/components/shared/FlagIcon";
@@ -12,6 +12,7 @@ import { getCountryPageData } from "@/lib/data/country-page";
 import { Schema } from "@/components/shared/Schema";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { notFound } from "next/navigation";
+import { getCountryById } from "@/lib/countries";
 
 
 type Props = {

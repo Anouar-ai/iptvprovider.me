@@ -53,8 +53,11 @@ export const getCountryPageData = cache(
         areaServed: { type: "Country", name },
         name: `IPTV Provider for ${name}`,
         description: `Premium IPTV service available in ${name} with over 20,000 channels, HD/4K quality, and instant setup.`,
-        price: "14.99",
-        priceCurrency: "USD"
+        offers: {
+            "@type": "Offer",
+            price: "16.00",
+            priceCurrency: "USD"
+        }
     }));
 
     const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pageFaqs));
