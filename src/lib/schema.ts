@@ -169,7 +169,7 @@ export function generateBreadcrumbSchema(itemListElement: { name: string; item: 
 interface ArticleSchemaProps {
     headline: string;
     description: string;
-    image: string;
+    image?: string;
     datePublished: string;
     dateModified: string;
     authorName?: string;
@@ -201,7 +201,7 @@ export function generateArticleSchema(props: ArticleSchemaProps): Article {
 interface HowToSchemaProps {
     name: string;
     description: string;
-    image?: { url: string; width: number; height: number; };
+    image?: { url: string; width?: number; height?: number; };
     steps: { name: string; text: string; url: string; }[];
     totalTime?: string;
 }
@@ -263,3 +263,5 @@ export function generateServiceSchema(props: ServiceSchemaProps): Service {
         }
     }
 }
+
+    

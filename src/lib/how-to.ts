@@ -46,3 +46,5 @@ export const howToArticles = articles.map(article => {
         image,
     };
 });
+
+    
