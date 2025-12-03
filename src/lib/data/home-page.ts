@@ -3,7 +3,7 @@ import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 import { weeklyBuzzItems } from "@/lib/site-data/weekly-buzz";
 import { sportEvents } from "@/lib/site-data/sport-events";
-import { getPlaceholderImage } from "@/lib/image-blur";
+import { getPlaceholderImage } from "@/lib/server/image-blur-server";
 import { generateProductSchema } from '@/lib/schema';
 import type { Product } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';

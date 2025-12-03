@@ -1,18 +1,14 @@
 
 import { ImageResponse } from 'next/og'
-import { howToArticles } from '@/lib/how-to';
+import { getSafeArticleData } from '@/lib/how-to';
 
 export const runtime = 'edge'
 export const alt = 'IPTV Setup Guide'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
-function getArticleData(deviceId: string) {
-    return howToArticles.find((p) => p.id === deviceId);
-}
-
 export default async function Image({ params }: { params: { device: string } }) {
-  const post = getArticleData(params.device)
+  const post = getSafeArticleData(params.device)
   
   return new ImageResponse(
     (

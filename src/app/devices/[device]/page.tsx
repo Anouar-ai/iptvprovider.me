@@ -235,7 +235,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                                   priority
                                   className="object-cover rounded-lg w-full h-auto"
                                   placeholder="blur"
-                                  blurDataURL={image.blurDataURL || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+"}
+                                  blurDataURL={image.blurDataURL}
                               />
                           </CardContent>
                       </Card>
