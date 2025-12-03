@@ -13,8 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         },
         {
             userAgent: 'GPTBot',
-            allow: ['/devices/', '/country/', '/faq', '/pricing'],
-            disallow: ['/api/', '/admin/']
+            disallow: ['/'],
         },
         {
             userAgent: 'ChatGPT-User',
