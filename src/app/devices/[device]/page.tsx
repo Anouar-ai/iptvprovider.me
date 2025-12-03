@@ -15,8 +15,6 @@ import { generateArticleSchema, generateHowToSchema, generateFAQPageSchema, gene
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import { plans } from "@/lib/site-data/pricing";
 
-const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
-
 type Props = {
   params: { device: string; };
 };
@@ -237,7 +235,7 @@ export default async function HowToPage({ params }: { params: { device: string }
                                   priority
                                   className="object-cover rounded-lg w-full h-auto"
                                   placeholder="blur"
-                                  blurDataURL={BLUR_DATA_URL}
+                                  blurDataURL={image.blurDataURL || "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+"}
                               />
                           </CardContent>
                       </Card>
@@ -258,5 +256,3 @@ export async function generateStaticParams() {
     device: article.id,
   }));
 }
-
-    

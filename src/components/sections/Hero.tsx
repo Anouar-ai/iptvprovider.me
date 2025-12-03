@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,15 +12,32 @@ import { SiWhatsapp } from "react-icons/si";
 import Image from "next/image";
 import MouseIcon from "@/assets/icons/mouse.svg";
 
+const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjMDMwNTBiIi8+PC9zdmc+";
+
 export function Hero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <section className="relative w-full overflow-hidden">
+      <Image
+        src="https://www.demotemplates.online/snowpulse/wp-content/uploads/2024/05/iptv-channels-list-USA-UK-Canada-Europe-Asia-Africa.jpg"
+        alt="A grid of popular TV channel logos"
+        fill
+        priority
+        className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
+        placeholder="blur"
+        blurDataURL={BLUR_DATA_URL}
+        style={{ opacity: videoLoaded ? 0 : 1 }}
+      />
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        preload="none"
+        onCanPlay={() => setVideoLoaded(true)}
+        className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
+        style={{ opacity: videoLoaded ? 1 : 0 }}
       >
         <source
           src="https://www.demotemplates.online/snowpulse/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider.mp4"
