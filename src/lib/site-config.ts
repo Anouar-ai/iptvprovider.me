@@ -28,13 +28,13 @@ export function generateMetadata({
   noIndex?: boolean;
   canonical?: string;
 }) {
-  const ogImageUrl = image || `${siteConfig.ogImage}?title=${encodeURIComponent(title)}`;
+  const ogImageUrl = image || `${siteConfig.url}${siteConfig.ogImage}?title=${encodeURIComponent(title)}`;
   
   return {
     title,
     description,
     alternates: {
-      canonical: canonical || undefined,
+      canonical: canonical ? `${siteConfig.url}${canonical}` : undefined,
     },
     openGraph: {
       title,
@@ -44,6 +44,7 @@ export function generateMetadata({
           url: ogImageUrl,
           width: 1200,
           height: 630,
+          alt: title,
         },
       ],
     },
@@ -52,6 +53,8 @@ export function generateMetadata({
       title,
       description,
       images: [ogImageUrl],
+      site: siteConfig.links.twitter,
+      creator: siteConfig.links.twitter,
     },
     robots: noIndex
       ? { index: false, follow: false }

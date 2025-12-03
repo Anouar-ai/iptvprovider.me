@@ -30,7 +30,7 @@ const outfit = Outfit({
 // SEO Constants
 const DEFAULT_TITLE = "#1 IPTV Provider";
 const DEFAULT_DESCRIPTION = "Subscribe to the #1 IPTV provider with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Try the best IPTV service now!";
-const defaultOgImage = `/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`;
+const defaultOgImage = `${siteConfig.url}/api/og?title=${encodeURIComponent(DEFAULT_TITLE)}`;
 
 
 export const metadata: Metadata = {

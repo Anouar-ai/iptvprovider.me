@@ -89,6 +89,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { title, description, image } = article;
 
+  // Using the centralized metadata generator
   return generatePageMetadata({
     title,
     description,
