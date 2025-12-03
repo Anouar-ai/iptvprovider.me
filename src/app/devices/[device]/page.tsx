@@ -227,22 +227,20 @@ export default async function HowToPage({ params }: { params: { device: string }
               <aside className="lg:col-span-1 space-y-8">
                   {image && (
                       <Card>
-                      <CardContent className="p-0">
-                          <div className="relative h-64 w-full">
-                          <Image
-                              src={image.imageUrl}
-                              alt={`${primaryKeyword} - ${title}`}
-                              data-ai-hint={image.imageHint}
-                              fill
-                              sizes="(max-width: 1024px) 100vw, 33vw"
-                              priority
-                              className="object-cover rounded-lg"
-                              placeholder="blur"
-                              blurDataURL={BLUR_DATA_URL}
-                          />
-                          </div>
-                      </CardContent>
-                  </Card>
+                          <CardContent className="p-0">
+                              <Image
+                                  src={image.imageUrl}
+                                  alt={`${primaryKeyword} - ${title}`}
+                                  width={image.width || 600}
+                                  height={image.height || 400}
+                                  data-ai-hint={image.imageHint}
+                                  priority
+                                  className="object-cover rounded-lg w-full h-auto"
+                                  placeholder="blur"
+                                  blurDataURL={BLUR_DATA_URL}
+                              />
+                          </CardContent>
+                      </Card>
                   )}
                   <InternalLinks currentId={id} />
               </aside>
