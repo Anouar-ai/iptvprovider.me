@@ -18,6 +18,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 const outfit = Outfit({
@@ -25,6 +26,7 @@ const outfit = Outfit({
   weight: ["700", "900"],
   display: "swap",
   variable: "--font-outfit",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -136,7 +138,6 @@ export default function RootLayout({
        <head>
           <Schema id="organization" schema={generateOrganizationSchema()} />
           <Schema id="website" schema={generateWebSiteSchema()} />
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
           <script src="https://cdn.visitors.now/v.js" data-token="0a9ca441-3262-415a-a3ac-e06859feeeba" async></script>
         </head>
