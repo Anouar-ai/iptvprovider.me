@@ -1,37 +1,47 @@
 
-import { Check, MessageCircle, Shield, Smartphone, Tv, Zap } from "lucide-react";
+import { Tv, Zap, Check, Shield, MessageCircle, Smartphone, Film, Trophy, Clock, GitCommit } from "lucide-react";
 import { Container } from "../shared/Container";
 
 const features = [
     { 
         icon: Tv, 
-        title: "20,000+ Channels",
-        description: "Access a massive selection of premium channels from around the world with our IPTV Provider subscription."
+        title: "24,000+ Live Channels",
+        description: "Access premium channels from the USA, UK, Canada, and worldwide, covering news, entertainment, and kids' programming."
     },
     { 
-        icon: Zap, 
+        icon: Film, 
+        title: "80,000+ VOD Library",
+        description: "Stream the latest movies and binge-worthy TV series. Our on-demand library is updated daily with new releases and classics."
+    },
+    { 
+        icon: Smartphone, 
+        title: "Multi-Device Streaming",
+        description: "Watch on any device—Smart TV, Android, iOS, Fire Stick, and more. Your subscription works everywhere, at home or on the go."
+    },
+    { 
+        icon: Clock, 
         title: "Instant Activation",
-        description: "Your IPTV Provider is activated immediately after payment. No waiting, just streaming."
+        description: "No waiting. Your IPTV subscription is activated within minutes of payment, with credentials delivered instantly to your email."
     },
     { 
-        icon: Check,
-        title: "HD/4K Quality",
-        description: "Enjoy a superior viewing experience with crystal clear streaming in High Definition and 4K resolution."
+        icon: Trophy, 
+        title: "All Sports & PPV Events",
+        description: "Never miss a game. Get live access to NFL, NBA, MLB, NHL, Premier League, UFC, Boxing, and all major PPV events."
     },
     { 
-        icon: Shield,
+        icon: Shield, 
         title: "Anti-Freeze Technology",
-        description: "Our IPTV Provider uses advanced anti-freeze tech for smooth, uninterrupted streaming."
+        description: "Our advanced anti-freeze technology and load balancing ensure smooth, uninterrupted streaming with 99.9% uptime."
     },
     { 
         icon: MessageCircle,
-        title: "24/7 Support",
-        description: "Get round-the-clock customer support for all our IPTV Provider plans. We're here to help anytime."
+        title: "24/7 Customer Support",
+        description: "Get help whenever you need it. Our expert support team is available around the clock via live chat, email, and WhatsApp."
     },
     { 
-        icon: Smartphone,
-        title: "Multi-Device",
-        description: "Watch our IPTV Provider on your Smart TV, Android, iOS, Fire Stick, PC, and more."
+        icon: GitCommit,
+        title: "Electronic Program Guide (EPG)",
+        description: "A full TV guide shows you what's on now and what's coming up. Set reminders and never miss your favorite shows."
     },
 ]
 
@@ -40,13 +50,16 @@ export function SubscriptionFeatures() {
         <section className="py-16 sm:py-24">
           <Container>
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Features Included in All IPTV Plans</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What's Included in Every IPTV Subscription</h2>
+              <p className="mt-4 text-lg text-muted-foreground">No matter which plan you choose, you get access to our complete feature set.</p>
             </div>
-            <ul className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {features.map((feature, i) => (
                     <li key={i} className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                        <h3 className="mb-2 flex items-center gap-2 font-headline text-xl">
-                            <feature.icon size={20} className="text-primary"/> 
+                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                            <feature.icon className="h-6 w-6" />
+                        </div>
+                        <h3 className="mb-2 font-headline text-xl">
                             {feature.title}
                         </h3>
                         <p className="text-muted-foreground">{feature.description}</p>

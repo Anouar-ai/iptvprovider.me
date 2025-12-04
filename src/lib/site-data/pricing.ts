@@ -9,11 +9,13 @@ export const plans = [
     savings: null,
     features: [
       "24,000+ Live Channels",
-      "Extensive VOD Library",
-      "HD/4K Streaming Quality",
+      "80,000+ VOD Movies & Series",
+      "HD & 4K Streaming Quality",
+      "All Sports & PPV Events",
+      "Anti-Freeze Technology",
+      "2 Device Connections",
       "24/7 Customer Support",
       "Instant Activation",
-      "Anti-Freeze Technology"
     ],
     isPopular: false,
     url: "/checkout?plan=1-month"
@@ -24,14 +26,16 @@ export const plans = [
     duration: "3 months",
     price: 39.00,
     price_monthly: 13.00,
-    savings: "Save 18%",
+    savings: "Save 19%",
     features: [
       "24,000+ Live Channels",
-      "Extensive VOD Library",
-      "HD/4K Streaming Quality",
+      "80,000+ VOD Movies & Series",
+      "HD & 4K Streaming Quality",
+      "All Sports & PPV Events",
+      "Anti-Freeze Technology",
+      "2 Device Connections",
       "24/7 Customer Support",
       "Instant Activation",
-      "Anti-Freeze Technology"
     ],
     isPopular: false,
     url: "/checkout?plan=3-months"
@@ -42,14 +46,16 @@ export const plans = [
     duration: "6 months",
     price: 60.00,
     price_monthly: 10.00,
-    savings: "Save 37%",
+    savings: "Save 38%",
     features: [
       "24,000+ Live Channels",
-      "Extensive VOD Library",
-      "HD/4K Streaming Quality",
+      "80,000+ VOD Movies & Series",
+      "HD & 4K Streaming Quality",
+      "All Sports & PPV Events",
+      "Anti-Freeze Technology",
+      "2 Device Connections",
       "24/7 Customer Support",
       "Instant Activation",
-      "Anti-Freeze Technology"
     ],
     isPopular: false,
     url: "/checkout?plan=6-months"
@@ -63,11 +69,14 @@ export const plans = [
     savings: "Save 53%",
     features: [
       "24,000+ Live Channels",
-      "Extensive VOD Library",
-      "HD/4K Streaming Quality",
+      "80,000+ VOD Movies & Series",
+      "HD & 4K Streaming Quality",
+      "All Sports & PPV Events",
+      "Anti-Freeze Technology",
+      "2 Device Connections",
       "24/7 Customer Support",
       "Instant Activation",
-      "Anti-Freeze Technology"
+      "Priority Support"
     ],
     isPopular: true,
     url: "/checkout?plan=12-months"
