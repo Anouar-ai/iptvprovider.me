@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -23,7 +24,8 @@ export function Hero() {
         loop
         muted
         playsInline
-        preload="none"
+        preload="auto"
+        poster="https://iptvwell.com/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider-1.jpeg"
         onCanPlay={() => setVideoLoaded(true)}
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
         style={{ opacity: videoLoaded ? 1 : 0 }}
