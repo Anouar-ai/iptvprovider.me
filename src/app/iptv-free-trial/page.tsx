@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/shared/Container";
-import { Check, Tv, Zap, Shield, MessageCircle, Smartphone, HelpCircle, UserCheck, Star } from "lucide-react";
+import { Check, Tv, Zap, Shield, MessageCircle, Smartphone, UserCheck, Star } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiWhatsapp } from "react-icons/si";
@@ -22,7 +22,9 @@ export function generateMetadata(): Metadata {
           description,
           canonical: "/iptv-free-trial",
       }),
-      title, // Override the title to remove the template suffix
+      title: {
+        absolute: title,
+      }
     };
 }
 
