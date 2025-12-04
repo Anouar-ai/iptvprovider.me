@@ -15,11 +15,16 @@ export function generateMetadata(): Metadata {
     const title = "IPTV Subscription Plans & Pricing 2025 | From $7.50/mo";
     const description = "Compare IPTV subscription plans from $7.50/month. 24,000+ HD/4K channels, instant activation, 7-day money-back guarantee. Choose your plan and start streaming today.";
     
-    return generatePageMetadata({
-        title,
-        description,
-        canonical: "/pricing",
-    });
+    return {
+      ...generatePageMetadata({
+          title,
+          description,
+          canonical: "/pricing",
+      }),
+      title: {
+        absolute: title,
+      }
+    };
 }
 
 
