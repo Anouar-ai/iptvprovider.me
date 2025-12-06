@@ -10,7 +10,10 @@ import type {
   Service,
   Brand,
   Offer,
-  AggregateOffer
+  AggregateOffer,
+  CollectionPage,
+  ItemList,
+  Person
 } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';
 
@@ -76,33 +79,33 @@ interface ProductSchemaProps {
 }
 
 export function generateProductSchema(props: ProductSchemaProps): Product {
-    const { name, description, image, ratingValue, reviewCount, price, offers, sku, mpn, brand } = props;
-    
-    const offerDetails = offers || (price ? {
-        '@type': 'Offer' as const,
-        price: price,
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock' as const,
-        url: `${siteConfig.url}/pricing`,
-        priceValidUntil: "2025-12-31",
-    } : undefined);
+  const { name, description, image, ratingValue, reviewCount, price, offers, sku, mpn, brand } = props;
 
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'Product',
-        name,
-        description,
-        image,
-        sku,
-        mpn,
-        brand,
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue,
-            reviewCount,
-        },
-        offers: offerDetails,
-    };
+  const offerDetails = offers || (price ? {
+    '@type': 'Offer' as const,
+    price: price,
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock' as const,
+    url: `${siteConfig.url}/pricing`,
+    priceValidUntil: "2025-12-31",
+  } : undefined);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name,
+    description,
+    image,
+    sku,
+    mpn,
+    brand,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue,
+      reviewCount,
+    },
+    offers: offerDetails,
+  };
 }
 
 
@@ -135,94 +138,120 @@ export function generateBreadcrumbSchema(itemListElement: { name: string; item: 
 }
 
 interface ArticleSchemaProps {
-    headline: string;
-    description: string;
-    image?: string;
-    datePublished: string;
-    dateModified: string;
-    authorName?: string;
-    publisherName?: string;
-    url: string;
+  headline: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  authorName?: string;
+  publisherName?: string;
+  url: string;
 }
 
 export function generateArticleSchema(props: ArticleSchemaProps): Article {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: props.headline,
-        description: props.description,
-        image: props.image,
-        datePublished: props.datePublished,
-        dateModified: props.dateModified,
-        author: {
-            '@type': 'Organization',
-            name: props.authorName || siteConfig.name,
-        },
-        publisher: defaultPublisher,
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': props.url,
-        },
-    };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: props.headline,
+    description: props.description,
+    image: props.image,
+    datePublished: props.datePublished,
+    dateModified: props.dateModified,
+    author: {
+      '@type': props.authorName ? 'Person' : 'Organization',
+      name: props.authorName || siteConfig.name,
+    },
+    publisher: defaultPublisher,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': props.url,
+    },
+  };
 }
 
 interface HowToSchemaProps {
-    name: string;
-    description: string;
-    image?: { url: string; width?: number; height?: number; };
-    steps: { name: string; text: string; url: string; }[];
-    totalTime?: string;
+  name: string;
+  description: string;
+  image?: { url: string; width?: number; height?: number; };
+  steps: { name: string; text: string; url: string; }[];
+  totalTime?: string;
 }
 
 export function generateHowToSchema(props: HowToSchemaProps): HowTo {
-    const { name, description, image, steps, totalTime } = props;
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
-        name,
-        description,
-        image: image ? {
-            '@type': 'ImageObject',
-            url: image.url,
-            width: image.width,
-            height: image.height,
-        } : undefined,
-        step: steps.map((step, index) => ({
-            '@type': 'HowToStep',
-            name: step.name,
-            text: step.text,
-            url: step.url,
-            position: index + 1,
-        })),
-        totalTime: totalTime,
-    };
+  const { name, description, image, steps, totalTime } = props;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    image: image ? {
+      '@type': 'ImageObject',
+      url: image.url,
+      width: image.width,
+      height: image.height,
+    } : undefined,
+    step: steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      name: step.name,
+      text: step.text,
+      url: step.url,
+      position: index + 1,
+    })),
+    totalTime: totalTime,
+  };
 }
 
 
 interface ServiceSchemaProps {
-    serviceType: string;
-    providerName: string;
-    areaServed: { type: string, name: string};
-    name: string;
-    description: string;
-    offers?: Offer | AggregateOffer;
+  serviceType: string;
+  providerName: string;
+  areaServed: { type: string, name: string };
+  name: string;
+  description: string;
+  offers?: Offer | AggregateOffer;
 }
 
 export function generateServiceSchema(props: ServiceSchemaProps): Service {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        serviceType: props.serviceType,
-        provider: {
-            '@type': 'Organization',
-            name: props.providerName
-        },
-        areaServed: {
-            '@type': props.areaServed.type as any,
-            name: props.areaServed.name,
-        },
-        name: props.name,
-        description: props.description,
-        offers: props.offers
-    }
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: props.serviceType,
+    provider: {
+      '@type': 'Organization',
+      name: props.providerName
+    },
+    areaServed: {
+      '@type': props.areaServed.type as any,
+      name: props.areaServed.name,
+    },
+    name: props.name,
+    description: props.description,
+    offers: props.offers
+  }
+}
+
+interface CollectionPageSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string; }[];
+}
+
+export function generateCollectionPageSchema(props: CollectionPageSchemaProps): CollectionPage {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: props.name,
+    description: props.description,
+    url: props.url,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: props.items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: item.url,
+        name: item.name,
+      })),
+    },
+  };
 }

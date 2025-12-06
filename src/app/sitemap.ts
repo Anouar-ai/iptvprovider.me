@@ -3,7 +3,9 @@ import { MetadataRoute } from 'next'
 import { howToArticles } from '@/lib/how-to';
 import { allCountries } from '@/lib/countries';
 
-const baseUrl = process.env.SITE_URL || 'https://www.iptvprovider.me';
+import { siteConfig } from '@/lib/site-config';
+
+const baseUrl = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
@@ -57,12 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/iptv-subscription`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
     },
   ];
 

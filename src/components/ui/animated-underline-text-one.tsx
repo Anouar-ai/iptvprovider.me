@@ -12,6 +12,7 @@ interface AnimatedTextProps extends React.HTMLAttributes<HTMLDivElement> {
   underlinePath?: string;
   underlineHoverPath?: string;
   underlineDuration?: number;
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "div" | "p";
 }
 
 const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
@@ -42,17 +43,19 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
       },
     };
 
+    const Component = props.as || "h1";
+
     return (
       <div
         ref={ref}
         className={cn("flex flex-col items-center justify-center gap-2", props.className)}
       >
         <div className="relative">
-          <h1
+          <Component
             className={cn("text-4xl font-bold text-center", textClassName)}
           >
             {text}
-          </h1>
+          </Component>
 
           <motion.svg
             width="100%"

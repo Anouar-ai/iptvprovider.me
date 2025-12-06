@@ -62,6 +62,7 @@ export function Hero() {
           className="w-full max-w-4xl"
         >
           <AnimatedText
+            as="h1"
             text="The World's Premier IPTV Provider"
             textClassName="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
             underlineClassName="text-primary"

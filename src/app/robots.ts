@@ -1,9 +1,7 @@
-
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/site-config';
 
 export default function robots(): MetadataRoute.Robots {
-    const siteUrl = 'https://www.iptvprovider.me';
-
     return {
         rules: [
             {
@@ -36,6 +34,6 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/'],
             }
         ],
-        sitemap: `${siteUrl}/sitemap.xml`,
+        sitemap: `${siteConfig.url}/sitemap.xml`,
     }
 }
