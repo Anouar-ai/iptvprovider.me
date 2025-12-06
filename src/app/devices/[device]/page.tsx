@@ -179,7 +179,7 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                 )}
                 <div className="flex items-center gap-1">
                   <span>Updated:</span>
-                  <time dateTime={dateModified}>{new Date(dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  <time dateTime={dateModified} suppressHydrationWarning>{new Date(dateModified).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                 </div>
               </div>
             </header>
@@ -265,6 +265,7 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                         className="object-cover rounded-lg w-full h-auto"
                         placeholder="blur"
                         blurDataURL={image.blurDataURL}
+                        sizes="(max-width: 1024px) 100vw, 33vw"
                       />
                     </CardContent>
                   </Card>

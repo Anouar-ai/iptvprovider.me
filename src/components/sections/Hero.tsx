@@ -46,6 +46,15 @@ export function Hero() {
         />
         Your browser does not support the video tag.
       </video>
+      {/* Hidden priority image to preload the video poster for LCP */}
+      <Image
+        src="https://iptvwell.com/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider-1.jpeg"
+        alt="Hero Background"
+        fill
+        priority
+        className="invisible absolute inset-0 -z-10"
+        sizes="100vw"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(40%_100%_at_50%_0%,hsl(var(--primary)/0.1),transparent)]" />
       <Container className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center py-20 text-center md:min-h-[600px]">
@@ -104,7 +113,7 @@ export function Hero() {
               repeatType: "loop",
             }}
           >
-            <Image src={MouseIcon} alt="Scroll down" className="h-full w-full" />
+            <Image src={MouseIcon} alt="Scroll down" className="h-full w-full" sizes="24px" />
           </motion.div>
         </div>
       </motion.div>

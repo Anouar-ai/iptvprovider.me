@@ -10,44 +10,44 @@ import { cn } from "@/lib/utils";
 const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjZWRlZGVkIi8+PC9zdmc+";
 
 const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, reverse?: boolean }) => {
-    return (
-        <div
-          className="relative w-full overflow-hidden"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, white 20%, white 80%, transparent)",
-          }}
-        >
-          <div className={cn(
-            "flex min-w-full shrink-0 animate-[scroll_40s_linear_infinite] items-center gap-4",
-            reverse && "animate-[scroll_40s_linear_infinite_reverse]"
-            )}
-            aria-hidden="true"
+  return (
+    <div
+      className="relative w-full overflow-hidden"
+      style={{
+        maskImage:
+          "linear-gradient(to right, transparent, white 20%, white 80%, transparent)",
+      }}
+    >
+      <div className={cn(
+        "flex min-w-full shrink-0 animate-[scroll_40s_linear_infinite] items-center gap-4",
+        reverse && "animate-[scroll_40s_linear_infinite_reverse]"
+      )}
+        aria-hidden="true"
+      >
+        {[...images, ...images].map((brand, index) => {
+          const brandImage = PlaceHolderImages.find(img => img.id === brand.id);
+          if (!brandImage) return null;
+          return (
+            <div
+              key={`${brand.id}-${index}`}
+              className="relative h-12 w-36 flex-shrink-0 px-4"
             >
-            {[...images, ...images].map((brand, index) => {
-                 const brandImage = PlaceHolderImages.find(img => img.id === brand.id);
-                 if (!brandImage) return null;
-                 return (
-                     <div
-                        key={`${brand.id}-${index}`}
-                        className="w-36 flex-shrink-0 px-4"
-                    >
-                        <Image
-                            src={brandImage.imageUrl}
-                            alt={brand.alt}
-                            width={brandImage.width || 150}
-                            height={brandImage.height || 46}
-                            className="object-contain h-12 w-auto"
-                            data-ai-hint={brandImage.imageHint}
-                            placeholder="blur"
-                            blurDataURL={BLUR_DATA_URL}
-                        />
-                    </div>
-                 )
-            })}
-          </div>
-        </div>
-    )
+              <Image
+                src={brandImage.imageUrl}
+                alt={brand.alt}
+                fill
+                className="object-contain"
+                data-ai-hint={brandImage.imageHint}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
+                sizes="144px"
+              />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 export function Brands() {
