@@ -6,7 +6,7 @@ import { allCountries } from '@/lib/countries';
 const baseUrl = process.env.SITE_URL || 'https://www.iptvprovider.me';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  
+
   const devicePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
     url: `${baseUrl}/devices/${article.id}`,
     lastModified: new Date(article.dateModified),
@@ -17,8 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
     url: `${baseUrl}/country/${country.id}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
+    changeFrequency: 'weekly',
+    priority: 0.9,
   }));
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -53,10 +53,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-        url: `${baseUrl}/iptv-free-trial`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
+      url: `${baseUrl}/iptv-free-trial`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/iptv-subscription`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
   ];
 

@@ -132,27 +132,29 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className={cn(
-        "font-body antialiased",
-        inter.variable,
-        outfit.variable
-      )}>
-       <head>
-          <Schema id="organization" schema={generateOrganizationSchema()} />
-          <Schema id="website" schema={generateWebSiteSchema()} />
-          <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
-        </head>
+      "font-body antialiased",
+      inter.variable,
+      outfit.variable
+    )}>
+      <head>
+        <Schema id="organization" schema={generateOrganizationSchema()} />
+        <Schema id="website" schema={generateWebSiteSchema()} />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://cdn.visitors.now" />
+        <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+      </head>
       <body>
         <ProgressBar />
         <Analytics />
         <Script
-            src="https://cdn.visitors.now/v.js"
-            data-token="0a9ca441-3262-415a-a3ac-e06859feeeba"
-            strategy="afterInteractive"
+          src="https://cdn.visitors.now/v.js"
+          data-token="0a9ca441-3262-415a-a3ac-e06859feeeba"
+          strategy="afterInteractive"
         />
         <Script
-            src="https://analytics.ahrefs.com/analytics.js"
-            id="ahrefs-analytics"
-            strategy="afterInteractive"
+          src="https://analytics.ahrefs.com/analytics.js"
+          id="ahrefs-analytics"
+          strategy="afterInteractive"
         />
         <ThemeProvider
           attribute="class"
@@ -161,8 +163,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">
-            <a 
-              href="#main-content" 
+            <a
+              href="#main-content"
               className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
             >
               Skip to main content

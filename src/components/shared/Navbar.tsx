@@ -28,8 +28,8 @@ export function Navbar() {
           <div className="ml-auto flex items-center gap-2">
             <ThemeToggle />
             <Button asChild>
-              <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer">
-                <SiWhatsapp />
+              <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+                <SiWhatsapp aria-hidden="true" />
                 <span className='hidden sm:inline-block ml-2'>WhatsApp</span>
               </Link>
             </Button>

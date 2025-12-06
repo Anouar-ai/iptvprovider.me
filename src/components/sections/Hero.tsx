@@ -14,6 +14,16 @@ import MouseIcon from "@/assets/icons/mouse.svg";
 
 const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjMDMwNTBiIi8+PC9zdmc+";
 
+/**
+ * Hero Section
+ * 
+ * Performance Note:
+ * The main headline is rendered without initial entry animations to ensure
+ * the Largest Contentful Paint (LCP) element is visible immediately.
+ * 
+ * Video Poster:
+ * A high-quality poster is provided to prevent layout shift before the video loads.
+ */
 export function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -39,13 +49,10 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(40%_100%_at_50%_0%,hsl(var(--primary)/0.1),transparent)]" />
       <Container className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center py-20 text-center md:min-h-[600px]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+        <div
           className="w-full max-w-4xl"
         >
-          <AnimatedText 
+          <AnimatedText
             text="The World's Premier IPTV Provider"
             textClassName="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
             underlineClassName="text-primary"
@@ -79,9 +86,9 @@ export function Hero() {
               HD/4K Quality
             </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
-       <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5, ease: "easeInOut" }}
@@ -97,7 +104,7 @@ export function Hero() {
               repeatType: "loop",
             }}
           >
-             <Image src={MouseIcon} alt="Scroll down" className="h-full w-full" />
+            <Image src={MouseIcon} alt="Scroll down" className="h-full w-full" />
           </motion.div>
         </div>
       </motion.div>

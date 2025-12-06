@@ -2,8 +2,10 @@
 export const footerLinks = {
     quickLinks: [
         { name: "Pricing", href: "/pricing" },
+        { name: "Locations", href: "/locations" },
+        { name: "FAQ", href: "/faq" },
         { name: "Affiliate Program", href: "#" },
-        { name: "Contact", href: "/contact"}
+        { name: "Contact", href: "/contact" }
     ],
     supportedLinks: [
         { name: "Android App", href: "#" },
