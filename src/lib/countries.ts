@@ -10,18 +10,18 @@ const countryData: [string, string][] = [
   ["Argentina", "ar"], ["Armenia", "am"], ["Australia", "au"], ["Austria", "at"], ["Azerbaijan", "az"], ["Bahamas", "bs"],
   ["Bahrain", "bh"], ["Bangladesh", "bd"], ["Barbados", "bb"], ["Belarus", "by"], ["Belgium", "be"], ["Belize", "bz"],
   ["Benin", "bj"], ["Bhutan", "bt"], ["Bolivia", "bo"], ["Bosnia and Herzegovina", "ba"], ["Botswana", "bw"], ["Brazil", "br"],
-  ["Brunei", "bn"], ["Bulgaria", "bg"], ["Burkina Faso", "bf"], ["Burma", "mm"], ["Burundi", "bi"], ["Cabo Verde", "cv"],
+  ["Brunei", "bn"], ["Bulgaria", "bg"], ["Burkina Faso", "bf"], ["Myanmar", "mm"], ["Burundi", "bi"], ["Cabo Verde", "cv"],
   ["Cambodia", "kh"], ["Cameroon", "cm"], ["Canada", "ca"], ["Cayman Islands", "ky"], ["Central African Republic", "cf"],
-  ["Chad", "td"], ["Chile", "cl"], ["China", "cn"], ["Colombia", "co"], ["Comoros", "km"], ["Congo Free State", "cd"],
+  ["Chad", "td"], ["Chile", "cl"], ["China", "cn"], ["Colombia", "co"], ["Comoros", "km"],
   ["Cook Islands", "ck"], ["Costa Rica", "cr"], ["Cote d’Ivoire (Ivory Coast)", "ci"], ["Croatia", "hr"], ["Cuba", "cu"],
   ["Cyprus", "cy"], ["Czechia", "cz"], ["Democratic Republic of the Congo", "cd"], ["Denmark", "dk"], ["Djibouti", "dj"],
-  ["Dominica", "dm"], ["Dominican Republic", "do"], ["East Germany", "de"], ["Ecuador", "ec"], ["Egypt", "eg"],
+  ["Dominica", "dm"], ["Dominican Republic", "do"], ["Ecuador", "ec"], ["Egypt", "eg"],
   ["El Salvador", "sv"], ["Equatorial Guinea", "gq"], ["Eritrea", "er"], ["Estonia", "ee"], ["Eswatini", "sz"], ["Ethiopia", "et"],
   ["Fiji", "fj"], ["Finland", "fi"], ["France", "fr"], ["Gabon", "ga"], ["Gambia", "gm"], ["Georgia", "ge"], ["Germany", "de"],
   ["Ghana", "gh"], ["Greece", "gr"], ["Grenada", "gd"], ["Guatemala", "gt"], ["Guinea", "gn"], ["Guinea-Bissau", "gw"],
   ["Guyana", "gy"], ["Haiti", "ht"], ["Holy See", "va"], ["Honduras", "hn"], ["Hungary", "hu"], ["Iceland", "is"], ["India", "in"],
   ["Indonesia", "id"], ["Iran", "ir"], ["Iraq", "iq"], ["Ireland", "ie"], ["Israel", "il"], ["Italy", "it"], ["Jamaica", "jm"],
-  ["Japan", "jp"], ["Jordan", "jo"], ["Kazakhstan", "kz"], ["Kenya", "ke"], ["Kiribati", "ki"], ["Korea", "kr"], ["Kosovo", "xk"],
+  ["Japan", "jp"], ["Jordan", "jo"], ["Kazakhstan", "kz"], ["Kenya", "ke"], ["Kiribati", "ki"], ["South Korea", "kr"], ["Kosovo", "xk"],
   ["Kuwait", "kw"], ["Kyrgyzstan", "kg"], ["Laos", "la"], ["Latvia", "lv"], ["Lebanon", "lb"], ["Lesotho", "ls"], ["Liberia", "lr"],
   ["Libya", "ly"], ["Liechtenstein", "li"], ["Lithuania", "lt"], ["Luxembourg", "lu"], ["Madagascar", "mg"], ["Malawi", "mw"],
   ["Malaysia", "my"], ["Maldives", "mv"], ["Mali", "ml"], ["Malta", "mt"], ["Marshall Islands", "mh"], ["Mauritania", "mr"],
@@ -59,7 +59,7 @@ export const allCountries: Country[] = countryData.map(([name, code]) => ({
 }));
 
 export function getCountryById(id: string): Country | undefined {
-    return allCountries.find(c => c.id === id);
+  return allCountries.find(c => c.id === id);
 }
 
 export async function generateStaticParams() {

@@ -16,11 +16,12 @@ import { getCountryById } from "@/lib/countries";
 
 
 type Props = {
-  params: { country: string };
+  params: Promise<{ country: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const country = getCountryById(params.country);
+  const { country: countryId } = await params;
+  const country = getCountryById(countryId);
 
   if (!country) {
     notFound();
@@ -32,11 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return generatePageMetadata({
     title,
     description,
-    canonical: `/country/${params.country}`,
+    canonical: `/country/${countryId}`,
   });
 }
 
-export default async function CountryPage({ params }: { params: { country: string }}) {
+export default async function CountryPage({ params }: { params: Promise<{ country: string }> }) {
+  const { country: countryId } = await params;
   const {
     country,
     pageFaqs,
@@ -44,7 +46,7 @@ export default async function CountryPage({ params }: { params: { country: strin
     breadcrumbSchema,
     serviceSchema,
     faqSchema
-  } = await getCountryPageData(params.country);
+  } = await getCountryPageData(countryId);
 
   const { name, code } = country;
 
@@ -54,7 +56,7 @@ export default async function CountryPage({ params }: { params: { country: strin
       <Schema id="service" schema={serviceSchema} />
       <Schema id="faq" schema={faqSchema} />
 
-      <SemanticContent 
+      <SemanticContent
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}
         semanticClusters={semanticContent.semanticClusters}
@@ -62,21 +64,21 @@ export default async function CountryPage({ params }: { params: { country: strin
       />
       <main className="py-16 sm:py-24">
         <Container>
-            <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                <ol className="flex items-center gap-2">
-                    <li>
-                        <Link href="/" className="hover:text-primary">Home</Link>
-                    </li>
-                    <li>/</li>
-                    <li>
-                        <Link href="/locations" className="hover:text-primary">Locations</Link>
-                    </li>
-                    <li>/</li>
-                    <li>
-                        {name}
-                    </li>
-                </ol>
-            </nav>
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+            <ol className="flex items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-primary">Home</Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link href="/locations" className="hover:text-primary">Locations</Link>
+              </li>
+              <li>/</li>
+              <li>
+                {name}
+              </li>
+            </ol>
+          </nav>
 
           <div className="text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl flex items-center justify-center gap-4">
@@ -97,52 +99,52 @@ export default async function CountryPage({ params }: { params: { country: strin
               <p className="mt-4 text-muted-foreground">We are the top-rated IPTV provider in {name} for a reason. Our service is optimized for viewers in your country, offering unparalleled stability and channel selection.</p>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary"/> Local & International Channels</h3>
-                    <p className="text-muted-foreground">Get access to all local {name} channels plus thousands of international sports, movies, and news channels.</p>
-                </div>
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Zap size={20} className="text-primary"/> Instant Activation</h3>
-                    <p className="text-muted-foreground">Your IPTV Provider is activated immediately after payment. Start watching in {name} within minutes.</p>
-                </div>
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Check size={20} className="text-primary"/> HD/4K Quality</h3>
-                    <p className="text-muted-foreground">Enjoy a superior viewing experience with crystal clear streaming, perfect for the modern TVs available in {name}.</p>
-                </div>
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Shield size={20} className="text-primary"/> Anti-Freeze Technology</h3>
-                    <p className="text-muted-foreground">Our powerful servers ensure a smooth, buffer-free experience, even during peak times in {name}.</p>
-                </div>
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><MessageCircle size={20} className="text-primary"/> 24/7 Support</h3>
-                    <p className="text-muted-foreground">Our dedicated support team is available 24/7 to assist our customers in {name} with any questions.</p>
-                </div>
-                <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
-                    <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Smartphone size={20} className="text-primary"/> Works on All Devices</h3>
-                    <p className="text-muted-foreground">Watch on your Smart TV, Android, iOS, Fire Stick, or computer anywhere in {name}.</p>
-                </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Tv size={20} className="text-primary" /> Local & International Channels</h3>
+                <p className="text-muted-foreground">Get access to all local {name} channels plus thousands of international sports, movies, and news channels.</p>
+              </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Zap size={20} className="text-primary" /> Instant Activation</h3>
+                <p className="text-muted-foreground">Your IPTV Provider is activated immediately after payment. Start watching in {name} within minutes.</p>
+              </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Check size={20} className="text-primary" /> HD/4K Quality</h3>
+                <p className="text-muted-foreground">Enjoy a superior viewing experience with crystal clear streaming, perfect for the modern TVs available in {name}.</p>
+              </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Shield size={20} className="text-primary" /> Anti-Freeze Technology</h3>
+                <p className="text-muted-foreground">Our powerful servers ensure a smooth, buffer-free experience, even during peak times in {name}.</p>
+              </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><MessageCircle size={20} className="text-primary" /> 24/7 Support</h3>
+                <p className="text-muted-foreground">Our dedicated support team is available 24/7 to assist our customers in {name} with any questions.</p>
+              </div>
+              <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
+                <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Smartphone size={20} className="text-primary" /> Works on All Devices</h3>
+                <p className="text-muted-foreground">Watch on your Smart TV, Android, iOS, Fire Stick, or computer anywhere in {name}.</p>
+              </div>
             </div>
           </section>
 
           <section className="bg-muted/30 py-16 dark:bg-card/30 sm:py-24 rounded-lg">
-              <Container>
-                  <div className="mx-auto max-w-3xl text-center">
-                      <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">FAQs about IPTV in {name}</h2>
-                  </div>
-                  <div className="mx-auto mt-8 max-w-3xl">
-                    <Accordion type="single" collapsible>
-                      {pageFaqs.map((faq, i) => (
-                        <AccordionItem key={i} value={`item-${i}`}>
-                          <AccordionTrigger>{faq.question}</AccordionTrigger>
-                          <AccordionContent>
-                            <p>{faq.answer}</p>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
-              </Container>
-            </section>
+            <Container>
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">FAQs about IPTV in {name}</h2>
+              </div>
+              <div className="mx-auto mt-8 max-w-3xl">
+                <Accordion type="single" collapsible>
+                  {pageFaqs.map((faq, i) => (
+                    <AccordionItem key={i} value={`item-${i}`}>
+                      <AccordionTrigger>{faq.question}</AccordionTrigger>
+                      <AccordionContent>
+                        <p>{faq.answer}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </Container>
+          </section>
 
         </Container>
       </main>
