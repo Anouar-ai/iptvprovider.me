@@ -184,10 +184,23 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
               </div>
             </header>
 
+            {/* Table of Contents */}
+            <section className="mb-12 max-w-3xl mx-auto">
+              <div className="p-6 border-2 rounded-xl bg-muted/30">
+                <h2 className="font-bold text-xl mb-4">📋 Quick Navigation</h2>
+                <nav className="grid md:grid-cols-2 gap-2">
+                  <Link href="#requirements" className="block text-sm hover:text-primary transition-colors">→ What You'll Need</Link>
+                  <Link href="#steps" className="block text-sm hover:text-primary transition-colors">→ Setup Steps</Link>
+                  {faqs && <Link href="#faq" className="block text-sm hover:text-primary transition-colors">→ FAQs</Link>}
+                  <Link href="#related" className="block text-sm hover:text-primary transition-colors">→ Related Guides</Link>
+                </nav>
+              </div>
+            </section>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <div className="prose prose-lg dark:prose-invert max-w-none">
-                  <Card className="not-prose my-8">
+                  <Card id="requirements" className="not-prose my-8 scroll-mt-20">
                     <CardHeader>
                       <CardTitle>What You'll Need</CardTitle>
                     </CardHeader>
@@ -201,7 +214,7 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                     </CardContent>
                   </Card>
 
-                  <h2 className="font-headline text-3xl">Step-by-Step Installation Guide for {primaryKeyword}</h2>
+                  <h2 id="steps" className="font-headline text-3xl scroll-mt-20">Step-by-Step Installation Guide for {primaryKeyword}</h2>
                   <p>Follow these simple steps to get our IPTV Provider running on your {primaryKeyword}. The entire process should only take a few minutes.</p>
                   <div className="space-y-8 mt-8">
                     {steps.map((step, index) => (
@@ -233,9 +246,38 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                     </Button>
                   </div>
 
+                  {/* Related Devices */}
+                  <div id="related" className="not-prose my-12 scroll-mt-20">
+                    <h2 className="font-headline text-3xl mb-6">Related Setup Guides</h2>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {howToArticles
+                        .filter(a => a.id !== id)
+                        .slice(0, 4)
+                        .map((device) => (
+                          <Link
+                            key={device.id}
+                            href={`/devices/${device.id}`}
+                            className="group p-4 border-2 rounded-lg hover:border-primary/40 transition-all hover:shadow-md"
+                          >
+                            <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                              {device.primaryKeyword}
+                            </h3>
+                            <p className="text-sm text-muted-foreground line-clamp-2">
+                              {device.description}
+                            </p>
+                          </Link>
+                        ))}
+                    </div>
+                    <div className="mt-4 text-center">
+                      <Button asChild variant="outline">
+                        <Link href="/devices">View All Device Guides</Link>
+                      </Button>
+                    </div>
+                  </div>
+
                   {faqs && (
                     <>
-                      <h2 className="font-headline text-3xl">Frequently Asked Questions</h2>
+                      <h2 id="faq" className="font-headline text-3xl scroll-mt-20">Frequently Asked Questions</h2>
                       <Accordion type="single" collapsible>
                         {faqs.map((faq, i) => (
                           <AccordionItem key={i} value={`item-${i}`}>
@@ -273,6 +315,24 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                 <InternalLinks currentId={id} />
               </aside>
             </div>
+
+            {/* Author Bio */}
+            <section className="mt-16 max-w-3xl mx-auto border-t pt-8">
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-bold">
+                  IT
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">About the IPTV Expert Team</h3>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Our team has been testing and documenting IPTV setup procedures across all major devices since 2018. We've helped thousands of users successfully install IPTV on their {primaryKeyword} and other devices.
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Last Updated: {new Date(dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: {new Date(article.datePublished).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </p>
+                </div>
+              </div>
+            </section>
 
           </article>
         </Container>
