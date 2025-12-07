@@ -13,7 +13,8 @@ import type {
   AggregateOffer,
   CollectionPage,
   ItemList,
-  Person
+  Person,
+  Review
 } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';
 
@@ -253,5 +254,43 @@ export function generateCollectionPageSchema(props: CollectionPageSchemaProps): 
         name: item.name,
       })),
     },
+  };
+}
+
+interface ReviewSchemaProps {
+  itemReviewed: {
+    name: string;
+    type: 'Product' | 'Service' | 'Organization';
+  };
+  author: string;
+  reviewRating: {
+    ratingValue: number;
+    bestRating?: number;
+    worstRating?: number;
+  };
+  reviewBody: string;
+  datePublished: string;
+}
+
+export function generateReviewSchema(props: ReviewSchemaProps): Review {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': props.itemReviewed.type,
+      name: props.itemReviewed.name,
+    },
+    author: {
+      '@type': 'Person',
+      name: props.author,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: props.reviewRating.ratingValue.toString(),
+      bestRating: (props.reviewRating.bestRating || 5).toString(),
+      worstRating: (props.reviewRating.worstRating || 1).toString(),
+    },
+    reviewBody: props.reviewBody,
+    datePublished: props.datePublished,
   };
 }

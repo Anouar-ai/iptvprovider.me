@@ -60,6 +60,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/iptv-guide`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/best-iptv-provider-2026`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/iptv-vs-cable-tv`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/iptv-vs-streaming-services`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/cheap-iptv-providers`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/how-to-setup-iptv`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/iptv-troubleshooting-guide`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/iptv-vpn-guide`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ];
 
   return [
