@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,23 +6,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { ShieldCheck, Tv, Zap } from "lucide-react";
-import { AnimatedText } from "../ui/animated-underline-text-one";
+import { AnimatedUnderline } from "@/components/ui/animated-underline";
 import { SiWhatsapp } from "react-icons/si";
 import Image from "next/image";
 import MouseIcon from "@/assets/icons/mouse.svg";
 
-const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDUiPjxwYXRoIGQ9Ik0wIDBoOHY1SDB6IiBmaWxsPSIjMDMwNTBiIi8+PC9zdmc+";
-
-/**
- * Hero Section
- * 
- * Performance Note:
- * The main headline is rendered without initial entry animations to ensure
- * the Largest Contentful Paint (LCP) element is visible immediately.
- * 
- * Video Poster:
- * A high-quality poster is provided to prevent layout shift before the video loads.
- */
 export function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoSrc, setVideoSrc] = useState<string>("");
@@ -66,15 +53,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(40%_100%_at_50%_0%,hsl(var(--primary)/0.1),transparent)]" />
       <Container className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center py-20 text-center md:min-h-[600px]">
-        <div
-          className="w-full max-w-4xl"
-        >
-          <AnimatedText
-            as="h1"
-            text="The World's Premier IPTV Provider"
-            textClassName="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
-            underlineClassName="text-primary"
-          />
+        <div className="w-full max-w-4xl">
+          <div className="relative flex flex-col items-center justify-center gap-2">
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 text-center">
+              The World&apos;s Premier IPTV Provider
+            </h1>
+            <AnimatedUnderline className="text-primary" />
+          </div>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-secondary-foreground/80">
             Unlock a world of entertainment with one of the world's best IPTV providers. Start your subscription now, from just $7.50/mo.
           </p>
