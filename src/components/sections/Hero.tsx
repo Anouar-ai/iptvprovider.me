@@ -26,6 +26,25 @@ const BLUR_DATA_URL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy5
  */
 export function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string>("");
+
+  useEffect(() => {
+    // Fetch the video file and create a Blob URL to hide the direct path
+    fetch("/The-Best-IPTV-Subscription-Service-Provider.webm")
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        setVideoSrc(url);
+      })
+      .catch((error) => console.error("Error loading video:", error));
+
+    // Cleanup: revoke the object URL when component unmounts
+    return () => {
+      if (videoSrc) {
+        URL.revokeObjectURL(videoSrc);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -35,26 +54,15 @@ export function Hero() {
         muted
         playsInline
         preload="auto"
-        poster="https://iptvwell.com/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider-1.jpeg"
+        title="The Best IPTV Subscription Service Provider"
+        aria-label="The Best IPTV Subscription Service Provider Promotional Video"
         onCanPlay={() => setVideoLoaded(true)}
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
         style={{ opacity: videoLoaded ? 1 : 0 }}
       >
-        <source
-          src="https://pub-93d3f90925314c4ea8adf63998c26129.r2.dev/The-Best-IPTV-Subscription-Service-Provider.mp4"
-          type="video/mp4"
-        />
+        {videoSrc && <source src={videoSrc} type="video/webm" />}
         Your browser does not support the video tag.
       </video>
-      {/* Hidden priority image to preload the video poster for LCP */}
-      <Image
-        src="https://iptvwell.com/wp-content/uploads/2024/05/The-Best-IPTV-Subscription-Service-Provider-1.jpeg"
-        alt="Hero Background"
-        fill
-        priority
-        className="invisible absolute inset-0 -z-10"
-        sizes="100vw"
-      />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
       <div className="absolute inset-0 bg-[radial-gradient(40%_100%_at_50%_0%,hsl(var(--primary)/0.1),transparent)]" />
       <Container className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center py-20 text-center md:min-h-[600px]">
