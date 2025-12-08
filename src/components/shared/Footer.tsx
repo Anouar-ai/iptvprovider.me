@@ -50,9 +50,16 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between border-t py-6 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} IPTV Provider. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              &copy; {new Date().getFullYear()} IPTV Provider. All rights reserved.
+            </p>
+            <div className="hidden sm:block text-muted-foreground">|</div>
+            <div className="flex gap-4 text-sm text-muted-foreground">
+              <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
+              <Link href="/legal" className="hover:text-primary">Legal Disclaimer</Link>
+            </div>
+          </div>
           <div className="mt-4 flex items-center space-x-4 sm:mt-0">
             <Link href="#" aria-label="Follow us on Facebook" className="text-muted-foreground hover:text-primary"><Facebook className="h-5 w-5" /></Link>
             <Link href="#" aria-label="Follow us on Twitter" className="text-muted-foreground hover:text-primary"><Twitter className="h-5 w-5" /></Link>

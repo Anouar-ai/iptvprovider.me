@@ -1,6 +1,8 @@
 
 export const footerLinks = {
     quickLinks: [
+        { name: "About Us", href: "/about" },
+        { name: "Methodology", href: "/review-process" },
         { name: "Pricing", href: "/pricing" },
         { name: "Locations", href: "/locations" },
         { name: "FAQ", href: "/faq" },
