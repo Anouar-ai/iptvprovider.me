@@ -1,17 +1,16 @@
 
 
 
-import { getSafeArticleData } from '@/lib/how-to';
+import { getSafeArticleData, type Article } from '@/lib/how-to';
 import { getArticlesWithEmbeddings } from '@/lib/server/how-to-server';
 import { findSemanticallySimilarContent } from './vector-related-content';
 import { unstable_cache as cache } from 'next/cache';
 
-export type Post = ReturnType<typeof getSafeArticleData>;
-
 // In a real app, this would fetch from a database or CMS.
-export async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(): Promise<Article[]> {
   return (await getArticlesWithEmbeddings()).map(p => ({
     id: p.id,
+    category: p.category, // Ensure category is passed if it exists in ContentWithEmbedding, otherwise strict check might fail if not optional there.
     title: p.title,
     description: p.description,
     primaryKeyword: p.primaryKeyword,
@@ -31,41 +30,63 @@ export async function getAllPosts(): Promise<Post[]> {
  * @param minLinks The maximum number of related links to return.
  * @returns An array of semantically related posts.
  */
+// Deterministic, score-based related content algorithm (No dependencies)
 export const getRelatedPosts = cache(async (currentId: string, minLinks = 3) => {
-  // Use the function that generates embeddings on the server at request time
-  const allPostsWithEmbeddings = await getArticlesWithEmbeddings();
-  
-  if (!allPostsWithEmbeddings || allPostsWithEmbeddings.length === 0) {
+  const allPosts = await getAllPosts();
+
+  if (!allPosts || allPosts.length === 0) {
     return [];
   }
-  
-  const currentPost = allPostsWithEmbeddings.find(p => p.id === currentId);
+
+  const currentPost = allPosts.find(p => p.id === currentId);
 
   if (!currentPost) {
     return [];
   }
-  
-  // Create a single text block for the current post to generate its embedding for comparison
-  const currentContentText = [
-    currentPost.title,
-    currentPost.description,
-    ...currentPost.steps.map(step => `${step.title}: ${step.description}`),
-    ...(currentPost.faqs ? currentPost.faqs.map(faq => `${faq.question} ${faq.answer}`) : [])
-  ].join('\n\n');
 
-  // Find semantically similar content
-  const related = await findSemanticallySimilarContent(
-    currentContentText,
-    allPostsWithEmbeddings,
-    currentId,
-    minLinks
-  );
-  
-  return related.map(post => ({
-      ...post,
-      href: `/devices/${post.id}`
-  }));
+  // Scoring Algorithm
+  const candidates = allPosts
+    .filter(p => p.id !== currentId) // Exclude current post
+    .map(post => {
+      let score = 0;
+
+      // 1. Category Strength (Most Important)
+      // Note: We access the 'category' property which you just added to the JSON data.
+      if (currentPost?.category && post?.category && currentPost.category === post.category) {
+        score += 10;
+      }
+
+      // 2. Keyword Overlap (Secondary)
+      if (currentPost.keywords && post.keywords) {
+        const currentKeywords = currentPost.keywords.map(k => k.toLowerCase());
+        const postKeywords = post.keywords.map(k => k.toLowerCase());
+
+        // Count overlapping keywords
+        const overlap = postKeywords.filter(k =>
+          currentKeywords.some(ck => ck.includes(k) || k.includes(ck))
+        ).length;
+
+        score += (overlap * 2);
+      }
+
+      // 3. Fallback: Title Similarity
+      if (post.title.includes(currentPost.primaryKeyword) || currentPost.title.includes(post.primaryKeyword)) {
+        score += 1;
+      }
+
+      return {
+        ...post,
+        score,
+        href: `/devices/${post.id}`
+      };
+    });
+
+  // Sort by score (descending) and return top results
+  return candidates
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4); // Return top 4 unique related items
+
 },
-['related-posts'],
-{ revalidate: 3600, tags: ['posts'] }
+  ['related-posts'],
+  { revalidate: 3600, tags: ['posts'] }
 );
