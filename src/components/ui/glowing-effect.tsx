@@ -33,6 +33,8 @@ const GlowingEffect = memo(
     const containerRef = useRef<HTMLDivElement>(null);
     const lastPosition = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef<number>(0);
+    const lastActive = useRef(false);
+    const lastAngle = useRef(0);
 
     const handleMove = useCallback(
       (e?: MouseEvent | { x: number; y: number }) => {
@@ -62,7 +64,10 @@ const GlowingEffect = memo(
           const inactiveRadius = 0.5 * Math.min(width, height) * inactiveZone;
 
           if (distanceFromCenter < inactiveRadius) {
-            element.style.setProperty("--active", "0");
+            if (lastActive.current) {
+              element.style.setProperty("--active", "0");
+              lastActive.current = false;
+            }
             return;
           }
 
@@ -72,26 +77,26 @@ const GlowingEffect = memo(
             mouseY > top - proximity &&
             mouseY < top + height + proximity;
 
-          element.style.setProperty("--active", isActive ? "1" : "0");
+          if (isActive !== lastActive.current) {
+            element.style.setProperty("--active", isActive ? "1" : "0");
+            lastActive.current = isActive;
+          }
 
           if (!isActive) return;
 
-          const currentAngle =
-            parseFloat(element.style.getPropertyValue("--start")) || 0;
+          const currentAngle = lastAngle.current;
           let targetAngle =
             (180 * Math.atan2(mouseY - center[1], mouseX - center[0])) /
-              Math.PI +
+            Math.PI +
             90;
 
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
-          const newAngle = currentAngle + angleDiff;
 
           animate(
             (progress) => {
-              element.style.setProperty(
-                "--start",
-                String(currentAngle + angleDiff * progress)
-              );
+              const val = currentAngle + angleDiff * progress;
+              element.style.setProperty("--start", String(val));
+              lastAngle.current = val;
             },
             {
               duration: movementDuration,
