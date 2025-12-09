@@ -32,16 +32,12 @@ export function generateWebSiteSchema(): WebSite {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${siteConfig.url}/#website`,
     'url': siteConfig.url,
     'name': siteConfig.name,
     'alternateName': ["IPTV Providers", "best iptv provider"],
-    'potentialAction': {
-      '@type': 'SearchAction',
-      'target': {
-        '@type': 'EntryPoint',
-        'urlTemplate': `${siteConfig.url}/?s={search_term_string}`
-      },
-      'query-input': 'required name=search_term_string',
+    'publisher': {
+      '@id': `${siteConfig.url}/#organization`,
     },
   };
 }
@@ -50,6 +46,7 @@ export function generateOrganizationSchema(): Organization {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
     'url': siteConfig.url,
     'logo': `${siteConfig.url}/api/og`,

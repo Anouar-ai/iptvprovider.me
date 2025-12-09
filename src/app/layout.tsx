@@ -76,6 +76,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - Best Streaming Service`,
+        type: 'image/png',
       },
     ],
   },
@@ -84,6 +85,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — IPTV Service in USA, UK & Worldwide`,
     description: siteConfig.description,
     creator: '@iptvprovider',
+    site: '@iptvprovider',
     images: [siteConfig.ogImage],
   },
   robots: {
@@ -113,7 +115,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '48x48' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
     apple: [
