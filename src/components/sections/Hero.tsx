@@ -67,12 +67,10 @@ export function Hero() {
             <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:bg-accent hover:shadow-xl hover:shadow-primary/30">
               <Link href="/#pricing">View Pricing</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
               <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
-                  <SiWhatsapp className="mr-2" />
-                  Contact on WhatsApp
-                </Button>
+                <SiWhatsapp className="mr-2" />
+                Contact on WhatsApp
               </Link>
             </Button>
           </div>
