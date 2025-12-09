@@ -17,14 +17,14 @@ export function generateMetadata(): Metadata {
     const title = "IPTV Free Trial 2026: Start Streaming in 5 Minutes (No Card Needed)";
     const description = "Start your IPTV free trial today. Access 500+ live channels, sports & movies. No credit card required. Instant activation. Try before you buy →";
     return {
-      ...generatePageMetadata({
-          title,
-          description,
-          canonical: "/iptv-free-trial",
-      }),
-      title: {
-        absolute: title,
-      }
+        ...generatePageMetadata({
+            title,
+            description,
+            canonical: "/iptv-free-trial",
+        }),
+        title: {
+            absolute: title,
+        }
     };
 }
 
@@ -69,7 +69,7 @@ export default async function IptvFreeTrialPage() {
             <Schema id="faq" schema={faqSchema} />
             <Schema id="service" schema={serviceSchema} />
 
-            <SemanticContent 
+            <SemanticContent
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}
                 semanticClusters={semanticContent.semanticClusters}
@@ -79,27 +79,27 @@ export default async function IptvFreeTrialPage() {
                 {/* Hero Section */}
                 <section className="py-20 sm:py-32 text-center bg-muted/20 dark:bg-card/30">
                     <Container>
-                         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+                        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
                             <ol className="flex items-center justify-center gap-2">
-                            <li>
-                                <Link href="/" className="hover:text-primary">
-                                Home
-                                </Link>
-                            </li>
-                            <li>/</li>
-                            <li>
-                                IPTV Free Trial
-                            </li>
+                                <li>
+                                    <Link href="/" className="hover:text-primary">
+                                        Home
+                                    </Link>
+                                </li>
+                                <li>/</li>
+                                <li>
+                                    IPTV Free Trial
+                                </li>
                             </ol>
                         </nav>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-6xl">
-                           Start Your IPTV Free Trial Now
+                            Start Your IPTV Free Trial Now
                         </h1>
                         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                           20,000+ Channels. Zero Commitment. Instant Access.
+                            20,000+ Channels. Zero Commitment. Instant Access.
                         </p>
                         <Button asChild size="lg" className="mt-8">
-                            <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
                                 <SiWhatsapp className="mr-2" />
                                 Start Free Trial on WhatsApp
                             </Link>
@@ -160,13 +160,13 @@ export default async function IptvFreeTrialPage() {
 
                 {/* Why Choose Our Trial Section */}
                 <section className="py-16 sm:py-24">
-                     <Container>
+                    <Container>
                         <SectionHeader
                             title="Why Our Free Trial is Better"
                             subtitle="We offer a truly risk-free way to test our service, focused on quality and customer trust."
                         />
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                             {whyChooseFeatures.map((feature) => (
+                            {whyChooseFeatures.map((feature) => (
                                 <div key={feature.title} className="flex items-start gap-4">
                                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                                         <feature.icon className="h-6 w-6" />
@@ -176,31 +176,31 @@ export default async function IptvFreeTrialPage() {
                                         <p className="mt-1 text-muted-foreground">{feature.description}</p>
                                     </div>
                                 </div>
-                             ))}
+                            ))}
                         </div>
                     </Container>
                 </section>
-                
+
                 {/* FAQ Section */}
                 <section id="faq" className="py-16 sm:py-24 bg-muted/20 dark:bg-card/30">
-                  <Container>
-                      <SectionHeader
-                          title="Free Trial - Frequently Asked Questions"
-                          subtitle="Got questions about the trial? We have answers."
-                      />
-                      <div className="mx-auto mt-8 max-w-3xl">
-                        <Accordion type="single" collapsible>
-                          {trialFaqs.map((faq, i) => (
-                            <AccordionItem key={i} value={`item-${i}`}>
-                              <AccordionTrigger>{faq.question}</AccordionTrigger>
-                              <AccordionContent>
-                                <p>{faq.answer}</p>
-                              </AccordionContent>
-                            </AccordionItem>
-                          ))}
-                        </Accordion>
-                      </div>
-                  </Container>
+                    <Container>
+                        <SectionHeader
+                            title="Free Trial - Frequently Asked Questions"
+                            subtitle="Got questions about the trial? We have answers."
+                        />
+                        <div className="mx-auto mt-8 max-w-3xl">
+                            <Accordion type="single" collapsible>
+                                {trialFaqs.map((faq, i) => (
+                                    <AccordionItem key={i} value={`item-${i}`}>
+                                        <AccordionTrigger>{faq.question}</AccordionTrigger>
+                                        <AccordionContent>
+                                            <p>{faq.answer}</p>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                ))}
+                            </Accordion>
+                        </div>
+                    </Container>
                 </section>
 
                 {/* Final CTA Section */}
@@ -214,14 +214,14 @@ export default async function IptvFreeTrialPage() {
                                 Your 24-hour, all-access pass to the best entertainment is just one click away.
                             </p>
                             <Button
-                            asChild
-                            size="lg"
-                            variant="outline"
-                            className="mt-8 border-primary-foreground bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                                asChild
+                                size="lg"
+                                variant="outline"
+                                className="mt-8 border-primary-foreground bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                             >
-                            <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer">
-                                Get Your Free Trial Now
-                            </Link>
+                                <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
+                                    Get Your Free Trial Now
+                                </Link>
                             </Button>
                         </div>
                     </Container>
@@ -232,6 +232,6 @@ export default async function IptvFreeTrialPage() {
     )
 }
 
-    
 
-    
+
+

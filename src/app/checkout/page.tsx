@@ -30,7 +30,7 @@ export default async function CheckoutPage() {
         <>
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
 
-            <SemanticContent 
+            <SemanticContent
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}
                 semanticClusters={semanticContent.semanticClusters}
@@ -38,20 +38,20 @@ export default async function CheckoutPage() {
             />
             <main className="py-16 sm:py-24">
                 <Container>
-                     <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                      <ol className="flex items-center gap-2">
-                        <li>
-                          <Link href="/" className="hover:text-primary">
-                            Home
-                          </Link>
-                        </li>
-                        <li>/</li>
-                        <li>
-                            Checkout
-                        </li>
-                      </ol>
+                    <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+                        <ol className="flex items-center gap-2">
+                            <li>
+                                <Link href="/" className="hover:text-primary">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>/</li>
+                            <li>
+                                Checkout
+                            </li>
+                        </ol>
                     </nav>
-                    <SectionHeader 
+                    <SectionHeader
                         title="Contact Us to Purchase"
                         subtitle="To complete your purchase, please contact us via WhatsApp. Our team is ready to assist you."
                     />
@@ -90,9 +90,11 @@ export default async function CheckoutPage() {
                                             <Input id="name" placeholder="Full Name" disabled />
                                         </div>
                                         <Button asChild size="lg" className="w-full">
-                                            <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer">
-                                                <SiWhatsapp className="mr-2 h-4 w-4" />
-                                                Contact on WhatsApp
+                                            <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
+                                                <Button size="lg" className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
+                                                    <SiWhatsapp className="mr-2 h-4 w-4" />
+                                                    Contact on WhatsApp
+                                                </Button>
                                             </Link>
                                         </Button>
                                     </div>
@@ -100,7 +102,7 @@ export default async function CheckoutPage() {
                             </Card>
                         </div>
                         <div className="order-1 md:order-2">
-                             <Card className="bg-muted/30 dark:bg-card/50">
+                            <Card className="bg-muted/30 dark:bg-card/50">
                                 <CardHeader>
                                     <CardTitle>Order Summary</CardTitle>
                                 </CardHeader>
@@ -113,7 +115,7 @@ export default async function CheckoutPage() {
                                         <p className="text-muted-foreground">Discount</p>
                                         <p className="font-semibold text-primary">-$102.00</p>
                                     </div>
-                                    <hr className="border-border"/>
+                                    <hr className="border-border" />
                                     <div className="flex justify-between font-bold text-lg">
                                         <p>Total</p>
                                         <p>$90.00</p>

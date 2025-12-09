@@ -68,9 +68,11 @@ export function Hero() {
               <Link href="/#pricing">View Pricing</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="https://wa.me/212700664844" target="_blank" rel="noopener noreferrer">
-                <SiWhatsapp className="mr-2" />
-                Contact on WhatsApp
+              <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
+                  <SiWhatsapp className="mr-2" />
+                  Contact on WhatsApp
+                </Button>
               </Link>
             </Button>
           </div>
