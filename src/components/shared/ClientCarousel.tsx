@@ -1,7 +1,7 @@
 
 "use client";
 
-import { ResponsivePicture } from "@/components/ui/responsive-picture";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import {
   Carousel,
   CarouselContent,
@@ -43,15 +43,15 @@ export function ClientCarousel({
             className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 xl:basis-1/7 pl-3 max-w-[200px]"
           >
             <main className="group relative overflow-hidden rounded-xl">
-              <ResponsivePicture
-                baseSrc={item.src}
+              <OptimizedImage
+                src={item.src}
                 alt={`Poster for ${item.title}, a popular movie available on IPTV Provider`}
-                className="rounded-xl object-cover transition-opacity duration-300 ease-in h-[300px] w-[200px]"
-                sizes={{
-                  mobile: { width: 200, quality: 80 },
-                  tablet: { width: 300, quality: 80 },
-                  desktop: { width: 400, quality: 75 }
-                }}
+                width={200}
+                height={300}
+                className="rounded-xl object-cover h-[300px] w-[200px]"
+                blurDataURL={item.placeholder}
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 17vw"
+                showSkeleton={true}
               />
               {showHoverContent && (
                 <>
