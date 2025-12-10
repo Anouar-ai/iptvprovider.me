@@ -9,13 +9,40 @@ const baseUrl = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
-  const devicePages: MetadataRoute.Sitemap = howToArticles.map((article) => ({
-    url: `${baseUrl}/devices/${article.id}`,
-    lastModified: new Date(article.dateModified),
-    changeFrequency: 'weekly',
-    priority: 0.8,
+  // 1. Define Static Device IDs (to exclude from dynamic generation)
+  const staticDeviceIds = [
+    'roku',
+    'apple-tv',
+    'fire-tv',
+    'samsung-tv',
+    'lg-tv',
+    'android',
+    'ios',
+    'windows',
+    'macos',
+    'mag',
+    'troubleshooting',
+  ];
+
+  // 2. Generate Dynamic Device Pages (excluding static ones)
+  const devicePages: MetadataRoute.Sitemap = howToArticles
+    .filter((article) => !staticDeviceIds.includes(article.id))
+    .map((article) => ({
+      url: `${baseUrl}/devices/${article.id}`,
+      lastModified: new Date(article.dateModified),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
+
+  // 3. Generate Static Device Pages (Hardcoded 0.9 priority)
+  const staticDevicePages: MetadataRoute.Sitemap = staticDeviceIds.map(id => ({
+    url: `${baseUrl}/devices/${id}`,
+    lastModified: new Date(),
+    changeFrequency: (id === 'troubleshooting') ? 'monthly' : 'monthly', // Troubleshooting is 0.8 usually but here we can standardize or separate
+    priority: (id === 'troubleshooting') ? 0.8 : 0.9,
   }));
 
+  // 4. Country Pages
   const countryPages: MetadataRoute.Sitemap = allCountries.map((country) => ({
     url: `${baseUrl}/country/${country.id}`,
     lastModified: new Date(),
@@ -23,7 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const staticPages: MetadataRoute.Sitemap = [
+  // 5. Core Pages
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -72,6 +100,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1.0,
     },
+  ];
+
+  // 6. Blog Pages
+  const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
@@ -114,17 +146,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/blog/iptv-vpn-guide`,
-      lastModified: new Date('2026-01-01'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
   ];
 
   return [
-    ...staticPages,
+    ...corePages,
+    ...staticDevicePages,
     ...devicePages,
     ...countryPages,
+    ...blogPages,
   ]
 }
+```

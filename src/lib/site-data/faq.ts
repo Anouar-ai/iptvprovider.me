@@ -1,5 +1,14 @@
 
+
 export const faqs = [
+    {
+        question: "Is IPTV legal?",
+        answer: "IPTV technology itself is completely legal. The legality depends on the content provider and licensing. Our IPTV Provider operates within legal frameworks and provides licensed content. We recommend always using legitimate IPTV services with proper content licensing to ensure you're accessing content legally. Reputable IPTV providers, like ours, maintain legal compliance and proper licensing agreements."
+    },
+    {
+        question: "What internet speed do I need for IPTV?",
+        answer: "For optimal IPTV streaming, we recommend: 10 Mbps minimum for SD quality, 25 Mbps for HD (1080p), and 50 Mbps for 4K/UHD streaming. For households with multiple devices, add 5-10 Mbps per additional device. A wired Ethernet connection is always better than Wi-Fi for stability. You can test your internet speed at fast.com to ensure you meet these requirements."
+    },
     {
         question: "Do you offer free trials for your IPTV Provider?",
         answer: "We do not offer free trials to maintain the highest quality for our paying subscribers, but we provide a low-cost 1-month plan as a perfect way to test our service. This approach prevents server overload from temporary users and ensures a stable, premium experience for serious customers."
