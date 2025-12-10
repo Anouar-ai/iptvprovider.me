@@ -63,6 +63,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  other: {
+    'one-verification': '30049c42',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
