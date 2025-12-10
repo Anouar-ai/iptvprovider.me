@@ -4,6 +4,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    // dynamicIO: true, // Removed as invalid in this version
+  },
+  cacheComponents: true, // Moved from experimental
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

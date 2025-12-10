@@ -2,11 +2,11 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  
+
   // ?title=<title>
   const hasTitle = searchParams.has('title');
   const title = hasTitle
@@ -30,19 +30,19 @@ export async function GET(req: NextRequest) {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '48px', fontWeight: 'bold' }}>
-           <svg
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ color: '#00FF7F' }}
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.51 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                fill="currentColor"
-              />
-            </svg>
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ color: '#00FF7F' }}
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.51 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              fill="currentColor"
+            />
+          </svg>
           <span style={{
             background: 'linear-gradient(to right, #00FF7F, #00BFFF)',
             backgroundClip: 'text',
