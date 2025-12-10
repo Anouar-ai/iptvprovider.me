@@ -8,6 +8,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { CheckCircle2, XCircle, AlertTriangle, DollarSign } from "lucide-react";
 
+const DATE_ISO = '2026-01-01T00:00:00.000Z';
+const DATE_YMD = '2026-01-01';
+const DATE_HUMAN = 'January 1, 2026';
+const DATE_MONTH_YEAR = 'January 2026';
+
 export function generateMetadata(): Metadata {
     const title = "Cheap IPTV Providers 2026: Best Budget Options Under $15/Month";
     const description = "Find the best cheap IPTV providers in 2026. Compare budget options under $15/month. Learn what to avoid and how to get quality IPTV for less.";
@@ -44,7 +49,7 @@ export function generateMetadata(): Metadata {
                 alt: 'Cheap IPTV Providers 2026',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: new Date().toISOString(),
+            modifiedTime: DATE_ISO,
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'Budget', 'Cheap', 'Affordable', 'Comparison'],
@@ -95,7 +100,7 @@ export default async function CheapIPTVProviders() {
         description: "Comprehensive guide to finding affordable IPTV providers without sacrificing quality",
         image: "/api/og?title=Cheap IPTV Providers 2026",
         datePublished: "2026-01-01",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: DATE_ISO.split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers`,
     });
@@ -130,7 +135,7 @@ export default async function CheapIPTVProviders() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>💰 Budget Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                            <span>💰 Budget Guide • Updated {DATE_MONTH_YEAR}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             Cheap IPTV Providers 2026
@@ -552,7 +557,7 @@ export default async function CheapIPTVProviders() {
                                     We've tested over 100 IPTV providers across all price ranges to help you find the best value. Our mission is to help cord-cutters save money without sacrificing quality.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {DATE_HUMAN} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

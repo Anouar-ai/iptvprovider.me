@@ -68,7 +68,7 @@ export default async function MacOSPage() {
         description: "Guide to IPTV Smarters on macOS.",
         image: "/api/og?title=Mac IPTV Guide",
         datePublished: "2026-01-11",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: '2026-01-01',
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/macos`,
     });
@@ -111,7 +111,7 @@ export default async function MacOSPage() {
                         <header className="text-center mb-16">
                             <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
                                 <Apple className="h-4 w-4" />
-                                <span>Apple Silicon Optimized • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                                <span>Apple Silicon Optimized • Updated {'January 2026'}</span>
                             </div>
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 Watch IPTV on Your Mac

@@ -7,6 +7,9 @@ const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow';
 const SITE_URL = process.env.SITE_URL || 'https://www.iptvprovider.me';
 const API_KEY = '34703b31e96542ffb49bffed790d5e29';
 
+// export const dynamic = 'force-dynamic'; // Removed due to conflict with cacheComponents
+
+
 async function submitUrls(urlList: string[]) {
   const payload = {
     host: new URL(SITE_URL).hostname,
@@ -28,7 +31,7 @@ async function submitUrls(urlList: string[]) {
       const errorText = await response.text();
       throw new Error(`IndexNow API error: ${response.status} ${response.statusText} - ${errorText}`);
     }
-    
+
     console.log('IndexNow submission successful:', payload);
     return { success: true, status: response.status, payload };
 
@@ -39,31 +42,36 @@ async function submitUrls(urlList: string[]) {
   }
 }
 
+// export const revalidate = 0; // Removed due to conflict
+
 export async function GET(req: NextRequest) {
-    const staticPages = [
-        '/',
-        '/pricing',
-        '/iptv-subscription',
-        '/locations',
-        '/faq',
-        '/contact',
-        '/iptv-free-trial',
-    ];
+  // Force dynamic rendering by accessing headers (workaround for cacheComponents conflict)
+  const _ = req.headers.get('user-agent');
 
-    const devicePages = howToArticles.map(article => `/devices/${article.id}`);
-    const countryPages = allCountries.map(country => `/country/${country.id}`);
+  const staticPages = [
+    '/',
+    '/pricing',
+    '/iptv-subscription',
+    '/locations',
+    '/faq',
+    '/contact',
+    '/iptv-free-trial',
+  ];
 
-    const allUrls = [
-        ...staticPages.map(path => `${SITE_URL}${path}`),
-        ...devicePages.map(path => `${SITE_URL}${path}`),
-        ...countryPages.map(path => `${SITE_URL}${path}`),
-    ];
-    
-    const result = await submitUrls(allUrls);
+  const devicePages = howToArticles.map(article => `/devices/${article.id}`);
+  const countryPages = allCountries.map(country => `/country/${country.id}`);
 
-    if (result.success) {
-        return NextResponse.json({ message: 'URLs submitted to IndexNow successfully.', details: result });
-    } else {
-        return NextResponse.json({ error: 'Failed to submit URLs to IndexNow.', details: result }, { status: 500 });
-    }
+  const allUrls = [
+    ...staticPages.map(path => `${SITE_URL}${path}`),
+    ...devicePages.map(path => `${SITE_URL}${path}`),
+    ...countryPages.map(path => `${SITE_URL}${path}`),
+  ];
+
+  const result = await submitUrls(allUrls);
+
+  if (result.success) {
+    return NextResponse.json({ message: 'URLs submitted to IndexNow successfully.', details: result });
+  } else {
+    return NextResponse.json({ error: 'Failed to submit URLs to IndexNow.', details: result }, { status: 500 });
+  }
 }

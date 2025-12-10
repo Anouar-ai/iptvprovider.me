@@ -78,7 +78,7 @@ export default async function AndroidPage() {
         description: "Setup guide for TiviMate and Smarters on Android.",
         image: "/api/og?title=Android IPTV Guide",
         datePublished: "2026-01-08",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: '2026-01-01',
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/android`,
     });
@@ -121,7 +121,7 @@ export default async function AndroidPage() {
                         <header className="text-center mb-16">
                             <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
                                 <Smartphone className="h-4 w-4" />
-                                <span>Android Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                                <span>Android Guide • Updated {'January 2026'}</span>
                             </div>
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 The Best Way to Watch IPTV on Android

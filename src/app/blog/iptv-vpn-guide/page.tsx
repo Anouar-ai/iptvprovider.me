@@ -8,6 +8,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { CheckCircle2, XCircle, Shield, Zap, Globe, Lock } from "lucide-react";
 
+const DATE_ISO = '2026-01-01T00:00:00.000Z';
+const DATE_YMD = '2026-01-01';
+const DATE_HUMAN = 'January 1, 2026';
+const DATE_MONTH_YEAR = 'January 2026';
+
 export function generateMetadata(): Metadata {
     const title = "IPTV VPN Guide 2026: Do You Need a VPN for IPTV? (Complete Guide)";
     const description = "Complete guide to using VPN with IPTV. Learn if you need a VPN, best VPNs for IPTV, setup instructions, and how to prevent ISP throttling. Updated Jan 2026.";
@@ -44,7 +49,7 @@ export function generateMetadata(): Metadata {
                 alt: 'IPTV VPN Guide 2026',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: new Date().toISOString(),
+            modifiedTime: DATE_ISO,
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'VPN', 'Privacy', 'Security', 'Guide'],
@@ -95,7 +100,7 @@ export default async function IPTVVPNGuide() {
         description: "Comprehensive guide covering VPN usage with IPTV, best VPNs, setup, and privacy",
         image: "/api/og?title=IPTV VPN Guide 2026",
         datePublished: "2026-01-01",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: DATE_ISO.split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide`,
     });
@@ -130,7 +135,7 @@ export default async function IPTVVPNGuide() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>🔒 Security Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                            <span>🔒 Security Guide • Updated {DATE_MONTH_YEAR}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             Do You Need a VPN for IPTV?
@@ -542,7 +547,7 @@ export default async function IPTVVPNGuide() {
                                     We've tested dozens of VPNs with IPTV services to find the best combinations for speed, privacy, and reliability. Our recommendations are based on real-world testing and user feedback.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {DATE_HUMAN} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

@@ -44,7 +44,7 @@ export function generateMetadata(): Metadata {
                 alt: 'Complete IPTV Guide 2026',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: new Date().toISOString(),
+            modifiedTime: '2026-01-01T00:00:00.000Z',
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'Streaming', 'Cord Cutting', 'Technology', 'Guide'],
@@ -111,7 +111,7 @@ export default async function IPTVGuide() {
         description: "Comprehensive guide covering IPTV technology, setup, providers, legal considerations, and expert tips",
         image: "/api/og?title=Complete IPTV Guide 2026",
         datePublished: "2026-01-01",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: '2026-01-01T00:00:00.000Z'.split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/iptv-guide`,
     });
@@ -157,7 +157,7 @@ export default async function IPTVGuide() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>📚 Complete Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                            <span>📚 Complete Guide • Updated {'January 1, 2026'}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             The Complete IPTV Guide 2026
@@ -685,7 +685,7 @@ export default async function IPTVGuide() {
                                     Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping 50,000+ cord-cutters save money and get better TV. All our guides are based on real-world testing—no paid placements, no affiliate bias.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {'January 1, 2026'} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

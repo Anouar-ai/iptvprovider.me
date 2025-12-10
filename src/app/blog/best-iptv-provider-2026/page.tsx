@@ -11,6 +11,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle2, TrendingUp, Shield, Zap } from "lucide-react";
 
+const DATE_ISO = '2026-01-01T00:00:00.000Z';
+const DATE_YMD = '2026-01-01';
+const DATE_HUMAN = 'January 1, 2026';
+const DATE_MONTH_YEAR = 'January 2026';
+
 export function generateMetadata(): Metadata {
     const title = "Best IPTV Provider 2026 : Top 5 Tested (Real Data + Rankings)";
     const description = "We tested 50+ IPTV services for 30 days. See which providers have the best channels, uptime, and 4K quality. Updated Jan 2026 with real performance data.";
@@ -47,7 +52,7 @@ export function generateMetadata(): Metadata {
                 alt: 'Best IPTV Provider 2026 Comparison',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: new Date().toISOString(),
+            modifiedTime: DATE_ISO,
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'Streaming', 'Cord Cutting', '4K Streaming', 'Live TV'],
@@ -64,7 +69,7 @@ export function generateMetadata(): Metadata {
         },
         other: {
             'article:published_time': '2026-01-01T00:00:00Z',
-            'article:modified_time': new Date().toISOString(),
+            'article:modified_time': DATE_ISO,
             'article:author': 'IPTV Expert Team',
         }
     };
@@ -132,7 +137,7 @@ export default async function BestIPTVProvider2025() {
         description: "Comprehensive comparison of the top 5 IPTV providers based on 30 days of real-world testing",
         image: "/api/og?title=Best IPTV Provider 2026",
         datePublished: "2026-01-01",
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: DATE_ISO.split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2026`,
     });
@@ -166,7 +171,7 @@ export default async function BestIPTVProvider2025() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>🔄 Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                            <span>🔄 Last Updated: {DATE_MONTH_YEAR}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             Best IPTV Provider in 2026: Real Comparison
@@ -442,7 +447,7 @@ export default async function BestIPTVProvider2025() {
                                     Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping 50,000+ cord-cutters find reliable streaming solutions. All our reviews are based on real-world testing—no paid placements, no affiliate bias.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {DATE_HUMAN} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

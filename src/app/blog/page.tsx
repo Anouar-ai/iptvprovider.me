@@ -95,7 +95,7 @@ export default function BlogIndex() {
                             <CardHeader>
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                     <Calendar className="h-4 w-4" />
-                                    <time dateTime={post.date}>
+                                    <time dateTime={post.date} suppressHydrationWarning>
                                         {new Date(post.date).toLocaleDateString('en-US', {
                                             year: 'numeric',
                                             month: 'long',
