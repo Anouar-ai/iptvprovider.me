@@ -8,11 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { CheckCircle2, XCircle, Tv, DollarSign, Zap } from "lucide-react";
 
-const DATE_ISO = '2026-01-01T00:00:00.000Z';
-const DATE_YMD = '2026-01-01';
-const DATE_HUMAN = 'January 1, 2026';
-const DATE_MONTH_YEAR = 'January 2026';
-
 export function generateMetadata(): Metadata {
     const title = "IPTV vs Streaming Services 2026: Netflix, Hulu, Disney+ Comparison";
     const description = "IPTV vs Netflix, Hulu, Disney+: Which is better? Compare live TV, cost, channels, and content. Get both for less than one streaming service. Updated Jan 2026.";
@@ -49,7 +44,7 @@ export function generateMetadata(): Metadata {
                 alt: 'IPTV vs Streaming Services Comparison',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: DATE_ISO,
+            modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'Streaming', 'Netflix', 'Hulu', 'Disney+', 'Comparison'],
@@ -100,7 +95,7 @@ export default async function IPTVvsStreaming() {
         description: "Comprehensive comparison of IPTV vs Netflix, Hulu, Disney+, and other streaming services",
         image: "/api/og?title=IPTV vs Streaming Services",
         datePublished: "2026-01-01",
-        dateModified: DATE_ISO.split('T')[0],
+        dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-streaming-services`,
     });
@@ -135,7 +130,7 @@ export default async function IPTVvsStreaming() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>📺 Comparison • Updated {DATE_MONTH_YEAR}</span>
+                            <span>📺 Comparison • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             IPTV vs Streaming Services: Which is Better?
@@ -466,7 +461,7 @@ export default async function IPTVvsStreaming() {
                                     Our team has been analyzing streaming services and IPTV providers since 2018. We've helped thousands of cord-cutters save money by finding the right balance between IPTV and traditional streaming services.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {DATE_HUMAN} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

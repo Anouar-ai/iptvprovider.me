@@ -385,7 +385,7 @@ export default async function HowToPage({ params }: { params: Promise<{ device: 
                   <p className="text-sm text-muted-foreground mt-2">
                     Our team has been testing and documenting IPTV setup procedures across all major devices since 2018. We've helped thousands of users successfully install IPTV on their {primaryKeyword} and other devices.
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2" suppressHydrationWarning>
+                  <p className="text-xs text-muted-foreground mt-2">
                     Last Updated: {new Date(dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: {new Date(article.datePublished).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                   </p>
                 </div>

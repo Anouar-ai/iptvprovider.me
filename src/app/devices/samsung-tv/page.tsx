@@ -78,7 +78,7 @@ export default async function SamsungTVPage() {
         description: "Guide to IBO Player and Set IPTV on Tizen OS.",
         image: "/api/og?title=Samsung IPTV Guide",
         datePublished: "2026-01-06",
-        dateModified: '2026-01-01',
+        dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/samsung-tv`,
     });
@@ -121,7 +121,7 @@ export default async function SamsungTVPage() {
                         <header className="text-center mb-16">
                             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
                                 <Monitor className="h-4 w-4" />
-                                <span>Tizen OS Guide • Updated {'January 2026'}</span>
+                                <span>Tizen OS Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                             </div>
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 Watch IPTV on Your Samsung Smart TV

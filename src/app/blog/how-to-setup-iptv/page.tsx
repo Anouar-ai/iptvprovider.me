@@ -8,11 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Link from "next/link";
 import { CheckCircle2, Smartphone, Tv, Monitor, AlertCircle } from "lucide-react";
 
-const DATE_ISO = '2026-01-01T00:00:00.000Z';
-const DATE_YMD = '2026-01-01';
-const DATE_HUMAN = 'January 1, 2026';
-const DATE_MONTH_YEAR = 'January 2026';
-
 export function generateMetadata(): Metadata {
     const title = "How to Setup IPTV in 2026: Complete Step-by-Step Guide (5 Minutes)";
     const description = "Learn how to setup IPTV on any device in 5 minutes. Step-by-step guide for Fire TV, Android TV, Smart TV, phones, and more. Updated Jan 2026.";
@@ -49,7 +44,7 @@ export function generateMetadata(): Metadata {
                 alt: 'How to Setup IPTV Guide',
             }],
             publishedTime: '2026-01-01T00:00:00Z',
-            modifiedTime: DATE_ISO,
+            modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
             tags: ['IPTV', 'Setup', 'Tutorial', 'Guide', 'How To'],
@@ -100,7 +95,7 @@ export default async function HowToSetupIPTV() {
         description: "Comprehensive tutorial on setting up IPTV on any device",
         image: "/api/og?title=How to Setup IPTV 2026",
         datePublished: "2026-01-01",
-        dateModified: DATE_ISO.split('T')[0],
+        dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv`,
     });
@@ -148,7 +143,7 @@ export default async function HowToSetupIPTV() {
                     {/* Hero Section */}
                     <div className="text-center max-w-4xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                            <span>📖 Tutorial • Updated {DATE_MONTH_YEAR}</span>
+                            <span>📖 Tutorial • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             How to Setup IPTV in 5 Minutes
@@ -404,7 +399,7 @@ export default async function HowToSetupIPTV() {
                     <section className="mb-16 max-w-3xl mx-auto">
                         <h2 className="font-headline text-3xl font-bold mb-6">Common Setup Issues & Solutions</h2>
 
-                        <Accordion type="single" collapsible suppressHydrationWarning>
+                        <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
                                 <AccordionTrigger>
                                     <div className="flex items-center gap-2">
@@ -466,7 +461,7 @@ export default async function HowToSetupIPTV() {
                     {/* FAQ */}
                     <section id="faq" className="max-w-3xl mx-auto scroll-mt-20 mb-16">
                         <h2 className="font-headline text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-                        <Accordion type="single" collapsible suppressHydrationWarning>
+                        <Accordion type="single" collapsible>
                             {faqs.map((faq, i) => (
                                 <AccordionItem key={i} value={`faq-${i}`}>
                                     <AccordionTrigger>
@@ -531,7 +526,7 @@ export default async function HowToSetupIPTV() {
                                     We've helped over 50,000 people setup IPTV on various devices. Our step-by-step guides are tested on real devices to ensure accuracy and ease of use.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {DATE_HUMAN} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>

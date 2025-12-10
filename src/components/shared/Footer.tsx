@@ -4,8 +4,6 @@ import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { footerLinks } from "@/lib/site-data/footer";
 
-const YEAR = new Date().getFullYear();
-
 export function Footer() {
   return (
     <footer className="border-t bg-background">
@@ -54,7 +52,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between border-t py-6 sm:flex-row">
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              &copy; {YEAR} IPTV Provider. All rights reserved.
+              &copy; {new Date().getFullYear()} IPTV Provider. All rights reserved.
             </p>
             <div className="hidden sm:block text-muted-foreground">|</div>
             <div className="flex gap-4 text-sm text-muted-foreground">

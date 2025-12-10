@@ -39,13 +39,7 @@ export const getCountryPageData = cache(
     const pageFaqs = getPageFaqs(name);
 
     // Define all data fetching and processing promises
-    // const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent(`IPTV Provider in ${name}`);
-    const semanticContentPromise: Promise<SemanticContentType> = Promise.resolve({
-      primaryEntity: `IPTV in ${name}`,
-      relatedEntities: [],
-      semanticClusters: [],
-      contextualKeywords: []
-    });
+    const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent(`IPTV Provider in ${name}`);
 
     const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
       { name: "Home", item: `${baseUrl}/` },

@@ -7,9 +7,6 @@ const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow';
 const SITE_URL = process.env.SITE_URL || 'https://www.iptvprovider.me';
 const API_KEY = '34703b31e96542ffb49bffed790d5e29';
 
-// export const dynamic = 'force-dynamic'; // Removed due to conflict with cacheComponents
-
-
 async function submitUrls(urlList: string[]) {
   const payload = {
     host: new URL(SITE_URL).hostname,
@@ -42,12 +39,7 @@ async function submitUrls(urlList: string[]) {
   }
 }
 
-// export const revalidate = 0; // Removed due to conflict
-
 export async function GET(req: NextRequest) {
-  // Force dynamic rendering by accessing headers (workaround for cacheComponents conflict)
-  const _ = req.headers.get('user-agent');
-
   const staticPages = [
     '/',
     '/pricing',

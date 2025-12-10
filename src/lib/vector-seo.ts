@@ -18,7 +18,6 @@ export type SemanticContent = SemanticContentType;
 export const generateSemanticContent = cache(async (topic: string): Promise<SemanticContent> => {
   try {
     const content = await generateSemanticContentFlow(topic);
-    if (!content) throw new Error('No content generated (missing API key?)');
     return content;
   } catch (error) {
     console.error(`Failed to generate semantic content for topic "${topic}":`, error);

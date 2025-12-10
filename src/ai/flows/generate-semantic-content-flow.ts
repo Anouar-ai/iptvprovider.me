@@ -34,14 +34,9 @@ export const generateSemanticContentFlow = ai.defineFlow(
   {
     name: 'generateSemanticContentFlow',
     inputSchema: z.string(),
-    outputSchema: SemanticContentSchema.nullable(),
+    outputSchema: SemanticContentSchema,
   },
   async (topic) => {
-    if (!process.env.GOOGLE_API_KEY && !process.env.GEMINI_API_KEY) {
-      console.warn('Skipping semantic content generation: No API key found.');
-      return null;
-    }
-
     const { output } = await prompt(topic);
     if (!output) {
       throw new Error('Failed to generate semantic content. The AI model did not return a valid output.');
