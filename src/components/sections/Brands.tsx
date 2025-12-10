@@ -1,7 +1,7 @@
 
 "use client";
 
-import { ResponsivePicture } from "@/components/ui/responsive-picture";
+import Image from "next/image";
 import { brands, brands_two } from "@/lib/site-data/brands";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Container } from "../shared/Container";
@@ -32,15 +32,15 @@ const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, rev
               key={`${brand.id}-${index}`}
               className="relative h-12 w-36 flex-shrink-0 px-4"
             >
-              <ResponsivePicture
-                baseSrc={brandImage.imageUrl}
+              <Image
+                src={brandImage.imageUrl}
                 alt={brand.alt}
-                className="object-contain h-full w-full"
-                sizes={{
-                  mobile: { width: 150, quality: 90 },
-                  tablet: { width: 150, quality: 90 },
-                  desktop: { width: 150, quality: 90 }
-                }}
+                fill
+                className="object-contain"
+                data-ai-hint={brandImage.imageHint}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
+                sizes="144px"
               />
             </div>
           )
@@ -60,3 +60,4 @@ export function Brands() {
     </section>
   );
 }
+
