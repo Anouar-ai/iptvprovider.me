@@ -11,10 +11,10 @@ import { z } from 'zod';
 import { SemanticContentSchema } from '@/lib/types/semantic-content';
 
 const prompt = ai.definePrompt({
-    name: 'semanticContentPrompt',
-    input: { schema: z.string() },
-    output: { schema: SemanticContentSchema },
-    prompt: `You are an expert SEO analyst and entity optimization specialist. 
+  name: 'semanticContentPrompt',
+  input: { schema: z.string() },
+  output: { schema: SemanticContentSchema },
+  prompt: `You are an expert SEO analyst and entity optimization specialist. 
     Analyze the following topic and generate a comprehensive semantic content structure. 
     Your goal is to provide a deep, contextual understanding of the topic for search engines.
 
@@ -34,9 +34,14 @@ export const generateSemanticContentFlow = ai.defineFlow(
   {
     name: 'generateSemanticContentFlow',
     inputSchema: z.string(),
-    outputSchema: SemanticContentSchema,
+    outputSchema: SemanticContentSchema.nullable(),
   },
   async (topic) => {
+    if (!process.env.GOOGLE_API_KEY && !process.env.GEMINI_API_KEY) {
+      console.warn('Skipping semantic content generation: No API key found.');
+      return null;
+    }
+
     const { output } = await prompt(topic);
     if (!output) {
       throw new Error('Failed to generate semantic content. The AI model did not return a valid output.');

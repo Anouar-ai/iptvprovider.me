@@ -404,7 +404,7 @@ export default async function HowToSetupIPTV() {
                     <section className="mb-16 max-w-3xl mx-auto">
                         <h2 className="font-headline text-3xl font-bold mb-6">Common Setup Issues & Solutions</h2>
 
-                        <Accordion type="single" collapsible>
+                        <Accordion type="single" collapsible suppressHydrationWarning>
                             <AccordionItem value="item-1">
                                 <AccordionTrigger>
                                     <div className="flex items-center gap-2">
@@ -466,7 +466,7 @@ export default async function HowToSetupIPTV() {
                     {/* FAQ */}
                     <section id="faq" className="max-w-3xl mx-auto scroll-mt-20 mb-16">
                         <h2 className="font-headline text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-                        <Accordion type="single" collapsible>
+                        <Accordion type="single" collapsible suppressHydrationWarning>
                             {faqs.map((faq, i) => (
                                 <AccordionItem key={i} value={`faq-${i}`}>
                                     <AccordionTrigger>

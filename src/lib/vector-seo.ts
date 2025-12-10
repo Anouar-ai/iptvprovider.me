@@ -18,6 +18,7 @@ export type SemanticContent = SemanticContentType;
 export const generateSemanticContent = cache(async (topic: string): Promise<SemanticContent> => {
   try {
     const content = await generateSemanticContentFlow(topic);
+    if (!content) throw new Error('No content generated (missing API key?)');
     return content;
   } catch (error) {
     console.error(`Failed to generate semantic content for topic "${topic}":`, error);
@@ -30,8 +31,8 @@ export const generateSemanticContent = cache(async (topic: string): Promise<Sema
     };
   }
 },
-['semantic-content'],
-{ revalidate: 3600, tags: ['seo'] }
+  ['semantic-content'],
+  { revalidate: 3600, tags: ['seo'] }
 );
 
 /**
@@ -51,6 +52,6 @@ export const generateEmbedding = cache(async (text: string): Promise<number[]> =
     return new Array(768).fill(0);
   }
 },
-['text-embedding'],
-{ revalidate: 3600 * 24 } // Embeddings for content are stable, cache for a day
+  ['text-embedding'],
+  { revalidate: 3600 * 24 } // Embeddings for content are stable, cache for a day
 );
