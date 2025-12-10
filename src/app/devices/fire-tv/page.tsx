@@ -172,7 +172,7 @@ export default async function FireTVPage() {
                             </h3>
                             <p className="text-yellow-700 dark:text-yellow-400">
                                 If you get an error when installing, it usually means your Firestick is almost full.
-                                Go to <strong>Settings > Applications > Manage Installed Applications</strong> and delete unused apps to free up at least 200MB of space.
+                                Go to <strong>Settings &gt; Applications &gt; Manage Installed Applications</strong> and delete unused apps to free up at least 200MB of space.
                             </p>
                         </section>
 
