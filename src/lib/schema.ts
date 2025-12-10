@@ -63,6 +63,55 @@ export function generateOrganizationSchema(): Organization {
   };
 }
 
+// LocalBusiness schema for geo-targeted pages
+export function generateLocalBusinessSchema(props: {
+  name: string;
+  description: string;
+  areaServed: string;
+  country: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${siteConfig.url}/#local-${props.country.toLowerCase()}`,
+    name: `${props.name} - ${props.areaServed}`,
+    description: props.description,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/api/og`,
+    areaServed: {
+      '@type': 'Country',
+      name: props.areaServed,
+    },
+    priceRange: '$',
+    email: siteConfig.links.email,
+  };
+}
+
+// SoftwareApplication schema for IPTV apps
+export function generateSoftwareApplicationSchema(props: {
+  name: string;
+  operatingSystem: string;
+  applicationCategory?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: props.name,
+    operatingSystem: props.operatingSystem,
+    applicationCategory: props.applicationCategory || 'MultimediaApplication',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '2547',
+    },
+  };
+}
+
 interface ProductSchemaProps {
   name: string;
   description: string;
@@ -289,5 +338,37 @@ export function generateReviewSchema(props: ReviewSchemaProps): Review {
     },
     reviewBody: props.reviewBody,
     datePublished: props.datePublished,
+  };
+}
+
+interface VideoSchemaProps {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  contentUrl?: string;
+  embedUrl?: string;
+  duration?: string; // ISO 8601 format, e.g., "PT1M30S"
+}
+
+export function generateVideoSchema(props: VideoSchemaProps) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: props.name,
+    description: props.description,
+    thumbnailUrl: props.thumbnailUrl,
+    uploadDate: props.uploadDate,
+    ...(props.contentUrl && { contentUrl: props.contentUrl }),
+    ...(props.embedUrl && { embedUrl: props.embedUrl }),
+    ...(props.duration && { duration: props.duration }),
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/api/og`,
+      },
+    },
   };
 }

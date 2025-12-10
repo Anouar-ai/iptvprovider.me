@@ -22,17 +22,19 @@ const SportEvents = dynamic(() => import('@/components/sections/SportEvents').th
 
 
 export default async function Home() {
-    const { 
-      semanticContent, 
-      weeklyBuzzItemsWithPlaceholders, 
-      sportEventsWithPlaceholders,
-      productSchema
-    } = await getHomePageData();
+  const {
+    semanticContent,
+    weeklyBuzzItemsWithPlaceholders,
+    sportEventsWithPlaceholders,
+    productSchema,
+    videoSchema
+  } = await getHomePageData();
 
   return (
     <>
       <Schema id="product" schema={productSchema} />
-      <SemanticContent 
+      <Schema id="video" schema={videoSchema} />
+      <SemanticContent
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}
         semanticClusters={semanticContent.semanticClusters}

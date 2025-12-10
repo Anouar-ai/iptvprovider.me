@@ -23,12 +23,15 @@ export function generateMetadata(): Metadata {
             absolute: title,
         },
         keywords: [
-            'iptv setup',
-            'iptv installation guide',
-            'iptv devices',
-            'how to install iptv',
-            'iptv player setup',
-            'iptv configuration'
+            // Device-specific (high priority)
+            'IPTV for Firestick', 'IPTV for Fire TV', 'best IPTV app Firestick',
+            'IPTV for Android', 'IPTV Android TV', 'Android IPTV player',
+            'IPTV for Smart TV', 'IPTV Samsung TV', 'IPTV LG TV',
+            'IPTV for iPhone', 'IPTV iOS', 'IPTV for Apple TV',
+            'IPTV for Roku', 'IPTV for Windows PC', 'IPTV for Mac',
+            // Setup/Installation
+            'install IPTV', 'IPTV setup guide', 'how to install IPTV',
+            'IPTV Smarters Pro', 'TiviMate setup', 'IPTV player configuration'
         ],
     };
 }

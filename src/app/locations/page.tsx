@@ -12,14 +12,22 @@ import { generateMetadata as generatePageMetadata, siteConfig } from '@/lib/site
 import { generateCollectionPageSchema } from '@/lib/schema';
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV Provider Service Locations | Available Worldwide";
-    const description = "Our IPTV Provider is available in over 100 countries worldwide. Find your country and get the best IPTV streaming service for your region.";
+    const title = "IPTV Service Worldwide | USA, UK, Canada & 100+ Countries";
+    const description = "Best IPTV provider available in USA, UK, Canada, Germany & 100+ countries. Premium IPTV subscription with local channels for your region. Get started today!";
 
-    return generatePageMetadata({
-        title,
-        description,
-        canonical: "/locations",
-    });
+    return {
+        ...generatePageMetadata({
+            title,
+            description,
+            canonical: "/locations",
+        }),
+        keywords: [
+            'IPTV USA', 'IPTV UK', 'IPTV Canada', 'IPTV Germany', 'IPTV France',
+            'IPTV worldwide', 'international IPTV', 'IPTV subscription USA',
+            'best IPTV provider USA', 'best IPTV UK', 'IPTV Middle East',
+            'IPTV Arabic channels', 'IPTV Australia', 'IPTV Europe'
+        ],
+    };
 }
 
 export default async function LocationsPage() {

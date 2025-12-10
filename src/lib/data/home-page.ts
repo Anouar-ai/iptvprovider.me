@@ -4,7 +4,7 @@ import { generateSemanticContent, type SemanticContent as SemanticContentType } 
 import { weeklyBuzzItems } from "@/lib/site-data/weekly-buzz";
 import { sportEvents } from "@/lib/site-data/sport-events";
 import { getPlaceholderImage } from "@/lib/server/image-blur-server";
-import { generateProductSchema } from '@/lib/schema';
+import { generateProductSchema, generateVideoSchema } from '@/lib/schema';
 import type { Product } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';
 import { plans } from '@/lib/site-data/pricing';
@@ -56,7 +56,16 @@ export const getHomePageData = cache(
         }))
       }
     }));
-    
+
+    // Video schema for Hero promotional video
+    const videoSchema = generateVideoSchema({
+      name: "The Best IPTV Subscription Service Provider",
+      description: "Discover why IPTV Provider is the world's premier streaming service. Watch 24,000+ live channels, sports, movies & TV shows in HD/4K quality.",
+      thumbnailUrl: `${siteConfig.url}/og-image.jpg`,
+      uploadDate: "2024-01-01",
+      duration: "PT30S",
+    });
+
     // Await all promises in parallel
     const [
       semanticContent,
@@ -70,11 +79,12 @@ export const getHomePageData = cache(
       productSchemaPromise
     ]);
 
-    return { 
-      semanticContent, 
-      weeklyBuzzItemsWithPlaceholders, 
+    return {
+      semanticContent,
+      weeklyBuzzItemsWithPlaceholders,
       sportEventsWithPlaceholders,
-      productSchema
+      productSchema,
+      videoSchema
     };
   },
   ['home-page-data'], // Cache key

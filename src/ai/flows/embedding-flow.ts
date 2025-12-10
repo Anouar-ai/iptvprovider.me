@@ -4,8 +4,8 @@
  *
  * - generateTextEmbedding - A function that generates a vector embedding for a given text.
  */
-import {ai} from '@/ai/genkit';
-import {z} from 'zod';
+import { ai } from '@/ai/genkit';
+import { z } from 'zod';
 
 const EmbeddingInputSchema = z.string();
 const EmbeddingOutputSchema = z.array(z.number());
@@ -23,9 +23,9 @@ const embeddingFlow = ai.defineFlow(
     outputSchema: EmbeddingOutputSchema,
   },
   async text => {
-    const {embedding} = await ai.embed({
+    const result = await ai.embed({
       content: text,
-    });
-    return embedding;
+    }) as any;
+    return result.embedding;
   }
 );
