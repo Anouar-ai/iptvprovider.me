@@ -141,6 +141,8 @@ export default function RootLayout({
         <Schema id="organization" schema={generateOrganizationSchema()} />
         <Schema id="website" schema={generateWebSiteSchema()} />
         <Schema id="navigation" schema={generateSiteNavigationSchema()} />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://iptvwell.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.visitors.now" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />

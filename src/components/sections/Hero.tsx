@@ -12,26 +12,7 @@ import Image from "next/image";
 import MouseIcon from "@/assets/icons/mouse.svg";
 
 export function Hero() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoSrc, setVideoSrc] = useState<string>("");
 
-  useEffect(() => {
-    // Fetch the video file and create a Blob URL to hide the direct path
-    fetch("/The-Best-IPTV-Subscription-Service-Provider.webm")
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = URL.createObjectURL(blob);
-        setVideoSrc(url);
-      })
-      .catch((error) => console.error("Error loading video:", error));
-
-    // Cleanup: revoke the object URL when component unmounts
-    return () => {
-      if (videoSrc) {
-        URL.revokeObjectURL(videoSrc);
-      }
-    };
-  }, []);
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -43,11 +24,9 @@ export function Hero() {
         preload="auto"
         title="The Best IPTV Subscription Service Provider"
         aria-label="The Best IPTV Subscription Service Provider Promotional Video"
-        onCanPlay={() => setVideoLoaded(true)}
-        className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
-        style={{ opacity: videoLoaded ? 1 : 0 }}
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        {videoSrc && <source src={videoSrc} type="video/webm" />}
+        <source src="/The-Best-IPTV-Subscription-Service-Provider.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />

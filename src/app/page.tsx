@@ -1,16 +1,18 @@
 
 import { Hero } from "@/components/sections/Hero";
-import { Brands } from "@/components/sections/Brands";
-import { Pricing } from "@/components/sections/Pricing";
-import SemanticContent from "@/components/shared/SemanticContent";
-import { Devices } from "@/components/sections/Devices";
-import { CTA } from "@/components/sections/CTA";
-import { FAQ } from "@/components/sections/FAQ";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { getHomePageData } from "@/lib/data/home-page";
+
 import { Schema } from "@/components/shared/Schema";
 import dynamic from 'next/dynamic';
 import { ContentCarouselSkeleton } from "@/components/shared/ContentCarousel";
+import SemanticContent from "@/components/shared/SemanticContent";
+import { getHomePageData } from "@/lib/data/home-page";
+
+const Brands = dynamic(() => import("@/components/sections/Brands").then(mod => mod.Brands));
+const Devices = dynamic(() => import("@/components/sections/Devices").then(mod => mod.Devices));
+const Pricing = dynamic(() => import("@/components/sections/Pricing").then(mod => mod.Pricing));
+const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks").then(mod => mod.HowItWorks));
+const CTA = dynamic(() => import("@/components/sections/CTA").then(mod => mod.CTA));
+const FAQ = dynamic(() => import("@/components/sections/FAQ").then(mod => mod.FAQ));
 
 const WeeklyBuzz = dynamic(() => import('@/components/sections/WeeklyBuzz').then(mod => mod.WeeklyBuzz), {
   loading: () => <ContentCarouselSkeleton />,
