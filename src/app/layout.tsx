@@ -50,19 +50,10 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   referrer: 'origin-when-cross-origin',
   keywords: [
-    // Primary keywords (high priority)
-    'best IPTV provider', 'best IPTV provider 2024', 'best IPTV provider 2025', 'best IPTV provider 2026',
-    'IPTV subscription', 'best IPTV service', 'IPTV service provider', 'premium IPTV', 'top IPTV providers',
-    // Transactional
-    'buy IPTV', 'cheap IPTV', 'cheap IPTV subscription', 'affordable IPTV service',
-    // Features
-    'IPTV 4K', '4K IPTV channels', 'sports IPTV', 'IPTV with VOD', 'live TV streaming',
-    // Geo-targeted
-    'IPTV USA', 'IPTV UK', 'IPTV Canada', 'IPTV worldwide',
-    // Device-specific
-    'IPTV for Firestick', 'IPTV for Android', 'IPTV Smart TV',
-    // Quality/Trust
-    'reliable IPTV', 'no buffering IPTV', 'cord cutting alternative'
+    'IPTV Subscription',
+    'best IPTV',
+    'IPTV provider',
+    'IPTV',
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,

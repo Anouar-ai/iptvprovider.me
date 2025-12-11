@@ -2,7 +2,7 @@
 export const siteConfig = {
   name: "IPTV Provider",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me",
-  ogImage: "/api/og",
+  ogImage: "/IPTV-Provider.png",
   description: "Subscribe to our IPTV service with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Premium IPTV streaming worldwide.",
   links: {
     twitter: "https://twitter.com/iptvprovider",
