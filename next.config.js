@@ -3,6 +3,13 @@
 const nextConfig = {
   experimental: {
     viewTransition: true,
+    optimizeCss: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   typescript: {
     ignoreBuildErrors: true,
