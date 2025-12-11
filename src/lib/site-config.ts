@@ -1,9 +1,9 @@
 
 export const siteConfig = {
-  name: "#1 IPTV Provider",
+  name: "IPTV Provider",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me",
   ogImage: "/api/og",
-  description: "Subscribe to the #1 IPTV provider with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Try the best IPTV service now!",
+  description: "Subscribe to our IPTV service with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Premium IPTV streaming worldwide.",
   links: {
     twitter: "https://twitter.com/iptvprovider",
     facebook: "https://facebook.com/iptvprovider",
@@ -29,7 +29,7 @@ export function generateMetadata({
   canonical?: string;
 }) {
   const ogImageUrl = image || `${siteConfig.url}${siteConfig.ogImage}?title=${encodeURIComponent(title)}`;
-  
+
   return {
     title,
     description,

@@ -36,7 +36,7 @@ export interface IPTVProvider {
 export const iptvProviders: IPTVProvider[] = [
     {
         id: "iptv-provider-me",
-        name: "#1 IPTV Provider",
+        name: "IPTV Provider",
         rank: 1,
         badge: "Editor's Choice",
         rating: 4.9,

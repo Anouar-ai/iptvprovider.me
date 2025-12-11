@@ -24,7 +24,7 @@ const defaultPublisher = {
   'name': siteConfig.name,
   'logo': {
     '@type': 'ImageObject' as const,
-    'url': `${siteConfig.url}/api/og`,
+    'url': `${siteConfig.url}/logo.png`,
   },
 };
 
@@ -38,14 +38,6 @@ export function generateWebSiteSchema(): WebSite {
     'alternateName': ["IPTV Providers", "best iptv provider"],
     'publisher': {
       '@id': `${siteConfig.url}/#organization`,
-    },
-    'potentialAction': {
-      '@type': 'SearchAction',
-      'target': {
-        '@type': 'EntryPoint',
-        'urlTemplate': `${siteConfig.url}/blog?search={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
     },
   };
 }
@@ -81,7 +73,7 @@ export function generateOrganizationSchema(): Organization {
     '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
     'url': siteConfig.url,
-    'logo': `${siteConfig.url}/api/og`,
+    'logo': `${siteConfig.url}/logo.png`,
     'contactPoint': {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
@@ -109,7 +101,7 @@ export function generateLocalBusinessSchema(props: {
     name: `${props.name} - ${props.areaServed}`,
     description: props.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/api/og`,
+    logo: `${siteConfig.url}/logo.png`,
     areaServed: {
       '@type': 'Country',
       name: props.areaServed,
@@ -431,7 +423,7 @@ export function generateVideoSchema(props: VideoSchemaProps) {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/api/og`,
+        url: `${siteConfig.url}/logo.png`,
       },
     },
   };

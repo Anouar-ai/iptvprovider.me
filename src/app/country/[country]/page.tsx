@@ -83,7 +83,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
           <div className="text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl flex items-center justify-center gap-4">
               <FlagIcon countryCode={code} countryName={name} className="h-10 w-10" />
-              <span>The #1 IPTV Provider in {name}</span>
+              <span>Premium IPTV Provider in {name}</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Experience the best IPTV streaming in {name} with over 20,000 channels, movies, and series in stunning HD & 4K quality. Instant activation and 24/7 support guaranteed.
