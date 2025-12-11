@@ -1,69 +1,47 @@
+import { NextRequest, NextResponse } from 'next/server';
 
-import { NextRequest, NextResponse } from 'next/server'
-import { howToArticles } from '@/lib/how-to';
-import { allCountries } from '@/lib/countries';
-
-const INDEXNOW_API_URL = 'https://api.indexnow.org/indexnow';
-const SITE_URL = process.env.SITE_URL || 'https://www.iptvprovider.me';
-const API_KEY = '34703b31e96542ffb49bffed790d5e29';
-
-async function submitUrls(urlList: string[]) {
-  const payload = {
-    host: new URL(SITE_URL).hostname,
-    key: API_KEY,
-    keyLocation: `${SITE_URL}/${API_KEY}.txt`,
-    urlList: urlList,
-  };
-
+export async function POST(req: NextRequest) {
   try {
-    const response = await fetch(INDEXNOW_API_URL, {
+    const { urls } = await req.json();
+
+    if (!urls || !Array.isArray(urls)) {
+      return NextResponse.json(
+        { error: 'Invalid request. "urls" must be an array of strings.' },
+        { status: 400 }
+      );
+    }
+
+    const host = 'www.iptvprovider.me';
+    const key = '48bc54b9d0744723920c74900a89405d';
+    const keyLocation = `https://${host}/${key}.txt`;
+
+    const response = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        host,
+        key,
+        keyLocation,
+        urlList: urls,
+      }),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      throw new Error(`IndexNow API error: ${response.status} ${response.statusText} - ${errorText}`);
+      return NextResponse.json(
+        { error: `IndexNow API error: ${response.status} ${errorText}` },
+        { status: response.status }
+      );
     }
 
-    console.log('IndexNow submission successful:', payload);
-    return { success: true, status: response.status, payload };
-
+    return NextResponse.json({ message: 'URLs submitted to IndexNow successfully.' });
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred during IndexNow submission';
-    console.error('IndexNow Submission Error:', errorMessage);
-    return { success: false, error: errorMessage };
-  }
-}
-
-export async function GET(req: NextRequest) {
-  const staticPages = [
-    '/',
-    '/pricing',
-    '/iptv-subscription',
-    '/locations',
-    '/faq',
-    '/contact',
-    '/iptv-free-trial',
-  ];
-
-  const devicePages = howToArticles.map(article => `/devices/${article.id}`);
-  const countryPages = allCountries.map(country => `/country/${country.id}`);
-
-  const allUrls = [
-    ...staticPages.map(path => `${SITE_URL}${path}`),
-    ...devicePages.map(path => `${SITE_URL}${path}`),
-    ...countryPages.map(path => `${SITE_URL}${path}`),
-  ];
-
-  const result = await submitUrls(allUrls);
-
-  if (result.success) {
-    return NextResponse.json({ message: 'URLs submitted to IndexNow successfully.', details: result });
-  } else {
-    return NextResponse.json({ error: 'Failed to submit URLs to IndexNow.', details: result }, { status: 500 });
+    console.error('IndexNow submission error:', error);
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
+    );
   }
 }
