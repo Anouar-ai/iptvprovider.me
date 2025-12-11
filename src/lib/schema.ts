@@ -39,6 +39,38 @@ export function generateWebSiteSchema(): WebSite {
     'publisher': {
       '@id': `${siteConfig.url}/#organization`,
     },
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': {
+        '@type': 'EntryPoint',
+        'urlTemplate': `${siteConfig.url}/blog?search={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+// SiteNavigationElement schema for Google Sitelinks optimization
+export function generateSiteNavigationSchema() {
+  const navItems = [
+    { name: 'Home', url: siteConfig.url },
+    { name: 'IPTV Free Trial', url: `${siteConfig.url}/iptv-free-trial` },
+    { name: 'Pricing', url: `${siteConfig.url}/pricing` },
+    { name: 'Blog', url: `${siteConfig.url}/blog` },
+    { name: 'Locations', url: `${siteConfig.url}/locations` },
+    { name: 'FAQ', url: `${siteConfig.url}/faq` },
+    { name: 'Contact', url: `${siteConfig.url}/contact` },
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': navItems.map((item, index) => ({
+      '@type': 'SiteNavigationElement',
+      'position': index + 1,
+      'name': item.name,
+      'url': item.url,
+    })),
   };
 }
 
@@ -340,6 +372,38 @@ export function generateReviewSchema(props: ReviewSchemaProps): Review {
     datePublished: props.datePublished,
   };
 }
+
+// WebPage schema with speakable sections for jump links
+interface WebPageSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  sections?: { id: string; name: string }[];
+}
+
+export function generateWebPageSchema(props: WebPageSchemaProps) {
+  const schema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: props.name,
+    description: props.description,
+    url: props.url,
+    publisher: {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+  };
+
+  // Add speakable sections if provided (for jump links)
+  if (props.sections && props.sections.length > 0) {
+    schema.speakable = {
+      '@type': 'SpeakableSpecification',
+      cssSelector: props.sections.map(s => `#${s.id}`),
+    };
+  }
+
+  return schema;
+}
+
 
 interface VideoSchemaProps {
   name: string;

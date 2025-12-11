@@ -14,14 +14,15 @@ export function Navbar() {
       <Container>
         <div className="flex h-16 items-center">
           <Logo />
-          <nav className="ml-10 hidden items-center space-x-6 lg:flex">
+          <nav className="ml-10 hidden items-center space-x-6 lg:flex" itemScope itemType="https://schema.org/SiteNavigationElement">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                itemProp="url"
               >
-                {link.name}
+                <span itemProp="name">{link.name}</span>
               </Link>
             ))}
           </nav>

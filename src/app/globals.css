@@ -122,3 +122,19 @@
 @view-transition {
   navigation: auto;
 }
+
+/* Smooth scroll for jump links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when using jump links */
+:target {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
