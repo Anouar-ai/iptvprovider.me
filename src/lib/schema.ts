@@ -24,7 +24,7 @@ const defaultPublisher = {
   'name': siteConfig.name,
   'logo': {
     '@type': 'ImageObject' as const,
-    'url': `${siteConfig.url}/logo.png`,
+    'url': `${siteConfig.url}/IPTV-Provider.png`,
   },
 };
 
@@ -73,7 +73,7 @@ export function generateOrganizationSchema(): Organization {
     '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
     'url': siteConfig.url,
-    'logo': `${siteConfig.url}/logo.png`,
+    'logo': `${siteConfig.url}/IPTV-Provider.png`,
     'contactPoint': {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
@@ -101,7 +101,7 @@ export function generateLocalBusinessSchema(props: {
     name: `${props.name} - ${props.areaServed}`,
     description: props.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/IPTV-Provider.png`,
     areaServed: {
       '@type': 'Country',
       name: props.areaServed,
@@ -423,7 +423,7 @@ export function generateVideoSchema(props: VideoSchemaProps) {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/logo.png`,
+        url: `${siteConfig.url}/IPTV-Provider.png`,
       },
     },
   };
