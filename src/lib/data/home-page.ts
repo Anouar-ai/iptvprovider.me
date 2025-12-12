@@ -62,7 +62,8 @@ export const getHomePageData = cache(
       name: "The Best IPTV Subscription Service Provider",
       description: "Discover why IPTV Provider is the world's premier streaming service. Watch 24,000+ live channels, sports, movies & TV shows in HD/4K quality.",
       thumbnailUrl: `${siteConfig.url}/og-image.jpg`,
-      uploadDate: "2024-01-01",
+      uploadDate: "2024-01-01T00:00:00+00:00",
+      contentUrl: `${siteConfig.url}/The-Best-IPTV-Subscription-Service-Provider.webm`,
       duration: "PT30S",
     });
 
