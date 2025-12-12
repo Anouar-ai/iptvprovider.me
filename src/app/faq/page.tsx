@@ -9,18 +9,18 @@ import { Schema } from "@/components/shared/Schema";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
 export function generateMetadata(): Metadata {
-    return generatePageMetadata({
-        title: "Frequently Asked Questions | IPTV Provider",
-        description: "Have questions about our IPTV Provider? Find answers to common questions about free trials, device compatibility, buffering, activation, and our refund policy.",
-        canonical: "/faq",
-    });
+  return generatePageMetadata({
+    title: "Frequently Asked Questions | IPTV Provider",
+    description: "Have questions about our IPTV Provider? Find answers to common questions about free trials, device compatibility, buffering, activation, and our refund policy.",
+    canonical: "/faq",
+  });
 }
 
 export default async function FaqPage() {
-  const { 
-    semanticContent, 
-    faqSchema, 
-    breadcrumbSchema 
+  const {
+    semanticContent,
+    faqSchema,
+    breadcrumbSchema
   } = await getFaqPageData();
 
   return (
@@ -28,7 +28,7 @@ export default async function FaqPage() {
       <Schema id="faq" schema={faqSchema} />
       <Schema id="breadcrumb" schema={breadcrumbSchema} />
 
-      <SemanticContent 
+      <SemanticContent
         primaryEntity={semanticContent.primaryEntity}
         relatedEntities={semanticContent.relatedEntities}
         semanticClusters={semanticContent.semanticClusters}
@@ -36,20 +36,20 @@ export default async function FaqPage() {
       />
       <main>
         <Container className="py-16 sm:py-24">
-            <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                <ol className="flex items-center gap-2">
-                <li>
-                    <Link href="/" className="hover:text-primary">
-                    Home
-                    </Link>
-                </li>
-                <li>/</li>
-                <li>
-                    FAQ
-                </li>
-                </ol>
-            </nav>
-            <FAQ />
+          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+            <ol className="flex items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-primary">
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                FAQ
+              </li>
+            </ol>
+          </nav>
+          <FAQ />
         </Container>
       </main>
     </>

@@ -1,11 +1,84 @@
 # llms.txt - AI-readable site summary
+
+## Site Information
 name: IPTV Provider
 description: Buy IPTV from the #1 rated provider! Get 24,000+ live channels, HD/4K streaming, VOD movies & sports. Affordable IPTV subscription for USA, UK & worldwide. 24/7 support.
 url: https://www.iptvprovider.me
 contact: support@iptvprovider.me
+language: en-US
+type: E-commerce / Streaming Service
+
+## Core Features
+- 24,000+ live TV channels (HD/4K quality)
+- Video on Demand (VOD) movies and series
+- Live sports streaming and events
+- Multi-device support (Smart TV, Fire TV, Android, iOS, MAG, etc.)
+- 24/7 customer support
+- Global service availability
+- Affordable subscription plans
 
 ## Key Pages
-- /pricing - IPTV subscription plans and pricing
-- /locations - Service availability by country
-- /faq - Frequently asked questions
-- /contact - Contact support
+
+### Main Navigation
+- / - Homepage with hero, pricing, features, and FAQ
+- /pricing - IPTV subscription plans and pricing details
+- /locations - Service availability by country and region
+- /faq - Frequently asked questions and answers
+- /contact - Contact support form and information
+
+### Service Information
+- /iptv-subscription - Detailed subscription information
+- /iptv-free-trial - Free trial signup and information
+- /iptv-guide - Complete guide to IPTV services
+- /channels - Available channel listings
+- /devices - Supported devices and setup guides
+
+### Content Pages
+- /blog - Articles, guides, and IPTV news
+- /review-process - How we review and rate services
+- /about - Company information and mission
+- /team - Team members and expertise
+
+### Device-Specific Guides
+- /country/* - Country-specific landing pages
+- /devices/* - Device setup and compatibility guides
+
+### Legal & Support
+- /legal - Terms of service and legal information
+- /privacy - Privacy policy and data protection
+- /checkout - Subscription checkout process
+
+## Technical Stack
+- Framework: Next.js (React)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Dynamic imports for performance optimization
+- Server-side rendering (SSR)
+- Structured data (Schema.org) for SEO
+- Responsive design (mobile-first)
+
+## SEO Features
+- Semantic HTML structure
+- Schema.org markup (Product, Video, FAQ schemas)
+- Optimized meta tags and descriptions
+- XML sitemap generation
+- Accessibility compliance (ARIA labels)
+- Core Web Vitals optimization
+- Jump links and table of contents
+
+## Content Highlights
+- Weekly trending content carousel
+- Live sports events schedule
+- Device compatibility matrix
+- Multi-language support considerations
+- Regional pricing and availability
+
+## API Endpoints
+- /api/* - Internal API routes for dynamic content
+
+## Target Audience
+- Cord-cutters seeking cable TV alternatives
+- Sports enthusiasts wanting live event access
+- International viewers needing global content
+- Budget-conscious consumers
+- Tech-savvy users across multiple devices

@@ -12,7 +12,7 @@ import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
-import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema } from "@/lib/schema";
+import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
@@ -140,7 +140,7 @@ export default function RootLayout({
       <head>
         <Schema id="organization" schema={generateOrganizationSchema()} />
         <Schema id="website" schema={generateWebSiteSchema()} />
-        <Schema id="navigation" schema={generateSiteNavigationSchema()} />
+        <Schema id="navigation" schema={generateAdvancedSitelinksSchema()} />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://iptvwell.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />

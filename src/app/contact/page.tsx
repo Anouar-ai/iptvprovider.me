@@ -2,11 +2,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
 } from '@/components/ui/card';
 import { Container } from '@/components/shared/Container';
 import { ContactForm } from '@/components/shared/ContactForm';
@@ -29,7 +29,7 @@ export default async function ContactPage() {
     return (
         <>
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
-            <SemanticContent 
+            <SemanticContent
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}
                 semanticClusters={semanticContent.semanticClusters}
@@ -38,17 +38,17 @@ export default async function ContactPage() {
             <main className="py-16 sm:py-24">
                 <Container>
                     <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
-                      <ol className="flex items-center gap-2">
-                        <li>
-                          <Link href="/" className="hover:text-primary">
-                            Home
-                          </Link>
-                        </li>
-                        <li>/</li>
-                        <li>
-                            Contact Us
-                        </li>
-                      </ol>
+                        <ol className="flex items-center gap-2">
+                            <li>
+                                <Link href="/" className="hover:text-primary">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>/</li>
+                            <li>
+                                Contact Us
+                            </li>
+                        </ol>
                     </nav>
                     <div className="mx-auto max-w-lg">
                         <Card>

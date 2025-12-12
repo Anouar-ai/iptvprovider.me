@@ -2,7 +2,7 @@
 import type { Thing, WithContext } from 'schema-dts';
 
 interface SchemaProps<T extends Thing> {
-  schema: WithContext<T>;
+  schema: WithContext<T> | any;
   id: string;
 }
 

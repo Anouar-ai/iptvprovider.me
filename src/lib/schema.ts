@@ -28,7 +28,7 @@ const defaultPublisher = {
   },
 };
 
-export function generateWebSiteSchema(): WebSite {
+export function generateWebSiteSchema(): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -66,7 +66,28 @@ export function generateSiteNavigationSchema() {
   };
 }
 
-export function generateOrganizationSchema(): Organization {
+// Advanced SiteNavigationElement schema with descriptions and metadata
+export function generateAdvancedSitelinksSchema(): any {
+  // Import sitelinks config dynamically to avoid circular dependencies
+  const { sitelinksConfig } = require('@/lib/site-data/sitelinks-config');
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'Site Navigation',
+    'description': 'Main navigation links for IPTV Provider website',
+    'inLanguage': 'en-US',
+    'itemListElement': sitelinksConfig.map((item: any, index: number) => ({
+      '@type': 'SiteNavigationElement',
+      'position': index + 1,
+      'name': item.name,
+      'description': item.description,
+      'url': `${siteConfig.url}${item.url}`,
+    })),
+  };
+}
+
+export function generateOrganizationSchema(): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
