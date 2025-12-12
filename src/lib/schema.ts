@@ -78,11 +78,14 @@ export function generateAdvancedSitelinksSchema(): any {
     'description': 'Main navigation links for IPTV Provider website',
     'inLanguage': 'en-US',
     'itemListElement': sitelinksConfig.map((item: any, index: number) => ({
-      '@type': 'SiteNavigationElement',
+      '@type': 'ListItem',
       'position': index + 1,
-      'name': item.name,
-      'description': item.description,
-      'url': `${siteConfig.url}${item.url}`,
+      'item': {
+        '@type': 'SiteNavigationElement',
+        'name': item.name,
+        'description': item.description,
+        'url': `${siteConfig.url}${item.url}`,
+      },
     })),
   };
 }
@@ -94,11 +97,15 @@ export function generateOrganizationSchema(): any {
     '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
     'url': siteConfig.url,
-    'logo': `${siteConfig.url}/IPTV-Provider.png`,
+    'logo': {
+      '@type': 'ImageObject',
+      'url': `${siteConfig.url}/IPTV-Provider.png`,
+    },
     'contactPoint': {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
       'contactType': 'Customer Service',
+      'availableLanguage': 'English',
     },
     'sameAs': [
       siteConfig.links.twitter,
