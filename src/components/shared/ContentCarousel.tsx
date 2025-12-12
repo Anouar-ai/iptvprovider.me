@@ -20,16 +20,16 @@ interface ContentCarouselProps {
 
 export function ContentCarouselSkeleton() {
   return (
-    <section className="relative space-y-4 px-4 py-4 sm:px-16">
+    <section className="relative space-y-4 px-4 py-4 sm:px-16" style={{ minHeight: '500px' }}>
       <div className="-mb-2 text-xl font-bold uppercase tracking-[10px] sm:text-2xl">
         <div className="flex flex-col gap-2 pt-20 max-sm:items-center">
-            <Skeleton className="h-16 w-48" />
-            <Skeleton className="h-8 w-32" />
+          <Skeleton className="h-16 w-48" />
+          <Skeleton className="h-8 w-32" />
         </div>
       </div>
       <div className="flex space-x-3 overflow-hidden p-1">
         {[...Array(6)].map((_, i) => (
-            <Skeleton key={i} className="h-[300px] w-[200px] rounded-xl" />
+          <Skeleton key={i} className="h-[300px] w-[200px] rounded-xl flex-shrink-0" />
         ))}
       </div>
     </section>
@@ -44,7 +44,7 @@ export function ContentCarousel({
   subtitleClassName,
   showHoverContent = false,
 }: ContentCarouselProps) {
-  
+
   return (
     <section className="relative space-y-4 px-4 py-4 sm:px-16">
       <div className="-mb-2 text-xl font-bold uppercase tracking-[10px] sm:text-2xl">
@@ -59,7 +59,7 @@ export function ContentCarousel({
           </div>
         </div>
       </div>
-      
+
       <ClientCarousel items={items} showHoverContent={showHoverContent} />
     </section>
   );

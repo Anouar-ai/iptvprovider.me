@@ -153,12 +153,12 @@ export default function RootLayout({
         <Script
           src="https://cdn.visitors.now/v.js"
           data-token="0a9ca441-3262-415a-a3ac-e06859feeeba"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           id="ahrefs-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <ThemeProvider
           attribute="class"

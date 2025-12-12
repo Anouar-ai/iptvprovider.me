@@ -15,13 +15,14 @@ export function Hero() {
 
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden min-h-[600px] md:min-h-[80vh]">
       <video
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/og-image.jpg"
         title="The Best IPTV Subscription Service Provider"
         aria-label="The Best IPTV Subscription Service Provider Promotional Video"
         className="absolute inset-0 h-full w-full object-cover"
