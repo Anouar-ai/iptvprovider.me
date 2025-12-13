@@ -26,6 +26,12 @@ const defaultPublisher = {
     '@type': 'ImageObject' as const,
     'url': `${siteConfig.url}/IPTV-Provider.png`,
   },
+  'contactPoint': {
+    '@type': 'ContactPoint' as const,
+    'email': siteConfig.links.email,
+    'contactType': 'Customer Service',
+    'availableLanguage': ['English', 'French'],
+  },
 };
 
 export function generateWebSiteSchema(): any {
@@ -105,7 +111,7 @@ export function generateOrganizationSchema(): any {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
       'contactType': 'Customer Service',
-      'availableLanguage': 'English',
+      'availableLanguage': ['English', 'French'],
     },
     'sameAs': [
       siteConfig.links.twitter,
@@ -259,6 +265,7 @@ export function generateArticleSchema(props: ArticleSchemaProps): Article {
     author: {
       '@type': props.authorName ? 'Person' : 'Organization',
       name: props.authorName || siteConfig.name,
+      url: `${siteConfig.url}/about`,
     },
     publisher: defaultPublisher,
     mainEntityOfPage: {

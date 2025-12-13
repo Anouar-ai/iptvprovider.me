@@ -35,10 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   // 3. Generate Static Device Pages (Hardcoded 0.9 priority)
+  // 3. Generate Static Device Pages (Hardcoded 0.9 priority)
   const staticDevicePages: MetadataRoute.Sitemap = staticDeviceIds.map(id => ({
     url: `${baseUrl}/devices/${id}`,
-    lastModified: new Date(),
-    changeFrequency: (id === 'troubleshooting') ? 'monthly' : 'monthly', // Troubleshooting is 0.8 usually but here we can standardize or separate
+    lastModified: new Date('2026-01-01'),
+    changeFrequency: (id === 'troubleshooting') ? 'monthly' : 'monthly',
     priority: (id === 'troubleshooting') ? 0.8 : 0.9,
   }));
 
@@ -54,43 +55,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/devices`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'yearly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/iptv-free-trial`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
@@ -106,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },

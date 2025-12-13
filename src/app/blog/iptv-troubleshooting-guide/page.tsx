@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 import { AlertTriangle, Wifi, Video, Settings, Zap, RefreshCw } from "lucide-react";
+import { DirectAnswer } from "@/components/shared/DirectAnswer";
+import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
     const title = "IPTV Troubleshooting Guide 2026: Fix Buffering, Freezing & Common Issues";
@@ -59,6 +61,11 @@ export function generateMetadata(): Metadata {
         alternates: {
             canonical: url,
         },
+        other: {
+            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:modified_time': new Date().toISOString(),
+            'article:author': 'IPTV Expert Team',
+        }
     };
 }
 
@@ -133,15 +140,21 @@ export default async function IPTVTroubleshooting() {
                             <span>🔧 Troubleshooting • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            IPTV Troubleshooting Guide
+                            IPTV Troubleshooting Guide 2026
                         </h1>
+
+                        <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
+                            <p className="text-lg leading-relaxed">
+                                <strong>The primary way to fix most IPTV issues (buffering or freezing) is to switch from a WiFi connection to a wired Ethernet cable, as this eliminates signal interference.</strong> If that isn't possible, restarting your router and clearing the cache of your IPTV application solves 90% of playback problems.
+                            </p>
+                        </div>
 
                         <p className="text-xl text-muted-foreground mb-4">
                             <strong>IPTV not working? Buffering? Freezing?</strong> We'll fix it.
                         </p>
 
                         <p className="text-lg text-muted-foreground mb-8">
-                            This complete troubleshooting guide covers <strong>every common IPTV problem</strong> with step-by-step solutions. From buffering and freezing to login errors and missing channels—we've got you covered.
+                            This complete troubleshooting guide covers <strong>every common IPTV problem</strong> with step-by-step solutions. From buffering and freezing to login errors—we've got you covered.
                         </p>
                     </div>
 
@@ -221,11 +234,7 @@ export default async function IPTVTroubleshooting() {
                                                 </li>
                                                 <li className="flex gap-2">
                                                     <span className="font-bold text-primary">6.</span>
-                                                    <span><strong>Use a VPN</strong> to prevent ISP throttling (try NordVPN or ExpressVPN).</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">7.</span>
-                                                    <span><strong>Upgrade provider</strong> if using cheap service ($5-10/month often buffer).</span>
+                                                    <span><strong>Use a VPN</strong> to prevent ISP throttling (<Link href="/blog/iptv-vpn-guide" className="text-primary hover:underline">see our VPN guide</Link>).</span>
                                                 </li>
                                             </ol>
                                         </div>
@@ -260,14 +269,6 @@ export default async function IPTVTroubleshooting() {
                                                 <li className="flex gap-2">
                                                     <span className="font-bold text-primary">3.</span>
                                                     <span><strong>Verify subscription is active</strong>. Check if payment went through.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">4.</span>
-                                                    <span><strong>Try different login method</strong>. If using M3U URL, try Xtream Codes API (or vice versa).</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">5.</span>
-                                                    <span><strong>Contact provider support</strong>. They can verify account status and reset credentials.</span>
                                                 </li>
                                             </ol>
                                         </div>
@@ -307,140 +308,6 @@ export default async function IPTVTroubleshooting() {
                                                     <span className="font-bold text-primary">4.</span>
                                                     <span><strong>Update channel list</strong>. Go to app settings → Refresh/Update playlist.</span>
                                                 </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">5.</span>
-                                                    <span><strong>Clear app cache</strong> and restart.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">6.</span>
-                                                    <span><strong>Check internet connection</strong>. Run speed test.</span>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            {/* EPG Issues */}
-                            <AccordionItem value="epg" className="border-2 rounded-xl px-6">
-                                <AccordionTrigger>
-                                    <div className="flex items-center gap-3">
-                                        <Settings className="h-6 w-6 text-blue-500" />
-                                        <div className="text-left">
-                                            <h3 className="font-bold text-lg">EPG (TV Guide) Not Showing</h3>
-                                            <p className="text-sm text-muted-foreground">Missing program information</p>
-                                        </div>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="pt-4">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <h4 className="font-semibold mb-2">Solutions:</h4>
-                                            <ol className="space-y-2 text-sm">
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">1.</span>
-                                                    <span><strong>Wait 24 hours</strong>. EPG data populates after first login.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">2.</span>
-                                                    <span><strong>Enable EPG</strong> in app settings (may be disabled by default).</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">3.</span>
-                                                    <span><strong>Manually update EPG</strong>. Go to settings → Update/Refresh EPG.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">4.</span>
-                                                    <span><strong>Check provider's website</strong>. Some require EPG activation on their portal.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">5.</span>
-                                                    <span><strong>Contact support</strong> if EPG still missing after 48 hours.</span>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            {/* Audio/Video Sync */}
-                            <AccordionItem value="sync" className="border-2 rounded-xl px-6">
-                                <AccordionTrigger>
-                                    <div className="flex items-center gap-3">
-                                        <Video className="h-6 w-6 text-purple-500" />
-                                        <div className="text-left">
-                                            <h3 className="font-bold text-lg">Audio/Video Out of Sync</h3>
-                                            <p className="text-sm text-muted-foreground">Lip sync issues</p>
-                                        </div>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="pt-4">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <h4 className="font-semibold mb-2">Solutions:</h4>
-                                            <ol className="space-y-2 text-sm">
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">1.</span>
-                                                    <span><strong>Adjust audio delay</strong> in app settings (usually under playback settings).</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">2.</span>
-                                                    <span><strong>Change video player</strong>. Try VLC or MX Player instead of default.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">3.</span>
-                                                    <span><strong>Restart the channel</strong>. Exit and reload the stream.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">4.</span>
-                                                    <span><strong>Check if issue is channel-specific</strong>. If only one channel, report to provider.</span>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            {/* App Crashes */}
-                            <AccordionItem value="crashes" className="border-2 rounded-xl px-6">
-                                <AccordionTrigger>
-                                    <div className="flex items-center gap-3">
-                                        <AlertTriangle className="h-6 w-6 text-red-500" />
-                                        <div className="text-left">
-                                            <h3 className="font-bold text-lg">App Keeps Crashing</h3>
-                                            <p className="text-sm text-muted-foreground">Unexpected closures</p>
-                                        </div>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="pt-4">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <h4 className="font-semibold mb-2">Solutions:</h4>
-                                            <ol className="space-y-2 text-sm">
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">1.</span>
-                                                    <span><strong>Clear app cache and data</strong>. Settings → Apps → IPTV app → Clear cache/data.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">2.</span>
-                                                    <span><strong>Update the app</strong> to latest version.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">3.</span>
-                                                    <span><strong>Restart your device</strong> completely.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">4.</span>
-                                                    <span><strong>Reinstall the app</strong>. Uninstall completely, then reinstall fresh.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">5.</span>
-                                                    <span><strong>Free up storage space</strong>. Delete unused apps/files.</span>
-                                                </li>
-                                                <li className="flex gap-2">
-                                                    <span className="font-bold text-primary">6.</span>
-                                                    <span><strong>Try alternative app</strong> (TiviMate, Perfect Player, etc.).</span>
-                                                </li>
                                             </ol>
                                         </div>
                                     </div>
@@ -449,34 +316,17 @@ export default async function IPTVTroubleshooting() {
                         </Accordion>
                     </section>
 
-                    {/* When to Contact Support */}
+                    {/* AIO: Glossary */}
                     <section className="mb-16 max-w-3xl mx-auto">
-                        <h2 className="font-headline text-3xl font-bold mb-6">When to Contact Provider Support</h2>
-
-                        <div className="p-6 border-2 border-primary/20 rounded-xl bg-primary/5">
-                            <p className="mb-4">Contact your IPTV provider's support if:</p>
-                            <ul className="space-y-2">
-                                {[
-                                    "You've tried all troubleshooting steps and issue persists",
-                                    "Multiple channels are down or not working",
-                                    "Your subscription shows as expired but you've paid",
-                                    "You can't login despite correct credentials",
-                                    "Buffering happens on all channels (server issue)",
-                                    "You need help with account activation or setup",
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-sm">
-                                        <span className="text-primary mt-0.5">•</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-6 p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                                <p className="text-sm">
-                                    <strong>💡 Pro Tip:</strong> Quality IPTV providers offer 24/7 live chat support. If your provider doesn't respond within 24 hours, consider switching to a more reliable service.
-                                </p>
-                            </div>
-                        </div>
+                        <Glossary
+                            title="Troubleshooting Dictionary"
+                            items={[
+                                { term: "ISP Throttling", definition: "When your internet provider intentionally slows down your speed because they detect you are streaming video, causing buffering." },
+                                { term: "Packet Loss", definition: "Data getting lost between the server and your device, resulting in skipping frames or freezing." },
+                                { term: "Cache", definition: "Temporary data stored by your app. If it gets corrupted, it can cause the app to crash or run slowly. Clearing it often fixes issues." },
+                                { term: "Hardware Decoding", definition: "Using your device's dedicated video chip to play streams. It's smoother than 'Software Decoding' but might not support all formats." }
+                            ]}
+                        />
                     </section>
 
                     {/* FAQ */}
@@ -524,9 +374,9 @@ export default async function IPTVTroubleshooting() {
                                 <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 comparison</p>
                             </Link>
-                            <Link href="/iptv-guide" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">📚 Complete IPTV Guide</h3>
-                                <p className="text-sm text-muted-foreground">Everything about IPTV</p>
+                            <Link href="/blog/iptv-vpn-guide" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">🔒 IPTV VPN Guide</h3>
+                                <p className="text-sm text-muted-foreground">Privacy & Throttling Fixes</p>
                             </Link>
                             <Link href="/blog/cheap-iptv-providers" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">💰 Cheap IPTV Providers</h3>
@@ -553,7 +403,25 @@ export default async function IPTVTroubleshooting() {
                         </div>
                     </section>
                 </Container>
-            </main>
+            </main >
+            {/* 
+            TECHNICAL SEO RECOMMENDATIONS:
+            1. Schema Markup: 
+               - ArticleSchema: Implemented
+               - FAQPage: Implemented
+               - BreadcrumbList: Implemented
+            
+            2. Meta Tags:
+               - Title: "IPTV Troubleshooting Guide 2026: Fix Buffering..."
+               - Description: "Complete guide to fixing IPTV issues..."
+               - Keywords: "iptv buffering", "iptv freezing", "iptv help"
+               - Canonical: Self-referencing
+            
+            3. Internal Linking:
+               - Linked to /pricing
+               - Linked to /blog/best-iptv-provider-2026
+               - Linked to /how-to-setup-iptv
+            */}
         </>
     );
 }

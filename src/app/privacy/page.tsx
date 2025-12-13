@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
+import { Schema } from "@/components/shared/Schema";
+import { generateBreadcrumbSchema } from "@/lib/schema";
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Privacy Policy | IPTV Provider Guide',
@@ -7,9 +10,22 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
+        { name: "Privacy Policy", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/privacy` },
+    ]);
+
     return (
         <main className="py-16 sm:py-24">
+            <Schema id="breadcrumb" schema={breadcrumbSchema} />
             <Container>
+                <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+                    <ol className="flex items-center gap-2">
+                        <li><Link href="/" className="hover:text-primary">Home</Link></li>
+                        <li>/</li>
+                        <li>Privacy Policy</li>
+                    </ol>
+                </nav>
                 <article className="prose prose-lg dark:prose-invert max-w-none mx-auto">
                     <header className="mb-12 text-center">
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl mb-6">

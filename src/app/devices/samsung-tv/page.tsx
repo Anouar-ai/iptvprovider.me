@@ -126,8 +126,13 @@ export default async function SamsungTVPage() {
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 Watch IPTV on Your Samsung Smart TV
                             </h1>
+                            <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
+                                <p className="text-lg leading-relaxed">
+                                    <strong>The best way to watch IPTV on Samsung Smart TV is by using native apps like IBO Player or Set IPTV directly from the Tizen App Store.</strong> These apps are specifically optimized for Samsung's Tizen OS, allowing for smooth 4K playback without the need for external devices like a Firestick.
+                                </p>
+                            </div>
                             <p className="text-xl text-muted-foreground">
-                                No messy cables or extra boxes. Use the best native apps for Samsung Tizen to stream in 4K directly.
+                                Samsung dominates the global TV market with <strong>over 19% market share</strong> (Source: Omdia 2024), making its Tizen platform one of the most supported ecosystems for IPTV apps.
                             </p>
                         </header>
 
@@ -210,3 +215,21 @@ export default async function SamsungTVPage() {
         </>
     );
 }
+
+/*
+TECHNICAL SEO RECOMMENDATIONS:
+1. Schema Markup:
+   - ArticleSchema: Implemented
+   - HowToSchema: Implemented (IBO Player Setup)
+   - FAQPage: Implemented
+   - BreadcrumbList: Implemented
+
+2. Meta Tags:
+   - Title: "How to Watch IPTV on Samsung Smart TV (2026 Guide)"
+   - Description: "Best IPTV apps for Samsung Tizen OS..."
+   - Keywords: "iptv samsung tv", "ibo player", "tizen iptv"
+
+3. Internal Linking:
+   - Linked to /pricing
+   - Linked to /iptv-free-trial
+*/

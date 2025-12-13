@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
+import { generateBreadcrumbSchema } from "@/lib/schema";
+import { Schema } from "@/components/shared/Schema";
 
 export function generateMetadata(): Metadata {
     const title = "IPTV Blog: Guides, Comparisons & Expert Tips";
@@ -77,9 +79,22 @@ const blogPosts = [
 ];
 
 export default function BlogIndex() {
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
+        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
+    ]);
+
     return (
         <main className="py-16 sm:py-24">
+            <Schema id="breadcrumb" schema={breadcrumbSchema} />
             <Container>
+                <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
+                    <ol className="flex items-center gap-2">
+                        <li><Link href="/" className="hover:text-primary">Home</Link></li>
+                        <li>/</li>
+                        <li>Blog</li>
+                    </ol>
+                </nav>
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl mb-6">
                         IPTV Blog & Guides

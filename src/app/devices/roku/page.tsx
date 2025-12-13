@@ -117,8 +117,13 @@ export default async function RokuPage() {
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 How to Watch IPTV on Roku (2026)
                             </h1>
+                            <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
+                                <p className="text-lg leading-relaxed">
+                                    <strong>You cannot install native IPTV apps on Roku because Roku's operating system (Roku OS) uses a closed ecosystem that restricts unverified "sideloaded" applications, unlike Android.</strong> Therefore, the only working method to watch IPTV on Roku is by using a "Casting" app like Web Video Caster from your smartphone to your TV.
+                                </p>
+                            </div>
                             <p className="text-xl text-muted-foreground">
-                                Roku doesn't support native IPTV apps, but don't worry. Here is the <strong>#1 working method</strong> to stream 20,000+ channels on your Roku device in 5 minutes.
+                                Despite Roku holding <strong>50% of the US streaming device market</strong> (Source: Pixalate 2024), its closed nature makes it the most difficult device for IPTV. This guide solves that problem.
                             </p>
                         </header>
 
@@ -203,3 +208,21 @@ export default async function RokuPage() {
         </>
     );
 }
+
+/*
+TECHNICAL SEO RECOMMENDATIONS:
+1. Schema Markup:
+   - ArticleSchema: Implemented
+   - HowToSchema: Implemented (Web Video Caster Workaround)
+   - FAQPage: Implemented
+   - ProductSchema: Implemented (Roku Subscription)
+
+2. Meta Tags:
+   - Title: "How to Install IPTV on Roku (2026 Guide) | Web Video Caster Method"
+   - Description: "Roku doesn't have a native IPTV app. Learn the best workaround..."
+   - Keywords: "iptv for roku", "web video caster", "roku jailbreak"
+
+3. Internal Linking:
+   - Linked to /pricing
+   - Linked to /iptv-free-trial
+*/

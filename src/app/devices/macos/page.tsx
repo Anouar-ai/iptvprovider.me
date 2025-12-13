@@ -116,8 +116,13 @@ export default async function MacOSPage() {
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                                 Watch IPTV on Your Mac
                             </h1>
+                            <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
+                                <p className="text-lg leading-relaxed">
+                                    <strong>The best way to watch IPTV on a Mac is by using "IPTV Smarters Pro" (native Mac App) or "GSE Smart IPTV", both of which run natively on macOS.</strong> Thanks to the shared architecture between Mac and iOS, these apps are highly optimized and battery-efficient for MacBook users.
+                                </p>
+                            </div>
                             <p className="text-xl text-muted-foreground">
-                                Seamless streaming for your MacBook Air, MacBook Pro, or iMac.
+                                Macs with <strong>Apple Silicon (M1/M2/M3)</strong> chips can process multiple 4K streams simultaneously while using minimal battery, offering the longest portable viewing time of any laptop on the market.
                             </p>
                         </header>
 
@@ -173,3 +178,21 @@ export default async function MacOSPage() {
         </>
     );
 }
+
+/*
+TECHNICAL SEO RECOMMENDATIONS:
+1. Schema Markup:
+   - ArticleSchema: Implemented
+   - HowToSchema: Implemented (Mac Setup)
+   - FAQPage: Implemented
+   - BreadcrumbList: Implemented
+
+2. Meta Tags:
+   - Title: "How to Watch IPTV on Mac (2026 macOS Guide)"
+   - Description: "Best IPTV players for MacBook and iMac..."
+   - Keywords: "iptv mac", "iptv smarters mac", "apple silicon iptv"
+
+3. Internal Linking:
+   - Linked to /pricing
+   - Linked to /iptv-free-trial
+*/
