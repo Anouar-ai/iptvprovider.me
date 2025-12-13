@@ -404,13 +404,13 @@ export default async function IPTVGuide() {
                         </ul>
 
                         <div className="grid md:grid-cols-2 gap-4">
-                            <Link href="/blog/best-iptv-for-sports" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">⚽ Best IPTV for Sports</h3>
                                 <p className="text-sm text-muted-foreground">Top providers for sports streaming</p>
                             </Link>
-                            <Link href="/blog/iptv-sports-channels-list" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">📺 Sports Channels List</h3>
-                                <p className="text-sm text-muted-foreground">Complete list of 50+ sports channels</p>
+                            <Link href="/devices" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">📺 Supported Devices</h3>
+                                <p className="text-sm text-muted-foreground">All compatible streaming devices</p>
                             </Link>
                         </div>
                     </section>
@@ -650,13 +650,13 @@ export default async function IPTVGuide() {
                                 <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2026</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 providers compared</p>
                             </Link>
-                            <Link href="/blog/best-iptv-for-sports" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">⚽ Best IPTV for Sports</h3>
                                 <p className="text-sm text-muted-foreground">Sports streaming guide</p>
                             </Link>
-                            <Link href="/blog/iptv-sports-channels-list" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">📺 Sports Channels List</h3>
-                                <p className="text-sm text-muted-foreground">50+ sports channels</p>
+                            <Link href="/devices" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">📺 Supported Devices</h3>
+                                <p className="text-sm text-muted-foreground">All compatible devices</p>
                             </Link>
                             <Link href="/devices/fire-tv" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">🔥 IPTV on Fire TV</h3>

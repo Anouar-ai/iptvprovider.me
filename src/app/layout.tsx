@@ -116,10 +116,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/IPTV-Provider.png', type: 'image/png', sizes: '192x192' },
     ],
     apple: [
-      { url: '/favicon.ico' },
+      { url: '/IPTV-Provider.png', sizes: '180x180' },
     ],
+    shortcut: '/favicon.ico',
   },
 
   category: 'technology',
@@ -146,6 +148,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.visitors.now" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+        <link rel="dns-prefetch" href="https://image.tmdb.org" />
       </head>
       <body>
         <ProgressBar />

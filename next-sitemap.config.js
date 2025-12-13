@@ -5,14 +5,8 @@ const config = {
     robotsTxtOptions: {
         policies: [
             { userAgent: '*', allow: '/' },
-            // Example of disallowing a path:
-            // { userAgent: '*', disallow: '/admin' },
         ],
-        additionalSitemaps: [
-            `${process.env.SITE_URL || 'https://www.iptvprovider.me'}/sitemap.xml`,
-        ],
-        // To add a crawl-delay, uncomment the following line:
-        // crawlDelay: 5, 
+        // additionalSitemaps removed to prevent self-referencing sitemap issue
     }
 };
 

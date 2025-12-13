@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     }
 
     const host = 'www.iptvprovider.me';
-    const key = '48bc54b9d0744723920c74900a89405d';
+    const key = process.env.INDEXNOW_KEY || '48bc54b9d0744723920c74900a89405d';
     const keyLocation = `https://${host}/${key}.txt`;
 
     const response = await fetch('https://api.indexnow.org/indexnow', {

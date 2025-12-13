@@ -3,6 +3,7 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { footerLinks } from "@/lib/site-data/footer";
+import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -61,9 +62,9 @@ export function Footer() {
             </div>
           </div>
           <div className="mt-4 flex items-center space-x-4 sm:mt-0">
-            <Link href="#" aria-label="Follow us on Facebook" className="text-muted-foreground hover:text-primary"><Facebook className="h-5 w-5" /></Link>
-            <Link href="#" aria-label="Follow us on Twitter" className="text-muted-foreground hover:text-primary"><Twitter className="h-5 w-5" /></Link>
-            <Link href="#" aria-label="Follow us on Instagram" className="text-muted-foreground hover:text-primary"><Instagram className="h-5 w-5" /></Link>
+            <Link href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="text-muted-foreground hover:text-primary"><Facebook className="h-5 w-5" /></Link>
+            <Link href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="text-muted-foreground hover:text-primary"><Twitter className="h-5 w-5" /></Link>
+            <Link href={siteConfig.links.instagram} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="text-muted-foreground hover:text-primary"><Instagram className="h-5 w-5" /></Link>
           </div>
         </div>
       </Container>
