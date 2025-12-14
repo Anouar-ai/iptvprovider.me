@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Alertcircle, FileWarning, HelpCircle } from 'lucide-react';
+import { AlertCircle, FileWarning, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Legal Disclaimer | Is IPTV Legal? | IPTV Provider Guide',

@@ -33,7 +33,7 @@ type ArticleType = ReturnType<typeof getSafeArticleData> & {
 
 async function getArticleData(deviceId: string): Promise<ArticleType> {
   const article = getSafeArticleData(deviceId);
-  if (!article) return undefined;
+  if (!article) return undefined as any;
 
   const imageInfo = PlaceHolderImages.find(img => img.id === `guide-image-${article.id}`);
   if (!imageInfo) return { ...article, image: undefined };
@@ -95,7 +95,7 @@ function StructuredData({ article }: { article: ArticleType }) {
       priceCurrency: "USD",
       lowPrice: lowPrice.toFixed(2),
       highPrice: highPrice.toFixed(2),
-      offerCount: plans.length.toString(),
+      offerCount: plans.length,
     }
   });
 

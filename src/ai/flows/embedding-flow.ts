@@ -23,9 +23,9 @@ const embeddingFlow = ai.defineFlow(
     outputSchema: EmbeddingOutputSchema,
   },
   async text => {
-    const result = await ai.embed({
+    const result = await (ai as any).embed({
       content: text,
-    }) as any;
+    });
     return result.embedding;
   }
 );

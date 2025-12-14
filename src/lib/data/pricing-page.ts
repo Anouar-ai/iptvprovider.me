@@ -4,7 +4,7 @@ import { generateSemanticContent, type SemanticContent as SemanticContentType } 
 import { plans } from "@/lib/site-data/pricing";
 import { pricingPageFaqs } from "@/lib/site-data/pricing-page-faq";
 import { generateProductSchema, generateBreadcrumbSchema, generateFAQPageSchema } from "@/lib/schema";
-import type { Product, BreadcrumbList, FAQPage } from 'schema-d-ts';
+import type { Product, BreadcrumbList, FAQPage } from 'schema-dts';
 import { siteConfig } from '../site-config';
 
 // This function fetches and processes all data required for the pricing page in a single, cached operation.
@@ -14,7 +14,7 @@ export const getPricingPageData = cache(
 
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent("IPTV Subscription Plans");
-    
+
     const productSchemaPromise: Promise<Product> = Promise.resolve(generateProductSchema({
       name: "IPTV Subscription",
       description: "Premium IPTV subscription with 24,000+ live channels, 80,000+ VOD content, HD/4K streaming, and 24/7 support.",
@@ -30,29 +30,29 @@ export const getPricingPageData = cache(
         priceCurrency: "USD",
         lowPrice: Math.min(...plans.map(p => p.price_monthly)).toFixed(2),
         highPrice: Math.max(...plans.map(p => p.price_monthly)).toFixed(2),
-        offerCount: plans.length.toString(),
+        offerCount: plans.length,
         offers: plans.map(plan => ({
-            "@type": "Offer",
-            "name": `IPTV Subscription - ${plan.name}`,
-            "price": plan.price.toFixed(2),
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": `${baseUrl}/pricing`,
-            "priceValidUntil": "2025-12-31",
-            "itemCondition": "https://schema.org/NewCondition",
-            "seller": {
-              "@type": "Organization",
-              "name": "IPTV Provider"
-            }
+          "@type": "Offer",
+          "name": `IPTV Subscription - ${plan.name}`,
+          "price": plan.price.toFixed(2),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": `${baseUrl}/pricing`,
+          "priceValidUntil": "2025-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "IPTV Provider"
+          }
         }))
       }
     }));
 
     const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
-        { name: "Home", item: `${baseUrl}/` },
-        { name: "Pricing", item: `${baseUrl}/pricing` }
+      { name: "Home", item: `${baseUrl}/` },
+      { name: "Pricing", item: `${baseUrl}/pricing` }
     ]));
-    
+
     const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pricingPageFaqs));
 
     // Await all promises in parallel for maximum efficiency
@@ -68,8 +68,8 @@ export const getPricingPageData = cache(
       faqSchemaPromise,
     ]);
 
-    return { 
-      semanticContent, 
+    return {
+      semanticContent,
       productSchema,
       breadcrumbSchema,
       faqSchema,

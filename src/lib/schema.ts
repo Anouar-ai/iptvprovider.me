@@ -214,7 +214,7 @@ interface ProductSchemaProps {
   brand?: Brand;
 }
 
-export function generateProductSchema(props: ProductSchemaProps): Product {
+export function generateProductSchema(props: ProductSchemaProps): any {
   const { name, description, image, ratingValue, reviewCount, price, offers, sku, mpn, brand } = props;
 
   const offerDetails = offers || (price ? {
@@ -245,7 +245,7 @@ export function generateProductSchema(props: ProductSchemaProps): Product {
 }
 
 
-export function generateFAQPageSchema(mainEntity: { question: string; answer: string }[]): FAQPage {
+export function generateFAQPageSchema(mainEntity: { question: string; answer: any }[]): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -260,7 +260,7 @@ export function generateFAQPageSchema(mainEntity: { question: string; answer: st
   };
 }
 
-export function generateBreadcrumbSchema(itemListElement: { name: string; item: string }[]): BreadcrumbList {
+export function generateBreadcrumbSchema(itemListElement: { name: string; item: string }[]): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -284,7 +284,7 @@ interface ArticleSchemaProps {
   url: string;
 }
 
-export function generateArticleSchema(props: ArticleSchemaProps): Article {
+export function generateArticleSchema(props: ArticleSchemaProps): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -310,11 +310,12 @@ interface HowToSchemaProps {
   name: string;
   description: string;
   image?: { url: string; width?: number; height?: number; };
+  url?: string;
   steps: { name: string; text: string; url: string; }[];
   totalTime?: string;
 }
 
-export function generateHowToSchema(props: HowToSchemaProps): HowTo {
+export function generateHowToSchema(props: HowToSchemaProps): any {
   const { name, description, image, steps, totalTime } = props;
   return {
     '@context': 'https://schema.org',
@@ -348,7 +349,7 @@ interface ServiceSchemaProps {
   offers?: Offer | AggregateOffer;
 }
 
-export function generateServiceSchema(props: ServiceSchemaProps): Service {
+export function generateServiceSchema(props: ServiceSchemaProps): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -374,7 +375,7 @@ interface CollectionPageSchemaProps {
   items: { name: string; url: string; }[];
 }
 
-export function generateCollectionPageSchema(props: CollectionPageSchemaProps): CollectionPage {
+export function generateCollectionPageSchema(props: CollectionPageSchemaProps): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -408,7 +409,7 @@ interface ReviewSchemaProps {
   datePublished: string;
 }
 
-export function generateReviewSchema(props: ReviewSchemaProps): Review {
+export function generateReviewSchema(props: ReviewSchemaProps): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'Review',
