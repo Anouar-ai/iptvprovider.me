@@ -149,6 +149,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.visitors.now" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <link rel="dns-prefetch" href="https://image.tmdb.org" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SSB6EEH0M5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SSB6EEH0M5');
+          `}
+        </Script>
       </head>
       <body>
         <ProgressBar />

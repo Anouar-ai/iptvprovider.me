@@ -5,7 +5,7 @@ export const siteConfig = {
   ogImage: "/IPTV-Provider.png",
   description: "Subscribe to our IPTV service with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Premium IPTV streaming worldwide.",
   // Knowledge Graph optimization fields
-  foundingDate: "2020",
+  foundingDate: "2025",
   slogan: "Your Gateway to Premium IPTV Streaming",
   alternateName: ["IPTV Provider", "IPTVProvider.me", "Best IPTV Provider"],
   links: {
