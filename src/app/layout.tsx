@@ -139,11 +139,13 @@ export default function RootLayout({
         <Schema id="navigation" schema={generateAdvancedSitelinksSchema()} />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://iptvwell.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.visitors.now" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <link rel="dns-prefetch" href="https://image.tmdb.org" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SSB6EEH0M5"

@@ -245,10 +245,19 @@ export function generateProductSchema(props: ProductSchemaProps): any {
 }
 
 
-export function generateFAQPageSchema(mainEntity: { question: string; answer: any }[]): any {
+export function generateFAQPageSchema(
+  mainEntity: { question: string; answer: any }[],
+  pageUrl?: string
+): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(pageUrl && {
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': pageUrl,
+      },
+    }),
     mainEntity: mainEntity.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,

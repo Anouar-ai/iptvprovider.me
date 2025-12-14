@@ -53,7 +53,7 @@ export const getPricingPageData = cache(
       { name: "Pricing", item: `${baseUrl}/pricing` }
     ]));
 
-    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pricingPageFaqs));
+    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pricingPageFaqs, `${baseUrl}/pricing`));
 
     // Await all promises in parallel for maximum efficiency
     const [
