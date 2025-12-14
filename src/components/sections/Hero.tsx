@@ -22,7 +22,7 @@ export function Hero() {
         muted
         playsInline
         preload="metadata"
-        poster="/og-image.jpg"
+        poster="/IPTV-Provider.png"
         title="The Best IPTV Subscription Service Provider"
         aria-label="The Best IPTV Subscription Service Provider Promotional Video"
         className="absolute inset-0 h-full w-full object-cover"

@@ -106,13 +106,7 @@ export const metadata: Metadata = {
       'msvalidate.01': 'CEC29E9356C1B062CC9637E64D68C778',
     },
   },
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/',
-      'x-default': '/',
-    },
-  },
+  // Canonical URLs are set per-page in generateMetadata() to avoid all pages pointing to homepage
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' },
