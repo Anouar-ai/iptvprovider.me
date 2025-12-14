@@ -224,21 +224,33 @@ export function generateProductSchema(props: ProductSchemaProps): any {
     availability: 'https://schema.org/InStock' as const,
     url: `${siteConfig.url}/pricing`,
     priceValidUntil: "2025-12-31",
+    seller: {
+      '@id': `${siteConfig.url}/#organization`,
+    },
   } : undefined);
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${siteConfig.url}/#product`,
     name,
     description,
     image,
     sku,
     mpn,
-    brand,
+    brand: brand || {
+      '@type': 'Brand',
+      name: siteConfig.name,
+    },
+    manufacturer: {
+      '@id': `${siteConfig.url}/#organization`,
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue,
       reviewCount,
+      bestRating: '5',
+      worstRating: '1',
     },
     offers: offerDetails,
   };

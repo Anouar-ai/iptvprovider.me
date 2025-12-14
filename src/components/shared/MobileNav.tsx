@@ -20,21 +20,24 @@ export function MobileNav() {
           <span className="sr-only">Toggle Navigation</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="flex flex-col">
+      <SheetContent side="left" className="flex flex-col" aria-label="Mobile Navigation">
         <Logo />
-        <nav className="mt-8 flex flex-1 flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="rounded-md px-3 py-2 text-lg font-medium hover:bg-accent"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>))}
-        </nav>
+        {/* Only render nav links when open - improves crawler visibility */}
+        {isOpen && (
+          <nav className="mt-8 flex flex-1 flex-col gap-4" aria-label="Mobile menu">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="rounded-md px-3 py-2 text-lg font-medium hover:bg-accent"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>))}
+          </nav>
+        )}
         <div className="mt-auto flex justify-center">
-            <ThemeToggle />
+          <ThemeToggle />
         </div>
       </SheetContent>
     </Sheet>

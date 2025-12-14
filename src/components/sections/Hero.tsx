@@ -21,8 +21,10 @@ export function Hero() {
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         poster="/IPTV.png"
+        // @ts-expect-error - fetchpriority is valid HTML attribute but not yet in React types
+        fetchpriority="high"
         title="The Best IPTV Subscription Service Provider"
         aria-label="The Best IPTV Subscription Service Provider Promotional Video"
         className="absolute inset-0 h-full w-full object-cover"

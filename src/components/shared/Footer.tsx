@@ -17,7 +17,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-semibold">Quick Links</h3>
+            <h2 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h2>
             <ul className="mt-4 space-y-2">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.name}>
@@ -29,7 +29,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold">Supported Apps</h3>
+            <h2 className="text-sm font-semibold uppercase tracking-wider">Supported Apps</h2>
             <ul className="mt-4 space-y-2">
               {footerLinks.supportedLinks.map((link) => (
                 <li key={link.name}>
@@ -41,7 +41,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold">Contact</h3>
+            <h2 className="text-sm font-semibold uppercase tracking-wider">Contact</h2>
             <address className="mt-4 space-y-2 text-sm not-italic text-muted-foreground">
               <p>{footerLinks.contact.address}</p>
               <a href={`mailto:${footerLinks.contact.email}`} className="hover:text-primary">
