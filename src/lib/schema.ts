@@ -110,22 +110,45 @@ export function generateOrganizationSchema(): any {
     '@type': 'Organization',
     '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
+    'alternateName': siteConfig.alternateName,
     'url': siteConfig.url,
     'logo': {
       '@type': 'ImageObject',
       'url': `${siteConfig.url}/IPTV-Provider.png`,
+      'width': 512,
+      'height': 512,
+    },
+    'image': `${siteConfig.url}/IPTV-Provider.png`,
+    'description': siteConfig.description,
+    'foundingDate': siteConfig.foundingDate,
+    'slogan': siteConfig.slogan,
+    'knowsAbout': [
+      'IPTV Streaming',
+      'Internet Television',
+      'Cord-Cutting',
+      'Live TV Streaming',
+      'Video on Demand',
+      'Smart TV Applications',
+      'Streaming Media'
+    ],
+    'areaServed': {
+      '@type': 'Place',
+      'name': 'Worldwide'
     },
     'contactPoint': {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
       'contactType': 'Customer Service',
       'availableLanguage': ['English', 'French'],
+      'areaServed': 'Worldwide',
     },
     'sameAs': [
       siteConfig.links.twitter,
       siteConfig.links.facebook,
       siteConfig.links.instagram,
-    ],
+      siteConfig.links.youtube,
+      siteConfig.links.linkedin,
+    ].filter(Boolean),
   };
 }
 

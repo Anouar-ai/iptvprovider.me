@@ -4,10 +4,16 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.iptvprovider.me",
   ogImage: "/IPTV-Provider.png",
   description: "Subscribe to our IPTV service with 24,000+ live channels & VOD. HD/4K quality, instant activation & 24/7 support. Premium IPTV streaming worldwide.",
+  // Knowledge Graph optimization fields
+  foundingDate: "2020",
+  slogan: "Your Gateway to Premium IPTV Streaming",
+  alternateName: ["IPTV Provider", "IPTVProvider.me", "Best IPTV Provider"],
   links: {
     twitter: "https://twitter.com/iptvprovider",
     facebook: "https://facebook.com/iptvprovider",
     instagram: "https://instagram.com/iptvprovider",
+    youtube: "https://youtube.com/@iptvprovider",
+    linkedin: "https://linkedin.com/company/iptvprovider",
     email: "support@iptvprovider.me",
   },
 } as const;
