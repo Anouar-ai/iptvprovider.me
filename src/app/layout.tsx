@@ -12,6 +12,7 @@ import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
+import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -145,20 +146,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.visitors.now" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-        <link rel="dns-prefetch" href="https://image.tmdb.org" />
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-SSB6EEH0M5"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-SSB6EEH0M5');
-          `}
-        </Script>
+        <link rel="preconnect" href="https://image.tmdb.org" />
+        {/* Google Analytics handled by Analytics component in body */}
       </head>
       <body>
         <ProgressBar />
@@ -187,10 +176,11 @@ export default function RootLayout({
               Skip to main content
             </a>
             <Navbar />
-            <main id="main-content" className="flex-grow">{children}</main>
+            <div id="main-content" className="flex-grow">{children}</div>
             <Footer />
           </div>
           <ContactSheet />
+          <ScrollToTop />
           <Toaster />
         </ThemeProvider>
       </body>

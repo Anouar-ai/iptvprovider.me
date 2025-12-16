@@ -38,7 +38,7 @@ export const getPricingPageData = cache(
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": `${baseUrl}/pricing`,
-          "priceValidUntil": "2025-12-31",
+          "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
           "itemCondition": "https://schema.org/NewCondition",
           "seller": {
             "@type": "Organization",

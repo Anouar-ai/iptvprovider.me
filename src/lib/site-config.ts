@@ -41,6 +41,11 @@ export function generateMetadata({
     description,
     alternates: {
       canonical: canonical ? `${siteConfig.url}${canonical}` : undefined,
+      languages: {
+        'en-US': canonical ? `${siteConfig.url}${canonical}` : siteConfig.url,
+        'en-GB': canonical ? `${siteConfig.url}${canonical}` : siteConfig.url,
+        'x-default': canonical ? `${siteConfig.url}${canonical}` : siteConfig.url,
+      },
     },
     openGraph: {
       title,

@@ -31,6 +31,7 @@ const BrandCarousel = ({ images, reverse = false }: { images: typeof brands, rev
             <div
               key={`${brand.id}-${index}`}
               className="relative h-12 w-36 flex-shrink-0 px-4"
+              style={{ aspectRatio: '3/1' }}
             >
               <Image
                 src={brandImage.imageUrl}

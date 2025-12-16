@@ -22,20 +22,23 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="left" className="flex flex-col" aria-label="Mobile Navigation">
         <Logo />
-        {/* Only render nav links when open - improves crawler visibility */}
-        {isOpen && (
-          <nav className="mt-8 flex flex-1 flex-col gap-4" aria-label="Mobile menu">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="rounded-md px-3 py-2 text-lg font-medium hover:bg-accent"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>))}
-          </nav>
-        )}
+        {/* Always render nav links for crawler visibility, hide visually when closed */}
+        <nav
+          className="mt-8 flex flex-1 flex-col gap-4"
+          aria-label="Mobile menu"
+          aria-hidden={!isOpen}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="rounded-md px-3 py-2 text-lg font-medium hover:bg-accent"
+              onClick={() => setIsOpen(false)}
+              tabIndex={isOpen ? 0 : -1}
+            >
+              {link.name}
+            </Link>))}
+        </nav>
         <div className="mt-auto flex justify-center">
           <ThemeToggle />
         </div>

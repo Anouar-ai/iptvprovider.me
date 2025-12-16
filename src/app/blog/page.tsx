@@ -85,7 +85,7 @@ export default function BlogIndex() {
     ]);
 
     return (
-        <div className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24">
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
             <Container>
                 <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
@@ -135,6 +135,6 @@ export default function BlogIndex() {
                     ))}
                 </div>
             </Container>
-        </div>
+        </section>
     );
 }

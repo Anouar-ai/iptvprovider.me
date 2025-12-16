@@ -40,11 +40,11 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div>
+          <div itemScope itemType="https://schema.org/Organization">
             <h2 className="text-sm font-semibold uppercase tracking-wider">Contact</h2>
             <address className="mt-4 space-y-2 text-sm not-italic text-muted-foreground">
-              <p>{footerLinks.contact.address}</p>
-              <a href={`mailto:${footerLinks.contact.email}`} className="hover:text-primary">
+              <p itemProp="address">{footerLinks.contact.address}</p>
+              <a href={`mailto:${footerLinks.contact.email}`} className="hover:text-primary" itemProp="email">
                 {footerLinks.contact.email}
               </a>
             </address>

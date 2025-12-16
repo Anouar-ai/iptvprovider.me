@@ -2,12 +2,16 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Schema } from "@/components/shared/Schema";
 import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-    title: 'About The IPTV Provider Guide | Our Mission & Team',
-    description: 'Learn about the team behind the IPTV Provider Guide. We are a group of IT experts and cord-cutting enthusiasts dedicated to helping you find the best streaming solutions.',
-};
+export function generateMetadata(): Metadata {
+    return generatePageMetadata({
+        title: 'About The IPTV Provider Guide | Our Mission & Team',
+        description: 'Learn about the team behind the IPTV Provider Guide. We are a group of IT experts and cord-cutting enthusiasts dedicated to helping you find the best streaming solutions.',
+        canonical: '/about',
+    });
+}
 
 export default function AboutPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([

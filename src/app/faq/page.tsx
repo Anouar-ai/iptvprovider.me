@@ -49,6 +49,14 @@ export default async function FaqPage() {
               </li>
             </ol>
           </nav>
+          <div className="mb-12 text-center">
+            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
+              Frequently Asked Questions
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Have questions about our IPTV service? Find answers to common questions about trials, compatibility, setup, and more.
+            </p>
+          </div>
           <FAQ />
         </Container>
       </main>

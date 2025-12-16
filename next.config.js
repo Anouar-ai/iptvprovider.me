@@ -122,6 +122,10 @@ const nextConfig = {
 
 export default nextConfig;
 
+// PWA: next-pwa is not compatible with Next.js 16 Turbopack yet
+// The manifest.ts file provides basic PWA support
+// TODO: Add service worker when Turbopack-compatible solution is available
+
 // To analyze the bundle size, install @next/bundle-analyzer and uncomment the following:
 // import withBundleAnalyzer from '@next/bundle-analyzer';
 // export default withBundleAnalyzer({

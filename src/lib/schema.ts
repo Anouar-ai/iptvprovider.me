@@ -17,6 +17,7 @@ import type {
   Review
 } from 'schema-dts';
 import { siteConfig } from '@/lib/site-config';
+import { sitelinksConfig } from '@/lib/site-data/sitelinks-config';
 
 // Reusable parts of schemas
 const defaultPublisher = {
@@ -82,9 +83,6 @@ export function generateSiteNavigationSchema() {
 
 // Advanced SiteNavigationElement schema with descriptions and metadata
 export function generateAdvancedSitelinksSchema(): any {
-  // Import sitelinks config dynamically to avoid circular dependencies
-  const { sitelinksConfig } = require('@/lib/site-data/sitelinks-config');
-
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -223,7 +221,7 @@ export function generateProductSchema(props: ProductSchemaProps): any {
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock' as const,
     url: `${siteConfig.url}/pricing`,
-    priceValidUntil: "2025-12-31",
+    priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     seller: {
       '@id': `${siteConfig.url}/#organization`,
     },
@@ -314,10 +312,19 @@ export function generateArticleSchema(props: ArticleSchemaProps): any {
     image: props.image,
     datePublished: props.datePublished,
     dateModified: props.dateModified,
-    author: {
-      '@type': props.authorName ? 'Person' : 'Organization',
-      name: props.authorName || siteConfig.name,
+    author: props.authorName ? {
+      '@type': 'Person',
+      name: props.authorName,
+      url: `${siteConfig.url}/team`,
+      jobTitle: 'Content Specialist',
+    } : {
+      '@type': 'Organization',
+      name: siteConfig.name,
       url: `${siteConfig.url}/about`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/IPTV-Provider.png`,
+      },
     },
     publisher: defaultPublisher,
     mainEntityOfPage: {
@@ -516,3 +523,57 @@ export function generateVideoSchema(props: VideoSchemaProps) {
     },
   };
 }
+
+// Speakable schema for voice search optimization (Google Assistant)
+interface SpeakableSchemaProps {
+  url: string;
+  headline: string;
+  description: string;
+  speakableCssSelectors?: string[];
+}
+
+export function generateSpeakableSchema(props: SpeakableSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': props.url,
+    url: props.url,
+    name: props.headline,
+    description: props.description,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: props.speakableCssSelectors || [
+        'h1',
+        '[data-speakable="true"]',
+        '.speakable-content',
+      ],
+    },
+    publisher: defaultPublisher,
+  };
+}
+
+// Aggregate rating for products/services
+interface AggregateRatingSchemaProps {
+  itemName: string;
+  itemType?: string;
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+  worstRating?: number;
+}
+
+export function generateAggregateRatingSchema(props: AggregateRatingSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': props.itemType || 'Product',
+    name: props.itemName,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: props.ratingValue,
+      reviewCount: props.reviewCount,
+      bestRating: props.bestRating || 5,
+      worstRating: props.worstRating || 1,
+    },
+  };
+}
+
