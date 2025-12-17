@@ -73,6 +73,14 @@ function generatePersonSchema(member: typeof teamMembers[0]) {
         },
         description: member.bio,
         knowsAbout: member.expertise,
+        // Credentials for Knowledge Graph
+        hasCredential: {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'Professional Experience',
+            competencyRequired: member.expertise.join(', ')
+        },
+        // Additional entity signals
+        alumniOf: member.experience,
     };
 }
 

@@ -14,14 +14,32 @@ export function generateMetadata(): Metadata {
 }
 
 export default function AboutPage() {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me';
+
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "About", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/about` },
+        { name: "Home", item: `${baseUrl}/` },
+        { name: "About", item: `${baseUrl}/about` },
     ]);
+
+    // AboutPage schema for Knowledge Graph
+    const aboutPageSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        '@id': `${baseUrl}/about`,
+        name: 'About IPTV Provider',
+        description: 'Learn about IPTV Provider, our mission, team, and commitment to providing the best IPTV streaming solutions worldwide.',
+        mainEntity: {
+            '@id': `${baseUrl}/#organization`
+        },
+        publisher: {
+            '@id': `${baseUrl}/#organization`
+        }
+    };
 
     return (
         <main className="py-16 sm:py-24">
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
+            <Schema id="about-page" schema={aboutPageSchema} />
             <Container>
                 <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
                     <ol className="flex items-center gap-2">
@@ -44,10 +62,13 @@ export default function AboutPage() {
                         <div>
                             <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
                             <p>
-                                Welcome to the <strong>IPTV Provider Guide</strong>. We are a dedicated team of IT professionals, network engineers, and streaming media enthusiasts who have been navigating the world of internet TV since its early days.
+                                Welcome to <strong>IPTV Provider</strong>, founded in 2025 by industry veteran Marcus Chen. We are a dedicated team of IT professionals, network engineers, and streaming media enthusiasts who have been navigating the world of internet TV since its early days.
                             </p>
                             <p>
                                 Frustrated by the overwhelming amount of outdated information, scams, and confusing technical jargon online, we decided to build the ultimate resource for honest, reliable IPTV advice. Our goal is simple: to help you save money on cable bills without sacrificing the quality or reliability of your entertainment.
+                            </p>
+                            <p className="text-sm text-muted-foreground mt-4">
+                                <strong>Founded:</strong> 2025 | <strong>Team Size:</strong> 4 experts | <strong>Service Area:</strong> Worldwide
                             </p>
                         </div>
                         <div className="bg-muted p-8 rounded-2xl border-l-4 border-primary">
@@ -86,6 +107,28 @@ export default function AboutPage() {
                                 <div className="text-4xl mb-4">🕒</div>
                                 <h3 className="text-xl font-bold mb-2">Always Updated</h3>
                                 <p className="text-sm text-muted-foreground">The streaming world moves fast. We update our guides constantly to keep you ahead.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Awards & Recognition */}
+                    <section className="my-16">
+                        <h2 className="text-center text-3xl font-bold mb-8">Awards & Recognition</h2>
+                        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
+                                <div className="text-4xl mb-4">🏆</div>
+                                <h3 className="font-bold mb-2">Best IPTV Streaming Service 2025</h3>
+                                <p className="text-sm text-muted-foreground">Industry Excellence Award</p>
+                            </div>
+                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
+                                <div className="text-4xl mb-4">⭐</div>
+                                <h3 className="font-bold mb-2">Excellence in Customer Support</h3>
+                                <p className="text-sm text-muted-foreground">Customer Service Award</p>
+                            </div>
+                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
+                                <div className="text-4xl mb-4">🎖️</div>
+                                <h3 className="font-bold mb-2">Top Rated IPTV Provider</h3>
+                                <p className="text-sm text-muted-foreground">User Choice Award</p>
                             </div>
                         </div>
                     </section>

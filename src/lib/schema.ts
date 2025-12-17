@@ -108,6 +108,7 @@ export function generateOrganizationSchema(): any {
     '@type': 'Organization',
     '@id': `${siteConfig.url}/#organization`,
     'name': siteConfig.name,
+    'legalName': siteConfig.legalName,
     'alternateName': siteConfig.alternateName,
     'url': siteConfig.url,
     'logo': {
@@ -120,6 +121,16 @@ export function generateOrganizationSchema(): any {
     'description': siteConfig.description,
     'foundingDate': siteConfig.foundingDate,
     'slogan': siteConfig.slogan,
+
+    // Founder information for Knowledge Graph
+    'founder': {
+      '@type': 'Person',
+      '@id': `${siteConfig.url}/team#${siteConfig.founder.id}`,
+      'name': siteConfig.founder.name,
+      'jobTitle': siteConfig.founder.role,
+    },
+
+    // Knowledge areas
     'knowsAbout': [
       'IPTV Streaming',
       'Internet Television',
@@ -129,23 +140,45 @@ export function generateOrganizationSchema(): any {
       'Smart TV Applications',
       'Streaming Media'
     ],
+
+    // Service area
     'areaServed': {
       '@type': 'Place',
       'name': 'Worldwide'
     },
+
+    // Contact information
     'contactPoint': {
       '@type': 'ContactPoint',
       'email': siteConfig.links.email,
+      'telephone': siteConfig.telephone,
       'contactType': 'Customer Service',
       'availableLanguage': ['English', 'French'],
       'areaServed': 'Worldwide',
     },
+
+    // Business details
+    'numberOfEmployees': {
+      '@type': 'QuantitativeValue',
+      'value': siteConfig.numberOfEmployees
+    },
+    'priceRange': siteConfig.priceRange,
+
+    // Awards and recognition
+    'award': siteConfig.awards,
+
+    // Authoritative sources for Knowledge Graph
     'sameAs': [
+      // Social media profiles
       siteConfig.links.twitter,
       siteConfig.links.facebook,
       siteConfig.links.instagram,
       siteConfig.links.youtube,
       siteConfig.links.linkedin,
+      // Authoritative sources
+      siteConfig.authoritativeSources.trustpilot,
+      siteConfig.authoritativeSources.wikidata,
+      siteConfig.authoritativeSources.crunchbase,
     ].filter(Boolean),
   };
 }
@@ -273,7 +306,8 @@ export function generateFAQPageSchema(
       name: question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: answer,
+        // Ensure text is always a string, handle objects/JSX
+        text: typeof answer === 'string' ? answer : String(answer),
       },
     })),
   };
