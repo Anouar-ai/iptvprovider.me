@@ -1,5 +1,4 @@
-import { google } from 'googleapis';
-import { JWT } from 'google-auth-library';
+import { google, Auth } from 'googleapis';
 
 export type IndexingType = 'URL_UPDATED' | 'URL_DELETED';
 
@@ -24,7 +23,7 @@ export class GoogleIndexingService {
         return JSON.parse(decodedKey);
     }
 
-    private async getAuthClient(): Promise<JWT> {
+    private async getAuthClient(): Promise<Auth.JWT> {
         const credentials = this.getCredentials();
         const jwtClient = new google.auth.JWT(
             credentials.client_email,
