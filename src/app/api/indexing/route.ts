@@ -1,58 +1,38 @@
-
 import { NextRequest, NextResponse } from 'next/server'
-import { google } from 'googleapis'
+import { indexingService } from '@/lib/google-indexing'
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { url } = body;
+    const { url, urls, type = 'URL_UPDATED' } = body;
 
-    if (!url) {
-      return NextResponse.json({ error: 'URL is required' }, { status: 400 });
+    if (!url && (!urls || !Array.isArray(urls) || urls.length === 0)) {
+      return NextResponse.json({ error: 'URL or URLs array is required' }, { status: 400 });
     }
 
-    if (!process.env.GOOGLE_INDEXING_SERVICE_ACCOUNT_BASE64) {
-        throw new Error("Google service account credentials are not set in environment variables.");
+    if (urls && Array.isArray(urls) && urls.length > 0) {
+      // Batch processing
+      const results = await indexingService.publishBatch(urls, type);
+      const failed = results.filter(r => r.status === 'failed');
+
+      return NextResponse.json({
+        success: true,
+        total: results.length,
+        failed_count: failed.length,
+        results: results
+      });
+    } else {
+      // Single URL processing
+      const result = await indexingService.publishUrl(url, type);
+
+      if (result.status === 'failed') {
+        return NextResponse.json({ error: result.message }, { status: result.code || 500 });
+      }
+
+      return NextResponse.json(result);
     }
-
-    // Decode the Base64 service account key
-    const decodedKey = Buffer.from(process.env.GOOGLE_INDEXING_SERVICE_ACCOUNT_BASE64, 'base64').toString('utf-8');
-    const credentials = JSON.parse(decodedKey);
-
-    const jwtClient = new google.auth.JWT(
-      credentials.client_email,
-      undefined,
-      credentials.private_key,
-      ['https://www.googleapis.com/auth/indexing'], // The required scope
-      undefined
-    );
-
-    const tokens = await jwtClient.authorize();
-
-    const options = {
-      url: 'https://indexing.googleapis.com/v3/urlNotifications:publish',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${tokens.access_token}`,
-      },
-      data: {
-        url: url,
-        type: 'URL_UPDATED',
-      },
-    };
-
-    const response = await fetch(options.url, {
-      method: options.method,
-      headers: options.headers,
-      body: JSON.stringify(options.data),
-    });
-
-    const result = await response.json();
-
-    return NextResponse.json(result);
   } catch (error) {
-    console.error('Indexing Error:', error);
+    console.error('Indexing API Error:', error);
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
     return NextResponse.json({ error: 'Internal Server Error', details: errorMessage }, { status: 500 });
   }
