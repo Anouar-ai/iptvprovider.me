@@ -1,44 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { bingIndexingService } from '@/lib/bing-indexing';
 
 export async function POST(req: NextRequest) {
   try {
-    const { urls } = await req.json();
+    const body = await req.json();
+    const { url, urls } = body;
 
-    if (!urls || !Array.isArray(urls)) {
+    // Validate input (accept either single 'url' or array 'urls')
+    if (!url && (!urls || !Array.isArray(urls) || urls.length === 0)) {
       return NextResponse.json(
-        { error: 'Invalid request. "urls" must be an array of strings.' },
+        { error: 'Invalid request. Provide "url" (string) or "urls" (array of strings).' },
         { status: 400 }
       );
     }
 
-    const host = 'www.iptvprovider.me';
-    const key = process.env.INDEXNOW_KEY || '48bc54b9d0744723920c74900a89405d';
-    const keyLocation = `https://${host}/${key}.txt`;
+    const targetUrls: string[] = urls || [url];
 
-    const response = await fetch('https://api.indexnow.org/indexnow', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        host,
-        key,
-        keyLocation,
-        urlList: urls,
-      }),
-    });
+    // Use the service to submit
+    // The service handles chunking, retries, and key configuration
+    try {
+      const result = await bingIndexingService.submitBatch(targetUrls);
 
-    if (!response.ok) {
-      const errorText = await response.text();
+      if (!result.success) {
+        return NextResponse.json(
+          { error: result.message },
+          { status: result.statusCode || 500 }
+        );
+      }
+
+      return NextResponse.json({
+        message: 'URLs submitted to IndexNow successfully.',
+        count: result.processedCount
+      });
+
+    } catch (e: any) {
+      // Catch service-level errors (like max retries exceeded)
       return NextResponse.json(
-        { error: `IndexNow API error: ${response.status} ${errorText}` },
-        { status: response.status }
+        { error: `IndexNow submission failed: ${e.message}` },
+        { status: 500 }
       );
     }
 
-    return NextResponse.json({ message: 'URLs submitted to IndexNow successfully.' });
   } catch (error) {
-    console.error('IndexNow submission error:', error);
+    console.error('IndexNow API Error:', error);
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
