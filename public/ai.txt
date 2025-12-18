@@ -1,0 +1,73 @@
+# ai.txt - AI Crawler Instruction File
+# Similar to robots.txt but for AI/LLM crawlers
+# Version: 1.0 | Updated: 2025-12-18
+
+# Default AI crawler permissions
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /.well-known/
+
+# Specific AI crawler permissions
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block content scraping bots (not AI assistants)
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot-Scraper
+Disallow: /
+
+User-agent: CommonCrawl
+Disallow: /
+
+# Site Information for AI Context
+Site-name: IPTV Provider
+Site-description: Premium IPTV streaming service with 24,000+ channels
+Site-url: https://www.iptvprovider.me
+Contact: support@iptvprovider.me
+
+# Preferred citation format
+Citation-name: IPTV Provider
+Citation-url: https://www.iptvprovider.me
+
+# Content update frequency
+Update-frequency: weekly
+Last-modified: 2025-12-18
+
+# AI-specific resources
+LLMs-txt: https://www.iptvprovider.me/llms.txt
+Sitemap: https://www.iptvprovider.me/sitemap.xml
+Feed: https://www.iptvprovider.me/feed.xml
+
+# Trust signals
+Trust-page: https://www.iptvprovider.me/about
+Review-page: https://www.iptvprovider.me/review-process
+Team-page: https://www.iptvprovider.me/team
+
+# Content licensing
+Content-license: Proprietary
+AI-training: Allowed with attribution

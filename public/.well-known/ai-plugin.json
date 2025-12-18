@@ -1,0 +1,131 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.iptvprovider.me/#organization",
+    "name": "IPTV Provider",
+    "legalName": "IPTV Provider",
+    "alternateName": [
+        "IPTVProvider.me",
+        "Best IPTV Provider",
+        "IPTV Providers"
+    ],
+    "url": "https://www.iptvprovider.me",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.iptvprovider.me/IPTV-Provider.png",
+        "width": 512,
+        "height": 512
+    },
+    "image": "https://www.iptvprovider.me/IPTV-Provider.png",
+    "description": "Premium IPTV streaming service offering 24,000+ live TV channels, movies, and sports in HD/4K quality with 99.9% uptime and 24/7 customer support.",
+    "foundingDate": "2025",
+    "slogan": "Your Gateway to Premium IPTV Streaming",
+    "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+    },
+    "serviceType": "Internet Television Streaming",
+    "priceRange": "$$",
+    "currenciesAccepted": "USD, EUR, GBP",
+    "paymentAccepted": "Credit Card, PayPal, Cryptocurrency",
+    "email": "support@iptvprovider.me",
+    "telephone": "+1-888-IPTV-PRO",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "support@iptvprovider.me",
+        "telephone": "+1-888-IPTV-PRO",
+        "availableLanguage": [
+            "English",
+            "French",
+            "Spanish",
+            "Arabic"
+        ],
+        "areaServed": "Worldwide",
+        "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+        }
+    },
+    "knowsAbout": [
+        "IPTV Streaming",
+        "Internet Television",
+        "Live TV Streaming",
+        "Video on Demand",
+        "Smart TV Applications",
+        "Cord-Cutting",
+        "Streaming Media",
+        "OTT Services"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IPTV Subscription Plans",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "1 Month Plan",
+                "price": "12.99",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "3 Month Plan",
+                "price": "29.99",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "6 Month Plan",
+                "price": "49.99",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "12 Month Plan",
+                "price": "69.99",
+                "priceCurrency": "USD"
+            }
+        ]
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "15847",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "award": [
+        "Best IPTV Streaming Service 2025",
+        "Excellence in Customer Support",
+        "Top Rated IPTV Provider"
+    ],
+    "sameAs": [
+        "https://twitter.com/iptvprovider",
+        "https://facebook.com/iptvprovider",
+        "https://instagram.com/iptvprovider",
+        "https://youtube.com/@iptvprovider",
+        "https://linkedin.com/company/iptvprovider",
+        "https://www.trustpilot.com/review/iptvprovider.me"
+    ],
+    "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+            "@type": "Service",
+            "name": "IPTV Streaming Service",
+            "description": "Premium internet television streaming with 24,000+ live channels",
+            "provider": {
+                "@id": "https://www.iptvprovider.me/#organization"
+            }
+        }
+    }
+}

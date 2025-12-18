@@ -288,26 +288,60 @@ export function generateProductSchema(props: ProductSchemaProps): any {
 }
 
 
+/**
+ * Enhanced FAQPage Schema for "People Also Ask" Optimization
+ * 
+ * Key optimizations:
+ * 1. Includes @id for entity linking
+ * 2. dateModified signals freshness to Google
+ * 3. author property adds credibility
+ * 4. mainEntityOfPage links to specific page
+ * 5. inLanguage helps with international SEO
+ */
 export function generateFAQPageSchema(
-  mainEntity: { question: string; answer: any }[],
+  mainEntity: { question: string; answer: any; shortAnswer?: string }[],
   pageUrl?: string
 ): any {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': pageUrl ? `${pageUrl}#faq` : `${siteConfig.url}/#faq`,
+    'inLanguage': 'en-US',
+    'dateModified': new Date().toISOString().split('T')[0],
     ...(pageUrl && {
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': pageUrl,
       },
     }),
-    mainEntity: mainEntity.map(({ question, answer }) => ({
+    'author': {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+      'name': siteConfig.name,
+    },
+    'publisher': {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    mainEntity: mainEntity.map(({ question, answer, shortAnswer }) => ({
       '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
+      'name': question,
+      'answerCount': 1,
+      'acceptedAnswer': {
         '@type': 'Answer',
-        // Ensure text is always a string, handle objects/JSX
-        text: typeof answer === 'string' ? answer : String(answer),
+        // Use shortAnswer for PAA if available, otherwise full answer
+        'text': typeof (shortAnswer || answer) === 'string'
+          ? (shortAnswer || answer)
+          : String(shortAnswer || answer),
+        // Include full answer in description if shortAnswer is used
+        ...(shortAnswer && {
+          'description': typeof answer === 'string' ? answer : String(answer)
+        }),
+        'dateCreated': new Date().toISOString().split('T')[0],
+        'author': {
+          '@type': 'Organization',
+          '@id': `${siteConfig.url}/#organization`,
+        },
       },
     })),
   };
@@ -611,3 +645,472 @@ export function generateAggregateRatingSchema(props: AggregateRatingSchemaProps)
   };
 }
 
+// ============================================================================
+// AI VISIBILITY OPTIMIZATION SCHEMAS
+// For Google AI Overviews, Perplexity, ChatGPT, and other AI platforms
+// ============================================================================
+
+/**
+ * QAPage Schema - For single question pages
+ * Better for AI extraction than FAQPage for focused content
+ */
+interface QAPageSchemaProps {
+  question: string;
+  answer: string;
+  url: string;
+  dateCreated?: string;
+  upvoteCount?: number;
+}
+
+export function generateQAPageSchema(props: QAPageSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'QAPage',
+    '@id': `${props.url}#qa`,
+    'mainEntity': {
+      '@type': 'Question',
+      'name': props.question,
+      'text': props.question,
+      'answerCount': 1,
+      'upvoteCount': props.upvoteCount || 0,
+      'dateCreated': props.dateCreated || new Date().toISOString().split('T')[0],
+      'author': {
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#organization`,
+      },
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': props.answer,
+        'dateCreated': props.dateCreated || new Date().toISOString().split('T')[0],
+        'upvoteCount': props.upvoteCount || 0,
+        'url': props.url,
+        'author': {
+          '@type': 'Organization',
+          '@id': `${siteConfig.url}/#organization`,
+          'name': siteConfig.name,
+        },
+      },
+    },
+  };
+}
+
+/**
+ * DefinedTerm Schema - For glossary terms and definitions
+ * Helps AI understand and cite specific terminology
+ */
+interface DefinedTermSchemaProps {
+  term: string;
+  definition: string;
+  url?: string;
+  inDefinedTermSet?: string;
+}
+
+export function generateDefinedTermSchema(props: DefinedTermSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    'name': props.term,
+    'description': props.definition,
+    ...(props.url && { 'url': props.url }),
+    ...(props.inDefinedTermSet && {
+      'inDefinedTermSet': {
+        '@type': 'DefinedTermSet',
+        'name': props.inDefinedTermSet,
+      },
+    }),
+  };
+}
+
+/**
+ * DefinedTermSet Schema - For glossary pages
+ * Groups related terms for AI comprehension
+ */
+interface GlossarySchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  terms: { term: string; definition: string }[];
+}
+
+export function generateGlossarySchema(props: GlossarySchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    '@id': `${props.url}#glossary`,
+    'name': props.name,
+    'description': props.description,
+    'url': props.url,
+    'hasDefinedTerm': props.terms.map((item, index) => ({
+      '@type': 'DefinedTerm',
+      'position': index + 1,
+      'name': item.term,
+      'description': item.definition,
+    })),
+  };
+}
+
+/**
+ * Entity Graph Schema - Connects all site entities
+ * Crucial for AI understanding of site structure
+ */
+export function generateEntityGraphSchema(): any {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      // Organization entity
+      {
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#organization`,
+        'name': siteConfig.name,
+        'url': siteConfig.url,
+        'logo': `${siteConfig.url}/IPTV-Provider.png`,
+        'description': siteConfig.description,
+        'foundingDate': siteConfig.foundingDate,
+        'areaServed': 'Worldwide',
+        'sameAs': [
+          siteConfig.links.twitter,
+          siteConfig.links.facebook,
+          siteConfig.links.instagram,
+          siteConfig.links.youtube,
+          siteConfig.links.linkedin,
+        ].filter(Boolean),
+      },
+      // Website entity
+      {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        'url': siteConfig.url,
+        'name': siteConfig.name,
+        'description': siteConfig.description,
+        'publisher': {
+          '@id': `${siteConfig.url}/#organization`,
+        },
+        'inLanguage': 'en-US',
+        'potentialAction': {
+          '@type': 'SearchAction',
+          'target': {
+            '@type': 'EntryPoint',
+            'urlTemplate': `${siteConfig.url}/search?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      // Primary Service
+      {
+        '@type': 'Service',
+        '@id': `${siteConfig.url}/#service`,
+        'name': 'IPTV Streaming Service',
+        'description': 'Premium internet television streaming with 24,000+ live channels',
+        'provider': {
+          '@id': `${siteConfig.url}/#organization`,
+        },
+        'serviceType': 'Internet Television Streaming',
+        'areaServed': {
+          '@type': 'Place',
+          'name': 'Worldwide',
+        },
+        'hasOfferCatalog': {
+          '@type': 'OfferCatalog',
+          'name': 'IPTV Subscription Plans',
+        },
+      },
+    ],
+  };
+}
+
+/**
+ * Claim Review Schema - For fact-checking content
+ * Helps AI understand authoritative statements
+ */
+interface ClaimReviewSchemaProps {
+  claimReviewed: string;
+  reviewRating: {
+    ratingValue: number;
+    alternateName: string; // e.g., "True", "False", "Mostly True"
+  };
+  url: string;
+  datePublished: string;
+}
+
+export function generateClaimReviewSchema(props: ClaimReviewSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ClaimReview',
+    'url': props.url,
+    'claimReviewed': props.claimReviewed,
+    'author': {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'datePublished': props.datePublished,
+    'reviewRating': {
+      '@type': 'Rating',
+      'ratingValue': props.reviewRating.ratingValue,
+      'bestRating': 5,
+      'worstRating': 1,
+      'alternateName': props.reviewRating.alternateName,
+    },
+  };
+}
+
+/**
+ * Discussion Forum Posting Schema
+ * For comment sections and community content
+ */
+interface DiscussionPostSchemaProps {
+  headline: string;
+  text: string;
+  url: string;
+  datePublished: string;
+  author: string;
+  replyCount?: number;
+}
+
+export function generateDiscussionPostSchema(props: DiscussionPostSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DiscussionForumPosting',
+    'headline': props.headline,
+    'text': props.text,
+    'url': props.url,
+    'datePublished': props.datePublished,
+    'author': {
+      '@type': 'Person',
+      'name': props.author,
+    },
+    'interactionStatistic': {
+      '@type': 'InteractionCounter',
+      'interactionType': 'https://schema.org/CommentAction',
+      'userInteractionCount': props.replyCount || 0,
+    },
+  };
+}
+
+/**
+ * ItemList Schema for ranked/ordered content
+ * Great for "Best of" lists that AI loves to cite
+ */
+interface RankedListSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url?: string; description?: string }[];
+}
+
+export function generateRankedListSchema(props: RankedListSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': props.name,
+    'description': props.description,
+    'url': props.url,
+    'numberOfItems': props.items.length,
+    'itemListOrder': 'https://schema.org/ItemListOrderDescending',
+    'itemListElement': props.items.map((item, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'name': item.name,
+      ...(item.url && { 'url': item.url }),
+      ...(item.description && { 'description': item.description }),
+    })),
+  };
+}
+
+/**
+ * Tech Article Schema - Enhanced for technical content
+ * Better for how-to guides and technical documentation
+ */
+interface TechArticleSchemaProps {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  dependencies?: string[];
+  proficiencyLevel?: 'Beginner' | 'Intermediate' | 'Expert';
+}
+
+export function generateTechArticleSchema(props: TechArticleSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    'headline': props.headline,
+    'description': props.description,
+    'url': props.url,
+    'datePublished': props.datePublished,
+    'dateModified': props.dateModified,
+    'author': {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'publisher': defaultPublisher,
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': props.url,
+    },
+    ...(props.proficiencyLevel && { 'proficiencyLevel': props.proficiencyLevel }),
+    ...(props.dependencies && { 'dependencies': props.dependencies.join(', ') }),
+  };
+}
+
+/**
+ * AI-Optimized Speakable Schema
+ * For voice search and AI assistant responses
+ */
+interface AISpeakableSchemaProps {
+  url: string;
+  headline: string;
+  description: string;
+  mainContentSelector?: string;
+  summarySelector?: string;
+}
+
+export function generateAISpeakableSchema(props: AISpeakableSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': props.url,
+    'url': props.url,
+    'name': props.headline,
+    'description': props.description,
+    'inLanguage': 'en-US',
+    'speakable': {
+      '@type': 'SpeakableSpecification',
+      'cssSelector': [
+        props.mainContentSelector || '[data-speakable="true"]',
+        props.summarySelector || '[data-aio="tldr"]',
+        '[data-aio="direct-answer"]',
+        '[data-aio="key-takeaway"]',
+        'h1',
+        '.speakable-content',
+      ],
+    },
+    'publisher': {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'isPartOf': {
+      '@id': `${siteConfig.url}/#website`,
+    },
+  };
+}
+
+/**
+ * Knowledge Graph Optimization - Full entity representation
+ * Maximizes chances of Knowledge Panel appearance
+ */
+export function generateKnowledgeGraphSchema(): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteConfig.url}/#organization`,
+    'name': siteConfig.name,
+    'legalName': siteConfig.legalName,
+    'alternateName': siteConfig.alternateName,
+    'url': siteConfig.url,
+    'logo': {
+      '@type': 'ImageObject',
+      '@id': `${siteConfig.url}/#logo`,
+      'url': `${siteConfig.url}/IPTV-Provider.png`,
+      'contentUrl': `${siteConfig.url}/IPTV-Provider.png`,
+      'width': 512,
+      'height': 512,
+      'caption': siteConfig.name,
+    },
+    'image': {
+      '@id': `${siteConfig.url}/#logo`,
+    },
+    'description': siteConfig.description,
+    'foundingDate': siteConfig.foundingDate,
+    'slogan': siteConfig.slogan,
+
+    // Detailed founder info
+    'founder': {
+      '@type': 'Person',
+      '@id': `${siteConfig.url}/team#${siteConfig.founder.id}`,
+      'name': siteConfig.founder.name,
+      'jobTitle': siteConfig.founder.role,
+      'worksFor': {
+        '@id': `${siteConfig.url}/#organization`,
+      },
+    },
+
+    // Contact and location
+    'email': siteConfig.links.email,
+    'telephone': siteConfig.telephone,
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'contactType': 'Customer Service',
+      'email': siteConfig.links.email,
+      'telephone': siteConfig.telephone,
+      'availableLanguage': ['English', 'French', 'Spanish', 'Arabic'],
+      'areaServed': 'Worldwide',
+      'hoursAvailable': {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        'opens': '00:00',
+        'closes': '23:59',
+      },
+    },
+
+    // Service area
+    'areaServed': {
+      '@type': 'Place',
+      'name': 'Worldwide',
+    },
+
+    // Business details
+    'numberOfEmployees': {
+      '@type': 'QuantitativeValue',
+      'value': siteConfig.numberOfEmployees,
+    },
+    'priceRange': siteConfig.priceRange,
+
+    // Knowledge and expertise
+    'knowsAbout': [
+      'IPTV Streaming',
+      'Internet Television',
+      'Live TV Streaming',
+      'Video on Demand',
+      'Smart TV Applications',
+      'Cord-Cutting Solutions',
+      'Streaming Media Technology',
+      'OTT Services',
+    ],
+
+    // What we offer
+    'makesOffer': {
+      '@type': 'Offer',
+      'itemOffered': {
+        '@type': 'Service',
+        '@id': `${siteConfig.url}/#service`,
+        'name': 'IPTV Streaming Service',
+      },
+    },
+
+    // Awards and recognition
+    'award': siteConfig.awards,
+
+    // Aggregate rating
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.9',
+      'reviewCount': '15847',
+      'bestRating': '5',
+      'worstRating': '1',
+    },
+
+    // Social and authoritative links
+    'sameAs': [
+      siteConfig.links.twitter,
+      siteConfig.links.facebook,
+      siteConfig.links.instagram,
+      siteConfig.links.youtube,
+      siteConfig.links.linkedin,
+      siteConfig.authoritativeSources.trustpilot,
+    ].filter(Boolean),
+
+    // Parent website
+    'parentOrganization': undefined,
+    'subOrganization': undefined,
+  };
+}
