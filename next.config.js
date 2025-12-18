@@ -69,6 +69,17 @@ const nextConfig = {
   reactStrictMode: true,
   async headers() {
     return [
+      // Prevent indexing of API routes
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      // Global security headers
       {
         source: '/:path*',
         headers: [
