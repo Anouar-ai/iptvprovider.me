@@ -68,6 +68,16 @@ export async function GET() {
         },
     ];
 
+    // Helper function to escape XML special characters
+    const escapeXml = (str: string) => {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
+    };
+
     // Generate RSS 2.0 feed
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" 
@@ -75,20 +85,20 @@ export async function GET() {
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>${siteConfig.name} Blog</title>
+    <title>${escapeXml(siteConfig.name)} Blog</title>
     <link>${baseUrl}/blog</link>
-    <description>${siteConfig.description}</description>
+    <description>${escapeXml(siteConfig.description)}</description>
     <language>en-US</language>
     <lastBuildDate>${now}</lastBuildDate>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>${baseUrl}/IPTV-Provider.png</url>
-      <title>${siteConfig.name}</title>
+      <title>${escapeXml(siteConfig.name)}</title>
       <link>${baseUrl}</link>
     </image>
-    <copyright>Copyright ${new Date().getFullYear()} ${siteConfig.name}</copyright>
-    <managingEditor>${siteConfig.links.email} (${siteConfig.name} Team)</managingEditor>
-    <webMaster>${siteConfig.links.email} (${siteConfig.name} Team)</webMaster>
+    <copyright>Copyright ${new Date().getFullYear()} ${escapeXml(siteConfig.name)}</copyright>
+    <managingEditor>${siteConfig.links.email} (${escapeXml(siteConfig.name)} Team)</managingEditor>
+    <webMaster>${siteConfig.links.email} (${escapeXml(siteConfig.name)} Team)</webMaster>
     <category>IPTV</category>
     <category>Streaming</category>
     <category>Technology</category>
@@ -101,7 +111,7 @@ ${blogPosts.map(post => `
       <description><![CDATA[${post.description}]]></description>
       <pubDate>${post.pubDate}</pubDate>
       <category>${post.category}</category>
-      <dc:creator>${siteConfig.name} Team</dc:creator>
+      <dc:creator>${escapeXml(siteConfig.name)} Team</dc:creator>
       <content:encoded><![CDATA[
         <p>${post.description}</p>
         <p><a href="${baseUrl}/blog/${post.slug}">Read the full article on ${siteConfig.name}</a></p>
