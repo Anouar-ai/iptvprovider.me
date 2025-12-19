@@ -118,7 +118,8 @@ export class BrandConsistencyValidator {
         );
 
         // Check alternate names
-        if (alternateName.length === 0) {
+        const alternateNames = Array.isArray(alternateName) ? alternateName : [];
+        if (alternateNames.length === 0) {
             this.addWarning(
                 'name',
                 'No alternate names defined',
@@ -128,12 +129,12 @@ export class BrandConsistencyValidator {
             this.addValidation(
                 'Alternate names defined',
                 true,
-                `${alternateName.length} alternate name(s) configured`
+                `${alternateNames.length} alternate name(s) configured`
             );
         }
 
         // Validate name doesn't have inconsistent casing
-        const hasInconsistentCasing = alternateName.some(alt =>
+        const hasInconsistentCasing = alternateNames.some(alt =>
             alt.toLowerCase() === name.toLowerCase() && alt !== name
         );
 

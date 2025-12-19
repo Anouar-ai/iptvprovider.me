@@ -213,7 +213,7 @@ class SchemaValidator {
         console.log(`${colors.cyan}🔍 Validating Schema.org Markup...${colors.reset}\n`);
 
         // Test Organization Schema
-        this.testSchema('Organization', schema.organizationSchema);
+        this.testSchema('Organization', schema.generateOrganizationSchema());
 
         // Test Website Schema
         this.testSchema('WebSite', schema.generateWebSiteSchema());
