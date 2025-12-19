@@ -134,7 +134,7 @@ export class BrandConsistencyValidator {
         }
 
         // Validate name doesn't have inconsistent casing
-        const hasInconsistentCasing = alternateNames.some(alt =>
+        const hasInconsistentCasing = alternateNames.some((alt: string) =>
             alt.toLowerCase() === name.toLowerCase() && alt !== name
         );
 

@@ -42,7 +42,7 @@ export function generateWebSiteSchema(): any {
     '@id': `${siteConfig.url}/#website`,
     'url': siteConfig.url,
     'name': siteConfig.name,
-    'alternateName': ["IPTV Providers", "best iptv provider"],
+    'alternateName': ["IPTVProvider.me"],
     'publisher': {
       '@id': `${siteConfig.url}/#organization`,
     },
@@ -253,6 +253,7 @@ export function generateSoftwareApplicationSchema(props: {
   name: string;
   operatingSystem: string;
   applicationCategory?: string;
+  aggregateRating?: { ratingValue: string; ratingCount: string }; // Only pass if you have real, verified ratings
 }) {
   return {
     '@context': 'https://schema.org',
@@ -265,11 +266,14 @@ export function generateSoftwareApplicationSchema(props: {
       price: '0',
       priceCurrency: 'USD',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '2547',
-    },
+    // Only include aggregateRating if real, verified ratings are provided
+    ...(props.aggregateRating && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: props.aggregateRating.ratingValue,
+        ratingCount: props.aggregateRating.ratingCount,
+      },
+    }),
   };
 }
 
@@ -1131,14 +1135,7 @@ export function generateKnowledgeGraphSchema(): any {
     // Awards and recognition
     'award': siteConfig.awards,
 
-    // Aggregate rating
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '15847',
-      'bestRating': '5',
-      'worstRating': '1',
-    },
+    // Aggregate rating removed - only add if you have real, verified reviews from third-party sources
 
     // Social and authoritative links
     'sameAs': [
@@ -1178,13 +1175,7 @@ export function generateBrandSchema(): any {
     'image': `${siteConfig.url}/IPTV-Provider.png`,
     'description': siteConfig.description,
     'slogan': siteConfig.slogan,
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '15847',
-      'bestRating': '5',
-      'worstRating': '1',
-    },
+    // Aggregate rating removed - only add if you have real, verified reviews from third-party sources
   };
 }
 
