@@ -13,7 +13,7 @@ import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
-import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema } from "@/lib/schema";
+import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema, generateBrandSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     'best IPTV',
     'IPTV provider',
     'IPTV',
+    'streaming service',
+    'live TV',
+    'VOD',
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -64,9 +67,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  // Canonical and alternate language URLs for international SEO
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      'en-US': siteConfig.url,
+      'en-GB': siteConfig.url,
+      'x-default': siteConfig.url,
+    },
+  },
+  // Enhanced OpenGraph tags for Knowledge Graph verification
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    alternateLocale: ['en_GB', 'en_CA'],
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: `${siteConfig.name} — IPTV Service in USA, UK & Worldwide`,
@@ -80,6 +94,9 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
     ],
+    // Additional OpenGraph tags for brand verification
+    emails: [siteConfig.links.email],
+    phoneNumbers: [siteConfig.telephone],
   },
   twitter: {
     card: 'summary_large_image',
@@ -118,7 +135,12 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.ico',
   },
-
+  // Additional metadata for brand signals
+  other: {
+    'og:brand': siteConfig.name,
+    'og:legal_name': siteConfig.legalName,
+    'og:founding_date': siteConfig.foundingDate,
+  },
   category: 'technology',
 };
 
@@ -138,6 +160,19 @@ export default function RootLayout({
         <Schema id="organization" schema={generateOrganizationSchema()} />
         <Schema id="website" schema={generateWebSiteSchema()} />
         <Schema id="navigation" schema={generateAdvancedSitelinksSchema()} />
+        <Schema id="brand" schema={generateBrandSchema()} />
+
+        {/* Additional meta tags for brand verification and Knowledge Graph */}
+        <meta property="og:site_name" content={siteConfig.name} />
+        <meta property="og:type" content="website" />
+        <meta property="business:contact_data:street_address" content="Digital Services" />
+        <meta property="business:contact_data:locality" content="Global" />
+        <meta property="business:contact_data:email" content={siteConfig.links.email} />
+        <meta property="business:contact_data:phone_number" content={siteConfig.telephone} />
+        <meta property="business:contact_data:website" content={siteConfig.url} />
+        <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
+        <meta name="application-name" content={siteConfig.name} />
+
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://iptvwell.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

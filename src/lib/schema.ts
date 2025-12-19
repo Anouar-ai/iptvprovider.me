@@ -111,16 +111,41 @@ export function generateOrganizationSchema(): any {
     'legalName': siteConfig.legalName,
     'alternateName': siteConfig.alternateName,
     'url': siteConfig.url,
+
+    // Explicit brand entity for Knowledge Graph
+    'brand': {
+      '@type': 'Brand',
+      'name': siteConfig.name,
+      'logo': `${siteConfig.url}/IPTV-Provider.png`,
+      'slogan': siteConfig.slogan,
+    },
+
+    // Unique identifier for entity disambiguation
+    'identifier': {
+      '@type': 'PropertyValue',
+      'propertyID': 'URL',
+      'value': siteConfig.url,
+    },
+
     'logo': {
       '@type': 'ImageObject',
       'url': `${siteConfig.url}/IPTV-Provider.png`,
       'width': 512,
       'height': 512,
+      'caption': `${siteConfig.name} Logo`,
     },
     'image': `${siteConfig.url}/IPTV-Provider.png`,
     'description': siteConfig.description,
     'foundingDate': siteConfig.foundingDate,
     'slogan': siteConfig.slogan,
+
+    // Address (even virtual businesses should have one)
+    'address': {
+      '@type': 'PostalAddress',
+      'addressCountry': 'US',
+      'addressLocality': 'Global',
+      'addressRegion': 'Worldwide',
+    },
 
     // Founder information for Knowledge Graph
     'founder': {
@@ -147,15 +172,31 @@ export function generateOrganizationSchema(): any {
       'name': 'Worldwide'
     },
 
-    // Contact information
-    'contactPoint': {
-      '@type': 'ContactPoint',
-      'email': siteConfig.links.email,
-      'telephone': siteConfig.telephone,
-      'contactType': 'Customer Service',
-      'availableLanguage': ['English', 'French'],
-      'areaServed': 'Worldwide',
-    },
+    // Enhanced contact information with multiple contact points
+    'contactPoint': [
+      {
+        '@type': 'ContactPoint',
+        'email': siteConfig.links.email,
+        'telephone': siteConfig.telephone,
+        'contactType': 'Customer Service',
+        'availableLanguage': ['English', 'French'],
+        'areaServed': 'Worldwide',
+      },
+      {
+        '@type': 'ContactPoint',
+        'email': siteConfig.links.email,
+        'contactType': 'Sales',
+        'availableLanguage': ['English'],
+        'areaServed': 'Worldwide',
+      },
+      {
+        '@type': 'ContactPoint',
+        'email': siteConfig.links.email,
+        'contactType': 'Technical Support',
+        'availableLanguage': ['English', 'French'],
+        'areaServed': 'Worldwide',
+      }
+    ],
 
     // Business details
     'numberOfEmployees': {
@@ -1114,3 +1155,36 @@ export function generateKnowledgeGraphSchema(): any {
     'subOrganization': undefined,
   };
 }
+
+/**
+ * Standalone Brand Schema for explicit brand declaration
+ * Critical for Google Knowledge Graph brand verification
+ */
+export function generateBrandSchema(): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Brand',
+    '@id': `${siteConfig.url}/#brand`,
+    'name': siteConfig.name,
+    'alternateName': siteConfig.alternateName,
+    'url': siteConfig.url,
+    'logo': {
+      '@type': 'ImageObject',
+      'url': `${siteConfig.url}/IPTV-Provider.png`,
+      'width': 512,
+      'height': 512,
+      'caption': `${siteConfig.name} Logo`,
+    },
+    'image': `${siteConfig.url}/IPTV-Provider.png`,
+    'description': siteConfig.description,
+    'slogan': siteConfig.slogan,
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.9',
+      'reviewCount': '15847',
+      'bestRating': '5',
+      'worstRating': '1',
+    },
+  };
+}
+
