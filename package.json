@@ -10,7 +10,12 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate:schemas": "tsx scripts/validate-schemas.ts",
+    "seo:validate": "tsx scripts/seo-tools.ts validate",
+    "seo:score": "tsx scripts/seo-tools.ts score",
+    "seo:brand": "tsx scripts/seo-tools.ts brand",
+    "seo:all": "tsx scripts/seo-tools.ts all"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "1.24.0",
@@ -78,6 +83,7 @@
     "prettier-plugin-tailwindcss": "0.6.14",
     "tailwindcss": "3.4.17",
     "tailwindcss-animate": "1.0.7",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   },
   "overrides": {
