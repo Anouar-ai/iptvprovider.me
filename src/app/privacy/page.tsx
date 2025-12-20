@@ -5,7 +5,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | IPTV Provider',
+    title: 'Privacy Policy',
     description: 'Your privacy is important to us. Read our privacy policy to understand how we collect, use, and protect your information.',
 };
 

@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, FileWarning, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Legal Disclaimer | Is IPTV Legal? | IPTV Provider',
+    title: 'Legal Disclaimer | Is IPTV Legal? ',
     description: 'Read our legal disclaimer regarding IPTV services. We do not host content. We provide educational information about streaming technology.',
 };
 
