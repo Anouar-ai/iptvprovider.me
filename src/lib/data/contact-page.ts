@@ -1,7 +1,7 @@
 
 import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
-import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateContactPageSchema } from '@/lib/schema';
 import type { BreadcrumbList } from 'schema-dts';
 
 
@@ -14,22 +14,32 @@ export const getContactPageData = cache(
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent("Contact IPTV Provider Support");
 
     const breadcrumbSchemaPromise: Promise<BreadcrumbList> = Promise.resolve(generateBreadcrumbSchema([
-        { name: "Home", item: `${baseUrl}/` },
-        { name: "Contact Us", item: `${baseUrl}/contact` }
+      { name: "Home", item: `${baseUrl}/` },
+      { name: "Contact Us", item: `${baseUrl}/contact` }
     ]));
+
+    // ContactPage schema for enhanced rich results
+    const contactPageSchemaPromise = Promise.resolve(generateContactPageSchema({
+      url: `${baseUrl}/contact`,
+      name: 'Contact Us | IPTV Provider',
+      description: 'Get in touch with our team. Whether you have a question about our IPTV Provider or need support, we\'re here to help.',
+    }));
 
     // Await all promises in parallel for maximum efficiency
     const [
       semanticContent,
       breadcrumbSchema,
+      contactPageSchema,
     ] = await Promise.all([
       semanticContentPromise,
       breadcrumbSchemaPromise,
+      contactPageSchemaPromise,
     ]);
 
-    return { 
-      semanticContent, 
+    return {
+      semanticContent,
       breadcrumbSchema,
+      contactPageSchema,
     };
   },
   ['contact-page-data'], // Unique cache key

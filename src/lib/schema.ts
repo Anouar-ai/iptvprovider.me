@@ -218,8 +218,7 @@ export function generateOrganizationSchema(): any {
       siteConfig.links.linkedin,
       // Authoritative sources
       siteConfig.authoritativeSources.trustpilot,
-      siteConfig.authoritativeSources.wikidata,
-      siteConfig.authoritativeSources.crunchbase,
+      // TODO: Add wikidata and crunchbase when profiles are created
     ].filter(Boolean),
   };
 }
@@ -1179,3 +1178,85 @@ export function generateBrandSchema(): any {
   };
 }
 
+/**
+ * ContactPage Schema for enhanced SERP visibility
+ * Links to Organization for entity graph consistency
+ */
+interface ContactPageSchemaProps {
+  url: string;
+  name?: string;
+  description?: string;
+}
+
+export function generateContactPageSchema(props: ContactPageSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${props.url}#contact`,
+    'url': props.url,
+    'name': props.name || 'Contact Us',
+    'description': props.description || `Contact ${siteConfig.name} for questions, support, or inquiries.`,
+    'mainEntity': {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'publisher': {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'isPartOf': {
+      '@id': `${siteConfig.url}/#website`,
+    },
+  };
+}
+
+/**
+ * BlogPosting Schema - More specific than Article for blog content
+ * Includes wordCount for AI content depth signals
+ */
+interface BlogPostingSchemaProps {
+  headline: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  authorName?: string;
+  authorId?: string;
+  url: string;
+  wordCount?: number;
+  articleSection?: string;
+  keywords?: string[];
+}
+
+export function generateBlogPostingSchema(props: BlogPostingSchemaProps): any {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${props.url}#article`,
+    'headline': props.headline,
+    'description': props.description,
+    'image': props.image ? `${siteConfig.url}${props.image}` : undefined,
+    'datePublished': props.datePublished,
+    'dateModified': props.dateModified,
+    ...(props.wordCount && { 'wordCount': props.wordCount }),
+    ...(props.articleSection && { 'articleSection': props.articleSection }),
+    ...(props.keywords && { 'keywords': props.keywords.join(', ') }),
+    'author': props.authorName ? {
+      '@type': 'Person',
+      '@id': props.authorId ? `${siteConfig.url}/team#${props.authorId}` : undefined,
+      'name': props.authorName,
+      'url': `${siteConfig.url}/team`,
+    } : {
+      '@type': 'Organization',
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'publisher': {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': props.url,
+    },
+    'isPartOf': {
+      '@id': `${siteConfig.url}/blog#collection`,
+    },
+  };
+}

@@ -145,7 +145,7 @@ export default function TeamPage() {
                             The Team Behind Your Trusted IPTV Guides
                         </h1>
                         <p className="text-xl text-muted-foreground">
-                            Our team has collectively <strong>tested 100+ IPTV providers</strong> and helped <strong>over 50,000 users</strong> cut the cord. Every review, guide, and recommendation comes from real-world experience.
+                            Our team has collectively <strong>tested 100+ IPTV providers</strong> and helped <strong>thousands of users</strong> cut the cord. Every review, guide, and recommendation comes from real-world experience.
                         </p>
                     </header>
 
@@ -160,7 +160,7 @@ export default function TeamPage() {
                             <div className="text-sm text-muted-foreground">Providers Tested</div>
                         </div>
                         <div className="text-center p-6 border rounded-xl bg-muted/30">
-                            <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+                            <div className="text-3xl font-bold text-primary mb-2">Many</div>
                             <div className="text-sm text-muted-foreground">Users Helped</div>
                         </div>
                         <div className="text-center p-6 border rounded-xl bg-muted/30">

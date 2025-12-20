@@ -5,7 +5,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | IPTV Provider Guide',
+    title: 'Privacy Policy | IPTV Provider',
     description: 'Your privacy is important to us. Read our privacy policy to understand how we collect, use, and protect your information.',
 };
 
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
 
                     <section className="space-y-8">
                         <p>
-                            At <strong>The IPTV Provider Guide</strong> ("we", "us", or "our"), accesible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.
+                            At <strong>IPTV Provider</strong> ("we", "us", or "our"), accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by us and how we use it.
                         </p>
 
                         <div>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                                 Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
                             </p>
                             <p>
-                                The IPTV Provider Guide does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+                                IPTV Provider does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
                             </p>
                         </div>
 

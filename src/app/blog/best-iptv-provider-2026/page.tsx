@@ -496,7 +496,7 @@ export default async function BestIPTVProvider2025() {
                             <div>
                                 <h3 className="font-semibold text-lg">About the IPTV Expert Team</h3>
                                 <p className="text-sm text-muted-foreground mt-2">
-                                    Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping 50,000+ cord-cutters find reliable streaming solutions. All our reviews are based on real-world testing—no paid placements, no affiliate bias.
+                                    Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping thousands of cord-cutters find reliable streaming solutions. All our reviews are based on real-world testing—no paid placements, no affiliate bias.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
                                     Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026

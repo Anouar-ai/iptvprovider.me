@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, FileWarning, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Legal Disclaimer | Is IPTV Legal? | IPTV Provider Guide',
+    title: 'Legal Disclaimer | Is IPTV Legal? | IPTV Provider',
     description: 'Read our legal disclaimer regarding IPTV services. We do not host content. We provide educational information about streaming technology.',
 };
 
@@ -26,7 +26,7 @@ export default function LegalPage() {
                         <FileWarning className="h-5 w-5" />
                         <AlertTitle className="text-lg font-bold">Important Notice</AlertTitle>
                         <AlertDescription className="text-base">
-                            The IPTV Provider Guide does NOT host, provide, archive, store, distribute, or stream any media content. We do not own, manage, control, run, maintain, or have any access to the servers or entities involved in indexing/telecasting media of any kind.
+                            IPTV Provider operates as a streaming service provider. We offer IPTV subscription services that provide access to live TV channels and video-on-demand content through licensed streaming technology.
                         </AlertDescription>
                     </Alert>
 
@@ -70,7 +70,7 @@ export default function LegalPage() {
                                 <div>
                                     <h3 className="text-lg font-bold mb-2">Do you sell IPTV subscriptions?</h3>
                                     <p className="text-sm">
-                                        No. We are an informational blog and review site. We do not sell, resell, or distribute any IPTV subscriptions or content.
+                                        Yes, we offer IPTV subscription services. IPTV Provider sells subscription packages that provide access to live TV channels and video-on-demand content. View our <a href="/pricing" className="text-primary hover:underline">pricing page</a> for available plans.
                                     </p>
                                 </div>
                             </div>

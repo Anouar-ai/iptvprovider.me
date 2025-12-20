@@ -9,7 +9,7 @@ export const siteConfig = {
   legalName: "IPTV Provider",
   foundingDate: "2025",
   slogan: "Your Gateway to Premium IPTV Streaming",
-  alternateName: ["IPTVP"],
+  alternateName: ["IPTVProvider.me"],
 
   // Founder information for Knowledge Graph
   founder: {
@@ -18,12 +18,8 @@ export const siteConfig = {
     role: "Founder & Lead Technical Reviewer"
   },
 
-  // Awards and recognition
-  awards: [
-    "Best IPTV Streaming Service 2025",
-    "Excellence in Customer Support",
-    "Top Rated IPTV Provider"
-  ],
+  // Awards: Add back when verifiable citations are available
+  awards: [] as string[],
 
   // Contact information
   telephone: "+1-888-IPTV-PRO",
@@ -38,12 +34,11 @@ export const siteConfig = {
     email: "support@iptvprovider.me",
   },
 
-  // Authoritative sources for Knowledge Graph sameAs
   authoritativeSources: {
     trustpilot: "https://www.trustpilot.com/review/iptvprovider.me",
-    // Add Wikidata and other sources after creation
-    wikidata: "",
-    crunchbase: "",
+    // TODO: Add when external profiles are created
+    // wikidata: "https://www.wikidata.org/wiki/Q...",
+    // crunchbase: "https://www.crunchbase.com/organization/iptvprovider",
   },
 
   // Business information

@@ -24,11 +24,12 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function ContactPage() {
-    const { breadcrumbSchema, semanticContent } = await getContactPageData();
+    const { breadcrumbSchema, contactPageSchema, semanticContent } = await getContactPageData();
 
     return (
         <>
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
+            <Schema id="contact-page" schema={contactPageSchema} />
             <SemanticContent
                 primaryEntity={semanticContent.primaryEntity}
                 relatedEntities={semanticContent.relatedEntities}

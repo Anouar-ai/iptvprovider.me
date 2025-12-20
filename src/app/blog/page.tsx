@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
-import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateBreadcrumbSchema, generateCollectionPageSchema } from "@/lib/schema";
 import { Schema } from "@/components/shared/Schema";
 
 export function generateMetadata(): Metadata {
@@ -79,14 +79,28 @@ const blogPosts = [
 ];
 
 export default function BlogIndex() {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me';
+
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
+        { name: "Home", item: `${siteUrl}/` },
+        { name: "Blog", item: `${siteUrl}/blog` },
     ]);
+
+    // CollectionPage schema for article carousel eligibility
+    const collectionSchema = generateCollectionPageSchema({
+        name: "IPTV Blog: Guides, Comparisons & Expert Tips",
+        description: "Expert guides on IPTV providers, device setup, troubleshooting, and industry news. Stay updated with the latest in streaming technology.",
+        url: `${siteUrl}/blog`,
+        items: blogPosts.map(post => ({
+            name: post.title,
+            url: `${siteUrl}/blog/${post.slug}`,
+        })),
+    });
 
     return (
         <section className="py-16 sm:py-24">
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
+            <Schema id="collection" schema={collectionSchema} />
             <Container>
                 <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
                     <ol className="flex items-center gap-2">

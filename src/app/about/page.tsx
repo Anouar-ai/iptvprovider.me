@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: 'About The IPTV Provider Guide | Our Mission & Team',
-        description: 'Learn about the team behind the IPTV Provider Guide. We are a group of IT experts and cord-cutting enthusiasts dedicated to helping you find the best streaming solutions.',
+        title: 'About IPTV Provider | Our Mission & Team',
+        description: 'Learn about the team behind IPTV Provider. We are IT experts and cord-cutting enthusiasts dedicated to helping you find the best streaming solutions.',
         canonical: '/about',
     });
 }
@@ -111,27 +111,6 @@ export default function AboutPage() {
                         </div>
                     </section>
 
-                    {/* Awards & Recognition */}
-                    <section className="my-16">
-                        <h2 className="text-center text-3xl font-bold mb-8">Awards & Recognition</h2>
-                        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
-                                <div className="text-4xl mb-4">🏆</div>
-                                <h3 className="font-bold mb-2">Best IPTV Streaming Service 2025</h3>
-                                <p className="text-sm text-muted-foreground">Industry Excellence Award</p>
-                            </div>
-                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
-                                <div className="text-4xl mb-4">⭐</div>
-                                <h3 className="font-bold mb-2">Excellence in Customer Support</h3>
-                                <p className="text-sm text-muted-foreground">Customer Service Award</p>
-                            </div>
-                            <div className="p-6 rounded-xl bg-card border shadow-sm text-center">
-                                <div className="text-4xl mb-4">🎖️</div>
-                                <h3 className="font-bold mb-2">Top Rated IPTV Provider</h3>
-                                <p className="text-sm text-muted-foreground">User Choice Award</p>
-                            </div>
-                        </div>
-                    </section>
 
                     <section className="bg-primary/5 rounded-2xl p-8 my-16 text-center">
                         <h2 className="text-2xl font-bold mb-4">Join Thousands of Happy Streamers</h2>
