@@ -229,13 +229,13 @@ export class BrandConsistencyValidator {
         }
 
         // Validate telephone
-        if (!telephone || telephone === '') {
+        if (typeof telephone !== 'string' || telephone.trim().length === 0) {
             this.addWarning(
                 'contact',
                 'Telephone number missing',
                 'Add phone number for Knowledge Graph completeness'
             );
-        } else if (telephone.length > 0) {
+        } else {
             // Check if telephone is in international format
             if (!telephone.startsWith('+')) {
                 this.addWarning(
