@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Box, Settings, Power, CheckCircle2 } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Setup MAG Box for IPTV (2026 Portal Guide)";
+    const title = "How to Setup MAG Box for IPTV (2025 Portal Guide)";
     const description = "Setup guide for MAG 250, 254, 322, and 420. How to register your MAC address and enter the Portal URL. Get 4K channels on your Infomir device.";
 
     return {
@@ -77,7 +77,7 @@ export default async function MAGPage() {
         headline: "How to Setup IPTV on MAG Box (Portal Method)",
         description: "Official guide for Infomir MAG devices.",
         image: "/api/og?title=MAG Box Guide",
-        datePublished: "2026-01-12",
+        datePublished: "2025-01-12",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/mag`,
@@ -208,7 +208,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Setup MAG Box for IPTV (2026 Portal Guide)"
+   - Title: "How to Setup MAG Box for IPTV (2025 Portal Guide)"
    - Description: "Setup guide for MAG 250, 254, 322, and 420..."
    - Keywords: "mag box setup", "infomir", "iptv portal url"
 

@@ -10,8 +10,8 @@ import Link from "next/link";
 import { CheckCircle2, XCircle, DollarSign, Tv, Zap, Shield } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV vs Cable TV 2026: Which is Better? (Complete Comparison)";
-    const description = "Detailed comparison of IPTV vs Cable TV: cost, channels, quality, installation, and more. Save $1,500+/year by switching. Updated Jan 2026.";
+    const title = "IPTV vs Cable TV 2025: Which is Better? (Complete Comparison)";
+    const description = "Detailed comparison of IPTV vs Cable TV: cost, channels, quality, installation, and more. Save $1,500+/year by switching. Updated Jan 2025.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-cable-tv`;
     const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/IPTV-vs-Cable-TV.webp`;
 
@@ -42,9 +42,9 @@ export function generateMetadata(): Metadata {
                 url: imageUrl,
                 width: 1200,
                 height: 630,
-                alt: 'IPTV vs Cable TV Comparison 2026',
+                alt: 'IPTV vs Cable TV Comparison 2025',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -92,10 +92,10 @@ const faqs = [
 
 export default async function IPTVvsCableTV() {
     const articleSchema = generateArticleSchema({
-        headline: "IPTV vs Cable TV 2026: Complete Comparison Guide",
+        headline: "IPTV vs Cable TV 2025: Complete Comparison Guide",
         description: "Comprehensive comparison of IPTV and Cable TV covering cost, channels, quality, and more",
         image: "/IPTV-vs-Cable-TV.webp",
-        datePublished: "2026-01-01",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-cable-tv`,
@@ -134,13 +134,13 @@ export default async function IPTVvsCableTV() {
                             <span>⚖️ Comparison • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            IPTV vs Cable TV: Which is Better in 2026?
+                            IPTV vs Cable TV: Which is Better in 2025?
                         </h1>
 
                         <div className="relative w-full aspect-video mb-8">
                             <Image
                                 src="/IPTV-vs-Cable-TV.webp"
-                                alt="IPTV vs Cable TV Comparison Chart 2026 - Cost & Features Analysis"
+                                alt="IPTV vs Cable TV Comparison Chart 2025 - Cost & Features Analysis"
                                 fill
                                 priority
                                 className="rounded-xl shadow-2xl border border-muted object-cover"
@@ -247,7 +247,7 @@ export default async function IPTVvsCableTV() {
                             <div className="border-2 rounded-xl p-6">
                                 <div className="flex items-center gap-3 mb-4">
                                     <DollarSign className="h-8 w-8 text-primary" />
-                                    <h3 className="font-bold text-2xl">1. Cost Analysis (2026)</h3>
+                                    <h3 className="font-bold text-2xl">1. Cost Analysis (2025)</h3>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-6">
@@ -467,8 +467,8 @@ export default async function IPTVvsCableTV() {
                     <section className="mb-16 max-w-3xl mx-auto">
                         <h2 className="font-headline text-2xl font-bold mb-6">Related Guides</h2>
                         <div className="grid md:grid-cols-2 gap-4">
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2026</h3>
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2025</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 providers compared</p>
                             </Link>
                             <Link href="/blog/iptv-vs-streaming-services" className="p-6 border rounded-lg hover:bg-muted transition-colors">
@@ -502,7 +502,7 @@ export default async function IPTVvsCableTV() {
                                     Our team has been helping people cut the cord since 2018. We've analyzed pricing, channel lineups, and user experiences from both IPTV and cable TV providers to give you unbiased, data-driven comparisons.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>
@@ -517,14 +517,14 @@ export default async function IPTVvsCableTV() {
                - BreadcrumbList: Implemented
             
             2. Meta Tags:
-               - Title: "IPTV vs Cable TV 2026: Which is Better?..."
+               - Title: "IPTV vs Cable TV 2025: Which is Better?..."
                - Description: "Comparison of cost, channels, quality..."
-               - Keywords: "iptv vs cable", "cut the cord 2026"
+               - Keywords: "iptv vs cable", "cut the cord 2025"
                - Canonical: Self-referencing
             
             3. Internal Linking:
                - Linked to /pricing
-               - Linked to /blog/best-iptv-provider-2026
+               - Linked to /blog/best-iptv-provider-2025
                - Linked to /iptv-guide
             */}
         </>

@@ -35,15 +35,15 @@ export const topicClusters: TopicCluster[] = [
         id: 'iptv-streaming',
         pillar: {
             url: '/iptv-guide',
-            title: 'Complete IPTV Guide 2026',
+            title: 'Complete IPTV Guide 2025',
             description: 'Everything you need to know about IPTV streaming',
             type: 'pillar',
             keywords: ['iptv', 'internet television', 'streaming', 'cord cutting'],
         },
         clusters: [
             {
-                url: '/blog/best-iptv-provider-2026',
-                title: 'Best IPTV Provider 2026',
+                url: '/blog/best-iptv-provider-2025',
+                title: 'Best IPTV Provider 2025',
                 description: 'Top rated IPTV services compared',
                 type: 'cluster',
                 keywords: ['best iptv', 'iptv providers', 'iptv review'],

@@ -112,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/best-iptv-provider-2026`,
+      url: `${baseUrl}/blog/best-iptv-provider-2025`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -169,12 +169,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    {
-      url: `${baseUrl}/review-process`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
+    // review-process page excluded: mixed identity issue (seller vs reviewer)
     {
       url: `${baseUrl}/legal`,
       lastModified: new Date(),

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Smartphone, Apple, AppWindow, Play } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Watch IPTV on iPhone & iPad (2026 iOS Guide)";
+    const title = "How to Watch IPTV on iPhone & iPad (2025 iOS Guide)";
     const description = "The best IPTV apps for iOS. Install IPTV Smarters, GSE Smart IPTV, or iPlayTV on your iPhone or iPad. No jailbreak required.";
 
     return {
@@ -77,7 +77,7 @@ export default async function iOSPage() {
         headline: "How to Watch IPTV on iPhone and iPad",
         description: "Guide to GSE Smart IPTV and Smarters on iOS.",
         image: "/api/og?title=iOS IPTV Guide",
-        datePublished: "2026-01-09",
+        datePublished: "2025-01-09",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/ios`,
@@ -208,7 +208,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Watch IPTV on iPhone & iPad (2026 iOS Guide)"
+   - Title: "How to Watch IPTV on iPhone & iPad (2025 iOS Guide)"
    - Description: "The best IPTV apps for iOS..."
    - Keywords: "iptv iphone", "gse smart iptv", "iptv smarters ios"
 

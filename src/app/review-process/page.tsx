@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Check, Shield, Server, Tv, Banknote, Headphones } from 'lucide-react';
+import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 
-export const metadata: Metadata = {
-    title: 'How We Evaluate IPTV Providers | Our Review Methodology',
-    description: 'Our strict review process ensures we only recommend the best IPTV services. Learn about our testing criteria: reliability, channel selection, support, and value.',
-};
+export function generateMetadata(): Metadata {
+    return generatePageMetadata({
+        title: "How We Evaluate IPTV Providers | Our Review Methodology",
+        description: "Our strict review process ensures we only recommend the best IPTV services. Learn about our testing criteria: reliability, channel selection, support, and value.",
+        canonical: "/review-process",
+        noIndex: true, // Noindex due to mixed identity issue (seller vs reviewer)
+    });
+}
 
 export default function ReviewProcessPage() {
     return (

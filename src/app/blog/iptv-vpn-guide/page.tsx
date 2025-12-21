@@ -9,10 +9,10 @@ import Link from "next/link";
 import { CheckCircle2, XCircle, Shield, Zap, Globe, Lock } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV VPN Guide 2026: Do You Need a VPN for IPTV? (Complete Guide)";
-    const description = "Complete guide to using VPN with IPTV. Learn if you need a VPN, best VPNs for IPTV, setup instructions, and how to prevent ISP throttling. Updated Jan 2026.";
+    const title = "IPTV VPN Guide 2025: Do You Need a VPN for IPTV? (Complete Guide)";
+    const description = "Complete guide to using VPN with IPTV. Learn if you need a VPN, best VPNs for IPTV, setup instructions, and how to prevent ISP throttling. Updated Jan 2025.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV VPN Guide 2026')}`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV VPN Guide 2025')}`;
 
     return {
         ...generatePageMetadata({
@@ -41,9 +41,9 @@ export function generateMetadata(): Metadata {
                 url: imageUrl,
                 width: 1200,
                 height: 630,
-                alt: 'IPTV VPN Guide 2026',
+                alt: 'IPTV VPN Guide 2025',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -91,10 +91,10 @@ const faqs = [
 
 export default async function IPTVVPNGuide() {
     const articleSchema = generateArticleSchema({
-        headline: "IPTV VPN Guide 2026: Complete Guide to Using VPN with IPTV",
+        headline: "IPTV VPN Guide 2025: Complete Guide to Using VPN with IPTV",
         description: "Comprehensive guide covering VPN usage with IPTV, best VPNs, setup, and privacy",
-        image: "/api/og?title=IPTV VPN Guide 2026",
-        datePublished: "2026-01-01",
+        image: "/api/og?title=IPTV VPN Guide 2025",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide`,
@@ -273,7 +273,7 @@ export default async function IPTVVPNGuide() {
 
                     {/* Best VPNs */}
                     <section className="mb-16 max-w-4xl mx-auto">
-                        <h2 className="font-headline text-3xl font-bold mb-8 text-center">Best VPNs for IPTV in 2026</h2>
+                        <h2 className="font-headline text-3xl font-bold mb-8 text-center">Best VPNs for IPTV in 2025</h2>
 
                         <div className="space-y-6">
                             {/* NordVPN */}
@@ -502,7 +502,7 @@ export default async function IPTVVPNGuide() {
                                 <Link href="/pricing">Start IPTV Free Trial</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2026">Compare IPTV Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2025">Compare IPTV Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -519,7 +519,7 @@ export default async function IPTVVPNGuide() {
                                 <h3 className="font-semibold text-lg mb-2">🔧 Troubleshooting Guide</h3>
                                 <p className="text-sm text-muted-foreground">Fix common issues</p>
                             </Link>
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 comparison</p>
                             </Link>
@@ -542,7 +542,7 @@ export default async function IPTVVPNGuide() {
                                     We've tested dozens of VPNs with IPTV services to find the best combinations for speed, privacy, and reliability. Our recommendations are based on real-world testing and user feedback.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>

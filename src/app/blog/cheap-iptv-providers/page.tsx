@@ -10,10 +10,10 @@ import { CheckCircle2, XCircle, AlertTriangle, DollarSign } from "lucide-react";
 import { DirectAnswer } from "@/components/shared/DirectAnswer";
 
 export function generateMetadata(): Metadata {
-    const title = "Cheap IPTV Providers 2026: Best Budget Options Under $15/Month";
-    const description = "Find the best cheap IPTV providers in 2026. Compare budget options under $15/month. Learn what to avoid and how to get quality IPTV for less.";
+    const title = "Cheap IPTV Providers 2025: Best Budget Options Under $15/Month";
+    const description = "Find the best cheap IPTV providers in 2025. Compare budget options under $15/month. Learn what to avoid and how to get quality IPTV for less.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Cheap IPTV Providers 2026')}`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Cheap IPTV Providers 2025')}`;
 
     return {
         ...generatePageMetadata({
@@ -42,9 +42,9 @@ export function generateMetadata(): Metadata {
                 url: imageUrl,
                 width: 1200,
                 height: 630,
-                alt: 'Cheap IPTV Providers 2026',
+                alt: 'Cheap IPTV Providers 2025',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -61,7 +61,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-01-01T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -97,10 +97,10 @@ const faqs = [
 
 export default async function CheapIPTVProviders() {
     const articleSchema = generateArticleSchema({
-        headline: "Cheap IPTV Providers 2026: Best Budget Options Under $15/Month",
+        headline: "Cheap IPTV Providers 2025: Best Budget Options Under $15/Month",
         description: "Comprehensive guide to finding affordable IPTV providers without sacrificing quality",
-        image: "/api/og?title=Cheap IPTV Providers 2026",
-        datePublished: "2026-01-01",
+        image: "/api/og?title=Cheap IPTV Providers 2025",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers`,
@@ -139,12 +139,12 @@ export default async function CheapIPTVProviders() {
                             <span>💰 Budget Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            Best Cheap IPTV Providers 2026
+                            Best Cheap IPTV Providers 2025
                         </h1>
 
                         <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
                             <p className="text-lg leading-relaxed">
-                                <strong>The best cheap IPTV provider in 2026 is IPTVProvider.me because it strikes the perfect balance between price ($15.99/mo) and quality (99.8% uptime), avoiding the common buffering issues found in services under $10/mo.</strong> While ultra-cheap options exist, paying slightly more ensures access to 24,000+ stable channels and responsive support.
+                                <strong>The best cheap IPTV provider in 2025 is IPTVProvider.me because it strikes the perfect balance between price ($15.99/mo) and quality (99.8% uptime), avoiding the common buffering issues found in services under $10/mo.</strong> While ultra-cheap options exist, paying slightly more ensures access to 24,000+ stable channels and responsive support.
                             </p>
                         </div>
 
@@ -471,7 +471,7 @@ export default async function CheapIPTVProviders() {
                                 <Link href="/pricing">Start Free Trial</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2026">Compare All Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2025">Compare All Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -480,8 +480,8 @@ export default async function CheapIPTVProviders() {
                     <section className="mb-16 max-w-3xl mx-auto">
                         <h2 className="font-headline text-2xl font-bold mb-6">Related Guides</h2>
                         <div className="grid md:grid-cols-2 gap-4">
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2026</h3>
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2025</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 providers compared</p>
                             </Link>
                             <Link href="/blog/iptv-vs-cable-tv" className="p-6 border rounded-lg hover:bg-muted transition-colors">
@@ -511,7 +511,7 @@ export default async function CheapIPTVProviders() {
                                     We've tested over 100 IPTV providers across all price ranges to help you find the best value. Our mission is to help cord-cutters save money without sacrificing quality.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>
@@ -526,14 +526,14 @@ export default async function CheapIPTVProviders() {
                - BreadcrumbList: Implemented
             
             2. Meta Tags:
-               - Title: "Cheap IPTV Providers 2026: Best Budget Options..."
+               - Title: "Cheap IPTV Providers 2025: Best Budget Options..."
                - Description: "Find best cheap IPTV under $15..."
                - Keywords: "cheap iptv", "budget iptv", "iptv deals"
                - Canonical: Self-referencing
             
             3. Internal Linking:
                - Linked to /pricing
-               - Linked to /blog/best-iptv-provider-2026
+               - Linked to /blog/best-iptv-provider-2025
                - Linked to /iptv-guide
             */}
         </>

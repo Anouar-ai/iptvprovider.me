@@ -15,22 +15,22 @@ import { DirectAnswer } from "@/components/shared/DirectAnswer";
 import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
-    const title = "Best IPTV Provider 2026 : Top 5 Tested (Real Data + Rankings)";
-    const description = "We tested 50+ IPTV services for 30 days. See which providers have the best channels, uptime, and 4K quality. Updated Jan 2026 with real performance data.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2026`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/Best-IPTV-Provider-in-2026.webp`;
+    const title = "Best IPTV Provider 2025 : Top 5 Tested (Real Data + Rankings)";
+    const description = "We tested 50+ IPTV services for 30 days. See which providers have the best channels, uptime, and 4K quality. Updated Jan 2025 with real performance data.";
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/Best-IPTV-Provider-in-2025.webp`;
 
     return {
         ...generatePageMetadata({
             title,
             description,
-            canonical: "/blog/best-iptv-provider-2026",
+            canonical: "/blog/best-iptv-provider-2025",
         }),
         title: {
             absolute: title,
         },
         keywords: [
-            'best iptv provider 2026',
+            'best iptv provider 2025',
             'iptv service comparison',
             'top iptv providers',
             'iptv streaming service',
@@ -47,9 +47,9 @@ export function generateMetadata(): Metadata {
                 url: imageUrl,
                 width: 1200,
                 height: 630,
-                alt: 'Best IPTV Provider 2026 Comparison',
+                alt: 'Best IPTV Provider 2025 Comparison',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -66,7 +66,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-01-01T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -87,7 +87,7 @@ const faqs = [
         answer: "IPTV Smarters is a free, user-friendly app available on almost all devices. TiviMate is a premium Android-only player ($10/year) known for its modern interface, advanced EPG features, and multi-screen capability. We recommend TiviMate for Firestick/Android users."
     },
     {
-        question: "Is IPTV legal in 2026?",
+        question: "Is IPTV legal in 2025?",
         answer: "IPTV technology itself is 100% legal. However, accessing copyrighted content without a license is illegal. We recommend using IPTV services that respect copyright laws and using a VPN to protect your online privacy."
     },
     {
@@ -126,7 +126,7 @@ export default async function BestIPTVProvider2025() {
     const productSchema = generateProductSchema({
         name: topProvider.name,
         description: `${topProvider.name} - ${topProvider.bestFor}`,
-        image: "/Best-IPTV-Provider-in-2026.webp",
+        image: "/Best-IPTV-Provider-in-2025.webp",
         ratingValue: topProvider.rating.toString(),
         reviewCount: topProvider.reviewCount.toString(),
         price: topProvider.price.monthly.toString(),
@@ -143,19 +143,19 @@ export default async function BestIPTVProvider2025() {
     const faqSchema = generateFAQPageSchema(faqs);
 
     const articleSchema = generateArticleSchema({
-        headline: "Best IPTV Provider in 2026: Real Comparison of Channels, Servers, and Value",
+        headline: "Best IPTV Provider in 2025: Real Comparison of Channels, Servers, and Value",
         description: "Comprehensive comparison of the top 5 IPTV providers based on 30 days of real-world testing",
-        image: "/Best-IPTV-Provider-in-2026.webp",
-        datePublished: "2026-01-01",
+        image: "/Best-IPTV-Provider-in-2025.webp",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2026`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
         { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "Best IPTV Provider 2026", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2026` },
+        { name: "Best IPTV Provider 2025", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025` },
     ]);
 
     return (
@@ -174,7 +174,7 @@ export default async function BestIPTVProvider2025() {
                             <li>/</li>
                             <li><Link href="/blog" className="hover:text-primary">Blog</Link></li>
                             <li>/</li>
-                            <li>Best IPTV Provider 2026</li>
+                            <li>Best IPTV Provider 2025</li>
                         </ol>
                     </nav>
 
@@ -184,13 +184,13 @@ export default async function BestIPTVProvider2025() {
                             <span>🔄 Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            Best IPTV Provider in 2026: The Definitive Ranking
+                            Best IPTV Provider in 2025: The Definitive Ranking
                         </h1>
 
                         <div className="relative w-full aspect-video mb-8">
                             <Image
-                                src="/Best-IPTV-Provider-in-2026.webp"
-                                alt="Best IPTV Provider 2026 - Top 5 Services Comparison Chart & Ranking"
+                                src="/Best-IPTV-Provider-in-2025.webp"
+                                alt="Best IPTV Provider 2025 - Top 5 Services Comparison Chart & Ranking"
                                 fill
                                 priority
                                 className="rounded-xl shadow-2xl border border-muted object-cover"
@@ -200,13 +200,13 @@ export default async function BestIPTVProvider2025() {
 
                         <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
                             <p className="text-lg leading-relaxed">
-                                <strong>The best IPTV provider in 2026 is {topProvider.name} because it consistently delivers 99.9% server uptime, offers over 20,000 live channels (including 4K sports), and provides the most responsive 24/7 customer support compared to 50+ other tested services.</strong> This provider stands out for its "Anti-Freeze" technology and compatibility with all major devices including Fire TV and Android.
+                                <strong>The best IPTV provider in 2025 is {topProvider.name} because it consistently delivers 99.9% server uptime, offers over 20,000 live channels (including 4K sports), and provides the most responsive 24/7 customer support compared to 50+ other tested services.</strong> This provider stands out for its "Anti-Freeze" technology and compatibility with all major devices including Fire TV and Android.
                             </p>
                         </div>
 
                         {/* Engaging Hook / Market Stats */}
                         <p className="text-xl text-muted-foreground mb-4">
-                            With the global IPTV market projected to reach <strong>over $150 billion by 2026</strong> (Source: Market Research Future), choosing a legitimate provider is harder than ever.
+                            With the global IPTV market projected to reach <strong>over $150 billion by 2025</strong> (Source: Market Research Future), choosing a legitimate provider is harder than ever.
                         </p>
 
                         <p className="text-lg text-muted-foreground mb-4">
@@ -224,13 +224,13 @@ export default async function BestIPTVProvider2025() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <CheckCircle2 className="h-5 w-5 text-green-500" />
-                                <span>Updated January 2026</span>
+                                <span>Updated January 2025</span>
                             </div>
                         </div>
 
                         {/* AIO: Direct Answer Block (Redundant but good for schema/parsing) */}
                         <DirectAnswer
-                            question="What is the best IPTV provider in 2026?"
+                            question="What is the best IPTV provider in 2025?"
                             answer={`After rigorous testing, ${topProvider.name} ranked #1 for its superior stability (99.7% uptime), massive channel library (24,000+), and included VPN support. It offers the best price-to-performance ratio.`}
                             bulletPoints={[
                                 "Best Overall: IPTV Provider (99.7% Uptime)",
@@ -244,7 +244,7 @@ export default async function BestIPTVProvider2025() {
                     <nav className="mb-16 max-w-2xl mx-auto bg-muted/30 p-6 rounded-xl">
                         <h2 className="font-semibold text-lg mb-4">Table of Contents</h2>
                         <ol className="space-y-2 text-sm">
-                            <li><a href="#why-2026" className="text-primary hover:underline">1. Why 2026 Changed IPTV</a></li>
+                            <li><a href="#why-2025" className="text-primary hover:underline">1. Why 2025 Changed IPTV</a></li>
                             <li><a href="#methodology" className="text-primary hover:underline">2. Our Testing Methodology</a></li>
                             <li><a href="#top-5" className="text-primary hover:underline">3. Top 5 IPTV Providers</a></li>
                             <li><a href="#comparison" className="text-primary hover:underline">4. Side-by-Side Comparison</a></li>
@@ -253,10 +253,10 @@ export default async function BestIPTVProvider2025() {
                         </ol>
                     </nav>
 
-                    {/* Why 2026 is Different */}
-                    <section id="why-2026" className="mb-16 max-w-3xl mx-auto scroll-mt-20">
-                        <h2 className="font-headline text-3xl font-bold mb-6">Why 2026 Changed Everything for IPTV</h2>
-                        <p className="text-lg mb-6">The IPTV landscape has evolved significantly. Here are the key shifts defining 2026:</p>
+                    {/* Why 2025 is Different */}
+                    <section id="why-2025" className="mb-16 max-w-3xl mx-auto scroll-mt-20">
+                        <h2 className="font-headline text-3xl font-bold mb-6">Why 2025 Changed Everything for IPTV</h2>
+                        <p className="text-lg mb-6">The IPTV landscape has evolved significantly. Here are the key shifts defining 2025:</p>
                         <ul className="space-y-4">
                             <li className="flex gap-3">
                                 <div className="flex-shrink-0 mt-1">
@@ -264,7 +264,7 @@ export default async function BestIPTVProvider2025() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold mb-1">4K is Now Standard</h3>
-                                    <p className="text-muted-foreground">If a service doesn't offer 4K streaming in 2026, it is obsolete. Bandwidth improvements have made UHD streaming accessible to most users.</p>
+                                    <p className="text-muted-foreground">If a service doesn't offer 4K streaming in 2025, it is obsolete. Bandwidth improvements have made UHD streaming accessible to most users.</p>
                                 </div>
                             </li>
                             <li className="flex gap-3">
@@ -349,7 +349,7 @@ export default async function BestIPTVProvider2025() {
 
                     {/* Top 5 Providers */}
                     <section id="top-5" className="mb-16 scroll-mt-20">
-                        <h2 className="font-headline text-3xl font-bold mb-8 text-center">Top 5 IPTV Providers in 2026</h2>
+                        <h2 className="font-headline text-3xl font-bold mb-8 text-center">Top 5 IPTV Providers in 2025</h2>
                         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {iptvProviders.map((provider) => (
                                 <ProviderCard key={provider.id} provider={provider} detailed={provider.rank === 1} />
@@ -397,7 +397,7 @@ export default async function BestIPTVProvider2025() {
                     <section className="mb-16 bg-primary/10 p-8 rounded-xl max-w-4xl mx-auto text-center">
                         <h2 className="font-headline text-3xl font-bold mb-4">Our Final Recommendation</h2>
                         <p className="text-lg mb-6">
-                            After testing 50+ providers, <strong>{topProvider.name}</strong> is the clear winner for 2026. It's not the cheapest, but it's the <strong>best value</strong>—combining the largest channel selection, highest uptime, and true 4K quality.
+                            After testing 50+ providers, <strong>{topProvider.name}</strong> is the clear winner for 2025. It's not the cheapest, but it's the <strong>best value</strong>—combining the largest channel selection, highest uptime, and true 4K quality.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button asChild size="lg" className="text-lg px-8">
@@ -499,7 +499,7 @@ export default async function BestIPTVProvider2025() {
                                     Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping thousands of cord-cutters find reliable streaming solutions. All our reviews are based on real-world testing—no paid placements, no affiliate bias.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>
@@ -515,9 +515,9 @@ export default async function BestIPTVProvider2025() {
                - BreadcrumbList: Implemented
             
             2. Meta Tags:
-               - Title: "Best IPTV Provider 2026 : Top 5 Tested..."
+               - Title: "Best IPTV Provider 2025 : Top 5 Tested..."
                - Description: "We tested 50+ IPTV services..."
-               - Keywords: "best iptv provider 2026", "top iptv providers"
+               - Keywords: "best iptv provider 2025", "top iptv providers"
                - Canonical: Self-referencing
             
             3. Internal Linking:

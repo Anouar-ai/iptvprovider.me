@@ -12,8 +12,8 @@ interface RelatedPost {
 
 const blogPosts: RelatedPost[] = [
     {
-        title: "Best IPTV Provider 2026",
-        slug: "/blog/best-iptv-provider-2026",
+        title: "Best IPTV Provider 2025",
+        slug: "/blog/best-iptv-provider-2025",
         description: "Top 5 tested IPTV providers ranked by uptime, channels, and value",
         category: "Comparison"
     },

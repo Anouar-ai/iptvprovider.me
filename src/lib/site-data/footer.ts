@@ -2,7 +2,6 @@
 export const footerLinks = {
     quickLinks: [
         { name: "About Us", href: "/about" },
-        { name: "Methodology", href: "/review-process" },
         { name: "Pricing", href: "/pricing" },
         { name: "Locations", href: "/locations" },
         { name: "FAQ", href: "/faq" },
@@ -16,7 +15,7 @@ export const footerLinks = {
         { name: "macOS App", href: "/devices/macos" },
     ],
     contact: {
-        address: "123 Digital Street, Lizard City, LC 12345",
+        address: "IPTV Provider — Worldwide",
         email: "support@iptvprovider.me"
     }
 };

@@ -2,12 +2,16 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Schema } from "@/components/shared/Schema";
 import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-    title: 'Privacy Policy',
-    description: 'Your privacy is important to us. Read our privacy policy to understand how we collect, use, and protect your information.',
-};
+export function generateMetadata(): Metadata {
+    return generatePageMetadata({
+        title: "Privacy Policy",
+        description: "Read our privacy policy to understand how we collect, use, and protect your information when using our IPTV service.",
+        canonical: "/privacy",
+    });
+}
 
 export default function PrivacyPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([

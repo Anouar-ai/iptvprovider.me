@@ -6,22 +6,26 @@ import { getCountryById } from "@/lib/countries";
 import { generateBreadcrumbSchema, generateServiceSchema, generateFAQPageSchema } from '@/lib/schema';
 import type { BreadcrumbList, Service, FAQPage } from 'schema-dts';
 
-const getPageFaqs = (name: string) => [
+const getPageFaqs = (country: { name: string; timezone: string; currency: string; language: string }) => [
   {
-    question: `Is your IPTV service available in ${name}?`,
-    answer: `Yes, our IPTV service is fully available and optimized for viewers in ${name}. You get access to local channels as well as our full international lineup.`
+    question: `Is your IPTV service available in ${country.name}?`,
+    answer: `Yes, our IPTV service is fully available and optimized for viewers in ${country.name}. Our service operates 24/7 in your timezone (${country.timezone}), ensuring you can watch your favorite content anytime. Interface available in ${country.language} and English. You get access to local ${country.name} channels as well as our full international lineup of 20,000+ channels.`
   },
   {
-    question: `What payment methods do you accept in ${name}?`,
-    answer: `We accept a variety of payment methods, including major credit cards and cryptocurrencies. All payments are securely processed. For specific options available in ${name}, please proceed to checkout or contact our support team.`
+    question: `What payment methods do you accept in ${country.name}?`,
+    answer: `We accept payments in ${country.currency} and all major international currencies including USD, EUR, and GBP. Payment options include credit/debit cards (Visa, Mastercard, Amex), PayPal, and cryptocurrency. All transactions are encrypted and processed securely.`
   },
   {
-    question: `How fast is the activation process in ${name}?`,
-    answer: `Activation is instant worldwide, including in ${name}. As soon as your payment is confirmed, you will receive your login credentials via email and can start streaming immediately.`
+    question: `How fast is the activation process in ${country.name}?`,
+    answer: `Activation is instant worldwide, including in ${country.name}. As soon as your payment is confirmed, you receive your login credentials via email within minutes. Our automated system works in your timezone (${country.timezone}), so you can start streaming immediately, day or night.`
   },
   {
-    question: `Do I need a VPN to use IPTV in ${name}?`,
-    answer: `While not mandatory, we highly recommend using a VPN in ${name} to ensure your privacy and bypass any potential ISP throttling or blocking, guaranteeing the best possible streaming experience.`
+    question: `Do I need a VPN to use IPTV in ${country.name}?`,
+    answer: `While not mandatory, we recommend using a VPN in ${country.name} to ensure your privacy, bypass potential ISP throttling, and access geo-restricted content. A VPN guarantees the smoothest streaming experience and protects your viewing activity.`
+  },
+  {
+    question: `What channels are available in ${country.name}?`,
+    answer: `In ${country.name}, you get access to all major local channels (in ${country.language}) plus our complete library of 20,000+ international channels. This includes sports, movies, news, entertainment, and kids' content in HD and 4K quality. Channel lineup includes content from USA, UK, Canada, Europe, Middle East, Asia, and more.`
   }
 ];
 
@@ -36,7 +40,7 @@ export const getCountryPageData = cache(
     }
     const { name } = country;
 
-    const pageFaqs = getPageFaqs(name);
+    const pageFaqs = getPageFaqs(country);
 
     // Define all data fetching and processing promises
     const semanticContentPromise: Promise<SemanticContentType> = generateSemanticContent(`IPTV Provider in ${name}`);

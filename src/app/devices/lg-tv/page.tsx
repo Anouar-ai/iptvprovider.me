@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Monitor, CreditCard, Tv, AlertTriangle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Install IPTV on LG Smart TV (2026 WebOS Guide)";
+    const title = "How to Install IPTV on LG Smart TV (2025 WebOS Guide)";
     const description = "The best IPTV players for LG WebOS. Setup guide for IPTV Smarters Pro (if available) or IBO Player. Watch 4K sports on your OLED TV.";
 
     return {
@@ -77,7 +77,7 @@ export default async function LGTVPage() {
         headline: "How to Watch IPTV on LG Smart TV (WebOS)",
         description: "Guide to IPTV Smarters and IBO Player on LG TV.",
         image: "/api/og?title=LG IPTV Guide",
-        datePublished: "2026-01-07",
+        datePublished: "2025-01-07",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/lg-tv`,
@@ -214,7 +214,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Install IPTV on LG Smart TV (2026 WebOS Guide)"
+   - Title: "How to Install IPTV on LG Smart TV (2025 WebOS Guide)"
    - Description: "The best IPTV players for LG WebOS..."
    - Keywords: "iptv lg", "webos iptv", "smart iptv lg"
 

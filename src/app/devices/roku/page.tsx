@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Tv, MonitorSmartphone, Wifi, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Install IPTV on Roku (2026 Guide) | Web Video Caster Method";
+    const title = "How to Install IPTV on Roku (2025 Guide) | Web Video Caster Method";
     const description = "Roku doesn't have a native IPTV app. Learn the best workaround to watch IPTV on Roku using Web Video Caster or Screen Mirroring. 5-minute setup guide.";
 
     return {
@@ -69,10 +69,10 @@ const faqs = [
 
 export default async function RokuPage() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Install IPTV on Roku in 2026 (Working Method)",
+        headline: "How to Install IPTV on Roku in 2025 (Working Method)",
         description: "Complete guide to watching IPTV on Roku using Web Video Caster workaround.",
         image: "/api/og?title=IPTV on Roku Guide",
-        datePublished: "2026-01-10",
+        datePublished: "2025-01-10",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/roku`,
@@ -115,7 +115,7 @@ export default async function RokuPage() {
                                 <span>Roku Setup Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                             </div>
                             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                                How to Watch IPTV on Roku (2026)
+                                How to Watch IPTV on Roku (2025)
                             </h1>
                             <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
                                 <p className="text-lg leading-relaxed">
@@ -218,7 +218,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - ProductSchema: Implemented (Roku Subscription)
 
 2. Meta Tags:
-   - Title: "How to Install IPTV on Roku (2026 Guide) | Web Video Caster Method"
+   - Title: "How to Install IPTV on Roku (2025 Guide) | Web Video Caster Method"
    - Description: "Roku doesn't have a native IPTV app. Learn the best workaround..."
    - Keywords: "iptv for roku", "web video caster", "roku jailbreak"
 

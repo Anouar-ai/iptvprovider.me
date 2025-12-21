@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const title = `Best IPTV Provider in ${country.name} | Reliable Streaming`;
-  const description = `Get the best IPTV Provider in ${country.name}. Enjoy 20,000+ channels, HD/4K quality, and instant activation. Perfect for sports, movies, and TV shows in ${country.name}.`;
+  const description = `Get the best IPTV Provider in ${country.name} (${country.timezone}). 20,000+ HD/4K channels with instant activation. Language: ${country.language}. Payment in ${country.currency} accepted. 24/7 support for ${country.name} viewers.`;
 
   return generatePageMetadata({
     title,
@@ -122,6 +122,32 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               <div className="rounded-lg bg-muted/30 p-6 dark:bg-card/50">
                 <h3 className="mb-2 flex items-center gap-2 font-headline text-xl"><Smartphone size={20} className="text-primary" /> Works on All Devices</h3>
                 <p className="text-muted-foreground">Watch on your Smart TV, Android, iOS, Fire Stick, or computer anywhere in {name}.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Timezone & Currency Info - Unique per country */}
+          <section className="py-8 border-t">
+            <div className="mx-auto max-w-3xl">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-6 bg-muted/30 rounded-lg dark:bg-card/50">
+                  <h3 className="font-headline text-lg font-semibold mb-2">🕐 Service Availability</h3>
+                  <p className="text-muted-foreground">Our IPTV service is available 24/7 in {name}. Your timezone is <strong>{country.timezone}</strong>, and our servers ensure optimal streaming at any hour.</p>
+                </div>
+                <div className="p-6 bg-muted/30 rounded-lg dark:bg-card/50">
+                  <h3 className="font-headline text-lg font-semibold mb-2">🌐 Local Language Support</h3>
+                  <p className="text-muted-foreground">Service available in <strong>{country.language}</strong> and English. Our interface and customer support accommodate viewers in {name}.</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                <div className="p-6 bg-muted/30 rounded-lg dark:bg-card/50">
+                  <h3 className="font-headline text-lg font-semibold mb-2">💳 Payment Methods</h3>
+                  <p className="text-muted-foreground">We accept payments in {country.currency} and major international currencies. Pay securely via credit card, PayPal, or cryptocurrency.</p>
+                </div>
+                <div className="p-6 bg-muted/30 rounded-lg dark:bg-card/50">
+                  <h3 className="font-headline text-lg font-semibold mb-2">📱 All Devices Supported</h3>
+                  <p className="text-muted-foreground">Watch on Smart TV, Android, iOS, Fire Stick, Roku, or computer. Works perfectly with devices available in {name}.</p>
+                </div>
               </div>
             </div>
           </section>

@@ -11,8 +11,8 @@ import { DirectAnswer } from "@/components/shared/DirectAnswer";
 import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV Troubleshooting Guide 2026: Fix Buffering, Freezing & Common Issues";
-    const description = "Complete IPTV troubleshooting guide. Fix buffering, freezing, login errors, and more. Step-by-step solutions for all common IPTV problems. Updated Jan 2026.";
+    const title = "IPTV Troubleshooting Guide 2025: Fix Buffering, Freezing & Common Issues";
+    const description = "Complete IPTV troubleshooting guide. Fix buffering, freezing, login errors, and more. Step-by-step solutions for all common IPTV problems. Updated Jan 2025.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`;
     const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV Troubleshooting Guide')}`;
 
@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV Troubleshooting Guide',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -62,7 +62,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-01-01T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -98,10 +98,10 @@ const faqs = [
 
 export default async function IPTVTroubleshooting() {
     const articleSchema = generateArticleSchema({
-        headline: "IPTV Troubleshooting Guide 2026: Fix Common Issues",
+        headline: "IPTV Troubleshooting Guide 2025: Fix Common Issues",
         description: "Complete guide to troubleshooting IPTV problems including buffering, freezing, and login errors",
         image: "/api/og?title=IPTV Troubleshooting Guide",
-        datePublished: "2026-01-01",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`,
@@ -140,7 +140,7 @@ export default async function IPTVTroubleshooting() {
                             <span>🔧 Troubleshooting • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            IPTV Troubleshooting Guide 2026
+                            IPTV Troubleshooting Guide 2025
                         </h1>
 
                         <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
@@ -357,7 +357,7 @@ export default async function IPTVTroubleshooting() {
                                 <Link href="/pricing">Try Our Service Free for 7 Days</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2026">Compare Top Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2025">Compare Top Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -370,7 +370,7 @@ export default async function IPTVTroubleshooting() {
                                 <h3 className="font-semibold text-lg mb-2">📖 How to Setup IPTV</h3>
                                 <p className="text-sm text-muted-foreground">Complete setup guide</p>
                             </Link>
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 comparison</p>
                             </Link>
@@ -397,7 +397,7 @@ export default async function IPTVTroubleshooting() {
                                     Our support team has resolved over 10,000 IPTV issues. This troubleshooting guide is based on real customer problems and proven solutions that work.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>
@@ -412,14 +412,14 @@ export default async function IPTVTroubleshooting() {
                - BreadcrumbList: Implemented
             
             2. Meta Tags:
-               - Title: "IPTV Troubleshooting Guide 2026: Fix Buffering..."
+               - Title: "IPTV Troubleshooting Guide 2025: Fix Buffering..."
                - Description: "Complete guide to fixing IPTV issues..."
                - Keywords: "iptv buffering", "iptv freezing", "iptv help"
                - Canonical: Self-referencing
             
             3. Internal Linking:
                - Linked to /pricing
-               - Linked to /blog/best-iptv-provider-2026
+               - Linked to /blog/best-iptv-provider-2025
                - Linked to /how-to-setup-iptv
             */}
         </>

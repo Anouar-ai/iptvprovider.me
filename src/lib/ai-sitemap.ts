@@ -135,7 +135,7 @@ export function getAllUrls(): SitemapEntry[] {
     });
 
     const blogPosts = [
-        { slug: 'best-iptv-provider-2026', priority: 0.9 },
+        { slug: 'best-iptv-provider-2025', priority: 0.9 },
         { slug: 'iptv-vs-cable-tv', priority: 0.8 },
         { slug: 'iptv-vs-streaming-services', priority: 0.8 },
         { slug: 'cheap-iptv-providers', priority: 0.8 },

@@ -22,7 +22,7 @@ export const siteConfig = {
   awards: [] as string[],
 
   // Contact information
-  telephone: "+1-888-IPTV-PRO",
+  telephone: "", // REMOVED: Use real verified number or leave empty
 
   // Social media and web presence
   links: {

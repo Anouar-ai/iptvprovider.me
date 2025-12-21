@@ -2,11 +2,15 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, FileWarning, HelpCircle } from 'lucide-react';
+import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-    title: 'Legal Disclaimer | Is IPTV Legal? ',
-    description: 'Read our legal disclaimer regarding IPTV services. We do not host content. We provide educational information about streaming technology.',
-};
+export function generateMetadata(): Metadata {
+    return generatePageMetadata({
+        title: "Legal Disclaimer | Is IPTV Legal?",
+        description: "Read our legal disclaimer about IPTV services. Understand how IPTV technology works and your responsibilities as a user.",
+        canonical: "/legal",
+    });
+}
 
 export default function LegalPage() {
     return (

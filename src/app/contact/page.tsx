@@ -17,7 +17,7 @@ import { generateMetadata as generatePageMetadata } from '@/lib/site-config';
 
 export function generateMetadata(): Metadata {
     return generatePageMetadata({
-        title: "Contact Us | IPTV Provider",
+        title: "Contact Us",
         description: "Get in touch with our team. Whether you have a question about our IPTV Provider or need support, we're here to help.",
         canonical: "/contact",
     });

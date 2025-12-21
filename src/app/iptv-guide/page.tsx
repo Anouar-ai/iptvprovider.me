@@ -9,10 +9,10 @@ import Link from "next/link";
 import { CheckCircle2, Tv, DollarSign, Shield, Zap, Globe, Smartphone, AlertTriangle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "The Complete IPTV Guide 2026: Everything You Need to Know";
-    const description = "Comprehensive guide to IPTV: what it is, how it works, legal considerations, setup guides, provider comparisons, and expert tips. Updated Jan 2026.";
+    const title = "The Complete IPTV Guide 2025: Everything You Need to Know";
+    const description = "Comprehensive guide to IPTV: what it is, how it works, legal considerations, setup guides, provider comparisons, and expert tips. Updated Jan 2025.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/iptv-guide`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Complete IPTV Guide 2026')}`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Complete IPTV Guide 2025')}`;
 
     return {
         ...generatePageMetadata({
@@ -41,9 +41,9 @@ export function generateMetadata(): Metadata {
                 url: imageUrl,
                 width: 1200,
                 height: 630,
-                alt: 'Complete IPTV Guide 2026',
+                alt: 'Complete IPTV Guide 2025',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -107,10 +107,10 @@ const faqs = [
 
 export default async function IPTVGuide() {
     const articleSchema = generateArticleSchema({
-        headline: "The Complete IPTV Guide 2026: Everything You Need to Know About Internet TV",
+        headline: "The Complete IPTV Guide 2025: Everything You Need to Know About Internet TV",
         description: "Comprehensive guide covering IPTV technology, setup, providers, legal considerations, and expert tips",
-        image: "/api/og?title=Complete IPTV Guide 2026",
-        datePublished: "2026-01-01",
+        image: "/api/og?title=Complete IPTV Guide 2025",
+        datePublished: "2025-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/iptv-guide`,
@@ -127,7 +127,7 @@ export default async function IPTVGuide() {
         name: "How to Set Up IPTV",
         description: "Step-by-step guide to setting up IPTV on any device",
         steps: [
-            { name: "Choose a Provider", text: "Select a reputable IPTV provider from our top 5 list", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2026` },
+            { name: "Choose a Provider", text: "Select a reputable IPTV provider from our top 5 list", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025` },
             { name: "Subscribe", text: "Sign up for a plan (monthly or yearly)", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/pricing` },
             { name: "Download App", text: "Install the IPTV app on your device", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/fire-tv` },
             { name: "Enter Credentials", text: "Log in with your username and password", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/iptv-guide` },
@@ -160,7 +160,7 @@ export default async function IPTVGuide() {
                             <span>📚 Complete Guide • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            The Complete IPTV Guide 2026
+                            The Complete IPTV Guide 2025
                         </h1>
 
                         <p className="text-xl text-muted-foreground mb-4">
@@ -293,7 +293,7 @@ export default async function IPTVGuide() {
                             <p className="text-lg font-semibold mb-4">
                                 <strong>Annual Savings:</strong> $840-1,560 by switching to IPTV
                             </p>
-                            <Link href="/blog/best-iptv-provider-2026">
+                            <Link href="/blog/best-iptv-provider-2025">
                                 <Button size="lg">See Top IPTV Providers</Button>
                             </Link>
                         </div>
@@ -374,7 +374,7 @@ export default async function IPTVGuide() {
                             <p className="mb-4">
                                 After testing 50+ providers, we recommend starting with our <strong>#1 pick</strong>—it offers the best balance of channels, stability, and value.
                             </p>
-                            <Link href="/blog/best-iptv-provider-2026">
+                            <Link href="/blog/best-iptv-provider-2025">
                                 <Button>See Our Top 5 Providers</Button>
                             </Link>
                         </div>
@@ -404,7 +404,7 @@ export default async function IPTVGuide() {
                         </ul>
 
                         <div className="grid md:grid-cols-2 gap-4">
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">⚽ Best IPTV for Sports</h3>
                                 <p className="text-sm text-muted-foreground">Top providers for sports streaming</p>
                             </Link>
@@ -637,7 +637,7 @@ export default async function IPTVGuide() {
                                 <Link href="/pricing">Start Your 7-Day Trial</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2026">Compare Top Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2025">Compare Top Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -646,11 +646,11 @@ export default async function IPTVGuide() {
                     <section className="mb-16 max-w-4xl mx-auto">
                         <h2 className="font-headline text-2xl font-bold mb-6 text-center">Related Guides</h2>
                         <div className="grid md:grid-cols-3 gap-4">
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2026</h3>
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2025</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 providers compared</p>
                             </Link>
-                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
                                 <h3 className="font-semibold text-lg mb-2">⚽ Best IPTV for Sports</h3>
                                 <p className="text-sm text-muted-foreground">Sports streaming guide</p>
                             </Link>
@@ -685,7 +685,7 @@ export default async function IPTVGuide() {
                                     Our team has been testing and reviewing IPTV services since 2018. We've evaluated over 200 providers across 5 continents, helping thousands of cord-cutters save money and get better TV. All our guides are based on real-world testing—no paid placements, no affiliate bias.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
                                 </p>
                             </div>
                         </div>

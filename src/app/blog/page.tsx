@@ -21,18 +21,18 @@ export function generateMetadata(): Metadata {
 
 const blogPosts = [
     {
-        title: "Best IPTV Provider in 2026: Real Comparison",
+        title: "Best IPTV Provider in 2025: Real Comparison",
         description: "We tested 50+ IPTV providers for 30 days. Here are the only 5 worth your money, ranked by channels, stability, and value.",
-        slug: "best-iptv-provider-2026",
-        date: "2026-01-01",
+        slug: "best-iptv-provider-2025",
+        date: "2025-01-01",
         category: "Comparison",
         readTime: "12 min read"
     },
     {
-        title: "IPTV vs Cable TV: Which is Better in 2026?",
+        title: "IPTV vs Cable TV: Which is Better in 2025?",
         description: "Detailed comparison of IPTV vs Cable TV: cost, channels, quality, installation, and more. Save $1,500+/year by switching.",
         slug: "iptv-vs-cable-tv",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Comparison",
         readTime: "10 min read"
     },
@@ -40,15 +40,15 @@ const blogPosts = [
         title: "IPTV vs Streaming Services: Netflix, Hulu, Disney+ Comparison",
         description: "Compare IPTV with Netflix, Hulu, Disney+. Get live TV + on-demand content for $15/month instead of $100+/month.",
         slug: "iptv-vs-streaming-services",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Comparison",
         readTime: "8 min read"
     },
     {
-        title: "Cheap IPTV Providers 2026: Best Budget Options",
+        title: "Cheap IPTV Providers 2025: Best Budget Options",
         description: "Find the best cheap IPTV providers under $15/month. Learn what to avoid and how to get quality IPTV for less.",
         slug: "cheap-iptv-providers",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Guide",
         readTime: "7 min read"
     },
@@ -56,7 +56,7 @@ const blogPosts = [
         title: "How to Setup IPTV: Complete Step-by-Step Guide",
         description: "Learn how to setup IPTV on any device in 5 minutes. Fire TV, Android TV, Smart TV, phones, and more.",
         slug: "how-to-setup-iptv",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Tutorial",
         readTime: "6 min read"
     },
@@ -64,7 +64,7 @@ const blogPosts = [
         title: "IPTV Troubleshooting Guide: Fix Buffering & Common Issues",
         description: "Complete troubleshooting guide for IPTV. Fix buffering, freezing, login errors, and more with step-by-step solutions.",
         slug: "iptv-troubleshooting-guide",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Support",
         readTime: "8 min read"
     },
@@ -72,7 +72,7 @@ const blogPosts = [
         title: "IPTV VPN Guide: Do You Need a VPN for IPTV?",
         description: "Complete guide to using VPN with IPTV. Best VPNs, setup instructions, and how to prevent ISP throttling.",
         slug: "iptv-vpn-guide",
-        date: "2026-01-01",
+        date: "2025-01-01",
         category: "Security",
         readTime: "7 min read"
     }

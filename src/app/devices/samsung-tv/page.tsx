@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Monitor, CreditCard, Tv, AlertTriangle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Watch IPTV on Samsung Smart TV (2026 Guide)";
+    const title = "How to Watch IPTV on Samsung Smart TV (2025 Guide)";
     const description = "Best IPTV apps for Samsung Tizen OS. Step-by-step setup guide for IBO Player, Set IPTV, and Nanomid. No extra box needed.";
 
     return {
@@ -74,10 +74,10 @@ const faqs = [
 
 export default async function SamsungTVPage() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Install IPTV on Samsung Smart TV (2026)",
+        headline: "How to Install IPTV on Samsung Smart TV (2025)",
         description: "Guide to IBO Player and Set IPTV on Tizen OS.",
         image: "/api/og?title=Samsung IPTV Guide",
-        datePublished: "2026-01-06",
+        datePublished: "2025-01-06",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/samsung-tv`,
@@ -225,7 +225,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Watch IPTV on Samsung Smart TV (2026 Guide)"
+   - Title: "How to Watch IPTV on Samsung Smart TV (2025 Guide)"
    - Description: "Best IPTV apps for Samsung Tizen OS..."
    - Keywords: "iptv samsung tv", "ibo player", "tizen iptv"
 
