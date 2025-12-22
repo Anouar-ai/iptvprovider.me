@@ -183,6 +183,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <link rel="preconnect" href="https://image.tmdb.org" />
         {/* Google Analytics handled by Analytics component in body */}
+        
+        {/* Google Ads Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17824278334"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17824278334');
+          `}
+        </Script>
       </head>
       <body>
         <ProgressBar />
