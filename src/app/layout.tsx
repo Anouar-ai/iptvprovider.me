@@ -13,6 +13,7 @@ import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { FloatingWhatsAppButton } from "@/components/shared/WhatsAppButton";
+import { TrackingInitializer } from "@/components/tracking/TrackingInitializer";
 import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema, generateBrandSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -200,14 +201,28 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-17824278334"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17824278334');
-          `}
-        </Script>
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              
+              gtag('consent', 'default', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
+              });
+              
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+            `,
+          }}
+        />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
@@ -237,6 +252,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <TrackingInitializer />
           <div className="relative flex min-h-screen flex-col">
             <a
               href="#main-content"

@@ -15,6 +15,7 @@ export interface WhatsAppLinkParams {
 
 /**
  * Generate WhatsApp link with optional pre-filled message and UTM tracking
+ * Automatically preserves stored UTM parameters for attribution
  * @param params - Phone number, message, and UTM parameters
  * @returns WhatsApp URL with tracking
  */
@@ -24,13 +25,25 @@ export function generateWhatsAppLink(params: WhatsAppLinkParams): string {
   // Remove + and spaces from phone number for WhatsApp API
   const cleanPhone = phone.replace(/[^0-9]/g, '');
 
+  // Get stored UTM parameters from localStorage/cookie
+  const storedUTM = getCurrentUTM();
+
+  // Merge provided UTMs with stored UTMs (provided takes precedence)
+  const finalUTM = {
+    utm_source: utm_source || storedUTM.utm_source,
+    utm_medium: utm_medium || storedUTM.utm_medium,
+    utm_campaign: utm_campaign || storedUTM.utm_campaign,
+    utm_content: utm_content || storedUTM.utm_content,
+    utm_term: utm_term || storedUTM.utm_term,
+  };
+
   // Build UTM tracking string
   const utmParams: string[] = [];
-  if (utm_source) utmParams.push(`utm_source=${encodeURIComponent(utm_source)}`);
-  if (utm_medium) utmParams.push(`utm_medium=${encodeURIComponent(utm_medium)}`);
-  if (utm_campaign) utmParams.push(`utm_campaign=${encodeURIComponent(utm_campaign)}`);
-  if (utm_content) utmParams.push(`utm_content=${encodeURIComponent(utm_content)}`);
-  if (utm_term) utmParams.push(`utm_term=${encodeURIComponent(utm_term)}`);
+  if (finalUTM.utm_source) utmParams.push(`utm_source=${encodeURIComponent(finalUTM.utm_source)}`);
+  if (finalUTM.utm_medium) utmParams.push(`utm_medium=${encodeURIComponent(finalUTM.utm_medium)}`);
+  if (finalUTM.utm_campaign) utmParams.push(`utm_campaign=${encodeURIComponent(finalUTM.utm_campaign)}`);
+  if (finalUTM.utm_content) utmParams.push(`utm_content=${encodeURIComponent(finalUTM.utm_content)}`);
+  if (finalUTM.utm_term) utmParams.push(`utm_term=${encodeURIComponent(finalUTM.utm_term)}`);
 
   // Build message with UTM tracking embedded
   let finalMessage = message || 'Hello! I\'m interested in your IPTV service.';
@@ -38,7 +51,7 @@ export function generateWhatsAppLink(params: WhatsAppLinkParams): string {
   // Add UTM reference to message for internal tracking
   if (utmParams.length > 0) {
     const utmString = utmParams.join('&');
-    finalMessage += `\n\n[Ref: ${utm_source || 'website'}]`;
+    finalMessage += `\n\n[Ref: ${finalUTM.utm_source || 'website'}]`;
   }
 
   // Encode message for URL
@@ -48,6 +61,35 @@ export function generateWhatsAppLink(params: WhatsAppLinkParams): string {
   const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
 
   return whatsappUrl;
+}
+
+/**
+ * Get current UTM parameters (URL first, then stored)
+ * Import from tracking/utm.ts
+ */
+function getCurrentUTM(): Partial<WhatsAppLinkParams> {
+  if (typeof window === 'undefined') return {};
+
+  try {
+    const stored = localStorage.getItem('iptv_utm_params');
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    // Fallback to cookie
+    try {
+      const cookies = document.cookie.split(';');
+      const utmCookie = cookies.find(c => c.trim().startsWith('iptv_utm='));
+      if (utmCookie) {
+        const value = utmCookie.split('=')[1];
+        return JSON.parse(decodeURIComponent(value));
+      }
+    } catch (err) {
+      // Silently fail
+    }
+  }
+
+  return {};
 }
 
 /**
