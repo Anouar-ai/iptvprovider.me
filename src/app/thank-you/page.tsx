@@ -1,21 +1,14 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { trackPurchase } from '@/lib/tracking/conversions';
 
-/**
- * Purchase Confirmation Page
- * 
- * This page should be shown ONLY after successful payment
- * 
- * URL structure examples:
- * /thank-you?transaction_id=order_12345&value=90.00&plan=yearly
- * /success?order_id=INV-2024-001&amount=60.00&email=customer@example.com
- * 
- * The tracking fires automatically when this page loads
- */
-export default function ThankYouPage() {
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
+function ThankYouContent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -92,5 +85,20 @@ export default function ThankYouPage() {
         </a>
       </div>
     </div>
+  );
+}
+
+export default function ThankYouPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    }>
+      <ThankYouContent />
+    </Suspense>
   );
 }
