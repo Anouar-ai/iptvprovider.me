@@ -49,7 +49,7 @@ export function Hero() {
               <Link href="/#pricing">View Pricing</Link>
             </Button>
             <WhatsAppButton
-              message="Hi! I want to start my 7-day free trial"
+              message="Hi! I'd like to start my free trial"
               utm={{
                 source: 'website',
                 medium: 'cta',
@@ -60,7 +60,7 @@ export function Hero() {
               variant="secondary"
               className="w-full sm:w-auto text-lg h-12 px-8"
             >
-              Start Free Trial
+              Try Free for 24 Hours
             </WhatsAppButton>
           </div>
 

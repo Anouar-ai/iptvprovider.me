@@ -8,7 +8,6 @@ import { Footer } from "@/components/shared/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ContactSheet } from "@/components/shared/ContactSheet";
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
@@ -249,7 +248,6 @@ export default function RootLayout({
             <div id="main-content" className="flex-grow">{children}</div>
             <Footer />
           </div>
-          <ContactSheet />
           <ScrollToTop />
           <FloatingWhatsAppButton />
           <Toaster />

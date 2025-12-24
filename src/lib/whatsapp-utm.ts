@@ -113,7 +113,7 @@ export const whatsAppLinks = {
   // Free trial CTA
   freeTrial: (phone: string) => generateWhatsAppLink({
     phone,
-    message: '👋 Hi! I want to start my 7-day free trial. How do I get started?',
+    message: '👋 Hi! I want to start my 24-hour free trial. How do I get started?',
     utm_source: 'website',
     utm_medium: 'cta',
     utm_campaign: 'free_trial',

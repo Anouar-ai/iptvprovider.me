@@ -15,7 +15,7 @@ export const pricingPageFaqs: PricingFAQ[] = [
     {
         question: "How much does the IPTV subscription cost?",
         shortAnswer: "Our IPTV subscription plans range from $7.50 to $20.00 per month, depending on duration (monthly, quarterly, or yearly). Yearly plans offer the best value with savings up to 60%. All plans include 24,000+ channels, HD/4K quality, and 24/7 support.",
-        answer: "Our IPTV subscription plans offer flexible pricing to suit any budget. Monthly plans start at $20.00, while our annual subscription drops to just $7.50/month (billed at $89.99/year), saving you over 60%. All plans include complete access to 24,000+ live channels, 80,000+ VOD content, HD/4K streaming quality, multi-device support, and 24/7 customer service. We also offer a 7-day money-back guarantee so you can try our service risk-free."
+        answer: "Our IPTV subscription plans offer flexible pricing to suit any budget. Monthly plans start at $20.00, while our annual subscription drops to just $7.50/month (billed at $89.99/year), saving you over 60%. All plans include complete access to 24,000+ live channels, 80,000+ VOD content, HD/4K streaming quality, multi-device support, and 24/7 customer service. We also offer a 24-hour free trial so you can test our service risk-free."
     },
     {
         question: "What payment methods do you accept?",
@@ -24,18 +24,18 @@ export const pricingPageFaqs: PricingFAQ[] = [
     },
     {
         question: "Can I cancel my subscription anytime?",
-        shortAnswer: "Yes, you can cancel your IPTV subscription at any time with no cancellation fees or penalties. However, refunds are only available within the first 7 days as per our money-back guarantee policy.",
-        answer: "Absolutely! Our IPTV subscriptions are completely flexible with no long-term contracts or commitments. You can cancel your subscription at any time without incurring cancellation fees or penalties. However, please note that refunds are only provided within the first 7 days of your initial purchase under our money-back guarantee. If you cancel after the 7-day period, you'll continue to have access until the end of your current billing cycle, but no refund will be issued for unused time."
+        shortAnswer: "Yes, you can cancel your IPTV subscription at any time with no cancellation fees or penalties. We offer a 24-hour free trial to test the service before purchase.",
+        answer: "Absolutely! Our IPTV subscriptions are completely flexible with no long-term contracts or commitments. You can cancel your subscription at any time without incurring cancellation fees or penalties. We offer a 24-hour free trial to test our service before any payment is required. If you choose to subscribe and are not satisfied, you can cancel anytime to prevent future billing."
     },
     {
         question: "Do you offer a free trial for IPTV?",
-        shortAnswer: "Yes, we offer a 7-day free trial that gives you full access to all 24,000+ channels, VOD library, and premium features. No credit card required for the trial - simply sign up and start streaming immediately.",
-        answer: "Yes! We offer a comprehensive 7-day free trial with absolutely no restrictions. During the trial period, you get complete access to our entire channel lineup (24,000+ live channels), full VOD library (80,000+ titles), HD/4K streaming, and all premium features.  The trial gives you ample time to test our service on your devices, check channel availability, and experience our quality. Best of all, no credit card information is required to start your trial - simply create an account and begin streaming within minutes."
+        shortAnswer: "Yes, we offer a 24-hour free trial that gives you full access to all 24,000+ channels, VOD library, and premium features. No credit card required for the trial - simply sign up and start streaming immediately.",
+        answer: "Yes! We offer a comprehensive 24-hour free trial with absolutely no restrictions. During the trial period, you get complete access to our entire channel lineup (24,000+ live channels), full VOD library (80,000+ titles), HD/4K streaming, and all premium features. The 24-hour trial gives you enough time to test our service on your devices, check channel availability, and experience our quality. Best of all, no credit card information is required to start your trial - simply create an account and begin streaming within minutes."
     },
     {
         question: "What's the difference between monthly and yearly plans?",
         shortAnswer: "Yearly plans save you over 60% compared to monthly billing. Monthly plans cost $20/month ($240/year), while yearly plans are just $89.99/year ($7.50/month). Both include identical features - the only difference is the billing cycle and savings.",
-        answer: "The only difference between our monthly and yearly plans is the billing frequency and the substantial cost savings. If you pay monthly at $20.00, you'll spend $240.00 over a year. However, our yearly subscription costs just $89.99 total, which breaks down to only $7.50 per month - saving you over $150 annually. Both plans provide 100% identical access to all channels, VOD content, quality levels, device support, and customer service. If you're confident in your choice (or want to try our 7-day trial first), the yearly plan offers the best value."
+        answer: "The only difference between our monthly and yearly plans is the billing frequency and the substantial cost savings. If you pay monthly at $20.00, you'll spend $240.00 over a year. However, our yearly subscription costs just $89.99 total, which breaks down to only $7.50 per month - saving you over $150 annually. Both plans provide 100% identical access to all channels, VOD content, quality levels, device support, and customer service. If you're confident in your choice (or want to try our 24-hour trial first), the yearly plan offers the best value."
     },
     {
         question: "Are there any hidden fees or extra costs?",
@@ -55,11 +55,11 @@ export const pricingPageFaqs: PricingFAQ[] = [
     {
         question: "Do you offer discounts for longer subscriptions?",
         shortAnswer: "Yes! We offer significant discounts for longer commitments: 3-month plans sa25%, 6-month plans save 40%, and 12-month plans save over 60% compared to monthly billing. The longer you subscribe, the more you save.",
-        answer: "Absolutely! We reward our loyal customers with substantial discounts for longer subscription periods. Our pricing structure works like this: Monthly subscriptions cost $20.00/month with maximum flexibility. 3-month subscriptions save you approximately 25% off the monthly rate. 6-month subscriptions provide around 40% savings. Annual (12-month) subscriptions deliver the best value with over 60% savings - just $89.99 for the entire year (equivalent to $7.50/month). All subscription tiers include identical access to our full service. We recommend trying our 7-day free trial first, then committing to an annual plan for maximum savings if you're satisfied."
+        answer: "Absolutely! We reward our loyal customers with substantial discounts for longer subscription periods. Our pricing structure works like this: Monthly subscriptions cost $20.00/month with maximum flexibility. 3-month subscriptions save you approximately 25% off the monthly rate. 6-month subscriptions provide around 40% savings. Annual (12-month) subscriptions deliver the best value with over 60% savings - just $89.99 for the entire year (equivalent to $7.50/month). All subscription tiers include identical access to our full service. We recommend trying our 24-hour free trial first, then committing to an annual plan for maximum savings if you're satisfied."
     },
     {
-        question: "Is the 7-day money-back guarantee really no questions asked?",
-        shortAnswer: "Yes, our 7-day money-back guarantee is completely genuine with no tricky conditions. If you're unsatisfied for any reason within 7 days of purchase, contact our support team and we'll process a full refund within 24-48 hours.",
-        answer: "Our 7-day money-back guarantee is absolutely genuine and straightforward - we mean it when we say 'no questions asked.' If you're not completely satisfied with our IPTV service for any reason within the first 7 days of your purchase, simply contact our customer support team via email, live chat, or ticket system. We'll process your full refund within 24-48 hours to your original payment method, no complicated forms or interrogations required. We're confident in our service quality, and this guarantee ensures you can try us completely risk-free. After the 7-day period, subscriptions are non-refundable, but you can cancel anytime to prevent future billing."
+        question: "Can I test the service before paying?",
+        shortAnswer: "Yes, we offer a 24-hour free trial with full access to all channels and features. No credit card required - test everything risk-free before making any commitment.",
+        answer: "Absolutely! We offer a 24-hour free trial with complete access to all 24,000+ channels, VOD library, and premium features. No credit card is required to start your trial - simply create an account and begin testing our service immediately. This gives you a full day to test channel quality, server stability, and compatibility with your devices. After the trial, you can choose to subscribe if you're satisfied. We believe our service quality speaks for itself, which is why we make it easy to try before you buy."
     }
 ];
