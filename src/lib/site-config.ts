@@ -22,7 +22,7 @@ export const siteConfig = {
   awards: [] as string[],
 
   // Contact information
-  telephone: "", // REMOVED: Use real verified number or leave empty
+  telephone: "+44 7848 197761", // UK contact number for NAP consistency
 
   // Social media and web presence
   links: {

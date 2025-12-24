@@ -16,7 +16,7 @@ import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
     const title = "Best IPTV Provider 2025 : Top 5 Tested (Real Data + Rankings)";
-    const description = "We tested 50+ IPTV services for 30 days. See which providers have the best channels, uptime, and 4K quality. Updated Jan 2025 with real performance data.";
+    const description = "The best IPTV provider in 2025 is IPTV Provider (99.9% uptime, 24,000+ channels). We tested 50+ services for 30 days. See complete rankings with real performance data.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025`;
     const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/Best-IPTV-Provider-in-2025.webp`;
 
@@ -158,12 +158,43 @@ export default async function BestIPTVProvider2025() {
         { name: "Best IPTV Provider 2025", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-provider-2025` },
     ]);
 
+    // ItemList schema for featured snippet optimization
+    const itemListSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'name': 'Top 5 Best IPTV Providers in 2025',
+        'description': 'Ranked list of the best IPTV providers based on 30-day real-world testing of channels, uptime, and video quality',
+        'itemListElement': iptvProviders.slice(0, 5).map((provider, index) => ({
+            '@type': 'ListItem',
+            'position': index + 1,
+            'item': {
+                '@type': 'Product',
+                'name': provider.name,
+                'description': provider.bestFor,
+                'aggregateRating': {
+                    '@type': 'AggregateRating',
+                    'ratingValue': provider.rating.toString(),
+                    'reviewCount': provider.reviewCount.toString(),
+                    'bestRating': '5',
+                    'worstRating': '1',
+                },
+                'offers': {
+                    '@type': 'Offer',
+                    'price': provider.price.monthly.toString(),
+                    'priceCurrency': 'USD',
+                    'availability': 'https://schema.org/InStock',
+                },
+            },
+        })),
+    };
+
     return (
         <>
             <Schema id="product" schema={productSchema} />
             <Schema id="faq" schema={faqSchema} />
             <Schema id="article" schema={articleSchema} />
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
+            <Schema id="itemlist" schema={itemListSchema} />
 
             <main className="py-16 sm:py-24">
                 <Container>

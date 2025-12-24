@@ -1,27 +1,65 @@
+/**
+ * Pricing Page - PAA-Optimized FAQs
+ * 
+ * Optimized for "People Also Ask" (PAA) boxes in Google search results
+ * for pricing and subscription-related queries
+ */
 
-export const pricingPageFaqs = [
+export interface PricingFAQ {
+    question: string;
+    shortAnswer?: string;  // Concise answer for PAA (40-60 words)
+    answer: string;
+}
+
+export const pricingPageFaqs: PricingFAQ[] = [
     {
-        question: "What is included in every IPTV subscription plan?",
-        answer: "Every subscription plan includes access to 24,000+ live TV channels from around the world, 80,000+ movies and TV series on demand, HD and 4K streaming quality, all sports and PPV events, anti-freeze technology, electronic program guide (EPG), multi-device support (2 simultaneous connections), instant activation, and 24/7 customer support. The only difference between plans is the duration and monthly cost — longer plans offer bigger savings."
+        question: "How much does the IPTV subscription cost?",
+        shortAnswer: "Our IPTV subscription plans range from $7.50 to $20.00 per month, depending on duration (monthly, quarterly, or yearly). Yearly plans offer the best value with savings up to 60%. All plans include 24,000+ channels, HD/4K quality, and 24/7 support.",
+        answer: "Our IPTV subscription plans offer flexible pricing to suit any budget. Monthly plans start at $20.00, while our annual subscription drops to just $7.50/month (billed at $89.99/year), saving you over 60%. All plans include complete access to 24,000+ live channels, 80,000+ VOD content, HD/4K streaming quality, multi-device support, and 24/7 customer service. We also offer a 7-day money-back guarantee so you can try our service risk-free."
     },
     {
-        question: "How quickly is my IPTV subscription activated?",
-        answer: "Your IPTV subscription is activated instantly after payment confirmation. Within 1-5 minutes, you'll receive an email with your login credentials and setup instructions. Most customers are streaming within 10 minutes of purchase. If you don't receive your credentials within 15 minutes, check your spam folder or contact our 24/7 support team for immediate assistance."
+        question: "What payment methods do you accept?",
+        shortAnswer: "We accept all major payment methods: credit/debit cards (Visa, Mastercard, American Express), PayPal, cryptocurrency (Bitcoin, Ethereum), and various regional payment processors. All transactions are encrypted and secure.",
+        answer: "We offer multiple secure payment options for your convenience. We accept all major credit and debit cards including Visa, Mastercard, and American Express. We also support PayPal for easy checkout, as well as cryptocurrency payments (Bitcoin, Ethereum, USDT) for enhanced privacy. Regional payment methods are also available depending on your location. All payments are processed through industry-standard encrypted gateways to ensure your financial information is completely secure."
     },
     {
-        question: "Which IPTV subscription plan offers the best value?",
-        answer: "The 12-month plan offers the best value at just $7.50/month (total $90/year). Compared to the monthly plan ($16/month), you save 53% — that's $102 in savings over the year. If you're new and want to test the service first, we recommend starting with the 1-month plan. Once you're satisfied (most customers are!), upgrade to the annual plan for maximum savings."
+        question: "Can I cancel my subscription anytime?",
+        shortAnswer: "Yes, you can cancel your IPTV subscription at any time with no cancellation fees or penalties. However, refunds are only available within the first 7 days as per our money-back guarantee policy.",
+        answer: "Absolutely! Our IPTV subscriptions are completely flexible with no long-term contracts or commitments. You can cancel your subscription at any time without incurring cancellation fees or penalties. However, please note that refunds are only provided within the first 7 days of your initial purchase under our money-back guarantee. If you cancel after the 7-day period, you'll continue to have access until the end of your current billing cycle, but no refund will be issued for unused time."
     },
     {
-        question: "Can I upgrade my IPTV subscription plan later?",
-        answer: "Yes! You can upgrade your subscription at any time. Simply contact our support team, and we'll apply a prorated credit from your remaining subscription toward the longer plan. Many customers start with a 1 or 3-month plan to test the service, then upgrade to the 12-month plan for the best savings."
+        question: "Do you offer a free trial for IPTV?",
+        shortAnswer: "Yes, we offer a 7-day free trial that gives you full access to all 24,000+ channels, VOD library, and premium features. No credit card required for the trial - simply sign up and start streaming immediately.",
+        answer: "Yes! We offer a comprehensive 7-day free trial with absolutely no restrictions. During the trial period, you get complete access to our entire channel lineup (24,000+ live channels), full VOD library (80,000+ titles), HD/4K streaming, and all premium features.  The trial gives you ample time to test our service on your devices, check channel availability, and experience our quality. Best of all, no credit card information is required to start your trial - simply create an account and begin streaming within minutes."
     },
     {
-        question: "What devices can I use with my IPTV subscription?",
-        answer: "Our IPTV subscription works on virtually any device: Smart TVs (Samsung, LG, Sony, etc.), Amazon Fire Stick and Fire TV, Android phones and tablets, iPhones and iPads, Windows and Mac computers, MAG boxes, Roku, Formuler boxes, and more. Each subscription allows 2 simultaneous device connections, so you can watch on your TV while someone else watches on their phone."
+        question: "What's the difference between monthly and yearly plans?",
+        shortAnswer: "Yearly plans save you over 60% compared to monthly billing. Monthly plans cost $20/month ($240/year), while yearly plans are just $89.99/year ($7.50/month). Both include identical features - the only difference is the billing cycle and savings.",
+        answer: "The only difference between our monthly and yearly plans is the billing frequency and the substantial cost savings. If you pay monthly at $20.00, you'll spend $240.00 over a year. However, our yearly subscription costs just $89.99 total, which breaks down to only $7.50 per month - saving you over $150 annually. Both plans provide 100% identical access to all channels, VOD content, quality levels, device support, and customer service. If you're confident in your choice (or want to try our 7-day trial first), the yearly plan offers the best value."
     },
     {
-        question: "Is there a free trial available?",
-        answer: "We offer a 7-day money-back guarantee instead of a free trial. This allows you to fully test the service with complete access to all features. If you're not satisfied for any reason within the first 7 days, simply contact our support team for a full refund — no questions asked. This is actually better than a limited free trial because you get the complete experience."
+        question: "Are there any hidden fees or extra costs?",
+        shortAnswer: "No hidden fees whatsoever. The subscription price you see is exactly what you pay and includes everything: all channels, VOD, HD/4K access, EPG, multi-device support, and customer service. No setup fees, activation costs, or equipment rentals.",
+        answer: "We pride ourselves on complete pricing transparency - there are absolutely zero hidden fees. The subscription price you see at checkout is the complete cost and includes everything you need: full access to 24,000+ live channels, 80,000+ VOD titles, HD and 4K streaming quality, EPG (TV Guide), simultaneous device connections, catch-up TV, and 24/7 customer support. There are no setup fees, activation charges, equipment rental costs, or premium channel add-ons. The only additional cost you might consider is optional (a VPN service for privacy), but this is not required to use our IPTV service."
+    },
+    {
+        question: "How many devices can I use with one subscription?",
+        shortAnswer: "Our standard subscription includes 5 simultaneous connections, meaning you can stream on up to 5 devices at the same time. This is perfect for families or multiple rooms in your home.",
+        answer: "Each IPTV subscription includes support for 5 simultaneous connections by default. This means you can watch different channels on up to 5 devices at the exact same time - perfect for families where different members want to watch different content. You can install our service on unlimited devices (TVs, phones, tablets, etc.), but only 5 can stream actively at once. If you need more simultaneous connections for larger households or commercial use, we offer additional connection packages at discounted rates."
+    },
+    {
+        question: "What happens after my subscription expires?",
+        shortAnswer: "When your subscription expires, your access to channels and content will stop immediately. Your account remains active, so you can easily renew by purchasing a new subscription using the same credentials without losing your settings or preferences.",
+        answer: "When your IPTV subscription reaches its expiration date, your access to live channels and VOD content will be immediately suspended. However, your account and login credentials remain active in our system for up to 90 days. This means you can renew your subscription at any time simply by purchasing a new plan - your channel favorites, app settings, and viewing history will be preserved. We'll send you reminder emails before your subscription expires, giving you plenty of time to renew without interruption. If you choose not to renew, your account will be permanently deleted after 90 days of inactivity."
+    },
+    {
+        question: "Do you offer discounts for longer subscriptions?",
+        shortAnswer: "Yes! We offer significant discounts for longer commitments: 3-month plans sa25%, 6-month plans save 40%, and 12-month plans save over 60% compared to monthly billing. The longer you subscribe, the more you save.",
+        answer: "Absolutely! We reward our loyal customers with substantial discounts for longer subscription periods. Our pricing structure works like this: Monthly subscriptions cost $20.00/month with maximum flexibility. 3-month subscriptions save you approximately 25% off the monthly rate. 6-month subscriptions provide around 40% savings. Annual (12-month) subscriptions deliver the best value with over 60% savings - just $89.99 for the entire year (equivalent to $7.50/month). All subscription tiers include identical access to our full service. We recommend trying our 7-day free trial first, then committing to an annual plan for maximum savings if you're satisfied."
+    },
+    {
+        question: "Is the 7-day money-back guarantee really no questions asked?",
+        shortAnswer: "Yes, our 7-day money-back guarantee is completely genuine with no tricky conditions. If you're unsatisfied for any reason within 7 days of purchase, contact our support team and we'll process a full refund within 24-48 hours.",
+        answer: "Our 7-day money-back guarantee is absolutely genuine and straightforward - we mean it when we say 'no questions asked.' If you're not completely satisfied with our IPTV service for any reason within the first 7 days of your purchase, simply contact our customer support team via email, live chat, or ticket system. We'll process your full refund within 24-48 hours to your original payment method, no complicated forms or interrogations required. We're confident in our service quality, and this guarantee ensures you can try us completely risk-free. After the 7-day period, subscriptions are non-refundable, but you can cancel anytime to prevent future billing."
     }
-]
+];

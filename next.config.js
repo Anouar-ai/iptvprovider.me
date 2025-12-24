@@ -5,6 +5,8 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
     optimizeCss: true,
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons', 'react-icons'],
+    webpackMemoryOptimizations: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {

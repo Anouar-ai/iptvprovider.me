@@ -2,7 +2,7 @@
 import { unstable_cache as cache } from 'next/cache';
 import { generateSemanticContent, type SemanticContent as SemanticContentType } from "@/lib/vector-seo";
 import { plans } from "@/lib/site-data/pricing";
-import { pricingPageFaqs } from "@/lib/site-data/pricing-page-faq";
+import { pricingPageFaqs, type PricingFAQ } from "@/lib/site-data/pricing-page-faq";
 import { generateProductSchema, generateBreadcrumbSchema, generateFAQPageSchema } from "@/lib/schema";
 import type { Product, BreadcrumbList, FAQPage } from 'schema-dts';
 import { siteConfig } from '../site-config';
@@ -53,7 +53,16 @@ export const getPricingPageData = cache(
       { name: "Pricing", item: `${baseUrl}/pricing` }
     ]));
 
-    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(generateFAQPageSchema(pricingPageFaqs, `${baseUrl}/pricing`));
+    const faqSchemaPromise: Promise<FAQPage> = Promise.resolve(
+      generateFAQPageSchema(
+        pricingPageFaqs.map((faq: PricingFAQ) => ({
+          question: faq.question,
+          answer: faq.answer,
+          shortAnswer: faq.shortAnswer,
+        })),
+        `${baseUrl}/pricing`
+      )
+    );
 
     // Await all promises in parallel for maximum efficiency
     const [
