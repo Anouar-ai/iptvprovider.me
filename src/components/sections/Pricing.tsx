@@ -17,7 +17,7 @@ import { Container } from "../shared/Container";
 import { SectionHeader } from "../shared/SectionHeader";
 import { Reveal } from "../shared/Reveal";
 import { Badge } from "../ui/badge";
-import Link from "next/link";
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 
 export function Pricing() {
   return (
@@ -60,9 +60,19 @@ export function Pricing() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className="w-full" variant={plan.isPopular ? "default" : "outline"}>
-                    <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">Order Now</Link>
-                  </Button>
+                  <WhatsAppButton
+                    message={`Hi! I'd like to subscribe to the ${plan.name} plan ($${plan.price})`}
+                    utm={{
+                      source: 'website',
+                      medium: 'cta',
+                      campaign: 'pricing',
+                      content: `plan_${plan.name.toLowerCase().replace(/\s+/g, '_')}`
+                    }}
+                    variant={plan.isPopular ? "default" : "outline"}
+                    className="w-full"
+                  >
+                    Subscribe Now
+                  </WhatsAppButton>
                 </CardFooter>
               </Card>
             </Reveal>
