@@ -13,6 +13,7 @@ import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Analytics } from "@/components/shared/Analytics";
 import { Schema } from "@/components/shared/Schema";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
+import { FloatingWhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema, generateBrandSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -250,6 +251,7 @@ export default function RootLayout({
           </div>
           <ContactSheet />
           <ScrollToTop />
+          <FloatingWhatsAppButton />
           <Toaster />
         </ThemeProvider>
       </body>

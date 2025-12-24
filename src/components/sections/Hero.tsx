@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { ShieldCheck, Tv, Zap } from "lucide-react";
 import { AnimatedUnderline } from "@/components/ui/animated-underline";
-import { SiWhatsapp } from "react-icons/si";
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import Image from "next/image";
 import MouseIcon from "@/assets/icons/mouse.svg";
 
@@ -48,12 +48,20 @@ export function Hero() {
             <Button asChild size="lg" className="shadow-lg shadow-primary/20 transition-all hover:bg-accent hover:shadow-xl hover:shadow-primary/30">
               <Link href="/#pricing">View Pricing</Link>
             </Button>
-            <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto text-lg h-12 px-8">
-              <Link href="https://wa.me/message/GIVZQEQESCWTO1" target="_blank" rel="noopener noreferrer">
-                <SiWhatsapp className="mr-2" />
-                Contact on WhatsApp
-              </Link>
-            </Button>
+            <WhatsAppButton
+              message="Hi! I want to start my 7-day free trial"
+              utm={{
+                source: 'website',
+                medium: 'cta',
+                campaign: 'homepage',
+                content: 'hero_cta'
+              }}
+              size="lg"
+              variant="secondary"
+              className="w-full sm:w-auto text-lg h-12 px-8"
+            >
+              Start Free Trial
+            </WhatsAppButton>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground">
