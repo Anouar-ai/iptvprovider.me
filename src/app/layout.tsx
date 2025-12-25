@@ -14,7 +14,8 @@ import { Schema } from "@/components/shared/Schema";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { FloatingWhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { TrackingInitializer } from "@/components/tracking/TrackingInitializer";
-import { generateOrganizationSchema, generateWebSiteSchema, generateSiteNavigationSchema, generateAdvancedSitelinksSchema, generateBrandSchema } from "@/lib/schema";
+import { generateOrganizationSchema, generateBrandSchema } from "@/lib/schema";
+import { generateWebsiteSchema, generateSiteNavigationSchema } from "@/lib/site-data/sitelinks-config";
 import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
@@ -159,8 +160,8 @@ export default function RootLayout({
     )}>
       <head>
         <Schema id="organization" schema={generateOrganizationSchema()} />
-        <Schema id="website" schema={generateWebSiteSchema()} />
-        <Schema id="navigation" schema={generateAdvancedSitelinksSchema()} />
+        <Schema id="website" schema={generateWebsiteSchema(siteConfig.url, siteConfig.name)} />
+        <Schema id="navigation" schema={generateSiteNavigationSchema(siteConfig.url)} />
         <Schema id="brand" schema={generateBrandSchema()} />
 
         {/* Additional meta tags for brand verification and Knowledge Graph */}

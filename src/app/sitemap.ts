@@ -4,6 +4,7 @@ import { howToArticles } from '@/lib/how-to';
 import { allCountries } from '@/lib/countries';
 
 import { siteConfig } from '@/lib/site-config';
+import { getSitemapEntries } from '@/lib/site-data/sitelinks-config';
 
 const baseUrl = siteConfig.url;
 
@@ -51,57 +52,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // 5. Core Pages
-  const corePages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/locations`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/devices`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/iptv-free-trial`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/iptv-guide`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1.0,
-    },
-  ];
+  // 5. Core Pages (Source regarding priorities/frequencies from sitelinks-config)
+  const corePages: MetadataRoute.Sitemap = getSitemapEntries(baseUrl).map(entry => ({
+      url: entry.url,
+      lastModified: new Date(entry.lastmod),
+      changeFrequency: entry.changefreq as 'daily' | 'weekly' | 'monthly' | 'yearly',
+      priority: entry.priority,
+  }));
 
   // 6. Blog Pages
   const blogPages: MetadataRoute.Sitemap = [
