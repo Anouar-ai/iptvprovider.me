@@ -15,7 +15,9 @@ export const footerLinks = {
         { name: "macOS App", href: "/devices/macos" },
     ],
     contact: {
-        address: "IPTV Provider — Worldwide",
+        address: "41 Midhurst Ave, Muswell Hill, London N10 3EP, Royaume-Uni",
+        phone: "+44 7848 197761",
+        whatsapp: "+44 7848 197761",
         email: "support@iptvprovider.me"
     }
 };

@@ -44,6 +44,12 @@ export function Footer() {
             <h2 className="text-sm font-semibold uppercase tracking-wider">Contact</h2>
             <address className="mt-4 space-y-2 text-sm not-italic text-muted-foreground">
               <p itemProp="address">{footerLinks.contact.address}</p>
+              <a href={`tel:${footerLinks.contact.phone}`} className="block hover:text-primary" itemProp="telephone">
+                {footerLinks.contact.phone}
+              </a>
+              <a href={`https://wa.me/${footerLinks.contact.whatsapp?.replace(/[^0-9]/g, "")}`} className="block hover:text-primary" itemProp="telephone">
+                WhatsApp: {footerLinks.contact.whatsapp}
+              </a>
               <a href={`mailto:${footerLinks.contact.email}`} className="hover:text-primary" itemProp="email">
                 {footerLinks.contact.email}
               </a>
