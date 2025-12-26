@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
     return generatePageMetadata({
         title,
         description,
-        path: "/blog/best-iptv-provider-2026",
+        canonical: "/blog/best-iptv-provider-2026",
     });
 }
 
@@ -56,7 +56,7 @@ export default function BestIPTVProvider2026() {
     const articleSchema = generateArticleSchema({
         headline: "Best IPTV Provider 2026: Top 10 Tested (Real Data + Rankings)",
         description: "A comprehensive, data-driven guide to the best IPTV providers in 2026. We test uptime, channel quality, and support to help you find the most reliable service.",
-        image: `${siteUrl}/images/blog/best-iptv-2026.jpg`,
+        image: `${siteUrl}/images/Best-IPTV-Provider-in-2026.webp`,
         author: "IPTV Expert Team",
         datePublished: publishDate,
         dateModified: new Date().toISOString(),
