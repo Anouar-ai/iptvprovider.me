@@ -410,13 +410,34 @@ interface ArticleSchemaProps {
   image?: string;
   datePublished: string;
   dateModified: string;
+  dateReviewed?: string;
   authorName?: string;
+  authorJobTitle?: string;
   publisherName?: string;
   url: string;
 }
 
 export function generateArticleSchema(props: ArticleSchemaProps): any {
-  return {
+  const authorSchema = props.authorName ? {
+    '@type': 'Person',
+    name: props.authorName,
+    url: `${siteConfig.url}/team`,
+    jobTitle: props.authorJobTitle || 'Content Specialist',
+    worksFor: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+    },
+  } : {
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: `${siteConfig.url}/about`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/IPTV-Provider.png`,
+    },
+  };
+
+  const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: props.headline,
@@ -424,26 +445,20 @@ export function generateArticleSchema(props: ArticleSchemaProps): any {
     image: props.image,
     datePublished: props.datePublished,
     dateModified: props.dateModified,
-    author: props.authorName ? {
-      '@type': 'Person',
-      name: props.authorName,
-      url: `${siteConfig.url}/team`,
-      jobTitle: 'Content Specialist',
-    } : {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: `${siteConfig.url}/about`,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteConfig.url}/IPTV-Provider.png`,
-      },
-    },
+    author: authorSchema,
     publisher: defaultPublisher,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': props.url,
     },
   };
+
+  // Add dateReviewed if provided (freshness signal)
+  if (props.dateReviewed) {
+    schema.dateReviewed = props.dateReviewed;
+  }
+
+  return schema;
 }
 
 interface HowToSchemaProps {

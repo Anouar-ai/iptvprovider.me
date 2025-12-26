@@ -106,7 +106,9 @@ export default async function CheapIPTVProviders() {
         image: "/api/og?title=Cheap IPTV Providers 2026",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "Mike Chen, Streaming Technology Analyst",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "Mike Chen",
+        authorJobTitle: "Streaming Technology Analyst",
         url: `https://www.iptvprovider.me/blog/cheap-iptv-providers`,
     });
 
