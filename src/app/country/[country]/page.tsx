@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     canonical: `/country/${countryId}`,
+    robots: 'index,follow',
   });
 }
 

@@ -11,8 +11,8 @@ import { CheckCircle2, XCircle, Shield, Zap, Globe, Lock } from "lucide-react";
 export function generateMetadata(): Metadata {
     const title = "IPTV VPN Guide 2026: Do You Need a VPN for IPTV? (Complete Guide)";
     const description = "Complete guide to using VPN with IPTV. Learn if you need a VPN, best VPNs for IPTV, setup instructions, and how to prevent ISP throttling. Updated Jan 2026.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV VPN Guide 2026')}`;
+    const url = `https://www.iptvprovider.me/blog/iptv-vpn-guide`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('IPTV VPN Guide 2026')}`;
 
     return {
         ...generatePageMetadata({
@@ -43,7 +43,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV VPN Guide 2026',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -94,16 +94,16 @@ export default async function IPTVVPNGuide() {
         headline: "IPTV VPN Guide 2026: Complete Guide to Using VPN with IPTV",
         description: "Comprehensive guide covering VPN usage with IPTV, best VPNs, setup, and privacy",
         image: "/api/og?title=IPTV VPN Guide 2026",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide`,
+        url: `https://www.iptvprovider.me/blog/iptv-vpn-guide`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "IPTV VPN Guide", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vpn-guide` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "IPTV VPN Guide", item: `https://www.iptvprovider.me/blog/iptv-vpn-guide` },
     ]);
 
     const faqSchema = generateFAQPageSchema(faqs);

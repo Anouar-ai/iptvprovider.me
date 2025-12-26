@@ -11,8 +11,8 @@ import { CheckCircle2, XCircle, Tv, DollarSign, Zap } from "lucide-react";
 export function generateMetadata(): Metadata {
     const title = "IPTV vs Streaming Services 2026: Netflix, Hulu, Disney+ Comparison";
     const description = "IPTV vs Netflix, Hulu, Disney+: Which is better? Compare live TV, cost, channels, and content. Get both for less than one streaming service. Updated Jan 2026.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-streaming-services`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV vs Streaming Services')}`;
+    const url = `https://www.iptvprovider.me/blog/iptv-vs-streaming-services`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('IPTV vs Streaming Services')}`;
 
     return {
         ...generatePageMetadata({
@@ -43,7 +43,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV vs Streaming Services Comparison',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -60,7 +60,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-12-20T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -99,16 +99,16 @@ export default async function IPTVvsStreaming() {
         headline: "IPTV vs Streaming Services 2026: Complete Comparison",
         description: "Comprehensive comparison of IPTV vs Netflix, Hulu, Disney+, and other streaming services",
         image: "/api/og?title=IPTV vs Streaming Services",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-streaming-services`,
+        url: `https://www.iptvprovider.me/blog/iptv-vs-streaming-services`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "IPTV vs Streaming Services", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-streaming-services` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "IPTV vs Streaming Services", item: `https://www.iptvprovider.me/blog/iptv-vs-streaming-services` },
     ]);
 
     const faqSchema = generateFAQPageSchema(faqs);

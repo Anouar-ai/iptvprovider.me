@@ -131,6 +131,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     canonical: `/devices/${device}`,
+    robots: 'index,follow',
   });
 }
 

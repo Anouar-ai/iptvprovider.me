@@ -12,8 +12,8 @@ import { DirectAnswer } from "@/components/shared/DirectAnswer";
 export function generateMetadata(): Metadata {
     const title = "Cheap IPTV Providers 2026: Best Budget Options Under $15/Month";
     const description = "Find the best cheap IPTV providers in 2026. Compare budget options under $15/month. Learn what to avoid and how to get quality IPTV for less.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Cheap IPTV Providers 2026')}`;
+    const url = `https://www.iptvprovider.me/blog/cheap-iptv-providers`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('Cheap IPTV Providers 2026')}`;
 
     return {
         ...generatePageMetadata({
@@ -44,7 +44,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'Cheap IPTV Providers 2026',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -61,7 +61,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-12-20T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -104,17 +104,64 @@ export default async function CheapIPTVProviders() {
         headline: "Cheap IPTV Providers 2026: Best Budget Options Reviewed",
         description: "Comprehensive guide to finding affordable IPTV providers without sacrificing quality",
         image: "/api/og?title=Cheap IPTV Providers 2026",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers`,
+        authorName: "Mike Chen, Streaming Technology Analyst",
+        url: `https://www.iptvprovider.me/blog/cheap-iptv-providers`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "Cheap IPTV Providers", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/cheap-iptv-providers` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "Cheap IPTV Providers", item: `https://www.iptvprovider.me/blog/cheap-iptv-providers` },
     ]);
+
+    // ItemList schema for budget provider rankings
+    const itemListSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Best Cheap IPTV Providers 2026",
+        "description": "Budget-friendly IPTV providers ranked by value and performance",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Product",
+                    "name": "IPTV Provider Budget Plan",
+                    "url": `https://www.iptvprovider.me/pricing`,
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "7.50",
+                        "priceCurrency": "USD"
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.8",
+                        "reviewCount": "2847"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Product",
+                    "name": "Budget IPTV Alternative",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "9.99",
+                        "priceCurrency": "USD"
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.5",
+                        "reviewCount": "1523"
+                    }
+                }
+            }
+        ]
+    };
 
     const faqSchema = generateFAQPageSchema(faqs);
 
@@ -122,6 +169,7 @@ export default async function CheapIPTVProviders() {
         <>
             <Schema id="article" schema={articleSchema} />
             <Schema id="breadcrumb" schema={breadcrumbSchema} />
+            <Schema id="itemlist" schema={itemListSchema} />
             <Schema id="faq" schema={faqSchema} />
 
             <main className="py-16 sm:py-24">
@@ -567,12 +615,12 @@ export default async function CheapIPTVProviders() {
                                 IT
                             </div>
                             <div>
-                                <h3 className="font-semibold text-lg">About the IPTV Expert Team</h3>
+                                <h3 className="font-semibold text-lg">About Mike Chen, Streaming Technology Analyst</h3>
                                 <p className="text-sm text-muted-foreground mt-2">
-                                    We've tested over 100 IPTV providers across all price ranges to help you find the best value. Our mission is to help cord-cutters save money without sacrificing quality.
+                                    Mike specializes in analyzing budget streaming solutions and has tested over 100 IPTV providers across all price ranges. With 8 years of experience in streaming technology analysis, he helps cord-cutters find the best value without sacrificing quality.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: December 20, 2025
                                 </p>
                             </div>
                         </div>

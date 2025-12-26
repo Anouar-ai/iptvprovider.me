@@ -12,8 +12,8 @@ import { CheckCircle2, XCircle, DollarSign, Tv, Zap, Shield } from "lucide-react
 export function generateMetadata(): Metadata {
     const title = "IPTV vs Cable TV 2026: Which is Better? (Complete Comparison)";
     const description = "Detailed comparison of IPTV vs Cable TV: cost, channels, quality, installation, and more. Save $1,500+/year by switching. Updated Jan 2026.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-cable-tv`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/IPTV-vs-Cable-TV.webp`;
+    const url = `https://www.iptvprovider.me/blog/iptv-vs-cable-tv`;
+    const imageUrl = `https://www.iptvprovider.me/IPTV-vs-Cable-TV.webp`;
 
     return {
         ...generatePageMetadata({
@@ -44,7 +44,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV vs Cable TV Comparison 2026',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -95,16 +95,16 @@ export default async function IPTVvsCableTV() {
         headline: "IPTV vs Cable TV 2026: Complete Comparison Guide",
         description: "Comprehensive comparison of IPTV and Cable TV covering cost, channels, quality, and more",
         image: "/IPTV-vs-Cable-TV.webp",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-cable-tv`,
+        url: `https://www.iptvprovider.me/blog/iptv-vs-cable-tv`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "IPTV vs Cable TV", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-vs-cable-tv` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "IPTV vs Cable TV", item: `https://www.iptvprovider.me/blog/iptv-vs-cable-tv` },
     ]);
 
     const faqSchema = generateFAQPageSchema(faqs);

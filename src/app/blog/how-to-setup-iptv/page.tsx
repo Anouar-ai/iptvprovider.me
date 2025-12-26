@@ -13,8 +13,8 @@ import { Glossary } from "@/components/shared/Glossary";
 export function generateMetadata(): Metadata {
     const title = "How to Setup IPTV in 2026: Step-by-Step Guide for Any Device";
     const description = "Learn how to setup IPTV on Firestick, Android TV, and Smart TVs in 5 minutes. Our 2026 guide covers installation, common mistakes, and best practices for 4K streaming.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('How to Setup IPTV 2026')}`;
+    const url = `https://www.iptvprovider.me/blog/how-to-setup-iptv`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('How to Setup IPTV 2026')}`;
 
     return {
         ...generatePageMetadata({
@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'How to Setup IPTV Guide',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -96,16 +96,16 @@ export default async function HowToSetupIPTV() {
         headline: "How to Setup IPTV in 2026: Complete Step-by-Step Guide",
         description: "Comprehensive tutorial on setting up IPTV on any device",
         image: "/api/og?title=How to Setup IPTV 2026",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv`,
+        url: `https://www.iptvprovider.me/blog/how-to-setup-iptv`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "How to Setup IPTV", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "How to Setup IPTV", item: `https://www.iptvprovider.me/blog/how-to-setup-iptv` },
     ]);
 
     const faqSchema = generateFAQPageSchema(faqs);
@@ -114,10 +114,10 @@ export default async function HowToSetupIPTV() {
         name: "How to Setup IPTV",
         description: "Complete guide to setting up IPTV on any device in 5 minutes",
         steps: [
-            { name: "Subscribe to IPTV Provider", text: "Choose a provider and subscribe to a plan", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/pricing` },
-            { name: "Download IPTV App", text: "Install the IPTV app on your device", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv` },
-            { name: "Enter Login Credentials", text: "Input your username and password", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv` },
-            { name: "Start Watching", text: "Browse channels and enjoy your content", url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv` },
+            { name: "Subscribe to IPTV Provider", text: "Choose a provider and subscribe to a plan", url: `https://www.iptvprovider.me/pricing` },
+            { name: "Download IPTV App", text: "Install the IPTV app on your device", url: `https://www.iptvprovider.me/blog/how-to-setup-iptv` },
+            { name: "Enter Login Credentials", text: "Input your username and password", url: `https://www.iptvprovider.me/blog/how-to-setup-iptv` },
+            { name: "Start Watching", text: "Browse channels and enjoy your content", url: `https://www.iptvprovider.me/blog/how-to-setup-iptv` },
         ],
         totalTime: "PT10M"
     });

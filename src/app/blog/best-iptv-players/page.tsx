@@ -12,8 +12,8 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 export function generateMetadata(): Metadata {
     const title = "Best IPTV Players for 2026: Top 7 Apps Reviewed & Tested";
     const description = "Discover the best IPTV players in 2026 for Firestick, Smart TV, Android, and iOS. We reviewed TiviMate, IPTV Smarters, and more for speed and stability.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/best-iptv-players`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('Best IPTV Players 2026')}`;
+    const url = `https://www.iptvprovider.me/blog/best-iptv-players`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('Best IPTV Players 2026')}`;
 
     return {
         ...generatePageMetadata({
@@ -32,12 +32,12 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'Best IPTV Players 2026 Comparison',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-12-20T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -51,7 +51,7 @@ export default function BestIPTVPlayersPage() {
         headline: "Best IPTV Players for 2026: Top 7 Apps Reviewed & Tested",
         description: "A comprehensive guide and review of the top 7 IPTV players available in 2026 for all major streaming devices.",
         image: "/api/og?title=Best IPTV Players 2026",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${siteUrl}/blog/best-iptv-players`,

@@ -13,8 +13,8 @@ import { Glossary } from "@/components/shared/Glossary";
 export function generateMetadata(): Metadata {
     const title = "IPTV Troubleshooting Guide 2026: Fix Buffering & Freezing";
     const description = "Solve all common IPTV problems in minutes. Our 2026 troubleshooting guide fixes buffering, freezing, and login errors on Firestick, Android, and Smart TVs.";
-    const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV Troubleshooting Guide')}`;
+    const url = `https://www.iptvprovider.me/blog/iptv-troubleshooting-guide`;
+    const imageUrl = `https://www.iptvprovider.me/api/og?title=${encodeURIComponent('IPTV Troubleshooting Guide')}`;
 
     return {
         ...generatePageMetadata({
@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV Troubleshooting Guide',
             }],
-            publishedTime: '2026-01-01T00:00:00Z',
+            publishedTime: '2025-12-20T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -62,7 +62,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2026-01-01T00:00:00Z',
+            'article:published_time': '2025-12-20T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -101,16 +101,16 @@ export default async function IPTVTroubleshooting() {
         headline: "IPTV Troubleshooting Guide 2026: Fix Common Issues",
         description: "Complete guide to troubleshooting IPTV problems including buffering, freezing, and login errors",
         image: "/api/og?title=IPTV Troubleshooting Guide",
-        datePublished: "2026-01-01",
+        datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`,
+        url: `https://www.iptvprovider.me/blog/iptv-troubleshooting-guide`,
     });
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/` },
-        { name: "Blog", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog` },
-        { name: "IPTV Troubleshooting Guide", item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide` },
+        { name: "Home", item: `https://www.iptvprovider.me/` },
+        { name: "Blog", item: `https://www.iptvprovider.me/blog` },
+        { name: "IPTV Troubleshooting Guide", item: `https://www.iptvprovider.me/blog/iptv-troubleshooting-guide` },
     ]);
 
     const faqSchema = generateFAQPageSchema(faqs);

@@ -197,13 +197,13 @@ export default function RootLayout({
           `}
         </Script>
         
-        {/* Google Ads Tag (gtag.js) */}
+        {/* Google Analytics + Google Ads (gtag.js) - Consolidated */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17824278334"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script
-          id="gtm"
+          id="gtag-config"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -216,13 +216,16 @@ export default function RootLayout({
               });
               
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+              
+              // Google Analytics 4
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                page_path: window.location.pathname
+              });
+              
+              // Google Ads Conversion Tracking
+              gtag('config', 'AW-17824278334');
             `,
           }}
-        />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
         />
       </head>
       <body>

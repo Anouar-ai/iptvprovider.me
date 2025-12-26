@@ -62,9 +62,13 @@ export function Footer() {
               &copy; {new Date().getFullYear()} IPTV Provider. All rights reserved.
             </p>
             <div className="hidden sm:block text-muted-foreground">|</div>
-            <div className="flex gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link href="/legal" className="hover:text-primary">Legal Disclaimer</Link>
+              <Link href="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
+              <Link href="/refund-policy" className="hover:text-primary">Refund Policy</Link>
+              <Link href="/dmca-policy" className="hover:text-primary">DMCA</Link>
+              <Link href="/licensing-disclaimer" className="hover:text-primary">Licensing</Link>
             </div>
           </div>
           <div className="mt-4 flex items-center space-x-4 sm:mt-0">
