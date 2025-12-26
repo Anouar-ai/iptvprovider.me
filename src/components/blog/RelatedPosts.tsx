@@ -12,10 +12,16 @@ interface RelatedPost {
 
 const blogPosts: RelatedPost[] = [
     {
-        title: "Best IPTV Provider 2025",
-        slug: "/blog/best-iptv-provider-2025",
+        title: "Best IPTV Provider 2026",
+        slug: "/blog/best-iptv-provider-2026",
         description: "Top 5 tested IPTV providers ranked by uptime, channels, and value",
         category: "Comparison"
+    },
+    {
+        title: "Best IPTV Players 2026",
+        slug: "/blog/best-iptv-players",
+        description: "Reviews of the top 7 IPTV apps for Firestick and Smart TV",
+        category: "Reviews"
     },
     {
         title: "IPTV vs Cable TV",

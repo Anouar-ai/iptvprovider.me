@@ -6,13 +6,13 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQPageSchema 
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
-import { AlertTriangle, Wifi, Video, Settings, Zap, RefreshCw } from "lucide-react";
+import { AlertTriangle, Wifi, Video, Settings, Zap, RefreshCw, XCircle, CheckCircle2 } from "lucide-react";
 import { DirectAnswer } from "@/components/shared/DirectAnswer";
 import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV Troubleshooting Guide 2025: Fix Buffering, Freezing & Common Issues";
-    const description = "Complete IPTV troubleshooting guide. Fix buffering, freezing, login errors, and more. Step-by-step solutions for all common IPTV problems. Updated Jan 2025.";
+    const title = "IPTV Troubleshooting Guide 2026: Fix Buffering & Freezing";
+    const description = "Solve all common IPTV problems in minutes. Our 2026 troubleshooting guide fixes buffering, freezing, and login errors on Firestick, Android, and Smart TVs.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`;
     const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('IPTV Troubleshooting Guide')}`;
 
@@ -45,11 +45,11 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'IPTV Troubleshooting Guide',
             }],
-            publishedTime: '2025-01-01T00:00:00Z',
+            publishedTime: '2026-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
-            tags: ['IPTV', 'Troubleshooting', 'Fix', 'Guide', 'Support'],
+            tags: ['IPTV', 'Troubleshooting', 'Buffering', 'Fix', 'Guide'],
         },
         twitter: {
             card: 'summary_large_image',
@@ -62,7 +62,7 @@ export function generateMetadata(): Metadata {
             canonical: url,
         },
         other: {
-            'article:published_time': '2025-01-01T00:00:00Z',
+            'article:published_time': '2026-01-01T00:00:00Z',
             'article:modified_time': new Date().toISOString(),
             'article:author': 'IPTV Expert Team',
         }
@@ -98,10 +98,10 @@ const faqs = [
 
 export default async function IPTVTroubleshooting() {
     const articleSchema = generateArticleSchema({
-        headline: "IPTV Troubleshooting Guide 2025: Fix Common Issues",
+        headline: "IPTV Troubleshooting Guide 2026: Fix Common Issues",
         description: "Complete guide to troubleshooting IPTV problems including buffering, freezing, and login errors",
         image: "/api/og?title=IPTV Troubleshooting Guide",
-        datePublished: "2025-01-01",
+        datePublished: "2026-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/iptv-troubleshooting-guide`,
@@ -140,7 +140,7 @@ export default async function IPTVTroubleshooting() {
                             <span>🔧 Troubleshooting • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            IPTV Troubleshooting Guide 2025
+                            IPTV Troubleshooting Guide 2026
                         </h1>
 
                         <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
@@ -160,6 +160,39 @@ export default async function IPTVTroubleshooting() {
 
                     {/* Quick Fixes */}
                     <section className="mb-16 max-w-3xl mx-auto">
+                        <h2 className="font-headline text-3xl font-bold mb-6">How to Fix IPTV Buffering: Step-by-Step</h2>
+                        
+                        <div className="space-y-8 mb-12 text-left">
+                            <div className="flex gap-4">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">Check Your Download Speed</h3>
+                                    <p className="text-muted-foreground">Run a speed test at Fast.com. You need a consistent 25 Mbps for 4K streaming. If your speed is low, restart your router or contact your ISP.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</div>
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">Switch to Wired Ethernet</h3>
+                                    <p className="text-muted-foreground">WiFi is prone to interference. Plug an Ethernet cable directly into your Firestick (using an adapter) or Smart TV for the most stable connection.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</div>
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">Clear App Cache and Force Stop</h3>
+                                    <p className="text-muted-foreground">Go to your device Settings {">"} Applications {">"} Manage Installed Applications. Find your IPTV app, select Clear Cache, then Force Stop and relaunch.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</div>
+                                <div>
+                                    <h3 className="text-xl font-bold mb-2">Change Video Player</h3>
+                                    <p className="text-muted-foreground">If the built-in player lags, switch to an external player like **VLC** or **MX Player** in your app settings. These players handle video decoding more efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <h2 className="font-headline text-3xl font-bold mb-6">⚡ Quick Fixes (Try These First)</h2>
 
                         <div className="space-y-3">
@@ -316,6 +349,34 @@ export default async function IPTVTroubleshooting() {
                         </Accordion>
                     </section>
 
+                    {/* COMMON MISTAKES & BEST PRACTICES */}
+                    <section id="best-practices" className="mb-16 max-w-4xl mx-auto scroll-mt-20 text-left">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="p-6 border-2 border-red-500/20 rounded-xl bg-red-500/5">
+                                <h2 className="font-headline text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <XCircle className="h-6 w-6 text-red-500" />
+                                    Troubleshooting Mistakes
+                                </h2>
+                                <ul className="space-y-4">
+                                    <li><strong>Using Free VPNs:</strong> Free VPNs lack the speed for IPTV, causing endless buffering. They often cap speeds at 2Mbps.</li>
+                                    <li><strong>Ignoring Router Placement:</strong> Walls block WiFi signals. If you must use WiFi, place the router near your device.</li>
+                                    <li><strong>Overloading Devices:</strong> Running too many background apps on a Firestick causes it to overheat and lag. Clear RAM regularly.</li>
+                                </ul>
+                            </div>
+                            <div className="p-6 border-2 border-green-500/20 rounded-xl bg-green-500/5">
+                                <h2 className="font-headline text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <CheckCircle2 className="h-6 w-6 text-green-500" />
+                                    Reliability Best Practices
+                                </h2>
+                                <ul className="space-y-4">
+                                    <li><strong>Use a Wired Connection:</strong> Ethernet is 100% more reliable than WiFi for live TV. Use an OTG adapter for Firesticks.</li>
+                                    <li><strong>Weekly Restarts:</strong> Restart your router and streaming device once a week to clear temporary RAM lag and cache.</li>
+                                    <li><strong>Update Your App:</strong> Always use the latest version of your IPTV player (e.g., Smarters 4.0) for the best 2026 performance.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* AIO: Glossary */}
                     <section className="mb-16 max-w-3xl mx-auto">
                         <Glossary
@@ -357,7 +418,7 @@ export default async function IPTVTroubleshooting() {
                                 <Link href="/pricing">Try Our Service Free for 7 Days</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2025">Compare Top Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2026">Compare Top Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -370,8 +431,8 @@ export default async function IPTVTroubleshooting() {
                                 <h3 className="font-semibold text-lg mb-2">📖 How to Setup IPTV</h3>
                                 <p className="text-sm text-muted-foreground">Complete setup guide</p>
                             </Link>
-                            <Link href="/blog/best-iptv-provider-2025" className="p-6 border rounded-lg hover:bg-muted transition-colors">
-                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider</h3>
+                            <Link href="/blog/best-iptv-provider-2026" className="p-6 border rounded-lg hover:bg-muted transition-colors">
+                                <h3 className="font-semibold text-lg mb-2">🏆 Best IPTV Provider 2026</h3>
                                 <p className="text-sm text-muted-foreground">Top 5 comparison</p>
                             </Link>
                             <Link href="/blog/iptv-vpn-guide" className="p-6 border rounded-lg hover:bg-muted transition-colors">
@@ -397,7 +458,7 @@ export default async function IPTVTroubleshooting() {
                                     Our support team has resolved over 10,000 IPTV issues. This troubleshooting guide is based on real customer problems and proven solutions that work.
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-2">
-                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2025
+                                    Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • Published: January 1, 2026
                                 </p>
                             </div>
                         </div>
@@ -412,14 +473,14 @@ export default async function IPTVTroubleshooting() {
                - BreadcrumbList: Implemented
             
             2. Meta Tags:
-               - Title: "IPTV Troubleshooting Guide 2025: Fix Buffering..."
+               - Title: "IPTV Troubleshooting Guide 2026: Fix Buffering..."
                - Description: "Complete guide to fixing IPTV issues..."
                - Keywords: "iptv buffering", "iptv freezing", "iptv help"
                - Canonical: Self-referencing
             
             3. Internal Linking:
                - Linked to /pricing
-               - Linked to /blog/best-iptv-provider-2025
+               - Linked to /blog/best-iptv-provider-2026
                - Linked to /how-to-setup-iptv
             */}
         </>

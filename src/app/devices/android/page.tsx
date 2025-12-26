@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Smartphone, CheckCircle2, Download, Play, Trophy } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Watch IPTV on Android (2025) | TiviMate & Smarters Guide";
+    const title = "How to Watch IPTV on Android (2026) | TiviMate & Smarters Guide";
     const description = "The best IPTV apps for Android phones, tablets, and TV boxes. Installation guide for TiviMate Premium (the #1 player) and IPTV Smarters Pro.";
 
     return {
@@ -74,10 +74,10 @@ const faqs = [
 
 export default async function AndroidPage() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Install IPTV on Android Devices (2025)",
+        headline: "How to Install IPTV on Android Devices (2026)",
         description: "Setup guide for TiviMate and Smarters on Android.",
         image: "/api/og?title=Android IPTV Guide",
-        datePublished: "2025-01-08",
+        datePublished: "2026-01-08",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/android`,
@@ -222,7 +222,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Watch IPTV on Android (2025) | TiviMate & Smarters Guide"
+   - Title: "How to Watch IPTV on Android (2026) | TiviMate & Smarters Guide"
    - Description: "The best IPTV apps for Android phones, tablets, and TV boxes..."
    - Keywords: "iptv android", "tivimate", "android iptv box"
 

@@ -35,15 +35,15 @@ export const topicClusters: TopicCluster[] = [
         id: 'iptv-streaming',
         pillar: {
             url: '/iptv-guide',
-            title: 'Complete IPTV Guide 2025',
+            title: 'Complete IPTV Guide 2026',
             description: 'Everything you need to know about IPTV streaming',
             type: 'pillar',
             keywords: ['iptv', 'internet television', 'streaming', 'cord cutting'],
         },
         clusters: [
             {
-                url: '/blog/best-iptv-provider-2025',
-                title: 'Best IPTV Provider 2025',
+                url: '/blog/best-iptv-provider-2026',
+                title: 'Best IPTV Provider 2026',
                 description: 'Top rated IPTV services compared',
                 type: 'cluster',
                 keywords: ['best iptv', 'iptv providers', 'iptv review'],
@@ -68,6 +68,13 @@ export const topicClusters: TopicCluster[] = [
                 description: 'Budget-friendly IPTV options',
                 type: 'cluster',
                 keywords: ['cheap iptv', 'affordable iptv', 'budget streaming'],
+            },
+            {
+                url: '/blog/best-iptv-players',
+                title: 'Best IPTV Players 2026',
+                description: 'Top rated IPTV apps reviewed',
+                type: 'cluster',
+                keywords: ['iptv players', 'iptv apps', 'tivimate', 'iptv smarters'],
             },
         ],
     },
@@ -94,6 +101,13 @@ export const topicClusters: TopicCluster[] = [
                 description: 'Setup IPTV on Samsung Smart TV',
                 type: 'cluster',
                 keywords: ['samsung iptv', 'smart tv iptv', 'tizen iptv'],
+            },
+            {
+                url: '/devices/smart-tv',
+                title: 'IPTV on Smart TV',
+                description: 'Complete guide for any Smart TV',
+                type: 'cluster',
+                keywords: ['smart tv iptv', 'install iptv tv', 'tv apps'],
             },
             {
                 url: '/devices/apple-tv',

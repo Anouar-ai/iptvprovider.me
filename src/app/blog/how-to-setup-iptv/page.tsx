@@ -6,15 +6,15 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQPageSchema,
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
-import { CheckCircle2, Smartphone, Tv, Monitor, AlertCircle } from "lucide-react";
+import { CheckCircle2, Smartphone, Tv, Monitor, AlertCircle, XCircle } from "lucide-react";
 import { DirectAnswer } from "@/components/shared/DirectAnswer";
 import { Glossary } from "@/components/shared/Glossary";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Setup IPTV in 2025: Complete Step-by-Step Guide (5 Minutes)";
-    const description = "Learn how to setup IPTV on any device in 5 minutes. Step-by-step guide for Fire TV, Android TV, Smart TV, phones, and more. Updated Jan 2025.";
+    const title = "How to Setup IPTV in 2026: Step-by-Step Guide for Any Device";
+    const description = "Learn how to setup IPTV on Firestick, Android TV, and Smart TVs in 5 minutes. Our 2026 guide covers installation, common mistakes, and best practices for 4K streaming.";
     const url = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv`;
-    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('How to Setup IPTV 2025')}`;
+    const imageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/api/og?title=${encodeURIComponent('How to Setup IPTV 2026')}`;
 
     return {
         ...generatePageMetadata({
@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
                 height: 630,
                 alt: 'How to Setup IPTV Guide',
             }],
-            publishedTime: '2025-01-01T00:00:00Z',
+            publishedTime: '2026-01-01T00:00:00Z',
             modifiedTime: new Date().toISOString(),
             authors: ['IPTV Expert Team'],
             section: 'Technology',
@@ -93,10 +93,10 @@ const faqs = [
 
 export default async function HowToSetupIPTV() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Setup IPTV in 2025: Complete Step-by-Step Guide",
+        headline: "How to Setup IPTV in 2026: Complete Step-by-Step Guide",
         description: "Comprehensive tutorial on setting up IPTV on any device",
-        image: "/api/og?title=How to Setup IPTV 2025",
-        datePublished: "2025-01-01",
+        image: "/api/og?title=How to Setup IPTV 2026",
+        datePublished: "2026-01-01",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/blog/how-to-setup-iptv`,
@@ -148,7 +148,7 @@ export default async function HowToSetupIPTV() {
                             <span>📖 Tutorial • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         </div>
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-                            How to Setup IPTV in 2025
+                            How to Setup IPTV in 2026
                         </h1>
 
                         <div className="bg-muted/30 p-6 rounded-xl border-l-4 border-primary text-left mb-8">
@@ -352,8 +352,36 @@ export default async function HowToSetupIPTV() {
                         </div>
                     </section>
 
+                    {/* NEW: COMMON MISTAKES & BEST PRACTICES */}
+                    <section className="mb-16 max-w-4xl mx-auto text-left">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="p-6 border-2 border-red-500/20 rounded-xl bg-red-500/5">
+                                <h2 className="font-headline text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <XCircle className="h-6 w-6 text-red-500" />
+                                    Setup Mistakes to Avoid
+                                </h2>
+                                <ul className="space-y-4">
+                                    <li><strong>Using Free M3U Links:</strong> Links found on forums are often "honey pots" for malware or simply don't work after 10 minutes. Always use a private subscription.</li>
+                                    <li><strong>Skipping the VPN:</strong> Many ISPs block IPTV servers during live sports. If your app works on 5G but not on WiFi, your ISP is the problem.</li>
+                                    <li><strong>Entering Credentials Manually:</strong> Mistyping an 'L' for an 'I' in an M3U link is the #1 reason for "Login Failed." copy-paste using the mobile app instead.</li>
+                                </ul>
+                            </div>
+                            <div className="p-6 border-2 border-green-500/20 rounded-xl bg-green-500/5">
+                                <h2 className="font-headline text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <CheckCircle2 className="h-6 w-6 text-green-500" />
+                                    Setup Best Practices
+                                </h2>
+                                <ul className="space-y-4">
+                                    <li><strong>Static IP for TV Boxes:</strong> Set a static IP for your Firestick/Android box in your router settings to prevent connection drops during IP renewals.</li>
+                                    <li><strong>Clean Install:</strong> If an app like Smarters starts lagging, don't just clear cache—uninstall and reinstall the latest version for improved 2026 security.</li>
+                                    <li><strong>Use External Players:</strong> If the built-in player buffers, switch to "VLC" or "MX Player" in your app settings for better hardware acceleration.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Troubleshooting */}
-                    <section className="mb-16 max-w-3xl mx-auto">
+                    <section className="mb-16 max-w-3xl mx-auto scroll-mt-20">
                         <h2 className="font-headline text-3xl font-bold mb-6">Troubleshooting Common Errors</h2>
 
                         <Accordion type="single" collapsible>
@@ -427,7 +455,7 @@ export default async function HowToSetupIPTV() {
                                 <Link href="/pricing">Get 7-Day Free Trial</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline">
-                                <Link href="/blog/best-iptv-provider-2025">Compare Providers</Link>
+                                <Link href="/blog/best-iptv-provider-2026">Compare Providers</Link>
                             </Button>
                         </div>
                     </section>
@@ -459,14 +487,14 @@ export default async function HowToSetupIPTV() {
                        - HowTo: Implemented with steps and tools
                     
                     2. Meta Tags:
-                       - Title: "How to Setup IPTV in 2025: Complete Step-by-Step Guide"
+                       - Title: "How to Setup IPTV in 2026: Complete Step-by-Step Guide"
                        - Description: "Learn how to setup IPTV on any device in 5 minutes..."
                        - Keywords: "iptv setup", "firestick iptv", "android iptv", "iptv installation"
                        - Canonical: Self-referencing
                     
                     3. Internal Linking:
                        - Linked to /pricing (Commercial intent)
-                       - Linked to /blog/best-iptv-provider-2025 (Topical authority)
+                       - Linked to /blog/best-iptv-provider-2026 (Topical authority)
                        - Linked to /devices/fire-tv (Deep linking)
                     */}
                 </Container>

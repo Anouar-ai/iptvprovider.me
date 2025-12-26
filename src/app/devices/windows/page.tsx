@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Laptop, AppWindow, Play, CheckCircle2 } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Watch IPTV on Windows PC (2025 Guide)";
+    const title = "How to Watch IPTV on Windows PC (2026 Guide)";
     const description = "The best IPTV players for Windows 10 & 11. Setup guide for IPTV Smarters Pro and VLC Media Player. Watch live TV on your laptop.";
 
     return {
@@ -71,7 +71,7 @@ export default async function WindowsPage() {
         headline: "How to Watch IPTV on Windows PC",
         description: "Guide to IPTV Smarters and VLC on Windows.",
         image: "/api/og?title=Windows IPTV Guide",
-        datePublished: "2025-01-10",
+        datePublished: "2026-01-10",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/windows`,
@@ -192,7 +192,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Watch IPTV on Windows PC (2025 Guide)"
+   - Title: "How to Watch IPTV on Windows PC (2026 Guide)"
    - Description: "The best IPTV players for Windows 10 & 11..."
    - Keywords: "iptv windows", "vlc iptv", "iptv smarters pc"
 

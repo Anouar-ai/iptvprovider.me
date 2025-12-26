@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Laptop, Apple, AppWindow } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Watch IPTV on Mac (2025 macOS Guide)";
+    const title = "How to Watch IPTV on Mac (2026 macOS Guide)";
     const description = "Best IPTV players for MacBook and iMac. Setup guide for IPTV Smarters Pro (Mac version) and GSE Smart IPTV. High-quality streaming.";
 
     return {
@@ -67,7 +67,7 @@ export default async function MacOSPage() {
         headline: "How to Watch IPTV on MacBook & iMac",
         description: "Guide to IPTV Smarters on macOS.",
         image: "/api/og?title=Mac IPTV Guide",
-        datePublished: "2025-01-11",
+        datePublished: "2026-01-11",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/macos`,
@@ -188,7 +188,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Watch IPTV on Mac (2025 macOS Guide)"
+   - Title: "How to Watch IPTV on Mac (2026 macOS Guide)"
    - Description: "Best IPTV players for MacBook and iMac..."
    - Keywords: "iptv mac", "iptv smarters mac", "apple silicon iptv"
 

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Flame, Download, Settings, Tv, AlertTriangle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "How to Install IPTV on Firestick (2025) | Easy 2-Minute Guide";
+    const title = "How to Install IPTV on Firestick (2026) | Easy 2-Minute Guide";
     const description = "The ultimate guide to installing IPTV on Amazon Fire TV Stick 4K & Max. Step-by-step sideloading instructions using Downloader. No buffering.";
 
     return {
@@ -75,10 +75,10 @@ const faqs = [
 
 export default async function FireTVPage() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Install IPTV on Amazon Firestick in 2025",
+        headline: "How to Install IPTV on Amazon Firestick in 2026",
         description: "Complete guide to sideloading IPTV apps on Fire TV.",
         image: "/api/og?title=Firestick IPTV Guide",
-        datePublished: "2025-01-05",
+        datePublished: "2026-01-05",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/fire-tv`,
@@ -225,7 +225,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "How to Install IPTV on Firestick (2025) | Easy 2-Minute Guide"
+   - Title: "How to Install IPTV on Firestick (2026) | Easy 2-Minute Guide"
    - Description: "The ultimate guide to installing IPTV on Amazon Fire TV Stick..."
    - Keywords: "iptv firestick", "sideload iptv", "downloader app"
 

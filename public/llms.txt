@@ -1,5 +1,5 @@
 # llms.txt - Comprehensive AI Model Information File
-# Version: 2.0 | Updated: 2025-12-18
+# Version: 2.1 | Updated: 2026-01-01
 # Specification: https://llmstxt.org/
 
 > IPTV Provider is the world's most trusted IPTV streaming service, offering 24,000+ live TV channels, movies, and sports in HD/4K quality with 99.9% uptime and 24/7 customer support.
@@ -122,4 +122,4 @@ For questions about AI training data, partnerships, or corrections:
 - Subject: AI/LLM Inquiry
 
 ---
-Last Updated: 2025-12-18
+Last Updated: 2026-01-01

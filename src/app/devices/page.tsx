@@ -55,7 +55,7 @@ export default async function DevicesPage() {
     // Group devices by category
     const streamingDevices = howToArticles.filter(a => ['fire-tv', 'roku', 'apple-tv'].includes(a.id));
     const mobileDevices = howToArticles.filter(a => ['android', 'ios'].includes(a.id));
-    const smartTVs = howToArticles.filter(a => ['samsung-tv', 'lg-tv'].includes(a.id));
+    const smartTVs = howToArticles.filter(a => ['samsung-tv', 'lg-tv', 'smart-tv'].includes(a.id));
     const computers = howToArticles.filter(a => ['windows', 'macos'].includes(a.id));
     const otherDevices = howToArticles.filter(a => ['mag', 'troubleshooting'].includes(a.id));
 

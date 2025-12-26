@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Settings, Wifi, AlertTriangle, HelpCircle } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "IPTV Troubleshooting Guide (2025) | Fix Buffering & Login Issues";
+    const title = "IPTV Troubleshooting Guide (2026) | Fix Buffering & Login Issues";
     const description = "Having issues with IPTV? Learn how to fix buffering, freezing, 'Authentication Failed' errors, and EPG not loading. Expert solutions.";
 
     return {
@@ -53,7 +53,7 @@ export default async function TroubleshootingPage() {
         headline: "Ultimate IPTV Troubleshooting Guide",
         description: "Fix common IPTV issues like buffering and login errors.",
         image: "/api/og?title=IPTV Help",
-        datePublished: "2025-01-13",
+        datePublished: "2026-01-13",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/troubleshooting`,
@@ -163,10 +163,11 @@ TECHNICAL SEO RECOMMENDATIONS:
    - BreadcrumbList: Implemented
 
 2. Meta Tags:
-   - Title: "IPTV Troubleshooting Guide (2025) | Fix Buffering & Login Issues"
+   - Title: "IPTV Troubleshooting Guide (2026) | Fix Buffering & Login Issues"
    - Description: "Having issues with IPTV? Learn how to fix buffering..."
    - Keywords: "iptv buffering", "iptv fix", "isp throttling"
 
 3. Internal Linking:
    - Linked to /contact
 */
+

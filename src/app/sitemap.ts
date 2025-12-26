@@ -69,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/best-iptv-provider-2025`,
+      url: `${baseUrl}/blog/best-iptv-provider-2026`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,

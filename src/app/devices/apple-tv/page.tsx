@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Tv, MonitorSmartphone, Wifi, CheckCircle2, AppWindow } from "lucide-react";
 
 export function generateMetadata(): Metadata {
-    const title = "Best IPTV App for Apple TV 2025 | iPlayTV & GSE Setup Guide";
+    const title = "Best IPTV App for Apple TV 2026 | iPlayTV & GSE Setup Guide";
     const description = "Watch IPTV on Apple TV (tvOS) easily. Complete setup guide for iPlayTV (Best Premium App) and GSE Smart IPTV (Free Alternative). 4K support.";
 
     return {
@@ -74,10 +74,10 @@ const faqs = [
 
 export default async function AppleTVPage() {
     const articleSchema = generateArticleSchema({
-        headline: "How to Watch IPTV on Apple TV in 2025",
+        headline: "How to Watch IPTV on Apple TV in 2026",
         description: "The ultimate guide to setting up iPlayTV and GSE Smart IPTV on tvOS.",
         image: "/api/og?title=Apple TV IPTV Guide",
-        datePublished: "2025-01-12",
+        datePublished: "2026-01-12",
         dateModified: new Date().toISOString().split('T')[0],
         authorName: "IPTV Expert Team",
         url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.iptvprovider.me'}/devices/apple-tv`,
@@ -213,7 +213,7 @@ TECHNICAL SEO RECOMMENDATIONS:
    - ProductSchema: Implemented
 
 2. Meta Tags:
-   - Title: "Best IPTV App for Apple TV 2025 | iPlayTV & GSE Setup Guide"
+   - Title: "Best IPTV App for Apple TV 2026 | iPlayTV & GSE Setup Guide"
    - Description: "Watch IPTV on Apple TV (tvOS) easily..."
    - Keywords: "iptv apple tv", "iplaytv", "gse smart iptv"
 
