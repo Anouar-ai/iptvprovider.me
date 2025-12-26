@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/shared/Container';
 import { Schema } from "@/components/shared/Schema";
-import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema, generateFAQPageSchema } from "@/lib/schema";
 import { generateMetadata as generatePageMetadata } from "@/lib/site-config";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -57,7 +57,7 @@ export default function BestIPTVPlayersPage() {
         url: `${siteUrl}/blog/best-iptv-players`,
     });
 
-    const faqSchema = generateFAQSchema([
+    const faqSchema = generateFAQPageSchema([
         {
             question: "What is the best IPTV player for Firestick in 2026?",
             answer: "TiviMate is currently considered the best IPTV player for Firestick and Android TV devices. It offers a premium, television-like interface, seamless EPG integration, and supports multiple playlists."
