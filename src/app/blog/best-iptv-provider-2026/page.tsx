@@ -10,7 +10,7 @@ import { generateProductSchema, generateFAQPageSchema, generateArticleSchema, ge
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CheckCircle2, TrendingUp, Shield, Zap } from "lucide-react";
+import { CheckCircle2, TrendingUp, Shield, Zap, XCircle } from "lucide-react";
 import { DirectAnswer } from "@/components/shared/DirectAnswer";
 import { Glossary } from "@/components/shared/Glossary";
 
