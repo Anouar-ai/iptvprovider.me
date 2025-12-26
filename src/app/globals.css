@@ -70,13 +70,13 @@
   }
 
   .prose {
-    --tw-prose-body: hsl(var(--foreground) / 0.8);
+    --tw-prose-body: hsl(var(--foreground) / 0.85);
     --tw-prose-headings: hsl(var(--foreground));
     --tw-prose-lead: hsl(var(--muted-foreground));
     --tw-prose-links: hsl(var(--primary));
     --tw-prose-bold: hsl(var(--foreground));
     --tw-prose-counters: hsl(var(--muted-foreground));
-    --tw-prose-bullets: hsl(var(--border));
+    --tw-prose-bullets: hsl(var(--primary) / 0.6);
     --tw-prose-hr: hsl(var(--border));
     --tw-prose-quotes: hsl(var(--foreground));
     --tw-prose-quote-borders: hsl(var(--primary));
@@ -86,6 +86,105 @@
     --tw-prose-pre-bg: hsl(var(--muted));
     --tw-prose-th-borders: hsl(var(--border));
     --tw-prose-td-borders: hsl(var(--border));
+  }
+
+  /* Enhanced Blog Typography */
+  .prose h1 {
+    @apply text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-6;
+    letter-spacing: -0.02em;
+  }
+
+  .prose h2 {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight leading-snug mt-12 mb-4;
+    letter-spacing: -0.015em;
+  }
+
+  .prose h3 {
+    @apply text-xl sm:text-2xl font-semibold leading-snug mt-8 mb-3;
+    letter-spacing: -0.01em;
+  }
+
+  .prose h4 {
+    @apply text-lg sm:text-xl font-semibold leading-normal mt-6 mb-2;
+  }
+
+  .prose h5 {
+    @apply text-base sm:text-lg font-medium leading-normal mt-4 mb-2;
+  }
+
+  .prose h6 {
+    @apply text-sm sm:text-base font-medium uppercase tracking-wide text-muted-foreground mt-4 mb-2;
+  }
+
+  .prose p {
+    @apply leading-relaxed mb-4;
+    line-height: 1.75;
+  }
+
+  .prose-lg p {
+    @apply text-lg leading-relaxed;
+    line-height: 1.8;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply my-4 space-y-2;
+  }
+
+  .prose li {
+    @apply leading-relaxed;
+  }
+
+  .prose a {
+    @apply font-medium underline-offset-4 transition-colors duration-200;
+  }
+
+  .prose a:hover {
+    @apply text-primary/80;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary/50 pl-6 italic my-6 text-muted-foreground;
+  }
+
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre {
+    @apply bg-muted/50 rounded-lg p-4 overflow-x-auto my-6;
+  }
+
+  .prose hr {
+    @apply my-8 border-border;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose table {
+    @apply w-full border-collapse my-6;
+  }
+
+  .prose th {
+    @apply text-left font-semibold p-3 bg-muted/30 border-b border-border;
+  }
+
+  .prose td {
+    @apply p-3 border-b border-border/50;
+  }
+
+  .prose img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose figure {
+    @apply my-8;
+  }
+
+  .prose figcaption {
+    @apply text-center text-sm text-muted-foreground mt-2;
   }
 
   /* Focus indicators for accessibility */

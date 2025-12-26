@@ -96,7 +96,9 @@ export default async function IPTVVPNGuide() {
         image: "/api/og?title=IPTV VPN Guide 2026",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "James Parker",
+        authorJobTitle: "VPN & Privacy Specialist",
         url: `https://www.iptvprovider.me/blog/iptv-vpn-guide`,
     });
 

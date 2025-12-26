@@ -53,7 +53,9 @@ export default function BestIPTVPlayersPage() {
         image: "/api/og?title=Best IPTV Players 2026",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "Marcus Lee",
+        authorJobTitle: "IPTV App Specialist",
         url: `${siteUrl}/blog/best-iptv-players`,
     });
 

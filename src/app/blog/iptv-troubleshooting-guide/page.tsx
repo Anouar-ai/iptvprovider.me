@@ -103,7 +103,9 @@ export default async function IPTVTroubleshooting() {
         image: "/api/og?title=IPTV Troubleshooting Guide",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "Chris Thompson",
+        authorJobTitle: "IPTV Technical Support Lead",
         url: `https://www.iptvprovider.me/blog/iptv-troubleshooting-guide`,
     });
 

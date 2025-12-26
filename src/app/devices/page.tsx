@@ -80,7 +80,7 @@ export default async function DevicesPage() {
                         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
                             IPTV Setup Guides
                         </h1>
-                        <p className="text-xl text-muted-foreground mb-8">
+                        <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                             Step-by-step instructions to install and configure IPTV on any device. Choose your device below to get started.
                         </p>
                         <Button asChild size="lg">
@@ -90,21 +90,21 @@ export default async function DevicesPage() {
 
                     {/* Streaming Devices */}
                     <section className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-8">
                             <Tv className="h-8 w-8 text-primary" />
-                            <h2 className="font-headline text-3xl font-bold">Streaming Devices</h2>
+                            <h2 className="font-headline text-3xl font-bold tracking-tight">Streaming Devices</h2>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             {streamingDevices.map((device) => (
                                 <Link
                                     key={device.id}
                                     href={`/devices/${device.id}`}
-                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg"
+                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg hover:-translate-y-1"
                                 >
-                                    <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                                         {device.primaryKeyword}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
                                         {device.description}
                                     </p>
                                     <div className="text-sm font-medium text-primary">
@@ -117,21 +117,21 @@ export default async function DevicesPage() {
 
                     {/* Mobile Devices */}
                     <section className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-8">
                             <Smartphone className="h-8 w-8 text-primary" />
-                            <h2 className="font-headline text-3xl font-bold">Mobile Devices</h2>
+                            <h2 className="font-headline text-3xl font-bold tracking-tight">Mobile Devices</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             {mobileDevices.map((device) => (
                                 <Link
                                     key={device.id}
                                     href={`/devices/${device.id}`}
-                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg"
+                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg hover:-translate-y-1"
                                 >
-                                    <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                                         {device.primaryKeyword}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
                                         {device.description}
                                     </p>
                                     <div className="text-sm font-medium text-primary">
@@ -144,21 +144,21 @@ export default async function DevicesPage() {
 
                     {/* Smart TVs */}
                     <section className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-8">
                             <Tablet className="h-8 w-8 text-primary" />
-                            <h2 className="font-headline text-3xl font-bold">Smart TVs</h2>
+                            <h2 className="font-headline text-3xl font-bold tracking-tight">Smart TVs</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             {smartTVs.map((device) => (
                                 <Link
                                     key={device.id}
                                     href={`/devices/${device.id}`}
-                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg"
+                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg hover:-translate-y-1"
                                 >
-                                    <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                                         {device.primaryKeyword}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
                                         {device.description}
                                     </p>
                                     <div className="text-sm font-medium text-primary">
@@ -171,21 +171,21 @@ export default async function DevicesPage() {
 
                     {/* Computers */}
                     <section className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex items-center gap-3 mb-8">
                             <Monitor className="h-8 w-8 text-primary" />
-                            <h2 className="font-headline text-3xl font-bold">Computers</h2>
+                            <h2 className="font-headline text-3xl font-bold tracking-tight">Computers</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             {computers.map((device) => (
                                 <Link
                                     key={device.id}
                                     href={`/devices/${device.id}`}
-                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg"
+                                    className="group p-6 border-2 rounded-xl hover:border-primary/40 transition-all hover:shadow-lg hover:-translate-y-1"
                                 >
-                                    <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                                    <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
                                         {device.primaryKeyword}
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
                                         {device.description}
                                     </p>
                                     <div className="text-sm font-medium text-primary">

@@ -97,7 +97,9 @@ export default async function IPTVvsCableTV() {
         image: "/IPTV-vs-Cable-TV.webp",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "David Kim",
+        authorJobTitle: "Cord-Cutting Expert",
         url: `https://www.iptvprovider.me/blog/iptv-vs-cable-tv`,
     });
 

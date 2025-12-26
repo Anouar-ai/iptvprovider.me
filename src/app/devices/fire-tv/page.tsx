@@ -118,8 +118,8 @@ export default async function FireTVPage() {
                         </ol>
                     </nav>
 
-                    <article className="max-w-4xl mx-auto">
-                        <header className="text-center mb-16">
+                    <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
+                        <header className="text-center mb-16 not-prose">
                             <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
                                 <Flame className="h-4 w-4" />
                                 <span>#1 Streaming Device • Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
@@ -138,7 +138,7 @@ export default async function FireTVPage() {
                         </header>
 
                         {/* App Choice */}
-                        <section className="mb-16 grid md:grid-cols-2 gap-8">
+                        <section className="mb-16 grid md:grid-cols-2 gap-8 not-prose">
                             <div className="border-2 border-primary/20 bg-primary/5 rounded-xl p-8 flex flex-col items-center text-center">
                                 <h3 className="text-2xl font-bold mb-2">IPTV Smarters Pro</h3>
                                 <p className="text-muted-foreground mb-4">Best for beginners. Free, easy to use, and nice interface.</p>
@@ -152,7 +152,7 @@ export default async function FireTVPage() {
                         </section>
 
                         {/* Steps */}
-                        <section className="mb-16">
+                        <section className="mb-16 not-prose">
                             <h2 className="font-headline text-3xl font-bold mb-8">Installation Instructions</h2>
                             <div className="space-y-6">
                                 {steps.map((step, idx) => (
@@ -162,7 +162,7 @@ export default async function FireTVPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-xl mb-2">{step.name}</h3>
-                                            <p className="text-muted-foreground">{step.text}</p>
+                                            <p className="text-muted-foreground leading-relaxed">{step.text}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -170,32 +170,32 @@ export default async function FireTVPage() {
                         </section>
 
                         {/* Troubleshooting Box */}
-                        <section className="bg-yellow-50 dark:bg-yellow-900/10 border-l-4 border-yellow-400 p-6 mb-16 rounded-r-xl">
+                        <section className="bg-yellow-50 dark:bg-yellow-900/10 border-l-4 border-yellow-400 p-6 mb-16 rounded-r-xl not-prose">
                             <h3 className="text-xl font-bold text-yellow-800 dark:text-yellow-500 mb-2 flex items-center gap-2">
                                 <AlertTriangle className="h-5 w-5" />
                                 Common Issue: "App Not Installed"
                             </h3>
-                            <p className="text-yellow-700 dark:text-yellow-400">
+                            <p className="text-yellow-700 dark:text-yellow-400 leading-relaxed">
                                 If you get an error when installing, it usually means your Firestick is almost full.
                                 Go to <strong>Settings &gt; Applications &gt; Manage Installed Applications</strong> and delete unused apps to free up at least 200MB of space.
                             </p>
                         </section>
 
                         {/* FAQ */}
-                        <section className="mb-16">
+                        <section className="mb-16 not-prose">
                             <h2 className="font-headline text-3xl font-bold mb-8">Frequently Asked Questions</h2>
                             <Accordion type="single" collapsible>
                                 {faqs.map((faq, i) => (
                                     <AccordionItem key={i} value={`faq-${i}`}>
-                                        <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
-                                        <AccordionContent>{faq.answer}</AccordionContent>
+                                        <AccordionTrigger className="text-left font-medium text-lg">{faq.question}</AccordionTrigger>
+                                        <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
                                     </AccordionItem>
                                 ))}
                             </Accordion>
                         </section>
 
                         {/* CTA */}
-                        <section className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20">
+                        <section className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20 not-prose">
                             <h2 className="font-headline text-3xl font-bold mb-4">Ready to Stream?</h2>
                             <p className="text-lg mb-6 text-muted-foreground">
                                 Get your login details instantly.

@@ -98,7 +98,9 @@ export default async function HowToSetupIPTV() {
         image: "/api/og?title=How to Setup IPTV 2026",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "Emily Watson",
+        authorJobTitle: "Device Setup Specialist",
         url: `https://www.iptvprovider.me/blog/how-to-setup-iptv`,
     });
 

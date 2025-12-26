@@ -101,7 +101,9 @@ export default async function IPTVvsStreaming() {
         image: "/api/og?title=IPTV vs Streaming Services",
         datePublished: "2025-12-20",
         dateModified: new Date().toISOString().split('T')[0],
-        authorName: "IPTV Expert Team",
+        dateReviewed: new Date().toISOString().split('T')[0],
+        authorName: "Alex Rivera",
+        authorJobTitle: "Streaming Industry Analyst",
         url: `https://www.iptvprovider.me/blog/iptv-vs-streaming-services`,
     });
 
