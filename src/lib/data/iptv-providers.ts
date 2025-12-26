@@ -246,6 +246,201 @@ export const iptvProviders: IPTVProvider[] = [
         bestFor: "International viewers who need Arabic, Indian, or Latino channels with high reliability",
         trialDays: 3,
         refundDays: 7
+    },
+    {
+        id: "xtreme-hd-iptv",
+        name: "Xtreme HD IPTV",
+        rank: 6,
+        rating: 4.6,
+        reviewCount: 2100,
+        price: {
+            monthly: 15.00,
+            yearly: 80.00,
+            currency: "USD"
+        },
+        features: {
+            channels: 21000,
+            vod: 60000,
+            quality4K: true,
+            qualityHD: true,
+            devices: 1,
+            epg: true,
+            catchup: true,
+            support247: true
+        },
+        performance: {
+            uptime: 99.1,
+            freezeRate: 0.5,
+            zappingSpeed: 0.9
+        },
+        pros: [
+            "Massive global channel list",
+            "Excellent US/UK sports coverage",
+            "Includes all major PPV events"
+        ],
+        cons: [
+            "Standard plan only allows 1 connection",
+            "Occasional EPG lagginess"
+        ],
+        bestFor: "Viewers who want a comprehensive global channel list and reliable US networks",
+        trialDays: 1,
+        refundDays: 0
+    },
+    {
+        id: "tivorotv",
+        name: "TivoRotv",
+        rank: 7,
+        rating: 4.5,
+        reviewCount: 1400,
+        price: {
+            monthly: 14.00,
+            yearly: 85.00,
+            currency: "USD"
+        },
+        features: {
+            channels: 19000,
+            vod: 150000,
+            quality4K: true,
+            qualityHD: true,
+            devices: 2,
+            epg: true,
+            catchup: true,
+            support247: true
+        },
+        performance: {
+            uptime: 98.5,
+            freezeRate: 1.0,
+            zappingSpeed: 1.1
+        },
+        pros: [
+            "Largest VOD library for movies and series",
+            "High-bitrate 4K streaming",
+            "Friendly user dashboard"
+        ],
+        cons: [
+            "More expensive than budget options",
+            "Support response can be slow on weekends"
+        ],
+        bestFor: "Movie buffs and binge-watchers who need a massive VOD catalog in 4K",
+        trialDays: 2,
+        refundDays: 3
+    },
+    {
+        id: "sonix-iptv",
+        name: "Sonix IPTV",
+        rank: 8,
+        rating: 4.4,
+        reviewCount: 950,
+        price: {
+            monthly: 12.00,
+            yearly: 75.00,
+            currency: "USD"
+        },
+        features: {
+            channels: 30000,
+            vod: 80000,
+            quality4K: true,
+            qualityHD: true,
+            devices: 3,
+            epg: true,
+            catchup: false,
+            support247: true
+        },
+        performance: {
+            uptime: 97.2,
+            freezeRate: 1.8,
+            zappingSpeed: 1.4
+        },
+        pros: [
+            "Incredible channel count (30k+)",
+            "Stable international servers",
+            "Affordable 3-device plan"
+        ],
+        cons: [
+            "Lacks catch-up features on many channels",
+            "EPG can be incomplete for niche international channels"
+        ],
+        bestFor: "Global viewers who need specific local channels from around the world",
+        trialDays: 3,
+        refundDays: 0
+    },
+    {
+        id: "4k-iptv-zone",
+        name: "4K IPTV Zone",
+        rank: 9,
+        rating: 4.2,
+        reviewCount: 1200,
+        price: {
+            monthly: 11.00,
+            yearly: 65.00,
+            currency: "USD"
+        },
+        features: {
+            channels: 20000,
+            vod: 50000,
+            quality4K: true,
+            qualityHD: true,
+            devices: 5,
+            epg: true,
+            catchup: true,
+            support247: false
+        },
+        performance: {
+            uptime: 96.5,
+            freezeRate: 2.5,
+            zappingSpeed: 1.6
+        },
+        pros: [
+            "Best value for 5 simulateneous devices",
+            "Solid 4K sports performance",
+            "36-hour trial available"
+        ],
+        cons: [
+            "No 24/7 live chat support",
+            "Interface feels slightly dated"
+        ],
+        bestFor: "Large households needing multiple streams on a budget",
+        trialDays: 1,
+        refundDays: 0
+    },
+    {
+        id: "digitalizard",
+        name: "Digitalizard",
+        rank: 10,
+        rating: 4.3,
+        reviewCount: 880,
+        price: {
+            monthly: 13.00,
+            yearly: 82.00,
+            currency: "USD"
+        },
+        features: {
+            channels: 12000,
+            vod: 80000,
+            quality4K: true,
+            qualityHD: true,
+            devices: 2,
+            epg: true,
+            catchup: true,
+            support247: true
+        },
+        performance: {
+            uptime: 98.8,
+            freezeRate: 0.8,
+            zappingSpeed: 1.0
+        },
+        pros: [
+            "Low latency streaming (ideal for gaming/betting)",
+            "Instant account activation",
+            "True 8K capability on pilot channels"
+        ],
+        cons: [
+            "Lower total channel count than market leaders",
+            "Requires very high-speed internet for 8K"
+        ],
+        bestFor: "Tech enthusiasts and users prioritizing low latency and high resolution",
+        trialDays: 2,
+        refundDays: 5
     }
 ];
 
