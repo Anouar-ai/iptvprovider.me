@@ -1,10 +1,32 @@
 ~version: "2.1"
 
-# Define the body of the article
-body: //div[has-class("entry-content")]
+# IPTV Provider Blog - Telegram Instant View Template
+# Submit this template at: https://instantview.telegram.org/
 
-# Define the title
-title: //h1[has-class("entry-title")]
+# Match blog article pages
+?path: /blog/.+
+
+# Define the title - h1 with font-headline class
+title: //h1[contains(@class, "font-headline")]
+
+# Define the body - main content area
+body: //main
 
 # Define the cover image
-cover: //img[has-class("featured-image")]
+cover: //img[contains(@class, "featured") or @alt[contains(., "IPTV")]]
+
+# Remove navigation and non-content elements
+@remove: //header
+@remove: //footer
+@remove: //nav
+@remove: //button
+@remove: //*[contains(@class, "sticky")]
+
+# Remove CTAs and promotional blocks
+@remove: //*[contains(text(), "View #1") or contains(text(), "Get 24-Hour")]
+
+# Author information
+author: "IPTV Expert Team"
+
+# Set the site name
+site_name: "IPTV Provider"
