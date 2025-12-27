@@ -1,0 +1,10 @@
+~version: "2.1"
+
+# Define the body of the article
+body: //div[has-class("entry-content")]
+
+# Define the title
+title: //h1[has-class("entry-title")]
+
+# Define the cover image
+cover: //img[has-class("featured-image")]
