@@ -18,8 +18,18 @@ title: //h1
 # Body - Main content container
 body: //main
 
-# Cover image from OpenGraph meta tag
+# Cover image - Multiple XPath fallbacks (Telegram tries in order)
+# 1. OpenGraph image (best quality, defined in metadata)
 cover: //meta[@property="og:image"]/@content
+
+# 2. Twitter Card image fallback
+cover: //meta[@name="twitter:image"]/@content
+
+# 3. First image in main content
+cover: //main//img/@src
+
+# 4. Any image on page as last resort
+cover: //img/@src
 
 # Author (static - no author element in DOM)
 author: "IPTV Expert Team"
