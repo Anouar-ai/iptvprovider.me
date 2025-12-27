@@ -1,32 +1,54 @@
 ~version: "2.1"
 
-# IPTV Provider Blog - Telegram Instant View Template
-# Submit this template at: https://instantview.telegram.org/
+# =====================================================
+# Telegram Instant View Template for iptvprovider.me
+# Submit at: https://instantview.telegram.org/
+# =====================================================
 
-# Match blog article pages
+# Match all blog article pages
 ?path: /blog/.+
 
-# Define the title - h1 with font-headline class
-title: //h1[contains(@class, "font-headline")]
+# =====================================================
+# MAIN CONTENT SELECTORS (XPath)
+# =====================================================
 
-# Define the body - main content area
+# Title - The main H1 headline
+title: //h1
+
+# Body - Main content container
 body: //main
 
-# Define the cover image
-cover: //img[contains(@class, "featured") or @alt[contains(., "IPTV")]]
+# Cover image from OpenGraph meta tag
+cover: //meta[@property="og:image"]/@content
 
-# Remove navigation and non-content elements
+# Author (static - no author element in DOM)
+author: "IPTV Expert Team"
+
+# Site name
+site_name: "IPTV Provider"
+
+# =====================================================
+# ELEMENTS TO REMOVE (XPath)
+# =====================================================
+
+# Navigation elements
 @remove: //header
 @remove: //footer
 @remove: //nav
+
+# All interactive buttons
 @remove: //button
-@remove: //*[contains(@class, "sticky")]
 
-# Remove CTAs and promotional blocks
-@remove: //*[contains(text(), "View #1") or contains(text(), "Get 24-Hour")]
+# Fixed/sticky elements (WhatsApp widget, etc.)
+@remove: //div[contains(@class, "fixed")]
+@remove: //a[contains(@href, "wa.me")]
 
-# Author information
-author: "IPTV Expert Team"
+# Remove internal link clusters at bottom
+@remove: //section[.//h2[contains(text(), "Comparison Guides")]]
+@remove: //section[.//h2[contains(text(), "Technical Help")]]
 
-# Set the site name
-site_name: "IPTV Provider"
+# Remove author bio section
+@remove: //section[.//h3[contains(text(), "Expert Review Team")]]
+
+# Remove sources section
+@remove: //section[.//h2[contains(text(), "Sources")]]
